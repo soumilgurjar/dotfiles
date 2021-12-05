@@ -12,6 +12,7 @@ set relativenumber            " show relative line numbers (except current)
 set ruler                     " show column in console
 filetype indent on            " load filetype-specific indent files
 set autoindent
+set showcmd                   " shows the current command
 
 """""""" ---------------  Vimrc Backup ------------------
 "Turn on backup option
@@ -33,7 +34,7 @@ call vundle#begin()
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'junegunn/goyo.vim'
 Plugin 'drewtempelmeyer/palenight.vim'
 Plugin 'altercation/vim-colors-solarized'
@@ -89,10 +90,23 @@ set wildmenu
 " - :b lets you autocomplete any open buffer
 
 """""""" ----------------  SNIPPETS -----------------------
+" Leader
+let mapleader = " "
 
-" Read an empty HTML template and move cursor to title
-"nnoremap ,html :-1read $HOME/.vim/.skeleton.html<CR>3jwf>a
-nnoremap ,svrc :source $MYVIMRC<CR>
+" Switch between the last two files
+nnoremap <Leader><Leader> <C-^>
+
+" Quicker window movement
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+
+" Get off my lawn
+nnoremap <Left> :echoe "Use h"<CR>
+nnoremap <Right> :echoe "Use l"<CR>
+nnoremap <Up> :echoe "Use k"<CR>
+nnoremap <Down> :echoe "Use j"<CR>
 
 """""""" --------------- Mappings ------------------------
 map <C-n> :NERDTreeToggle<CR>

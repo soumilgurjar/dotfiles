@@ -1,6 +1,5 @@
 source ~/.bashrc
 
-export PATH=/usr/local/bin:$PATH
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 export PATH=$PATH:/Library/TeX/Distributions/.DefaultTeX/Contents/Programs/texbin
@@ -15,8 +14,3 @@ alias light_large="osascript ~/Documents/terminal_profile_scripts/terminal_profi
 
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
-# Added following lines due to openssl issue from 'brew info openssl'
-# export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
-# export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
-# export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
-# export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig"

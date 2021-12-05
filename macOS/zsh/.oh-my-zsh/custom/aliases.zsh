@@ -32,6 +32,7 @@ alias cl='clear'
 
 # Git related
 alias glog="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --branches"
+alias gs="git status"
 
 # Change terminal profile and looks
 alias man_page="osascript ~/Documents/terminal_profile_scripts/terminal_profile_man_page.scpt"
