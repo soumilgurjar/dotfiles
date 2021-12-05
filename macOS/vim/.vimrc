@@ -96,18 +96,16 @@ let mapleader = " "
 " Switch between the last two files
 nnoremap <Leader><Leader> <C-^>
 
-" Quicker window movement
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
-
 " Get off my lawn
 nnoremap <Left> :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
 
+" Quickly insert an empty new line without entering insert mode
+nnoremap <Leader>o o<Esc>
+nnoremap <Leader>O O<Esc>
+ 
 """""""" --------------- Mappings ------------------------
 map <C-n> :NERDTreeToggle<CR>
 imap jj <Esc>
