@@ -2,7 +2,7 @@
 # Example aliases
 alias zalias="vim ~/.oh-my-zsh/custom/aliases.zsh"
 alias zconfig="vim ~/.zshrc"
-alias ohmyzsh="vim ~/.oh-my-zsh"
+alias ohmyzsh="cd ~/.oh-my-zsh/custom/plugins/"
 alias reload="source ~/.zshrc"
 alias switch_zsh="chsh -s $(which zsh)"
 alias switch_bash="chsh -s $(which bash)"
@@ -20,10 +20,10 @@ alias euy='ssh -Y sgurjar@euler.ethz.ch'
 alias eux='ssh -X sgurjar@euler.ethz.ch'
 
 #Terminal navigation
+alias vi=vim
 alias vib='vim ~/.bashrc'
 alias sob='source ~/.bashrc'
 alias vibp='vim ~/.bash_profile'
-alias vi=vim
 alias sobp='source ~/.bash_profile'
 alias vivim='vim ~/.vimrc'
 alias fs='du -sh'
@@ -50,7 +50,7 @@ alias light_large="osascript ~/Documents/terminal_profile_scripts/terminal_profi
 alias dlsc='cd ~/polybox/ETHZ_Material/Fall_2021/DeepLearningInScientificComputing/'
 alias scr='cd /Users/sgurjar/Scratch_Bryant/'
 alias of='cd /Users/sgurjar/Scratch_Bryant/OpenFOAM_Cases/'
-alias matlab="/Applications/MATLAB_R2017b.app/bin/matlab -nojvm -nodesktop -nodisplay -nosplash"
+alias matlab="/Applications/MATLAB_R2021a.app/bin/matlab -nojvm -nodesktop -nodisplay -nosplash"
 alias cmea="cd /Users/sgurjar/polybox/ETHZ_Material/Correction_Winter2020/CMEA/"
 alias sem="cd /Users/sgurjar/polybox/ETHZ_Material/Fall_2019"
 alias gmsh="/Applications/Gmsh.app/Contents/MacOS/gmsh"
@@ -61,9 +61,13 @@ alias cases='cd /Users/sgurjar/Scratch_Bryant/OpenFOAM_Cases/Useful_Euler_Cases/
 alias dlsc_env='source ~/VirtualEnvs/dlsc_env/bin/activate'
 alias vogelwarte_env='source ~/Git_Repositories/vogelwarte/vogelwarte-env/bin/activate'
 
-
 # Adds commits and pushes files with the argument as the commit message
-function gacp() {
+function gcam() {
+  git add .
+  git commit -m "$1"
+}
+# Adds commits and pushes files with the argument as the commit message
+function gcap() {
   git add .
   git commit -m "$1"
   git push
