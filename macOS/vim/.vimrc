@@ -33,9 +33,11 @@ set autowrite                   " allows changing buffer with save
 set clipboard=unnamed           " yank and paste with the system clipboard
 set encoding=utf-8
 set expandtab                   " tabs are spaces
+set shiftround                  " When shifting lines, round the indentation to the nearest multiple of “shiftwidth.”
+set shiftwidth=4
+set smarttab                    " Insert “tabstop” number of spaces when the “tab” key is pressed.
 set tabstop=4                   " number of visual spaces per TAB
 set softtabstop=4               " number of spaces in tab when editing
-set shiftwidth=4
 set ignorecase                  " case-insensitive search
 set incsearch                   " search as characters are entered
 set hlsearch
@@ -51,11 +53,15 @@ set nowrap                      " do not automatically wrap on load
 set scrolloff=10
 set smartcase
 set nobackup
+set laststatus=1                " Always display the status bar.
+set cursorline
+set mouse=a
+
 """"""""" ---------------  VIM Themes --------------------
 " ---- Solarized Dark
-" set background=dark
-" let g:solarized_termcolors=256
-" colorscheme default
+"set background=dark
+"let g:solarized_termcolors=256
+"colorscheme solarized
 
 " ---- Palenight
 set background=dark
