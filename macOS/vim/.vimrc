@@ -1,27 +1,4 @@
 syntax on
-set showmatch                 " highlight matching [{()}]
-set incsearch                 " search as characters are entered
-set hlsearch                  " highlight matches
-
-set tabstop=4                 " number of visual spaces per TAB
-set softtabstop=4             " number of spaces in tab when editing
-set shiftwidth=4
-set expandtab                 " tabs are spaces
-set number                    " show absolute line numbers
-set relativenumber            " show relative line numbers (except current)
-set ruler                     " show column in console
-filetype indent on            " load filetype-specific indent files
-set autoindent
-set showcmd                   " shows the current command
-
-"""""""" ---------------  Vimrc Backup ------------------
-"Turn on backup option
-set backup
-set backupdir=/Users/sgurjar/Dropbox/Apps/vim/
-set writebackup
-set backupcopy=yes
-au BufWritePre * let &bex = '@' . strftime("%F.%H:%M")
-
 """""""" ---------------  Vundle Setup ------------------
 set nocompatible              " required
 filetype off                  " required
@@ -49,13 +26,39 @@ filetype plugin indent on    " required
 
 " Need to run ':PluginInstall' within vim whenever a plugin is added
 
+"""""""" ----------------- Global Settings ---------------
+set autoindent
+set autoread
+set autowrite                   " allows changing buffer with save
+set clipboard=unnamed           " yank and paste with the system clipboard
+set encoding=utf-8
+set expandtab                   " tabs are spaces
+set tabstop=4                   " number of visual spaces per TAB
+set softtabstop=4               " number of spaces in tab when editing
+set shiftwidth=4
+set ignorecase                  " case-insensitive search
+set incsearch                   " search as characters are entered
+set hlsearch
+set showmatch                   " highlight matching [{()}]
+set noerrorbells
+set number                      " show absolute line numbers
+set relativenumber              " show relative line numbers (except current)
+set ruler                       " show column in console
+set list                        " show trailing whitespace
+set listchars=tab:▸\ ,trail:▫
+set showcmd                     " shows the current command
+set nowrap                      " do not automatically wrap on load
+set scrolloff=10
+set smartcase
+set nobackup
 """"""""" ---------------  VIM Themes --------------------
 " ---- Solarized Dark
-set background=dark
+" set background=dark
 " let g:solarized_termcolors=256
 " colorscheme default
 
 " ---- Palenight
+set background=dark
 let g:lightline = { 'colorscheme': 'palenight' }
 colorscheme palenight
 
@@ -84,28 +87,44 @@ set path+=**
 
 " Display all matching files when we tab complete
 set wildmenu
-
+set wildmode=longest,list,full
 " - Hit tab to :find by partial match
 " - Use * to make it fuzzy
 " - :b lets you autocomplete any open buffer
 
-"""""""" ----------------  SNIPPETS -----------------------
-" Leader
+"""""""" --------------- Mappings ------------------------
+" Leader is now set to Spacebar
 let mapleader = " "
 
 " Switch between the last two files
 nnoremap <Leader><Leader> <C-^>
+" Pressing j twice in insert mode will lead to Esc
+imap jj <Esc>
 
-" Get off my lawn
+" Get off my lawn (Never use arrow keys)
 nnoremap <Left> :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
+inoremap <Left> <NOP>
+inoremap <Right> <NOP>
+inoremap <Up> <NOP>
+inoremap <Down> <NOP>
 
 " Quickly insert an empty new line without entering insert mode
 nnoremap <Leader>o o<Esc>
 nnoremap <Leader>O O<Esc>
- 
-"""""""" --------------- Mappings ------------------------
+" Removes highlighting until next search asdadas
+nnoremap <Leader>hl :noh<CR>
+" Allows easy copying to end of line
+nnoremap Y y$
+" Keeps stuff centered when searching in file
+nnoremap n nzzzv
+nnoremap N Nzzzv
+nnoremap J mzJ`z
+
+" Nerdtree toggle
 map <C-n> :NERDTreeToggle<CR>
-imap jj <Esc>
+
+""""""" _______________ Abbreviations ___________________
+" iabbrev @@ soumilgurjar@gmail.com

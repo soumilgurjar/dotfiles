@@ -1,11 +1,14 @@
 # This file should be added to ~/.oh-my-zsh/custom/ directory
 # Example aliases
-alias zshalias="vim ~/.oh-my-zsh/custom/aliases.zsh"
-alias zshconfig="vim ~/.zshrc"
+alias zalias="vim ~/.oh-my-zsh/custom/aliases.zsh"
+alias zconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 alias reload="source ~/.zshrc"
 alias switch_zsh="chsh -s $(which zsh)"
 alias switch_bash="chsh -s $(which bash)"
+
+#To avoid brew python versions accidentally linking against a Pyenv-provided Python, we use a wrapper
+alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
 
 #Python3 and pip3 alias
 # alias pip=/usr/local/bin/pip3

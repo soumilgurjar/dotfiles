@@ -82,10 +82,22 @@ set wildmenu
 " - :b lets you autocomplete any open buffer
 
 """""""" ----------------  SNIPPETS -----------------------
+" Leader
+let mapleader = " "
 
-" Read an empty HTML template and move cursor to title
-"nnoremap ,html :-1read $HOME/.vim/.skeleton.html<CR>3jwf>a
-nnoremap ,svrc :source $MYVIMRC<CR>
+" Switch between the last two files
+nnoremap <Leader><Leader> <C-^>
+
+" Get off my lawn
+nnoremap <Left> :echoe "Use h"<CR>
+nnoremap <Right> :echoe "Use l"<CR>
+nnoremap <Up> :echoe "Use k"<CR>
+nnoremap <Down> :echoe "Use j"<CR>
+
+" Quickly insert an empty new line without entering insert mode
+nnoremap <Leader>o o<Esc>
+nnoremap <Leader>O O<Esc>
+ 
 
 """""""" --------------- Mappings ------------------------
 map <C-n> :NERDTreeToggle<CR>

@@ -39,25 +39,29 @@ zstyle ':omz:update' frequency 13
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-    git 
     colored-man-pages 
     themes 
     web-search
     zsh-autosuggestions
+    zsh-history-substring-search
     zsh-syntax-highlighting
     zsh-vi-mode
     z
 )
 
+# Plugin preferences
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=62'
+bindkey '^ ' autosuggest-accept # This sets the Ctrl+Space as the hotkey for acception the suggestions
+#bindkey '^+=' autosuggest-toggle # This sets the Ctrl+Shift+= as the hotkey to toggle autosuggestions
+
+
 source $ZSH/oh-my-zsh.sh
+source "$ZSH_CUSTOM/plugins/"
 
 # Play nice with pyenv
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
-
-#To avoid brew python versions accidentally linking against a Pyenv-provided Python, we use a wrapper
-alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
