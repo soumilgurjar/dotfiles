@@ -21,11 +21,11 @@ alias eux='ssh -X sgurjar@euler.ethz.ch'
 
 #Terminal navigation
 alias vi=vim
-alias vib='vim ~/.dotfiles/macOS/vim/.bashrc'
-alias sob='source ~/.dotfiles/macOS/vim/.bashrc'
-alias vibp='vim ~/.dotfiles/macOS/vim/.bash_profile'
-alias sobp='source ~/.dotfiles/macOS/vim/.bash_profile'
-alias vivim='vim ~/.dotfiles/macOS/vim/.vimrc'
+alias vib='vim ~/.bashrc'
+alias sob='source ~/.bashrc'
+alias vibp='vim ~/.bash_profile'
+alias sobp='source ~/.bash_profile'
+alias vivim='vim ~/.vimrc'
 alias fs='du -sh'
 alias la='ls -a'
 alias ls='clear; ls'

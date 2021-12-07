@@ -40,6 +40,7 @@ VIM_MODE_VICMD_KEY='jj'                 # This allows escape from insert to norm
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+    git
     colored-man-pages
     themes
     web-search
@@ -54,7 +55,6 @@ plugins=(
 #ZVM_VI_INSERT_ESCAPE_BINDKEY=jj
 bindkey '^ ' autosuggest-accept # This sets the Ctrl+Space as the hotkey for acception the suggestions
 #bindkey '^+=' autosuggest-toggle # This sets the Ctrl+Shift+= as the hotkey to toggle autosuggestions
-
 
 source $ZSH/oh-my-zsh.sh
 
