@@ -29,6 +29,7 @@ Plugin 'kien/ctrlp.vim'
 
 " Plugin settings
 let g:ctrlp_user_command = ['.git/', 'git ls-files --cached --others  --exclude-standard %s']
+let g:yankring_history_file = '.yankring_history'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -91,6 +92,11 @@ let g:lightline = { 'colorscheme': 'solarized' }
 " colorscheme palenight
 " let g:lightline = { 'colorscheme': 'palenight' }
 " let g:palenight_terminal_italics=1
+
+let g:lightline = {
+      \ 'active': { 'left': [ [ 'mode', 'paste' ], [ 'gitbranch', 'readonly', 'filename', 'modified' ] ] },
+      \ 'component_function': { 'gitbranch': 'fugitive#head' },
+      \ }
 
 """"""""" --------------- VIM Buffer ----------------------
 "make vim save and load the folding of the document each time it loads"
