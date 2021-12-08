@@ -1,18 +1,4 @@
 syntax on
-set showmatch                 " highlight matching [{()}]
-set incsearch                 " search as characters are entered
-set hlsearch                  " highlight matches
-
-set tabstop=4                 " number of visual spaces per TAB
-set softtabstop=4             " number of spaces in tab when editing
-set shiftwidth=4
-set expandtab                 " tabs are spaces
-set number                    " show absolute line numbers
-set relativenumber            " show relative line numbers (except current)
-set ruler                     " show column in console
-filetype indent on            " load filetype-specific indent files
-set autoindent
-
 """""""" ---------------  Vundle Setup ------------------
 set nocompatible              " required
 filetype off                  " required
@@ -27,41 +13,90 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'junegunn/goyo.vim'
-Plugin 'drewtempelmeyer/palenight.vim'
-Plugin 'altercation/vim-colors-solarized'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-commentary'
 Plugin 'scrooloose/nerdtree'
 Plugin 'bling/vim-bufferline'
+Plugin 'simnalamburt/vim-mundo'
+Plugin 'vim-scripts/YankRing.vim'
+
+" Theme plugins
+Plugin 'itchyny/lightline.vim'
+Plugin 'drewtempelmeyer/palenight.vim'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'gosukiwi/vim-atom-dark'
+Plugin 'kien/ctrlp.vim'
+
+" Plugin settings
+let g:ctrlp_user_command = ['.git/', 'git ls-files --cached --others  --exclude-standard %s']
+let g:yankring_history_file = '.yankring_history'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-"Need to run ':PluginInstall' within vim whenever a new plugin is added
+" Need to run ':PluginInstall' within vim whenever a plugin is added
+
+"""""""" ----------------- Global Settings ---------------
+set autoindent
+set autoread
+set autowrite                   " allows changing buffer with save
+set hidden
+set clipboard=unnamed           " yank and paste with the system clipboard
+set encoding=utf-8
+set expandtab                   " tabs are spaces
+set shiftround                  " When shifting lines, round the indentation to the nearest multiple of “shiftwidth.”
+set shiftwidth=4
+set smarttab                    " Insert “tabstop” number of spaces when the “tab” key is pressed.
+set tabstop=4                   " number of visual spaces per TAB
+set softtabstop=4               " number of spaces in tab when editing
+set ignorecase                  " case-insensitive search
+set incsearch                   " search as characters are entered
+set hlsearch
+set showmatch                   " highlight matching [{()}]
+set noerrorbells
+set number                      " show absolute line numbers
+set relativenumber              " show relative line numbers (except current)
+set ruler                       " show column in console
+set list                        " show trailing whitespace
+set listchars=tab:▸\ ,trail:▫
+set showcmd                     " shows the current command
+set nowrap                      " do not automatically wrap on load
+set scrolloff=10
+set smartcase
+set nobackup
+set laststatus=2                " Always display the status bar.
+set cursorline
+set mouse=a
+set undofile
+set undodir=~/.vim/undo
 
 """"""""" ---------------  VIM Themes --------------------
 " ---- Solarized Dark
+set background=dark
+colorscheme solarized
+let g:lightline = { 'colorscheme': 'solarized' }
+
+" ---- Solarized Light
+" set background=light
+" colorscheme solarized
+" let g:lightline = { 'colorscheme': 'solarized' }
+
+" ---- Atom Dark
 " set background=dark
-" let g:solarized_termcolors=256
-" colorscheme default
+" colorscheme atom-dark
+" let g:lightline = { 'colorscheme': 'atom-dark' }
 
 " ---- Palenight
-set background=dark
-let g:lightline = { 'colorscheme': 'palenight' }
-colorscheme palenight
+" set background=dark
+" colorscheme palenight
+" let g:lightline = { 'colorscheme': 'palenight' }
+" let g:palenight_terminal_italics=1
 
-if (has("nvim"))
-  "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
-  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-endif
-
-"For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
-"Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
-" < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
-if (has("termguicolors"))
-  set termguicolors
-endif
+let g:lightline = {
+      \ 'active': { 'left': [ [ 'mode', 'paste' ], [ 'gitbranch', 'readonly', 'filename', 'modified' ] ] },
+      \ 'component_function': { 'gitbranch': 'fugitive#head' },
+      \ }
 
 """"""""" --------------- VIM Buffer ----------------------
 "make vim save and load the folding of the document each time it loads"
@@ -73,32 +108,90 @@ au BufWinEnter ?* silent loadview 1
 " Search down into subfolders
 " Provides tab-completion for all file-related tasks
 set path+=**
-
 " Display all matching files when we tab complete
 set wildmenu
+set wildmode=longest,list,full
+set wildignore+=*.a,*.bmp,*.png,*.tiff,*.jpg,*.eps,*.gif,*.ico
+set wildignore+=*.pdf,*.doc,*.xlsx,*.dmg,*.zip,*.app,*.mp4,*.mkv,*.ogg,*.mp3
+set wildignore+=.DS_Store,.git,.hg,.svn
+set wildignore+=*.swp,*.tmp.
 
 " - Hit tab to :find by partial match
 " - Use * to make it fuzzy
 " - :b lets you autocomplete any open buffer
 
-"""""""" ----------------  SNIPPETS -----------------------
-" Leader
+"""""""" --------------- leader Mappings ------------------------
+" leader is now set to Spacebar
 let mapleader = " "
 
+"Open vimrc
+nnoremap <leader>ev :w<CR> :e $MYVIMRC<CR>
+"Open zshrc
+nnoremap <leader>ez :w<CR> :e ~/.zshrc<CR>
+"Open zshrc
+nnoremap <leader>eb :w<CR> :e ~/.bashrc<CR>
+" Source vimrc
+nnoremap <leader><CR> :w<CR>:so ~/.vimrc<CR>
+" Install Plugins
+nnoremap <leader>pi :PluginInstall<CR>
+" Quickly insert an empty new line without entering insert mode
+nnoremap <leader>o o<Esc>
+nnoremap <leader>O O<Esc>
+" Removes highlighting until next search asdadas
+nnoremap <leader>hl :noh<CR>
 " Switch between the last two files
-nnoremap <Leader><Leader> <C-^>
+nnoremap <leader><leader> :w<CR><C-^>
+" Show undo tree
+nnoremap <leader>u :MundoToggle<CR>
+" Show yank buffer
+nnoremap <leader>y :YRShow<CR>
+" Nerdtree toggle
+nnoremap <leader>n :NERDTreeToggle<CR>
+" CtrlP toggle
+nnoremap <silent> <leader>p :w<CR>:CtrlP<CR>
 
-" Get off my lawn
+" Git mappings
+nnoremap <leader>gb :Gblame<CR>
+nnoremap <leader>gs :Gstatus<CR>
+nnoremap <leader>gc :Gcommit<CR>
+nnoremap <leader>gph :Gpush<CR>
+nnoremap <leader>gpl :Gpull<CR>
+
+" Go to specific buffer
+nnoremap <leader>1  :w<CR>:1b<CR>
+nnoremap <leader>2  :w<CR>:2b<CR>
+nnoremap <leader>3  :w<CR>:3b<CR>
+nnoremap <leader>4  :w<CR>:4b<CR>
+nnoremap <leader>5  :w<CR>:5b<CR>
+
+
+
+"""""""" --------------- Mappings ------------------------
+" Pressing j twice in insert mode will lead to Esc
+inoremap jj <Esc>
+
+" Get off my lawn (Never use arrow keys)
 nnoremap <Left> :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
+inoremap <Left> <NOP>
+inoremap <Right> <NOP>
+inoremap <Up> <NOP>
+inoremap <Down> <NOP>
+inoremap <Esc> <NOP>
 
-" Quickly insert an empty new line without entering insert mode
-nnoremap <Leader>o o<Esc>
-nnoremap <Leader>O O<Esc>
- 
+" Allows easy copying to end of line
+nnoremap Y y$
 
-"""""""" --------------- Mappings ------------------------
-map <C-n> :NERDTreeToggle<CR>
-imap jj <Esc>
+" Keeps stuff centered when searching in file
+nnoremap n nzzzv
+nnoremap N Nzzzv
+nnoremap J mzJ`z
+
+" Helps move entire block
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
+""""""" _______________ Abbreviations ___________________
+" iabbrev @@ soumilgurjar@gmail.com
