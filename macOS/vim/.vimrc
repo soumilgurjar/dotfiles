@@ -19,13 +19,13 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'bling/vim-bufferline'
 Plugin 'simnalamburt/vim-mundo'
 Plugin 'vim-scripts/YankRing.vim'
+Plugin 'kien/ctrlp.vim'
 
 " Theme plugins
 Plugin 'itchyny/lightline.vim'
 Plugin 'drewtempelmeyer/palenight.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'gosukiwi/vim-atom-dark'
-Plugin 'kien/ctrlp.vim'
 
 " Plugin settings
 let g:ctrlp_user_command = ['.git/', 'git ls-files --cached --others  --exclude-standard %s']
@@ -164,7 +164,9 @@ nnoremap <leader>3  :w<CR>:3b<CR>
 nnoremap <leader>4  :w<CR>:4b<CR>
 nnoremap <leader>5  :w<CR>:5b<CR>
 
-
+" Move lines up or down
+nnoremap <leader>k :m .-2<CR>==
+nnoremap <leader>j :m .+1<CR>==
 
 """""""" --------------- Mappings ------------------------
 " Pressing j twice in insert mode will lead to Esc
@@ -192,6 +194,11 @@ nnoremap J mzJ`z
 " Helps move entire block
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
+" Helps move line in insert mode
+inoremap <C-j> <esc>:m .+1<CR>==
+inoremap <C-k> <esc>:m .-2<CR>==
+nnoremap <C-j> :m .+1<CR>==
+nnoremap <C-k> :m .-2<CR>==
 
 """"""" _______________ Abbreviations ___________________
 " iabbrev @@ soumilgurjar@gmail.com
