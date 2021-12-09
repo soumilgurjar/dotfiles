@@ -134,8 +134,8 @@ nnoremap <leader>sz :w<CR> :source ~/.zshrc <CR> :echo "Sourced zshrc" <CR>
 nnoremap <leader>ev :w<CR> :e ~/.vimrc <CR>
 nnoremap <leader>sv :w<CR> :source ~/.vimrc <CR> :echo "Sourced vimrc" <CR>
 "Open and source bashrc
-nnoremap <leader>eb :w<CR> :e ~/.bashrc<CR>
-nnoremap <leader>sb :w<CR> :source ~/.bashrc<CR> :echo "Sourced bashrc" <CR>
+nnoremap <leader>eb :w<CR> :e ~/.bashrc <CR>
+nnoremap <leader>sb :w<CR> :source ~/.bashrc <CR> :echo "Sourced bashrc" <CR>
 
 " Install Plugins
 nnoremap <leader>pi :PluginInstall<CR>
