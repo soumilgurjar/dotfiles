@@ -13,8 +13,8 @@ set surround
 set ignorecase smartcase
 set incsearch
 set scrolloff=10
-" set showmode
-" set showcmd
+set showmode
+set showcmd
 
 "" ------- IdeaVim commands ------------
 set ideajoin
@@ -26,14 +26,14 @@ set ideamarks
 let mapleader = " "
 
 " Open and source ideavimrc
-nnoremap <leader>ei :w<CR> :e ~/.ideavimrc<CR>
-nnoremap <leader>si :w<CR> :source ~/.ideavimrc<CR> :echo "Sourced ideavimrc" <CR>
+nnoremap <leader>ei :w<CR> :e ~/.ideavimrc <CR>
+nnoremap <leader>si :w<CR> :source ~/.ideavimrc <CR> :echo "Sourced ideavimrc" <CR>
 " Open and source zshrc
-nnoremap <leader>ez :w<CR> :e ~/.zshrc<CR>
-nnoremap <leader>sz :w<CR> :source ~/.zshrc<CR>
+nnoremap <leader>ez :w<CR> :e ~/.zshrc <CR>
+nnoremap <leader>sz :w<CR> :source ~/.zshrc <CR>
 " Open and source vimrc
-nnoremap <leader>ev :w<CR> :e ~/.vimrc<CR>
-nnoremap <leader>sv :w<CR> :source ~/.vimrc<CR>
+nnoremap <leader>ev :w<CR> :e ~/.vimrc <CR>
+nnoremap <leader>sv :w<CR> :source ~/.vimrc <CR>
 " Quickly insert an empty new line without entering insert mode
 nnoremap <leader>o o<Esc>
 nnoremap <leader>O O<Esc>
@@ -97,8 +97,4 @@ nnoremap == :action ReformatCode<CR>
 vnoremap == :action ReformatCode<CR>
 nnoremap <leader>r :action RenameElement
 
-" nnoremap cc :action CommentByLineComment<CR>
-" vnoremap cc :action CommentByLineComment<CR>
-
-" Find more examples here: https://jb.gg/share-ideavimrc
 
