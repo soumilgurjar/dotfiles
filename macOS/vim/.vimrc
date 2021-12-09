@@ -124,29 +124,41 @@ set wildignore+=*.swp,*.tmp.
 " leader is now set to Spacebar
 let mapleader = " "
 
-"Open vimrc
-nnoremap <leader>ev :w<CR> :e $MYVIMRC<CR>
-"Open zshrc
-nnoremap <leader>ez :w<CR> :e ~/.zshrc<CR>
-"Open zshrc
+" Open and source ideavimrc
+nnoremap <leader>ei :w<CR> :e ~/.ideavimrc <CR>
+nnoremap <leader>si :w<CR> :source ~/.ideavimrc <CR> :echo "Sourced ideavimrc" <CR>
+" Open and source zshrc
+nnoremap <leader>ez :w<CR> :e ~/.zshrc <CR>
+nnoremap <leader>sz :w<CR> :source ~/.zshrc <CR> :echo "Sourced zshrc" <CR>
+" Open and source vimrc
+nnoremap <leader>ev :w<CR> :e ~/.vimrc <CR>
+nnoremap <leader>sv :w<CR> :source ~/.vimrc <CR> :echo "Sourced vimrc" <CR>
+"Open and source bashrc
 nnoremap <leader>eb :w<CR> :e ~/.bashrc<CR>
-" Source vimrc
-nnoremap <leader><CR> :w<CR>:so ~/.vimrc<CR>
+nnoremap <leader>sb :w<CR> :source ~/.bashrc<CR> :echo "Sourced bashrc" <CR>
+
 " Install Plugins
 nnoremap <leader>pi :PluginInstall<CR>
+
 " Quickly insert an empty new line without entering insert mode
 nnoremap <leader>o o<Esc>
 nnoremap <leader>O O<Esc>
-" Removes highlighting until next search asdadas
+
+" Removes highlighting until next search
 nnoremap <leader>hl :noh<CR>
+
 " Switch between the last two files
 nnoremap <leader><leader> :w<CR><C-^>
+
 " Show undo tree
 nnoremap <leader>u :MundoToggle<CR>
+
 " Show yank buffer
 nnoremap <leader>y :YRShow<CR>
+
 " Nerdtree toggle
 nnoremap <leader>n :NERDTreeToggle<CR>
+
 " CtrlP toggle
 nnoremap <silent> <leader>p :w<CR>:CtrlP<CR>
 
