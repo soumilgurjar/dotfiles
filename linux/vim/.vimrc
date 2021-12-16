@@ -42,7 +42,7 @@ set autoindent
 set autoread
 set autowrite                   " allows changing buffer with save
 set hidden
-set clipboard=unnamed           " yank and paste with the system clipboard
+set clipboard=unnamedplus       " yank and paste with the system clipboard
 set encoding=utf-8
 set expandtab                   " tabs are spaces
 set shiftround                  " When shifting lines, round the indentation to the nearest multiple of “shiftwidth.”
@@ -71,6 +71,25 @@ set mouse=a
 set undofile
 set undodir=~/.vim/undo
 
+
+""""""""" ---------------  VIM Cursor --------------------
+" Cursor in terminal
+" https://vim.fandom.com/wiki/Configuring_the_cursor
+" 1 or 0 -> blinking block
+" 2 solid block
+" 3 -> blinking underscore
+" 4 solid underscore
+" Recent versions of xterm (282 or above) also support
+" 5 -> blinking vertical bar
+" 6 -> solid vertical bar
+
+if &term =~ '^xterm'
+    " normal mode
+    let &t_EI .= "\<Esc>[2 q"
+    " insert mode
+    let &t_SI .= "\<Esc>[6 q"
+endif
+
 """"""""" ---------------  VIM Themes --------------------
 " ---- Solarized Dark
 " set background=dark
@@ -97,6 +116,8 @@ let g:lightline = {
       \ 'active': { 'left': [ [ 'mode', 'paste' ], [ 'gitbranch', 'readonly', 'filename', 'modified' ] ] },
       \ 'component_function': { 'gitbranch': 'fugitive#head' },
       \ }
+
+
 
 """"""""" --------------- VIM Buffer ----------------------
 "make vim save and load the folding of the document each time it loads"
