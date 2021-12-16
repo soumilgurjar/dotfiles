@@ -1,0 +1,100 @@
+"" ------- Plugin emulation -------------
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'preservim/nerdtree'
+Plug 'machakann/vim-highlightedyank'
+
+"" ------- Set commands ------------
+set visualbell
+set clipboard+=ideaput
+set clipboard+=unnamed
+set number relativenumber
+set surround
+set ignorecase smartcase
+set incsearch
+set scrolloff=10
+set showmode
+set showcmd
+
+"" ------- IdeaVim commands ------------
+set ideajoin
+set idearefactormode=keep
+set ideamarks
+
+"""""""" --------------- leader Mappings ------------------------
+" leader is now set to Spacebar
+let mapleader = " "
+
+" Open and source ideavimrc
+nnoremap <leader>ei :w<CR> :e C:\Users\soumi\.ideavimrc <CR>
+nnoremap <leader>si :w<CR> :source C:\Users\soumi\.ideavimrc <CR> :echo "Sourced ideavimrc" <CR>
+" Open and source zshrc
+nnoremap <leader>ez :w<CR> :e ~/.zshrc <CR>
+nnoremap <leader>sz :w<CR> :source ~/.zshrc <CR>
+" Open and source vimrc
+nnoremap <leader>ev :w<CR> :e ~/.vimrc <CR>
+nnoremap <leader>sv :w<CR> :source ~/.vimrc <CR>
+" Quickly insert an empty new line without entering insert mode
+nnoremap <leader>o o<Esc>
+nnoremap <leader>O O<Esc>
+" Removes highlighting until next search
+nnoremap <leader>hl :noh<CR>
+" Switch between the last two files
+" nnoremap <leader><leader> :w<CR><C-^>
+" Nerdtree toggle
+nnoremap <leader>n :NERDTreeToggle<CR>
+" CtrlP toggle
+" nnoremap <silent> <leader>p :w<CR>:CtrlP<CR>
+
+
+" Go to specific buffer
+nnoremap <leader>hh :action PreviousTab<CR>
+nnoremap <leader>ll :action NextTab<CR>
+nnoremap <leader>] :action NextSplitter<CR>
+nnoremap <leader>[ :action PrevSplitter<CR>
+" nnoremap <leader>1  :w<CR>:1b<CR>
+" nnoremap <leader>2  :w<CR>:2b<CR>
+" nnoremap <leader>3  :w<CR>:3b<CR>
+" nnoremap <leader>4  :w<CR>:4b<CR>
+" nnoremap <leader>5  :w<CR>:5b<CR>
+
+
+"""""""" --------------- Mappings ------------------------
+" Pressing j twice in insert mode will lead to Esc
+inoremap jj <Esc>
+
+" Get off my lawn (Never use arrow keys)
+nnoremap <Left> <NOP>
+nnoremap <Right> <NOP>
+nnoremap <Up> <NOP>
+nnoremap <Down> <NOP>
+inoremap <Left> <NOP>
+inoremap <Right> <NOP>
+inoremap <Up> <NOP>
+inoremap <Down> <NOP>
+inoremap <Esc> <NOP>
+
+" Allows easy copying to end of line
+nnoremap Y y$
+
+" Keeps stuff centered when searching in file
+nnoremap n nzzzv
+nnoremap N Nzzzv
+nnoremap J mzJ`z
+
+" Move lines of code up and down
+nnoremap <C-k> :m .-2<CR>
+nnoremap <C-j> :m .+1<CR>
+inoremap <C-k> <Esc>:m -2<CR>i
+inoremap <C-j> <Esc>:m +1<CR>i
+
+"" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
+nnoremap gd :action GotoDeclaration<CR>
+nnoremap gs :action GotoSuperMethod<CR>
+nnoremap gi :action GotoImplementation<CR>
+nnoremap gb :action JumpToLastChange<CR>
+nnoremap == :action ReformatCode<CR>
+vnoremap == :action ReformatCode<CR>
+nnoremap <leader>r :action RenameElement
+
+
