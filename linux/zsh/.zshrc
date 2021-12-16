@@ -6,7 +6,8 @@
 # export PATH="$PYENV_ROOT/shims:$PATH"
 
 # Set colors for 'ls' command
-export CLICOLOR=1
+eval `dircolors ~/Git_Repositories/dircolors-solarized/dircolors.256dark`
+export TERM=xterm-256color        # for common 256 color terminals (e.g. gnome-terminal)
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/soumilgurjar/.oh-my-zsh"
@@ -33,22 +34,29 @@ zstyle ':omz:update' frequency 13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
-
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=62'
+VIM_MODE_VICMD_KEY='jj'                 # This allows escape from insert to normal mode with 'jj'
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-    git 
-    colored-man-pages 
-    themes 
-    zsh-vi-mode
+    git
+    colored-man-pages
+    themes
     web-search
     zsh-autosuggestions
+    zsh-history-substring-search
     zsh-syntax-highlighting
+    zsh-vim-mode                        # This vi-mode plugin keeps the push-line ^q functionality
     z
 )
+
+# Plugin preferences
+#ZVM_VI_INSERT_ESCAPE_BINDKEY=jj
+bindkey '^ ' autosuggest-accept # This sets the Ctrl+Space as the hotkey for acception the suggestions
+#bindkey '^+=' autosuggest-toggle # This sets the Ctrl+Shift+= as the hotkey to toggle autosuggestions
 
 source $ZSH/oh-my-zsh.sh
 
