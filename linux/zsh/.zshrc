@@ -35,11 +35,10 @@ zstyle ':omz:update' frequency 13
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=62'
-VIM_MODE_VICMD_KEY='jj'                 # This allows escape from insert to normal mode with 'jj'
-# Which plugins would you like to load?
+VIM_MODE_VICMD_KEY='jj'                 # jhis allows escape from insert to normal mode with 'jj'
+
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     git
@@ -47,23 +46,21 @@ plugins=(
     themes
     web-search
     zsh-autosuggestions
-    zsh-history-substring-search
     zsh-syntax-highlighting
     zsh-vim-mode                        # This vi-mode plugin keeps the push-line ^q functionality
     z
 )
 
 # Plugin preferences
-#ZVM_VI_INSERT_ESCAPE_BINDKEY=jj
 bindkey '^ ' autosuggest-accept # This sets the Ctrl+Space as the hotkey for acception the suggestions
-#bindkey '^+=' autosuggest-toggle # This sets the Ctrl+Shift+= as the hotkey to toggle autosuggestions
+MODE_CURSOR_VIINS="steady bar white"
+MODE_CURSOR_REPLACE="blinking block red"
+MODE_CURSOR_VICMD="steady block white"
+MODE_CURSOR_SEARCH="steady underline #ff00ff"
+MODE_CURSOR_VISUAL="steady block yellow"
+MODE_CURSOR_VLINE="steady block #00ffff"
 
 source $ZSH/oh-my-zsh.sh
-
-# Play nice with pyenv
-# if command -v pyenv 1>/dev/null 2>&1; then
-#  eval "$(pyenv init -)"
-# fi
 
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
