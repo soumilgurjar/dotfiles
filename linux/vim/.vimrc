@@ -19,13 +19,13 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'bling/vim-bufferline'
 Plugin 'simnalamburt/vim-mundo'
 Plugin 'vim-scripts/YankRing.vim'
+Plugin 'kien/ctrlp.vim'
 
 " Theme plugins
 Plugin 'itchyny/lightline.vim'
 Plugin 'drewtempelmeyer/palenight.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'gosukiwi/vim-atom-dark'
-Plugin 'kien/ctrlp.vim'
 
 " Plugin settings
 let g:ctrlp_user_command = ['.git/', 'git ls-files --cached --others  --exclude-standard %s']
@@ -73,9 +73,9 @@ set undodir=~/.vim/undo
 
 """"""""" ---------------  VIM Themes --------------------
 " ---- Solarized Dark
-set background=dark
-colorscheme solarized
-let g:lightline = { 'colorscheme': 'solarized' }
+" set background=dark
+" colorscheme solarized
+" let g:lightline = { 'colorscheme': 'solarized' }
 
 " ---- Solarized Light
 " set background=light
@@ -88,10 +88,10 @@ let g:lightline = { 'colorscheme': 'solarized' }
 " let g:lightline = { 'colorscheme': 'atom-dark' }
 
 " ---- Palenight
-" set background=dark
-" colorscheme palenight
-" let g:lightline = { 'colorscheme': 'palenight' }
-" let g:palenight_terminal_italics=1
+set background=dark
+colorscheme palenight
+let g:lightline = { 'colorscheme': 'palenight' }
+let g:palenight_terminal_italics=1
 
 let g:lightline = {
       \ 'active': { 'left': [ [ 'mode', 'paste' ], [ 'gitbranch', 'readonly', 'filename', 'modified' ] ] },
@@ -124,29 +124,41 @@ set wildignore+=*.swp,*.tmp.
 " leader is now set to Spacebar
 let mapleader = " "
 
-"Open vimrc
-nnoremap <leader>ev :w<CR> :e $MYVIMRC<CR>
-"Open zshrc
-nnoremap <leader>ez :w<CR> :e ~/.zshrc<CR>
-"Open zshrc
-nnoremap <leader>eb :w<CR> :e ~/.bashrc<CR>
-" Source vimrc
-nnoremap <leader><CR> :w<CR>:so ~/.vimrc<CR>
+" Open and source ideavimrc
+nnoremap <leader>ei :w<CR> :e ~/.dotfiles/windows/ideavim/.ideavimrc <CR>
+nnoremap <leader>si :w<CR> :source ~/.dotfiles/windows/ideavim/.ideavimrc <CR> :echo "Sourced ideavimrc" <CR>
+" Open and source zshrc
+nnoremap <leader>ez :w<CR> :e ~/.zshrc <CR>
+nnoremap <leader>sz :w<CR> :source ~/.zshrc <CR> :echo "Sourced zshrc" <CR>
+" Open and source vimrc
+nnoremap <leader>ev :w<CR> :e ~/.vimrc <CR>
+nnoremap <leader>sv :w<CR> :source ~/.vimrc <CR> :echo "Sourced vimrc" <CR>
+"Open and source bashrc
+nnoremap <leader>eb :w<CR> :e ~/.bashrc <CR>
+nnoremap <leader>sb :w<CR> :source ~/.bashrc <CR> :echo "Sourced bashrc" <CR>
+
 " Install Plugins
 nnoremap <leader>pi :PluginInstall<CR>
+
 " Quickly insert an empty new line without entering insert mode
 nnoremap <leader>o o<Esc>
 nnoremap <leader>O O<Esc>
-" Removes highlighting until next search asdadas
+
+" Removes highlighting until next search
 nnoremap <leader>hl :noh<CR>
+
 " Switch between the last two files
 nnoremap <leader><leader> :w<CR><C-^>
+
 " Show undo tree
 nnoremap <leader>u :MundoToggle<CR>
+
 " Show yank buffer
 nnoremap <leader>y :YRShow<CR>
+
 " Nerdtree toggle
 nnoremap <leader>n :NERDTreeToggle<CR>
+
 " CtrlP toggle
 nnoremap <silent> <leader>p :w<CR>:CtrlP<CR>
 
@@ -164,7 +176,9 @@ nnoremap <leader>3  :w<CR>:3b<CR>
 nnoremap <leader>4  :w<CR>:4b<CR>
 nnoremap <leader>5  :w<CR>:5b<CR>
 
-
+" Move lines up or down
+nnoremap <leader>k :m .-2<CR>==
+nnoremap <leader>j :m .+1<CR>==
 
 """""""" --------------- Mappings ------------------------
 " Pressing j twice in insert mode will lead to Esc
@@ -192,6 +206,11 @@ nnoremap J mzJ`z
 " Helps move entire block
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
+" Helps move line in insert mode
+inoremap <C-j> <esc>:m .+1<CR>==
+inoremap <C-k> <esc>:m .-2<CR>==
+nnoremap <C-j> :m .+1<CR>==
+nnoremap <C-k> :m .-2<CR>==
 
 """"""" _______________ Abbreviations ___________________
 " iabbrev @@ soumilgurjar@gmail.com
