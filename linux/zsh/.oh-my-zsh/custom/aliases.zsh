@@ -1,7 +1,8 @@
 # This file should be added to ~/.oh-my-zsh/custom/ directory
 # Example aliases
-alias zshalias="vim ~/.oh-my-zsh/custom/aliases.zsh"
-alias zshconfig="vim ~/.zshrc"
+alias zalias="vim ~/.oh-my-zsh/custom/aliases.zsh"
+alias zconfig="vim ~/.zshrc"
+alias ohmyzsh="cd ~/.oh-my-zsh/custom/plugins/"
 alias reload="source ~/.zshrc"
 alias switch_zsh="chsh -s $(which zsh)"
 alias switch_bash="chsh -s $(which bash)"
@@ -16,15 +17,15 @@ alias euy='ssh -Y sgurjar@euler.ethz.ch'
 alias eux='ssh -X sgurjar@euler.ethz.ch'
 
 #Terminal navigation
+alias vi=vim
 alias vib='vim ~/.bashrc'
 alias sob='source ~/.bashrc'
 alias vibp='vim ~/.bash_profile'
-alias vi=vim
 alias sobp='source ~/.bash_profile'
 alias vivim='vim ~/.vimrc'
 alias fs='du -sh'
+alias ls='clear; ls --color'
 alias la='ls -a'
-alias ls='clear; ls'
 alias rm='rm -i'
 alias gr='grep -r -n'
 alias cl='clear'
@@ -49,11 +50,19 @@ function unstow() {
 
 
 #Commonly accessed directories
+alias win='cd /mnt/c/Users/soumi/'
+
+#Simple utility commands
 
 #Activate environments with alias
 
 # Adds commits and pushes files with the argument as the commit message
-function gacp() {
+function gcam() {
+  git add .
+  git commit -m "$1"
+}
+# Adds commits and pushes files with the argument as the commit message
+function gcap() {
   git add .
   git commit -m "$1"
   git push
