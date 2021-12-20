@@ -41,6 +41,7 @@ brew "poppler"
 brew "pyenv"
 brew "scrcpy"
 brew "stow"
+brew "the_silver_searcher"
 brew "utf8proc"
 brew "tmux"
 brew "zlib"
@@ -48,15 +49,16 @@ brew "zsh"
 brew "brewsci/science/mathgl"
 cask "adobe-acrobat-reader"
 cask "alfred"
+cask "alt-tab"
 cask "android-file-transfer"
 cask "android-platform-tools"
 cask "anki"
 cask "appcleaner"
-cask "cheatsheet"
 cask "chromedriver"
 cask "discord"
 cask "dozer"
 cask "dropbox"
+cask "enpass"
 cask "epic-games"
 cask "firefox"
 cask "flux"
@@ -92,7 +94,6 @@ mas "HP Easy Scan", id: 967004861
 mas "HP Smart", id: 1474276998
 mas "Magnet", id: 441258766
 mas "NordVPN", id: 905953485
-mas "NordVPN IKE", id: 1116599239
 mas "Pocket", id: 568494494
 mas "QuickShade", id: 931571202
 mas "The Unarchiver", id: 425424353
