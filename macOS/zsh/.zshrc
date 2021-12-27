@@ -52,9 +52,13 @@ plugins=(
 )
 
 # Plugin preferences
-#ZVM_VI_INSERT_ESCAPE_BINDKEY=jj
 bindkey '^ ' autosuggest-accept # This sets the Ctrl+Space as the hotkey for acception the suggestions
-#bindkey '^+=' autosuggest-toggle # This sets the Ctrl+Shift+= as the hotkey to toggle autosuggestions
+MODE_CURSOR_VIINS="steady bar white"
+MODE_CURSOR_REPLACE="blinking block red"
+MODE_CURSOR_VICMD="steady block white"
+MODE_CURSOR_SEARCH="steady underline #ff00ff"
+MODE_CURSOR_VISUAL="steady block yellow"
+MODE_CURSOR_VLINE="steady block #00ffff"
 
 source $ZSH/oh-my-zsh.sh
 
