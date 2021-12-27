@@ -38,13 +38,13 @@ alias glog="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%
 alias gs="git status"
 
 # Change terminal profile and looks
-alias man_page="osascript ~/Documents/terminal_profile_scripts/terminal_profile_man_page.scpt"
-alias novel="osascript ~/Documents/terminal_profile_scripts/terminal_profile_novel.scpt"
-alias novel_large="osascript ~/Documents/terminal_profile_scripts/terminal_profile_novel_largeFont.scpt"
-alias light="osascript ~/Documents/terminal_profile_scripts/terminal_profile_solarized_light.scpt"
-alias dark="osascript ~/Documents/terminal_profile_scripts/terminal_profile_solarized_dark.scpt"
-alias dark_large="osascript ~/Documents/terminal_profile_scripts/terminal_profile_solarized_dark_largeFont.scpt"
-alias light_large="osascript ~/Documents/terminal_profile_scripts/terminal_profile_solarized_light_largeFont.scpt"
+alias man_page="osascript ~/.dotfiles/macOS/terminal_profile_scripts/terminal_profile_man_page.scpt"
+alias novel="osascript ~/.dotfiles/macOS/terminal_profile_scripts/terminal_profile_novel.scpt"
+alias novel_large="osascript ~/.dotfiles/macOS/terminal_profile_scripts/terminal_profile_novel_largeFont.scpt"
+alias light="osascript ~/.dotfiles/macOS/terminal_profile_scripts/terminal_profile_solarized_light.scpt"
+alias dark="osascript ~/.dotfiles/macOS/terminal_profile_scripts/terminal_profile_solarized_dark.scpt"
+alias dark_large="osascript ~/.dotfiles/macOS/terminal_profile_scripts/terminal_profile_solarized_dark_largeFont.scpt"
+alias light_large="osascript ~/.dotfiles/macOS/terminal_profile_scripts/terminal_profile_solarized_light_largeFont.scpt"
 
 #Commonly accessed directories
 alias dlsc='cd ~/polybox/ETHZ_Material/Fall_2021/DeepLearningInScientificComputing/'
