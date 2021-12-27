@@ -71,6 +71,21 @@ set mouse=a
 set undofile
 set undodir=~/.vim/undo
 
+""""""""" ---------------  VIM Cursor --------------------
+"Mode Settings
+
+let &t_SI.="\e[6 q" "SI = INSERT mode
+let &t_SR.="\e[3 q" "SR = REPLACE mode
+let &t_EI.="\e[2 q" "EI = NORMAL mode (ELSE)
+
+"Cursor settings:
+"  1 -> blinking block
+"  2 -> solid block 
+"  3 -> blinking underscore
+"  4 -> solid underscore
+"  5 -> blinking vertical bar
+"  6 -> solid vertical bar
+
 """"""""" ---------------  VIM Themes --------------------
 " ---- Solarized Dark
 set background=dark
@@ -176,9 +191,6 @@ nnoremap <leader>3  :w<CR>:3b<CR>
 nnoremap <leader>4  :w<CR>:4b<CR>
 nnoremap <leader>5  :w<CR>:5b<CR>
 
-" Move lines up or down
-nnoremap <leader>k :m .-2<CR>==
-nnoremap <leader>j :m .+1<CR>==
 
 """""""" --------------- Mappings ------------------------
 " Pressing j twice in insert mode will lead to Esc

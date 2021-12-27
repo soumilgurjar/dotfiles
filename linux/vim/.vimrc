@@ -71,7 +71,6 @@ set mouse=a
 set undofile
 set undodir=~/.vim/undo
 
-
 """"""""" ---------------  VIM Cursor --------------------
 " Cursor in terminal
 " https://vim.fandom.com/wiki/Configuring_the_cursor
@@ -197,9 +196,6 @@ nnoremap <leader>3  :w<CR>:3b<CR>
 nnoremap <leader>4  :w<CR>:4b<CR>
 nnoremap <leader>5  :w<CR>:5b<CR>
 
-" Move lines up or down
-nnoremap <leader>k :m .-2<CR>==
-nnoremap <leader>j :m .+1<CR>==
 
 """""""" --------------- Mappings ------------------------
 " Pressing j twice in insert mode will lead to Esc
