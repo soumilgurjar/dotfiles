@@ -1,8 +1,10 @@
 "" ------- Plugin emulation -------------
+Plug 'michaeljsmith/vim-indent-object'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'preservim/nerdtree'
 Plug 'machakann/vim-highlightedyank'
+Plug 'tommcdo/vim-exchange'
 
 "" ------- Set commands ------------
 set visualbell
@@ -21,7 +23,10 @@ set ideajoin
 set idearefactormode=keep
 set ideamarks
 
-"""""""" --------------- leader Mappings ------------------------
+"" ------- IdeaVim Plugins -------------
+let g:highlightedyank_highlight_duration = "1000"
+
+""""""""  --------------- leader Mappings ------------------------
 " leader is now set to Spacebar
 let mapleader = " "
 
@@ -46,6 +51,7 @@ nnoremap <leader>n :NERDTreeToggle<CR>
 " CtrlP toggle
 " nnoremap <silent> <leader>p :w<CR>:CtrlP<CR>
 
+nnoremap <leader>r :action RenameElement
 
 " Go to specific buffer
 nnoremap <leader>hh :action PreviousTab<CR>
@@ -95,6 +101,5 @@ nnoremap gi :action GotoImplementation<CR>
 nnoremap gb :action JumpToLastChange<CR>
 nnoremap == :action ReformatCode<CR>
 vnoremap == :action ReformatCode<CR>
-nnoremap <leader>r :action RenameElement
 
 
