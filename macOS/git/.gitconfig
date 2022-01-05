@@ -29,3 +29,5 @@
 [http]
 	sslVerify = true
 	sslCAInfo = /usr/local/etc/openssl/cert.pem
+[init]
+	defaultBranch = master
