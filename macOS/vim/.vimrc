@@ -20,6 +20,9 @@ Plugin 'bling/vim-bufferline'
 Plugin 'simnalamburt/vim-mundo'
 Plugin 'vim-scripts/YankRing.vim'
 Plugin 'kien/ctrlp.vim'
+Plugin 'michaeljsmith/vim-indent-object'
+Plugin 'machakann/vim-highlightedyank'
+Plugin 'tommcdo/vim-exchange'
 
 " Theme plugins
 Plugin 'itchyny/lightline.vim'
@@ -30,6 +33,7 @@ Plugin 'gosukiwi/vim-atom-dark'
 " Plugin settings
 let g:ctrlp_user_command = ['.git/', 'git ls-files --cached --others  --exclude-standard %s']
 let g:yankring_history_file = '.yankring_history'
+let g:highlightedyank_highlight_duration = "1000"
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -71,6 +75,22 @@ set mouse=a
 set undofile
 set undodir=~/.vim/undo
 
+""""""" ---------- VIM Autocommands ----------------------
+" Only do this part when compiled with support for autocommands
+if has("autocmd")
+    " Enable file type detection
+    filetype on
+
+    " Syntax of these languages is fussy over tabs Vs spaces
+    autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
+    autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
+    " Customisations based on house-style (arbitrary)
+
+    " Treat .rss files as XML
+    " One can manually set file type with ' :setfiletype xml'
+    autocmd BufNewFile,BufRead *.rss setfiletype xml
+endif
 """"""""" ---------------  VIM Cursor --------------------
 "Mode Settings
 
@@ -80,7 +100,7 @@ let &t_EI.="\e[2 q" "EI = NORMAL mode (ELSE)
 
 "Cursor settings:
 "  1 -> blinking block
-"  2 -> solid block 
+"  2 -> solid block
 "  3 -> blinking underscore
 "  4 -> solid underscore
 "  5 -> blinking vertical bar
@@ -191,6 +211,9 @@ nnoremap <leader>3  :w<CR>:3b<CR>
 nnoremap <leader>4  :w<CR>:4b<CR>
 nnoremap <leader>5  :w<CR>:5b<CR>
 
+" Go to next or previous window
+nnoremap <leader>[  :w<CR><C-w>h
+nnoremap <leader>]  :w<CR><C-w>l
 
 """""""" --------------- Mappings ------------------------
 " Pressing j twice in insert mode will lead to Esc
