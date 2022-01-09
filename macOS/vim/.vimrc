@@ -23,6 +23,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'michaeljsmith/vim-indent-object'
 Plugin 'machakann/vim-highlightedyank'
 Plugin 'tommcdo/vim-exchange'
+Plugin 'airblade/vim-gitgutter'
 
 " Theme plugins
 Plugin 'itchyny/lightline.vim'
@@ -33,7 +34,7 @@ Plugin 'gosukiwi/vim-atom-dark'
 " Plugin settings
 let g:ctrlp_user_command = ['.git/', 'git ls-files --cached --others  --exclude-standard %s']
 let g:yankring_history_file = '.yankring_history'
-let g:highlightedyank_highlight_duration = "1000"
+let g:highlightedyank_highlight_duration = "200"
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -74,6 +75,7 @@ set cursorline
 set mouse=a
 set undofile
 set undodir=~/.vim/undo
+set updatetime=1000             " Sets time between git diff run by gitgutter
 
 """"""" ---------- VIM Autocommands ----------------------
 " Only do this part when compiled with support for autocommands
@@ -108,6 +110,7 @@ let &t_EI.="\e[2 q" "EI = NORMAL mode (ELSE)
 
 """"""""" ---------------  VIM Themes --------------------
 " ---- Solarized Dark
+let g:solarized_termtrans=1
 set background=dark
 colorscheme solarized
 let g:lightline = { 'colorscheme': 'solarized' }
@@ -204,6 +207,8 @@ nnoremap <leader>gc :Gcommit<CR>
 nnoremap <leader>gph :Gpush<CR>
 nnoremap <leader>gpl :Gpull<CR>
 
+" Git Gutter mappings
+nnoremap <leader>gpl :Gpull<CR>
 " Go to specific buffer
 nnoremap <leader>1  :w<CR>:1b<CR>
 nnoremap <leader>2  :w<CR>:2b<CR>
