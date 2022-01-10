@@ -8,7 +8,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+" call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
@@ -41,6 +41,7 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 " Need to run ':PluginInstall' within vim whenever a plugin is added
+" Test commenta
 
 """""""" ----------------- Global Settings ---------------
 set autoindent
@@ -67,17 +68,17 @@ set list                        " show trailing whitespace
 set listchars=tab:▸\ ,trail:▫
 set showcmd                     " shows the current command
 set nowrap                      " do not automatically wrap on load
+set textwidth=120               " text wraps at 120 instead of default 80
 set scrolloff=10
 set smartcase
 set nobackup
 set laststatus=2                " Always display the status bar.
-set cursorline
 set mouse=a
 set undofile
 set undodir=~/.vim/undo
 set updatetime=1000             " Sets time between git diff run by gitgutter
 
-""""""" ---------- VIM Autocommands ----------------------
+""""""" ---------- VIM Autocommands -----------------------
 " Only do this part when compiled with support for autocommands
 if has("autocmd")
     " Enable file type detection
@@ -109,11 +110,20 @@ let &t_EI.="\e[2 q" "EI = NORMAL mode (ELSE)
 "  6 -> solid vertical bar
 
 """"""""" ---------------  VIM Themes --------------------
+let g:lightline = {
+      \ 'active': { 'left': [ [ 'mode', 'paste' ], [ 'gitbranch', 'readonly', 'filename', 'modified' ] ] },
+      \ 'component_function': { 'gitbranch': 'fugitive#head' },
+      \ }
+
+if has('termguicolors')
+    set termguicolors
+endif
+
 " ---- Solarized Dark
-let g:solarized_termtrans=1
-set background=dark
-colorscheme solarized
-let g:lightline = { 'colorscheme': 'solarized' }
+" let g:solarized_termtrans=1
+" set background=dark
+" colorscheme solarized
+" let g:lightline = { 'colorscheme': 'solarized' }
 
 " ---- Solarized Light
 " set background=light
@@ -126,15 +136,10 @@ let g:lightline = { 'colorscheme': 'solarized' }
 " let g:lightline = { 'colorscheme': 'atom-dark' }
 
 " ---- Palenight
-" set background=dark
-" colorscheme palenight
-" let g:lightline = { 'colorscheme': 'palenight' }
-" let g:palenight_terminal_italics=1
-
-let g:lightline = {
-      \ 'active': { 'left': [ [ 'mode', 'paste' ], [ 'gitbranch', 'readonly', 'filename', 'modified' ] ] },
-      \ 'component_function': { 'gitbranch': 'fugitive#head' },
-      \ }
+set background=dark
+colorscheme palenight
+let g:lightline = { 'colorscheme': 'palenight' }
+let g:palenight_terminal_italics=1
 
 """"""""" --------------- VIM Buffer ----------------------
 "make vim save and load the folding of the document each time it loads"
