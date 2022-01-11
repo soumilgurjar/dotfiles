@@ -34,7 +34,7 @@ Plugin 'gosukiwi/vim-atom-dark'
 " Plugin settings
 let g:ctrlp_user_command = ['.git/', 'git ls-files --cached --others  --exclude-standard %s']
 let g:yankring_history_file = '.yankring_history'
-let g:highlightedyank_highlight_duration = "200"
+" let g:highlightedyank_highlight_duration = "200"
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -115,15 +115,17 @@ let g:lightline = {
       \ 'component_function': { 'gitbranch': 'fugitive#head' },
       \ }
 
-if has('termguicolors')
-    set termguicolors
-endif
+" if has('termguicolors')
+"     set termguicolors
+" endif
 
 " ---- Solarized Dark
 " let g:solarized_termtrans=1
-" set background=dark
-" colorscheme solarized
-" let g:lightline = { 'colorscheme': 'solarized' }
+set background=dark
+colorscheme solarized
+let g:lightline = { 'colorscheme': 'solarized' }
+highlight! link SignColumn LineNr
+autocmd ColorScheme * highlight! link SignColumn LineNr
 
 " ---- Solarized Light
 " set background=light
@@ -136,16 +138,16 @@ endif
 " let g:lightline = { 'colorscheme': 'atom-dark' }
 
 " ---- Palenight
-set background=dark
-colorscheme palenight
-let g:lightline = { 'colorscheme': 'palenight' }
-let g:palenight_terminal_italics=1
+" set background=dark
+" colorscheme palenight
+" let g:lightline = { 'colorscheme': 'palenight' }
+" let g:palenight_terminal_italics=1
 
 """"""""" --------------- VIM Buffer ----------------------
 "make vim save and load the folding of the document each time it loads"
 "also places the cursor in the last place that it was left."
-au BufWinLeave ?* mkview 1
-au BufWinEnter ?* silent loadview 1
+autocmd BufWinLeave ?* mkview 1
+autocmd BufWinEnter ?* silent loadview 1
 
 """""""" ---------------- VIM Finding Files ------------------
 " Search down into subfolders
