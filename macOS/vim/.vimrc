@@ -24,7 +24,7 @@ Plug 'moll/vim-bbye'
 
 " Theme plugins
 Plug 'itchyny/lightline.vim'
-Plug 'mengelbrecht/lightline-bufferline'
+" Plug 'mengelbrecht/lightline-bufferline'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'gosukiwi/vim-atom-dark'
@@ -71,7 +71,6 @@ set scrolloff=10
 set smartcase
 set nobackup
 set laststatus=2                " Always display the status bar.
-set showtabline=2                " Always display the tab bar.
 set mouse=a
 set undofile
 set undodir=~/.vim/undo
@@ -93,7 +92,6 @@ if has("autocmd")
     " Treat .rss files as XML
     " One can manually set file type with ' :setfiletype xml'
     autocmd BufNewFile,BufRead *.rss setfiletype xml
-    " autocmd BufWritePost,TextChanged,TextChangedI * call lightline#update()
 endif
 
 """"""""" ---------------  VIM Cursor --------------------
@@ -139,23 +137,6 @@ let g:lightline = {
       \ 'active': { 'left': [ [ 'mode', 'paste' ], [ 'gitbranch', 'readonly', 'filename', 'modified' ] ] },
       \ 'component_function': { 'gitbranch': 'fugitive#head' },
       \ }
-" let g:lightline = {
-"       \ 'active': {
-"       \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'filename', 'modified' ] ]
-"       \ },
-"       \ 'tabline': {
-"       \   'left': [ ['buffers'] ],
-"       \   'right': [ ['close'] ]
-"       \ },
-"       \ 'component_expand': {
-"       \   'buffers': 'lightline#bufferline#buffers'
-"       \ },
-"       \ 'component_type': {
-"       \   'buffers': 'tabsel'
-"       \ }
-"       \ }
-" let g:lightline#bufferline#show_number = 1
-" let g:lightline#bufferline#number_separator = ':'
 
 """"""""" --------------- VIM Buffer ----------------------
 "make vim save and load the folding of the document each time it loads"
