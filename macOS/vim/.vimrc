@@ -24,6 +24,8 @@ Plugin 'michaeljsmith/vim-indent-object'
 Plugin 'machakann/vim-highlightedyank'
 Plugin 'tommcdo/vim-exchange'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'aymericbeaumet/vim-symlink'
+Plugin 'moll/vim-bbye'
 
 " Theme plugins
 Plugin 'itchyny/lightline.vim'
@@ -209,23 +211,26 @@ nnoremap <silent> <leader>p :w<CR>:CtrlP<CR>
 
 " Git mappings
 nnoremap <leader>gb :Gblame<CR>
-nnoremap <leader>gs :Gstatus<CR>
+nnoremap <leader>gs :Git<CR>
 nnoremap <leader>gc :Gcommit<CR>
 nnoremap <leader>gph :Gpush<CR>
 nnoremap <leader>gpl :Gpull<CR>
 
-" Git Gutter mappings
-nnoremap <leader>gpl :Gpull<CR>
 " Go to specific buffer
 nnoremap <leader>1  :w<CR>:1b<CR>
 nnoremap <leader>2  :w<CR>:2b<CR>
 nnoremap <leader>3  :w<CR>:3b<CR>
 nnoremap <leader>4  :w<CR>:4b<CR>
 nnoremap <leader>5  :w<CR>:5b<CR>
+nnoremap <leader>hh  :w<CR>:bp<CR>
+nnoremap <leader>ll  :w<CR>:bn<CR>
 
 " Go to next or previous window
 nnoremap <leader>[  :w<CR><C-w>h
 nnoremap <leader>]  :w<CR><C-w>l
+
+"Close current buffer
+nnoremap <leader>qq :w<CR>:Bdelete<CR>
 
 """""""" --------------- Mappings ------------------------
 " Pressing j twice in insert mode will lead to Esc
