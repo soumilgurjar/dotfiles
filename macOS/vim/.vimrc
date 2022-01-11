@@ -3,36 +3,31 @@ syntax on
 set nocompatible              " required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
-" alternatively, pass a path where Vundle should install plugins
-" call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'junegunn/goyo.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-commentary'
-Plugin 'scrooloose/nerdtree'
-Plugin 'bling/vim-bufferline'
-Plugin 'simnalamburt/vim-mundo'
-Plugin 'vim-scripts/YankRing.vim'
-Plugin 'kien/ctrlp.vim'
-Plugin 'michaeljsmith/vim-indent-object'
-Plugin 'machakann/vim-highlightedyank'
-Plugin 'tommcdo/vim-exchange'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'aymericbeaumet/vim-symlink'
-Plugin 'moll/vim-bbye'
+" List plugins here
+Plug 'VundleVim/Vundle.vim'
+Plug 'junegunn/goyo.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-commentary'
+Plug 'scrooloose/nerdtree'
+Plug 'bling/vim-bufferline'
+Plug 'simnalamburt/vim-mundo'
+Plug 'vim-scripts/YankRing.vim'
+Plug 'kien/ctrlp.vim'
+Plug 'michaeljsmith/vim-indent-object'
+Plug 'machakann/vim-highlightedyank'
+Plug 'tommcdo/vim-exchange'
+Plug 'airblade/vim-gitgutter'
+Plug 'aymericbeaumet/vim-symlink'
+Plug 'moll/vim-bbye'
 
 " Theme plugins
-Plugin 'itchyny/lightline.vim'
-Plugin 'mengelbrecht/lightline-bufferline'
-Plugin 'drewtempelmeyer/palenight.vim'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'gosukiwi/vim-atom-dark'
+Plug 'itchyny/lightline.vim'
+Plug 'mengelbrecht/lightline-bufferline'
+Plug 'drewtempelmeyer/palenight.vim'
+Plug 'altercation/vim-colors-solarized'
+Plug 'gosukiwi/vim-atom-dark'
 
 " Plugin settings
 let g:ctrlp_user_command = ['.git/', 'git ls-files --cached --others  --exclude-standard %s']
@@ -40,11 +35,11 @@ let g:yankring_history_file = '.yankring_history'
 " let g:highlightedyank_highlight_duration = "200"
 
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
+call plug#end()
 filetype plugin indent on    " required
 
-" Need to run ':PluginInstall' within vim whenever a plugin is added
-" Need to run ':PluginUpdate' within vim to update a plugin
+" Need to run ':PlugInstall' within vim whenever a plugin is added
+" Need to run ':PlugUpdate' within vim to update a plugin
 
 """""""" ----------------- Global Settings ---------------
 set autoindent
@@ -202,8 +197,8 @@ nnoremap <leader>eb :w<CR> :e ~/.bashrc <CR>
 nnoremap <leader>sb :w<CR> :source ~/.bashrc <CR> :echo "Sourced bashrc" <CR>
 
 " Install Plugins
-nnoremap <leader>pi :PluginInstall<CR>
-nnoremap <leader>pu :PluginUpdate<CR>
+nnoremap <leader>pi :PlugInstall<CR>
+nnoremap <leader>pu :PlugUpdate<CR>
 
 " Quickly insert an empty new line without entering insert mode
 nnoremap <leader>o o<Esc>
