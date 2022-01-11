@@ -43,7 +43,7 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 " Need to run ':PluginInstall' within vim whenever a plugin is added
-" Test commenta
+" Need to run ':PluginUpdate' within vim to update a plugin
 
 """""""" ----------------- Global Settings ---------------
 set autoindent
@@ -79,6 +79,7 @@ set mouse=a
 set undofile
 set undodir=~/.vim/undo
 set updatetime=1000             " Sets time between git diff run by gitgutter
+set backspace=indent,eol,start  " Vim 8.2 update had changed default backspace behaviour. This reverts it.
 
 """"""" ---------- VIM Autocommands -----------------------
 " Only do this part when compiled with support for autocommands
@@ -96,6 +97,7 @@ if has("autocmd")
     " One can manually set file type with ' :setfiletype xml'
     autocmd BufNewFile,BufRead *.rss setfiletype xml
 endif
+
 """"""""" ---------------  VIM Cursor --------------------
 "Mode Settings
 
@@ -112,17 +114,7 @@ let &t_EI.="\e[2 q" "EI = NORMAL mode (ELSE)
 "  6 -> solid vertical bar
 
 """"""""" ---------------  VIM Themes --------------------
-let g:lightline = {
-      \ 'active': { 'left': [ [ 'mode', 'paste' ], [ 'gitbranch', 'readonly', 'filename', 'modified' ] ] },
-      \ 'component_function': { 'gitbranch': 'fugitive#head' },
-      \ }
-
-" if has('termguicolors')
-"     set termguicolors
-" endif
-
 " ---- Solarized Dark
-" let g:solarized_termtrans=1
 set background=dark
 colorscheme solarized
 let g:lightline = { 'colorscheme': 'solarized' }
@@ -144,6 +136,11 @@ autocmd ColorScheme * highlight! link SignColumn LineNr
 " colorscheme palenight
 " let g:lightline = { 'colorscheme': 'palenight' }
 " let g:palenight_terminal_italics=1
+
+let g:lightline = {
+      \ 'active': { 'left': [ [ 'mode', 'paste' ], [ 'gitbranch', 'readonly', 'filename', 'modified' ] ] },
+      \ 'component_function': { 'gitbranch': 'fugitive#head' },
+      \ }
 
 """"""""" --------------- VIM Buffer ----------------------
 "make vim save and load the folding of the document each time it loads"
@@ -186,6 +183,7 @@ nnoremap <leader>sb :w<CR> :source ~/.bashrc <CR> :echo "Sourced bashrc" <CR>
 
 " Install Plugins
 nnoremap <leader>pi :PluginInstall<CR>
+nnoremap <leader>pu :PluginUpdate<CR>
 
 " Quickly insert an empty new line without entering insert mode
 nnoremap <leader>o o<Esc>
@@ -209,7 +207,7 @@ nnoremap <leader>n :NERDTreeToggle<CR>
 " CtrlP toggle
 nnoremap <silent> <leader>p :w<CR>:CtrlP<CR>
 
-" Git mappings
+" Git Fugitive mappings
 nnoremap <leader>gb :Gblame<CR>
 nnoremap <leader>gs :Git<CR>
 nnoremap <leader>gc :Gcommit<CR>
@@ -217,13 +215,13 @@ nnoremap <leader>gph :Gpush<CR>
 nnoremap <leader>gpl :Gpull<CR>
 
 " Go to specific buffer
+nnoremap <leader>hh  :w<CR>:bp<CR>
+nnoremap <leader>ll  :w<CR>:bn<CR>
 nnoremap <leader>1  :w<CR>:1b<CR>
 nnoremap <leader>2  :w<CR>:2b<CR>
 nnoremap <leader>3  :w<CR>:3b<CR>
 nnoremap <leader>4  :w<CR>:4b<CR>
 nnoremap <leader>5  :w<CR>:5b<CR>
-nnoremap <leader>hh  :w<CR>:bp<CR>
-nnoremap <leader>ll  :w<CR>:bn<CR>
 
 " Go to next or previous window
 nnoremap <leader>[  :w<CR><C-w>h
