@@ -29,6 +29,7 @@ brew "gd"
 brew "git"
 brew "graphviz"
 brew "gsl"
+brew "imagemagick"
 brew "unibilium"
 brew "python@3.10"
 brew "mackup"
@@ -44,12 +45,13 @@ brew "stow"
 brew "the_silver_searcher"
 brew "utf8proc"
 brew "tmux"
+brew "vim"
+brew "youtube-dl"
 brew "zlib"
 brew "zsh"
 brew "brewsci/science/mathgl"
 cask "adobe-acrobat-reader"
 cask "alfred"
-cask "alt-tab"
 cask "android-file-transfer"
 cask "android-platform-tools"
 cask "anki"
@@ -67,24 +69,27 @@ cask "google-chrome"
 cask "google-drive"
 cask "iterm2"
 cask "itsycal"
+cask "joshjon-nocturnal"
 cask "karabiner-elements"
 cask "kodi"
 cask "lunar"
+cask "mos"
 cask "obs"
+cask "pock"
 cask "pycharm-edu"
 cask "quicklook-csv"
 cask "quicklook-json"
 cask "spotify"
 cask "steam"
 cask "teamviewer"
-cask "virtualbox"
+cask "touch-bar-simulator"
+cask "tuck"
 cask "visual-studio-code"
 cask "webpquicklook"
 cask "whatsapp-beta"
 cask "zoom"
 mas "Amphetamine", id: 937984704
 mas "Bandwidth+", id: 490461369
-mas "Dashlane - Legacy", id: 552383089
 mas "Encrypto", id: 935235287
 mas "FileZilla Pro", id: 1298486723
 mas "Helium", id: 1054607607
@@ -99,3 +104,4 @@ mas "QuickShade", id: 931571202
 mas "The Unarchiver", id: 425424353
 mas "We Love Lights", id: 1479422551
 mas "Xcode", id: 497799835
+mas "XMenu", id: 419332741
