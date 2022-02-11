@@ -51,8 +51,7 @@ alias dlsc='cd ~/polybox/ETHZ_Material/Fall_2021/DeepLearningInScientificComputi
 alias scr='cd /Users/sgurjar/Scratch_Bryant/'
 alias of='cd /Users/sgurjar/Scratch_Bryant/OpenFOAM_Cases/'
 alias matlab="/Applications/MATLAB_R2021a.app/bin/matlab -nojvm -nodesktop -nodisplay -nosplash"
-alias cmea="cd /Users/sgurjar/polybox/ETHZ_Material/Correction_Winter2020/CMEA/"
-alias sem="cd /Users/sgurjar/polybox/ETHZ_Material/Fall_2019"
+alias sem="cd /Users/sgurjar/polybox/ETHZ_Material/Spring_2022"
 alias gmsh="/Applications/Gmsh.app/Contents/MacOS/gmsh"
 alias mmgs="/Applications/mmgs_debug"
 alias cases='cd /Users/sgurjar/Scratch_Bryant/OpenFOAM_Cases/Useful_Euler_Cases/'
@@ -60,6 +59,13 @@ alias cases='cd /Users/sgurjar/Scratch_Bryant/OpenFOAM_Cases/Useful_Euler_Cases/
 #Activate environments with alias
 alias dlsc_env='source ~/VirtualEnvs/dlsc_env/bin/activate'
 alias vogelwarte_env='source ~/Git_Repositories/vogelwarte/vogelwarte-env/bin/activate'
+
+#Brew serch and install commands
+alias bs="brew search"
+alias bi="brew install"
+alias bic="brew install --cask"
+alias bl="brew list"
+alias bu="brew upgrade && brew update"
 
 # Adds commits and pushes files with the argument as the commit message
 function gcam() {
