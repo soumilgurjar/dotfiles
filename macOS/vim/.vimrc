@@ -206,9 +206,10 @@ nnoremap <silent> <leader>p :w<CR>:CtrlP<CR>
 " Git Fugitive mappings
 nnoremap <leader>gb :Gblame<CR>
 nnoremap <leader>gs :Git<CR>
-nnoremap <leader>gc :Gcommit<CR>
+nnoremap <leader>gc :Git commit<CR>
 nnoremap <leader>gph :Gpush<CR>
 nnoremap <leader>gpl :Gpull<CR>
+nnoremap <leader>gl :G log<CR>
 
 " Go to specific buffer
 nnoremap <leader>hh  :w<CR>:bp<CR>

@@ -66,7 +66,7 @@ alias bi="brew install"
 alias bic="brew install --cask"
 alias bl="brew list"
 alias bu="brew upgrade && brew update"
-alias bun="brew uninstall" 
+alias bun="brew uninstall"
 
 # Adds commits and pushes files with the argument as the commit message
 function gcam() {
