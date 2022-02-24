@@ -227,6 +227,12 @@ nnoremap <leader>]  :w<CR><C-w>l
 "Close current buffer
 nnoremap <leader>qq :w<CR>:Bdelete<CR>
 
+"Save current buffer
+nnoremap <leader>ww :w<CR><Esc>
+
+"Quit current buffer without saving
+nnoremap <leader>a :q<CR>
+
 """""""" --------------- Mappings ------------------------
 " Pressing j twice in insert mode will lead to Esc
 inoremap jj <Esc>
