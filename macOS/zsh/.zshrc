@@ -52,7 +52,7 @@ plugins=(
 
 # Plugin preferences
 # bindkey '^ ' autosuggest-accept # This sets the Ctrl+Space as the hotkey for acception the suggestions
-MODE_CURSOR_VIINS="#ffff00 blinking bar"
+MODE_CURSOR_VIINS="#ffff00 steady bar"
 MODE_CURSOR_REPLACE="#ff0000 blinking block"
 MODE_CURSOR_VICMD="#ffffff steady block"
 MODE_CURSOR_SEARCH="#ff00ff steady underline"
