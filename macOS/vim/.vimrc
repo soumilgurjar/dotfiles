@@ -204,12 +204,12 @@ nnoremap <leader>n :NERDTreeToggle<CR>
 nnoremap <silent> <leader>p :w<CR>:CtrlP<CR>
 
 " Git Fugitive mappings
-nnoremap <leader>gb :Gblame<CR>
+nnoremap <leader>gb :Git blame<CR>
 nnoremap <leader>gs :Git<CR>
 nnoremap <leader>gc :Git commit<CR>
-nnoremap <leader>gph :Gpush<CR>
-nnoremap <leader>gpl :Gpull<CR>
-nnoremap <leader>gl :G log<CR>
+nnoremap <leader>gph :Git push<CR>
+nnoremap <leader>gpl :Git pull<CR>
+nnoremap <leader>gl :Git log<CR>
 
 " Go to specific buffer
 nnoremap <leader>hh  :w<CR>:bp<CR>
