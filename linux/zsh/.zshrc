@@ -41,7 +41,6 @@ VIM_MODE_VICMD_KEY='jj'                 # jhis allows escape from insert to norm
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-    git
     colored-man-pages
     themes
     web-search
@@ -52,14 +51,13 @@ plugins=(
 )
 
 # Plugin preferences
-bindkey '^ ' autosuggest-accept # This sets the Ctrl+Space as the hotkey for acception the suggestions
-MODE_CURSOR_VIINS="steady bar white"
-MODE_CURSOR_REPLACE="blinking block red"
-MODE_CURSOR_VICMD="steady block white"
-MODE_CURSOR_SEARCH="steady underline #ff00ff"
-MODE_CURSOR_VISUAL="steady block yellow"
-MODE_CURSOR_VLINE="steady block #00ffff"
-
+# bindkey '^ ' autosuggest-accept # This sets the Ctrl+Space as the hotkey for acception the suggestions
+MODE_CURSOR_VIINS="#ffff00 steady bar"
+MODE_CURSOR_REPLACE="#ff0000 blinking block"
+MODE_CURSOR_VICMD="#ffffff steady block"
+MODE_CURSOR_SEARCH="#ff00ff steady underline"
+MODE_CURSOR_VISUAL="#ffff00 steady block"
+MODE_CURSOR_VLINE="#00ffff steady block"
 source $ZSH/oh-my-zsh.sh
 
 
@@ -68,3 +66,7 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
