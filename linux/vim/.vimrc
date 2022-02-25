@@ -3,46 +3,50 @@ syntax on
 set nocompatible              " required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'junegunn/goyo.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-commentary'
-Plugin 'scrooloose/nerdtree'
-Plugin 'bling/vim-bufferline'
-Plugin 'simnalamburt/vim-mundo'
-Plugin 'vim-scripts/YankRing.vim'
-Plugin 'kien/ctrlp.vim'
+" List plugins here
+Plug 'VundleVim/Vundle.vim'
+Plug 'junegunn/goyo.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-commentary'
+Plug 'scrooloose/nerdtree'
+Plug 'bling/vim-bufferline'
+Plug 'simnalamburt/vim-mundo'
+Plug 'vim-scripts/YankRing.vim'
+Plug 'kien/ctrlp.vim'
+Plug 'michaeljsmith/vim-indent-object'
+Plug 'machakann/vim-highlightedyank'
+Plug 'tommcdo/vim-exchange'
+Plug 'airblade/vim-gitgutter'
+Plug 'aymericbeaumet/vim-symlink'
+Plug 'moll/vim-bbye'
 
 " Theme plugins
-Plugin 'itchyny/lightline.vim'
-Plugin 'drewtempelmeyer/palenight.vim'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'gosukiwi/vim-atom-dark'
+Plug 'itchyny/lightline.vim'
+" Plug 'mengelbrecht/lightline-bufferline'
+Plug 'drewtempelmeyer/palenight.vim'
+Plug 'altercation/vim-colors-solarized'
+Plug 'gosukiwi/vim-atom-dark'
 
 " Plugin settings
 let g:ctrlp_user_command = ['.git/', 'git ls-files --cached --others  --exclude-standard %s']
 let g:yankring_history_file = '.yankring_history'
+" let g:highlightedyank_highlight_duration = "200"
 
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
+call plug#end()
 filetype plugin indent on    " required
 
-" Need to run ':PluginInstall' within vim whenever a plugin is added
+" Need to run ':PlugInstall' within vim whenever a plugin is added
+" Need to run ':PlugUpdate' within vim to update a plugin
 
 """""""" ----------------- Global Settings ---------------
 set autoindent
 set autoread
 set autowrite                   " allows changing buffer with save
 set hidden
-set clipboard=unnamedplus       " yank and paste with the system clipboard
+set clipboard=unnamed           " yank and paste with the system clipboard
 set encoding=utf-8
 set expandtab                   " tabs are spaces
 set shiftround                  " When shifting lines, round the indentation to the nearest multiple of “shiftwidth.”
@@ -62,14 +66,16 @@ set list                        " show trailing whitespace
 set listchars=tab:▸\ ,trail:▫
 set showcmd                     " shows the current command
 set nowrap                      " do not automatically wrap on load
+set textwidth=120               " text wraps at 120 instead of default 80
 set scrolloff=10
 set smartcase
 set nobackup
 set laststatus=2                " Always display the status bar.
-set cursorline
 set mouse=a
 set undofile
 set undodir=~/.vim/undo
+set updatetime=1000             " Sets time between git diff run by gitgutter
+set backspace=indent,eol,start  " Vim 8.2 update had changed default backspace behaviour. This reverts it.
 
 """"""""" ---------------  VIM Cursor --------------------
 " Cursor in terminal
@@ -87,6 +93,8 @@ if &term =~ '^xterm'
     let &t_EI .= "\<Esc>[2 q"
     " insert mode
     let &t_SI .= "\<Esc>[6 q"
+    " replace mode
+    let &t_SR.="\<Esc>[3 q"
 endif
 
 """"""""" ---------------  VIM Themes --------------------
@@ -94,6 +102,8 @@ endif
 " set background=dark
 " colorscheme solarized
 " let g:lightline = { 'colorscheme': 'solarized' }
+" highlight! link SignColumn LineNr
+" autocmd ColorScheme * highlight! link SignColumn LineNr
 
 " ---- Solarized Light
 " set background=light
@@ -115,7 +125,6 @@ let g:lightline = {
       \ 'active': { 'left': [ [ 'mode', 'paste' ], [ 'gitbranch', 'readonly', 'filename', 'modified' ] ] },
       \ 'component_function': { 'gitbranch': 'fugitive#head' },
       \ }
-
 
 
 """"""""" --------------- VIM Buffer ----------------------
@@ -158,7 +167,8 @@ nnoremap <leader>eb :w<CR> :e ~/.bashrc <CR>
 nnoremap <leader>sb :w<CR> :source ~/.bashrc <CR> :echo "Sourced bashrc" <CR>
 
 " Install Plugins
-nnoremap <leader>pi :PluginInstall<CR>
+nnoremap <leader>pi :PlugInstall<CR>
+nnoremap <leader>pu :PlugUpdate<CR>
 
 " Quickly insert an empty new line without entering insert mode
 nnoremap <leader>o o<Esc>
@@ -182,20 +192,35 @@ nnoremap <leader>n :NERDTreeToggle<CR>
 " CtrlP toggle
 nnoremap <silent> <leader>p :w<CR>:CtrlP<CR>
 
-" Git mappings
-nnoremap <leader>gb :Gblame<CR>
-nnoremap <leader>gs :Gstatus<CR>
-nnoremap <leader>gc :Gcommit<CR>
-nnoremap <leader>gph :Gpush<CR>
-nnoremap <leader>gpl :Gpull<CR>
+" Git Fugitive mappings
+nnoremap <leader>gb :Git blame<CR>
+nnoremap <leader>gs :Git<CR>
+nnoremap <leader>gc :Git commit<CR>
+nnoremap <leader>gph :Git push<CR>
+nnoremap <leader>gpl :Git pull<CR>
+nnoremap <leader>gl :Git log<CR>
 
 " Go to specific buffer
+nnoremap <leader>hh  :w<CR>:bp<CR>
+nnoremap <leader>ll  :w<CR>:bn<CR>
 nnoremap <leader>1  :w<CR>:1b<CR>
 nnoremap <leader>2  :w<CR>:2b<CR>
 nnoremap <leader>3  :w<CR>:3b<CR>
 nnoremap <leader>4  :w<CR>:4b<CR>
 nnoremap <leader>5  :w<CR>:5b<CR>
 
+" Go to next or previous window
+nnoremap <leader>[  :w<CR><C-w>h
+nnoremap <leader>]  :w<CR><C-w>l
+
+"Close current buffer
+nnoremap <leader>qq :w<CR>:Bdelete<CR>
+
+"Save current buffer
+nnoremap <leader>ww :w<CR><Esc>
+
+"Quit current buffer without saving
+nnoremap <leader>a :q<CR>
 
 """""""" --------------- Mappings ------------------------
 " Pressing j twice in insert mode will lead to Esc
