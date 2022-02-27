@@ -1,5 +1,32 @@
 [user]
-	name = soumilgurjar
-	email = soumilgurjar@gmail.com
+    name = Soumil Gurjar
+	email = 95701317+soumilgurjar@users.noreply.github.com
+[core]
+	editor = vim
+	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+    excludesfile = ~/.gitignore
+	autocrlf = input
+[web]
+	browser = google-chrome
+[color]
+	ui = auto
+[color "branch"]
+	current = yellow bold
+	local = green bold
+	remote = cyan bold
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+[color "status"]
+	added = green bold
+	changed = yellow bold
+	untracked = red bold
+[alias]
+    lg = log --graph --pretty=format:'%C(yellow)%h%C(auto)%d%Creset %s %C(white)- %an, %ar%Creset'
+[init]
+    defaultBranch = master
 [credential]
 	helper = store
