@@ -99,6 +99,8 @@ endif
 
 """"""""" ---------------  VIM Themes --------------------
 " ---- Solarized Dark
+" let g:solarized_termcolors=256
+" set t_Co=256
 " set background=dark
 " colorscheme solarized
 " let g:lightline = { 'colorscheme': 'solarized' }
