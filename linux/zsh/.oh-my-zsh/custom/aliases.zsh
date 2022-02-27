@@ -33,6 +33,9 @@ alias cl='clear'
 # Git related
 alias glog="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --branches"
 alias gs="git status"
+alias gaa="git add ."
+alias ga="git add"
+alias gcm="git commit -m"
 
 # Stow related
 function stowth_test() {
