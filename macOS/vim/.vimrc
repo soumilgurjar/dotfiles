@@ -225,17 +225,19 @@ nnoremap <leader>[  :w<CR><C-w>h
 nnoremap <leader>]  :w<CR><C-w>l
 
 "Close current buffer
-nnoremap <leader>qq :w<CR>:Bdelete<CR>
+nnoremap <leader>aa :w<CR>:Bdelete<CR>
 
 "Save current buffer
-nnoremap <leader>ww :w<CR><Esc>
+nnoremap <leader>ww :wq<CR>
+nnoremap <leader>zz :w<CR><Esc>
 
 "Quit current buffer without saving
-nnoremap <leader>a :q<CR>
+nnoremap <leader>qq :q!<CR>
 
 """""""" --------------- Mappings ------------------------
 " Pressing j twice in insert mode will lead to Esc
 inoremap jj <Esc>
+inoremap JJ <Esc>
 
 " Get off my lawn (Never use arrow keys)
 nnoremap <Left> :echoe "Use h"<CR>
