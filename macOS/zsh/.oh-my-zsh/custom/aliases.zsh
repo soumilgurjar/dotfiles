@@ -36,6 +36,7 @@ alias cl='clear'
 # Git related
 alias glog="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --branches"
 alias gs="git status"
+alias gco="git checkout"
 
 # Change terminal profile and looks
 alias man_page="osascript ~/.dotfiles/macOS/terminal_profile_scripts/terminal_profile_man_page.scpt"
@@ -55,6 +56,7 @@ alias sem="cd /Users/sgurjar/polybox/ETHZ_Material/Spring_2022"
 alias gmsh="/Applications/Gmsh.app/Contents/MacOS/gmsh"
 alias mmgs="/Applications/mmgs_debug"
 alias cases='cd /Users/sgurjar/Scratch_Bryant/OpenFOAM_Cases/Useful_Euler_Cases/'
+alias plover='/Applications/Plover.app/Contents/MacOS/Plover'
 
 #Activate environments with alias
 alias dlsc_env='source ~/VirtualEnvs/dlsc_env/bin/activate'
