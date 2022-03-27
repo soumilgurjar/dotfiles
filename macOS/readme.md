@@ -61,8 +61,8 @@ Use stow to put your bash git vim & zsh config files into place with symbolic li
 
 ```zsh
 cd ~/.dotfiles/macOS/
-stow -nvSt ~ bash git vim zsh
-stow -vSt ~ bash git vim zsh
+stow -nvSt ~ bash git vim zsh tmux
+stow -vSt ~ bash git vim zsh tmux
 ```
 ## ZSH plugins download
 ```zsh
