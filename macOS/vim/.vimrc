@@ -21,6 +21,8 @@ Plug 'tommcdo/vim-exchange'
 Plug 'airblade/vim-gitgutter'
 Plug 'aymericbeaumet/vim-symlink'
 Plug 'moll/vim-bbye'
+Plug 'tmux-plugins/vim-tmux'
+Plug 'sheerun/vim-polyglot'
 
 " Theme plugins
 Plug 'itchyny/lightline.vim'
@@ -65,9 +67,11 @@ set ruler                       " show column in console
 set list                        " show trailing whitespace
 set listchars=tab:▸\ ,trail:▫
 set showcmd                     " shows the current command
-set nowrap                      " do not automatically wrap on load
+set wrap                        " do not automatically wrap on load
+set breakindent                 " enable indentation on linebreak
+set linebreak                   " enable softwrap without breaking words
 set textwidth=120               " text wraps at 120 instead of default 80
-set scrolloff=10
+set scrolloff=4
 set smartcase
 set nobackup
 set laststatus=2                " Always display the status bar.
@@ -173,9 +177,12 @@ nnoremap <leader>sz :w<CR> :source ~/.zshrc <CR> :echo "Sourced zshrc" <CR>
 " Open and source vimrc
 nnoremap <leader>ev :w<CR> :e ~/.vimrc <CR>
 nnoremap <leader>sv :w<CR> :source ~/.vimrc <CR> :echo "Sourced vimrc" <CR>
-"Open and source bashrc
+" Open and source bashrc
 nnoremap <leader>eb :w<CR> :e ~/.bashrc <CR>
 nnoremap <leader>sb :w<CR> :source ~/.bashrc <CR> :echo "Sourced bashrc" <CR>
+" Open and source tmux conf
+nnoremap <leader>et :w<CR> :e ~/.tmux.conf <CR>
+nnoremap <leader>st :w<CR> <C-a> : source ~/.tmux.conf <CR>
 
 " Install Plugins
 nnoremap <leader>pi :PlugInstall<CR>
@@ -192,16 +199,16 @@ nnoremap <leader>hl :noh<CR>
 nnoremap <leader><leader> :w<CR><C-^>
 
 " Show undo tree
-nnoremap <leader>u :MundoToggle<CR>
+nnoremap <leader>uu :MundoToggle<CR>
 
 " Show yank buffer
-nnoremap <leader>y :YRShow<CR>
+nnoremap <leader>yy :YRShow<CR>
 
 " Nerdtree toggle
-nnoremap <leader>n :NERDTreeToggle<CR>
+nnoremap <leader>nn :NERDTreeToggle<CR>
 
 " CtrlP toggle
-nnoremap <silent> <leader>p :w<CR>:CtrlP<CR>
+nnoremap <silent> <leader>pp :w<CR>:CtrlP<CR>
 
 " Git Fugitive mappings
 nnoremap <leader>gb :Git blame<CR>
@@ -229,6 +236,7 @@ nnoremap <leader>aa :w<CR>:Bdelete<CR>
 
 "Save current buffer
 nnoremap <leader>ww :wq<CR>
+nnoremap <leader>ee :w<CR><Esc>
 nnoremap <leader>zz :w<CR><Esc>
 
 "Quit current buffer without saving
@@ -237,6 +245,8 @@ nnoremap <leader>qq :q!<CR>
 """""""" --------------- Mappings ------------------------
 " Pressing j twice in insert mode will lead to Esc
 inoremap jj <Esc>
+inoremap kk <Esc>
+inoremap jk <Esc>
 inoremap JJ <Esc>
 
 " Get off my lawn (Never use arrow keys)
@@ -244,10 +254,10 @@ nnoremap <Left> :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
-inoremap <Left> <NOP>
-inoremap <Right> <NOP>
-inoremap <Up> <NOP>
-inoremap <Down> <NOP>
+" inoremap <Left> <NOP>
+" inoremap <Right> <NOP>
+" inoremap <Up> <NOP>
+" inoremap <Down> <NOP>
 inoremap <Esc> <NOP>
 
 " Allows easy copying to end of line
@@ -268,4 +278,4 @@ nnoremap <C-j> :m .+1<CR>==
 nnoremap <C-k> :m .-2<CR>==
 
 """"""" _______________ Abbreviations ___________________
-" iabbrev @@ soumilgurjar@gmail.com
+    " iabbrev @@ soumilgurjar@gmail.com
