@@ -8,6 +8,9 @@ export PATH="$PYENV_ROOT/shims:$PATH"
 # Set colors for 'ls' command
 export CLICOLOR=1
 
+# Set editor to vim
+export EDITOR=vim
+
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/sgurjar/.oh-my-zsh"
 

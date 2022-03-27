@@ -58,17 +58,21 @@ alias mmgs="/Applications/mmgs_debug"
 alias cases='cd /Users/sgurjar/Scratch_Bryant/OpenFOAM_Cases/Useful_Euler_Cases/'
 alias plover='/Applications/Plover.app/Contents/MacOS/Plover'
 
-#Activate environments with alias
+# Activate environments with alias
 alias dlsc_env='source ~/VirtualEnvs/dlsc_env/bin/activate'
 alias vogelwarte_env='source ~/Git_Repositories/vogelwarte/vogelwarte-env/bin/activate'
 
-#Brew serch and install commands
+# Brew search and install commands
 alias bs="brew search"
 alias bi="brew install"
 alias bic="brew install --cask"
 alias bl="brew list"
 alias bu="brew upgrade && brew update"
 alias bun="brew uninstall"
+
+# TMUX plugin install and update
+alias tpi="~/.tmux/plugins/tpm/bin/install_plugins"
+alias tpu="~/.tmux/plugins/tpm/bin/update_plugins all"
 
 # Adds commits and pushes files with the argument as the commit message
 function gcam() {
