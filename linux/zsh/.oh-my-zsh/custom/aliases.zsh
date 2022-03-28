@@ -33,11 +33,18 @@ alias cl='clear'
 # Git related
 alias glog="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --branches"
 alias gs="git status"
+alias gco="git checkout"
 alias gaa="git add ."
 alias ga="git add"
 alias gcm="git commit -m"
 
 # Stow related
+function stow_adopt_test() {
+    stow --adopt -nvSt ~ $1
+}
+function stow_adopt() {
+    stow --adopt -vSt ~ $1
+}
 function stowth_test() {
     stow -nvSt ~ $1
 }
@@ -61,7 +68,9 @@ alias winget_export='winget export -o ./winget_apps.json'               # Need t
 
 #Simple utility commands
 
-#Activate environments with alias
+# TMUX plugin install and update
+alias tpi="~/.tmux/plugins/tpm/bin/install_plugins"
+alias tpu="~/.tmux/plugins/tpm/bin/update_plugins all"
 
 # Adds commits and pushes files with the argument as the commit message
 function gcam() {
