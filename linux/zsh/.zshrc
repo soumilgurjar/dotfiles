@@ -70,3 +70,12 @@ source $ZSH/oh-my-zsh.sh
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+# Add Euler Keychain
+/usr/bin/keychain $HOME/.ssh/id_ed25519_euler
+source $HOME/.keychain/Dell-G5-sh
+
+# Enable Public Access on X11 server under Windows (for Paraview on Euler)
+export DISPLAY=$(ip route list default | awk '{print $3}'):0
+export LIBGL_ALWAYS_INDIRECT=1

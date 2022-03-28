@@ -55,6 +55,10 @@ function unstow() {
 #Commonly accessed directories
 alias win='cd /mnt/c/Users/soumi/'
 
+# Winget save app list
+alias winget_all='winget list > ~/.dotfiles/windows/winget_apps_all.txt'
+alias winget_export='winget export -o ./winget_apps.json'               # Need to run this from a powershell window
+
 #Simple utility commands
 
 #Activate environments with alias
@@ -70,3 +74,4 @@ function gcap() {
   git commit -m "$1"
   git push
 }
+function winget { (cd /mnt/c; cmd.exe /c "winget $@";) }

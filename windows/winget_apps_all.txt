@@ -1,0 +1,333 @@
+   -    -\ Name                                      Id                                         Version        Available    Source
+-----------------------------------------------------------------------------------------------------------------------
+QuickLook                                 21090PaddyXu.QuickLook_egxr34yet59cg       3.7.1.0                     
+Widget Launcher                           48405AmbientSoftware.WidgetsFree_agy8jafh… 4.0.5.0                     
+Netflix                                   4DF9E0F8.Netflix_mcm4njqhnhss8             6.98.1805.0                 
+hueDynamic for Hue                        52892MD2Solutions.hueDynamic_6tz2v08d5fw6a 2.9.30.0                    
+WhatsApp Desktop                          5319275A.WhatsAppDesktop_cv1g1gvanyjgm     2.2208.15.0                 
+CaptureAge 1.4.11                         66a3e6fd-4cd4-454e-9ee9-6818fcbd13a6       1.4.11                      
+7-Zip                                     7zip.7zip                                  21.07                       winget
+aoe2companion 26.0.13+0                   8bcabbd3-2bda-54cf-8681-f1e7e98b39dd       26.0.13+0                   
+Visual Studio Build Tools 2019            Microsoft.VisualStudio.2019.BuildTools     16.11.11                    winget
+HP Smart                                  AD2F1837.HPPrinterControl_v10z8vjag6ke6    135.1.385.0                 
+AoE Match Data Provider                   AOEMatchDataProvider                       0.1.3                       
+Anaconda3                                 Anaconda.Anaconda3                         2021.11                     winget
+Anki                                      Anki.Anki                                  2.1.49                      winget
+PDF Merger & Splitter                     AnywaySoftInc.PDFMergerSplitter_0qkrc2qac… 2.0.1.0                     
+Intel® Graphics Command Center            AppUp.IntelGraphicsExperience_8j3eq9eme6c… 1.100.3407.0                
+Intel® OptaneTM Memory and Storage Manag… AppUp.IntelOptaneMemoryandStorageManageme… 18.1.1024.0                 
+ThunderboltTM Control Center              AppUp.ThunderboltControlCenter_8j3eq9eme6… 1.0.34.0                    
+iCloud                                    AppleInc.iCloud_nzyj5cx40ttqa              13.0.201.0                  
+AutoHotkey                                Lexikos.AutoHotkey                         1.1.33.10                   winget
+Ubuntu                                    Canonical.Ubuntu                           2004.2022.1.0               winget
+Logitech Capture                          Capture                                    2.06.12                     
+Cisco AnyConnect Secure Mobility Client   Cisco AnyConnect Secure Mobility Client    4.10.02086                  
+AnyConnect                                CiscoSystems.AnyConnect_edjcgkw48dhxt      4.10.72.0                   
+Alienware Command Center                  DellInc.AlienwareCommandCenter_htrsf667h5… 5.4.16.0                    
+Dell Customer Connect                     DellInc.DellCustomerConnect_htrsf667h5kn2  5.3.5.0                     
+Dell Digital Delivery                     DellInc.DellDigitalDelivery_htrsf667h5kn2  4.0.92.0                    
+Dell SupportAssist for Home PCs           DellInc.DellSupportAssistforPCs_htrsf667h… 3.10.7.0                    
+Dell Update                               DellInc.DellUpdate_htrsf667h5kn2           4.4.18.0                    
+My Dell                                   DellInc.MyDell_htrsf667h5kn2               1.92.17.0                   
+Desktop APM                               Desktop APM                                Unknown                     
+Discord                                   Discord.Discord                            1.0.9004                    winget
+Dropbox                                   Dropbox.Dropbox                            144.4.4491                  winget
+Everything 1.4.1.1009 (x64)               Everything                                 1.4.1.1009                  
+f.lux                                     F.luxSoftwareLLC.f.lux_sw1dyjdkns7gt       4.120.0.0                   
+Logi Firmware Update Tool for Logi4KStre… FWUpdateLogi4KStreamEdition                1.3.14.0                    
+FileZilla Client                          TimKosse.FileZilla.Client                  3.58.0                      winget
+GitHub Desktop                            GitHub.GitHubDesktop                       2.9.12                      winget
+Git                                       Git.Git                                    2.35.1.2                    winget
+Google Chrome                             Google.Chrome                              99.0.4844.82   99.0.4844.84 winget
+Alienware Command Center Suite            InstallShield_{1FB21E73-6D15-442E-8D51-55… 5.4.16.0                    
+Pantherbar                                JohannesTscholl.Pantherbar_3hp4skfxf5x2g   2.1.1.0                     
+Kodi                                      XBMCFoundation.Kodi                        19.3.0.0                    winget
+Logi Bolt                                 LogiBolt                                   1.2.6024.0                  
+Macrium Reflect Home                      MacriumReflect                             v8.0.6635                   
+MATLAB R2021a                             Matlab R2021a                              9.10                        
+Microsoft Edge                            Microsoft.Edge                             99.0.1150.55                winget
+Microsoft Edge Update                     Microsoft Edge Update                      1.3.155.85                  
+Microsoft Edge WebView2 Runtime           Microsoft.EdgeWebView2Runtime              99.0.1150.55                winget
+Cortana                                   Microsoft.549981C3F5F10_8wekyb3d8bbwe      3.2202.10603.0              
+Translator                                Microsoft.BingTranslator_8wekyb3d8bbwe     5.6.0.0                     
+MSN Weather                               Microsoft.BingWeather_8wekyb3d8bbwe        4.46.32012.0                
+App Installer                             Microsoft.DesktopAppInstaller_8wekyb3d8bb… 1.17.10271.0                
+Xbox                                      Microsoft.GamingApp_8wekyb3d8bbwe          2203.1001.4.0               
+Gaming Services                           Microsoft.GamingServices_8wekyb3d8bbwe     3.63.22003.0                
+Get Help                                  Microsoft.GetHelp_8wekyb3d8bbwe            10.2201.421.0               
+Microsoft Tips                            Microsoft.Getstarted_8wekyb3d8bbwe         10.2112.5.0                 
+HEIF Image Extensions                     Microsoft.HEIFImageExtension_8wekyb3d8bbwe 1.0.43012.0                 
+HEVC Video Extensions from Device Manufa… Microsoft.HEVCVideoExtension_8wekyb3d8bbwe 1.0.50361.0                 
+MPEG-2 Video Extension                    Microsoft.MPEG2VideoExtension_8wekyb3d8bb… 1.0.42152.0                 
+Paint 3D                                  Microsoft.MSPaint_8wekyb3d8bbwe            6.2203.1037.0               
+Microsoft Messaging                       Microsoft.Messaging_8wekyb3d8bbwe          4.1901.10241.…              
+3D Viewer                                 Microsoft.Microsoft3DViewer_8wekyb3d8bbwe  7.2107.7012.0               
+Microsoft Edge                            Microsoft.MicrosoftEdge.Stable_8wekyb3d8b… 99.0.1150.55                
+Office                                    Microsoft.MicrosoftOfficeHub_8wekyb3d8bbwe 18.2110.13110…              
+Microsoft Sticky Notes                    Microsoft.MicrosoftStickyNotes_8wekyb3d8b… 4.2.2.0                     
+Mixed Reality Portal                      Microsoft.MixedReality.Portal_8wekyb3d8bb… 2000.21051.12…              
+OneNote for Windows 10                    Microsoft.Office.OneNote_8wekyb3d8bbwe     16001.14326.2…              
+Mobile Plans                              Microsoft.OneConnect_8wekyb3d8bbwe         5.2202.422.0                
+Microsoft People                          Microsoft.People_8wekyb3d8bbwe             10.2105.4.0                 
+PowerShell                                Microsoft.PowerShell_8wekyb3d8bbwe         7.2.2.0                     
+Print 3D                                  Microsoft.Print3D_8wekyb3d8bbwe            3.3.791.0                   
+Microsoft Remote Desktop                  Microsoft.RemoteDesktop_8wekyb3d8bbwe      10.2.1817.0                 
+Snip & Sketch                             Microsoft.ScreenSketch_8wekyb3d8bbwe       10.2008.2277.0              
+Skype                                     Microsoft.SkypeApp_kzf8qxf38zg5c           15.82.404.0                 
+Store Experience Host                     Microsoft.StorePurchaseApp_8wekyb3d8bbwe   12109.1001.10…              
+VP9 Video Extensions                      Microsoft.VP9VideoExtensions_8wekyb3d8bbwe 1.0.50481.0                 
+Microsoft Pay                             Microsoft.Wallet_8wekyb3d8bbwe             2.4.18324.0                 
+Web Media Extensions                      Microsoft.WebMediaExtensions_8wekyb3d8bbwe 1.0.42192.0                 
+Webp Image Extensions                     Microsoft.WebpImageExtension_8wekyb3d8bbwe 1.0.42351.0                 
+Microsoft Photos                          Microsoft.Windows.Photos_8wekyb3d8bbwe     2021.21090.10…              
+Windows Alarms & Clock                    Microsoft.WindowsAlarms_8wekyb3d8bbwe      10.2101.28.0                
+Windows Calculator                        Microsoft.WindowsCalculator_8wekyb3d8bbwe  10.2103.8.0                 
+Windows Camera                            Microsoft.WindowsCamera_8wekyb3d8bbwe      2021.105.10.0               
+Feedback Hub                              Microsoft.WindowsFeedbackHub_8wekyb3d8bbwe 1.2203.761.0                
+Windows Maps                              Microsoft.WindowsMaps_8wekyb3d8bbwe        10.2104.2.0                 
+Windows Voice Recorder                    Microsoft.WindowsSoundRecorder_8wekyb3d8b… 10.2103.28.0                
+Microsoft Store                           Microsoft.WindowsStore_8wekyb3d8bbwe       22203.1401.21…              
+Windows Terminal                          Microsoft.WindowsTerminal                  1.12.10732.0                winget
+Windows Package Manager Source (winget)   Microsoft.Winget.Source_8wekyb3d8bbwe      2022.328.1108…              
+Xbox TCUI                                 Microsoft.Xbox.TCUI_8wekyb3d8bbwe          1.24.10001.0                
+Xbox Console Companion                    Microsoft.XboxApp_8wekyb3d8bbwe            48.86.28002.0               
+Xbox Accessories                          Microsoft.XboxDevices_8wekyb3d8bbwe        300.2202.2500…              
+Xbox Game Bar Plugin                      Microsoft.XboxGameOverlay_8wekyb3d8bbwe    1.54.4001.0                 
+Xbox Game Bar                             Microsoft.XboxGamingOverlay_8wekyb3d8bbwe  5.721.12013.0               
+Xbox Identity Provider                    Microsoft.XboxIdentityProvider_8wekyb3d8b… 12.85.31001.0               
+Xbox Game Speech Window                   Microsoft.XboxSpeechToTextOverlay_8wekyb3… 1.21.13002.0                
+Your Phone                                Microsoft.YourPhone_8wekyb3d8bbwe          1.22022.147.0               
+Groove Music                              Microsoft.ZuneMusic_8wekyb3d8bbwe          10.21102.1141…              
+Movies & TV                               Microsoft.ZuneVideo_8wekyb3d8bbwe          10.22011.1003…              
+NVIDIA Control Panel                      NVIDIACorp.NVIDIAControlPanel_56jybvy8sck… 8.1.962.0                   
+Notepad++                                 Notepad++.Notepad++                        8.3.3                       winget
+Notezilla 8.0                             Notezilla_is1                              8.0                         
+OBS Studio                                OBS Studio                                 26.0.2                      
+DroidCamOBS Plugin                        OBSDroidCam                                1.1.1                       
+Microsoft Office Professional Plus 2016   Office16.PROPLUS                           16.0.4266.1001              
+Microsoft OneDrive                        Microsoft.OneDrive                         22.045.0227.0…              winget
+Origin                                    Origin                                     10.5.104.48966              
+PyCharm 2021.3                            PyCharm 2021.3                             213.5744.248                
+PyCharm Community Edition 2021.2.3        PyCharm Community Edition 2021.2.3         212.5457.59                 
+Python 3.10                               PythonSoftwareFoundation.Python.3.10_qbz5… 3.10.1264.0                 
+Realtek Audio Control                     RealtekSemiconductorCorp.RealtekAudioCont… 1.15.227.0                  
+Killer Intelligence Center                RivetNetworks.KillerControlCenter_rh07ty8… 3.1121.1109.0               
+Samsung Portable SSD Software 1.0         SamsungPortableSSD_1.0_is1                 1.7.4.3                     
+Enpass Password Manager                   SinewSoftwareSystems.EnpassPasswordManage… 6.74.934.0                  
+Spotify Music                             SpotifyAB.SpotifyMusic_zpdnekdrzrea0       1.181.604.0                 
+Steam                                     Valve.Steam                                2.10.91.91                  winget
+Before Your Eyes                          Steam App 1082430                          Unknown                     
+Inscryption                               Steam App 1092790                          Unknown                     
+Hades                                     Steam App 1145360                          Unknown                     
+Potion Craft                              Steam App 1210320                          Unknown                     
+Spirit Island                             Steam App 1236720                          Unknown                     
+It Takes Two                              Steam App 1426210                          Unknown                     
+Dorfromantik                              Steam App 1455840                          Unknown                     
+Mark of the Ninja                         Steam App 214560                           Unknown                     
+Darkest Dungeon®                          Steam App 262060                           Unknown                     
+XCOM 2                                    Steam App 268500                           Unknown                     
+Little Nightmares                         Steam App 424840                           Unknown                     
+Pyre                                      Steam App 462770                           Unknown                     
+What Remains of Edith Finch               Steam App 501300                           Unknown                     
+For The King                              Steam App 527230                           Unknown                     
+Into the Breach                           Steam App 590380                           Unknown                     
+Griftlands                                Steam App 601840                           Unknown                     
+Portal 2                                  Steam App 620                              Unknown                     
+Slay the Spire                            Steam App 646570                           Unknown                     
+Overcooked! 2                             Steam App 728880                           Unknown                     
+Baba Is You                               Steam App 736260                           Unknown                     
+Outer Wilds                               Steam App 753640                           Unknown                     
+Wildermyth                                Steam App 763890                           Unknown                     
+Age of Empires II: Definitive Edition     Steam App 813780                           Unknown                     
+Dicey Dungeons                            Steam App 861540                           Unknown                     
+VBCABLE, The Virtual Audio Cable          VB:VBCABLE {87459874-1236-4469}            Unknown                     
+VLC media player                          VideoLAN.VLC                               3.0.17                      winget
+Wox                                       Wox.Wox                                    1.4.1196                    winget
+Zotero                                    Zotero.Zotero                              6.0.4                       winget
+Mail and Calendar                         microsoft.windowscommunicationsapps_8weky… 16005.14326.2…              
+Intel(R) Wireless Bluetooth(R)            {00002110-0220-1033-84C8-B8D95FA3C8C3}     22.110.2.1                  
+Windows PC Health Check                   Microsoft.WindowsPCHealthCheck             3.3.2110.22002              winget
+Microsoft Visual C++ 2013 Redistributabl… Microsoft.VC++2013Redist-x64               12.0.40664.0                winget
+EA app                                    ElectronicArts.EADesktop                   12.0.192.5129               winget
+Dell SupportAssist Remediation            {06e056de-da6a-4099-9d0a-94e5e0a14dfc}     5.5.1.16141                 
+EurKEY Keyboard Layout                    {09ACEC13-1BC0-4C4A-858E-5BD3FE898242}     1.0.3.40                    
+It Takes Two                              {10AD7848-62A0-425D-9E7C-A14E6EBB46BA}     Unknown                     
+Microsoft .NET Framework 4.7.2 Targeting… {1784A8CD-F7FE-47E2-A87D-1F31E7242D0D}     4.7.03062                   
+NordVPN                                   NordVPN.NordVPN                            6.45.5.0                    winget
+Intel(R) Management Engine Components     {1CEAC85D-2590-4760-800F-8DE5E91F3700}     2141.15.0.2511              
+Microsoft Visual C++ 2010 x64 Redistribu… Microsoft.VC++2010Redist-x64               10.0.40219                  winget
+PuTTY                                     PuTTY.PuTTY                                0.76.0.0                    winget
+Microsoft Windows Desktop Runtime - 5 (x… Microsoft.dotnetRuntime.5-x64              5.0.15.31016                winget
+Epic Games Launcher                       EpicGames.EpicGamesLauncher                1.3.0.0                     winget
+Python 3                                  Python.Python.3                            3.10.4150.0                 winget
+Dell SupportAssist OS Recovery Plugin fo… {2a8bafd6-22ae-4d0e-87a4-686b2a4a2ab0}     5.5.1.16143                 
+Microsoft Visual C++ 2015-2019 Redistrib… Microsoft.VC++2015-2019Redist-x64          14.29.30139.0               winget
+Epic Online Services                      {32C68D93-D32F-4B01-8250-61642BFC22F8}     2.0.28.0                    
+Microsoft Visual C++ 2012 Redistributabl… Microsoft.VC++2012Redist-x86               11.0.61030.0                winget
+Zoom                                      Zoom.Zoom                                  5.10.4306                   winget
+Dell Update for Windows Universal         {41D2D254-D869-4CD8-B440-5DF49083C4BA}     4.4.0                       
+Windows Software Development Kit          Microsoft.WindowsSDK                       10.1.19041.685              winget
+Python Launcher                           {463B0974-B1E1-401E-8F59-B0F9F81258E4}     3.10.7581.0                 
+Microsoft Update Health Tools             {5016990D-7F61-4A20-9451-A915D6616DD9}     3.66.0.0                    
+Logitech G HUB                            Logitech.GHUB                              2022.3.242300               winget
+Alienware OC Controls                     {5452ca1d-8298-4966-ba52-bd29505bddb4}     1.3.60.1380                 
+Intel® Driver & Support Assistant         Intel.IntelDriverAndSupportAssistant       22.1.8.8                    winget
+Dell Digital Delivery Services            {560DFD4A-23E2-45DD-A223-A4B3FA356913}     4.0.92.0                    
+Microsoft .NET Framework 4.6.2 SDK        {5F01B3C4-9BEC-465D-9C68-BB97D381FFAD}     4.6.01590                   
+Goodix Fingerprint Driver                 {60FAB781-18F2-4D2B-A8E7-B3AADD327955}_is1 3.0.37.300                  
+Intel(R) Dynamic Tuning                   {654EE65D-FAA4-4EA6-8C07-DC94E6A304D4}     8.7.10600.207…              
+NordUpdater                               {6E35DB82-3D19-4DD6-B8CB-F082815FDE18}_is1 1.2.2.29                    
+Microsoft Visual Studio Installer         {6F320B93-EE3C-4826-85E0-ADF79F8D4C61}     2.11.40.25675               
+Dell Mobile Connect Driver                {6F9CB82D-BC34-4FC1-B90D-AFFAC5C85E7B}     4.1.7498                    
+Microsoft Visual C++ 2015-2022 Redistrib… Microsoft.VC++2015-2022Redist-x86          14.32.31302.0               winget
+Killer Wireless Driver UWD                {7677ECBC-0890-4FDE-A0C5-B3646639B2A7}     3.1121.1159                 
+Microsoft Visual Studio Code              Microsoft.VisualStudioCode                 1.65.2                      winget
+Microsoft SQL Server Compact 4.0 SP1 x64… {78909610-D229-459C-A936-25D92283D3FD}     4.0.8876.1                  
+polybox                                   {7D5C76F2-7B2E-457F-B2D5-FDBE12931F84}     2.6.3.2122                  
+Logi Options+                             {850cdc16-85df-4052-b06e-4e3e9e83c5c6}     0.91.3227                   
+PowerToys (Preview)                       Microsoft.PowerToys                        0.56.2                      winget
+Intel(R) Computing Improvement Program    {88B98508-2D8F-46F1-90AD-557BE40C7067}     2.4.07642                   
+Update for Microsoft Office 2016 (KB4486… {90160000-0011-0000-1000-0000000FF1CE}_Of… Unknown                     
+Update for Microsoft OneNote 2016 (KB448… {90160000-0011-0000-1000-0000000FF1CE}_Of… Unknown                     
+Update for Microsoft Office 2016 (KB3141… {90160000-0011-0000-1000-0000000FF1CE}_Of… Unknown                     
+Update for Microsoft Office 2016 (KB3213… {90160000-0011-0000-1000-0000000FF1CE}_Of… Unknown                     
+Security Update for Microsoft Office 201… {90160000-0011-0000-1000-0000000FF1CE}_Of… Unknown                     
+Update for Microsoft Office 2016 (KB4462… {90160000-0011-0000-1000-0000000FF1CE}_Of… Unknown                     
+Update for Microsoft Office 2016 (KB4484… {90160000-0011-0000-1000-0000000FF1CE}_Of… Unknown                     
+Update for Microsoft Office 2016 (KB3114… {90160000-0011-0000-1000-0000000FF1CE}_Of… Unknown                     
+Security Update for Microsoft Office 201… {90160000-0011-0000-1000-0000000FF1CE}_Of… Unknown                     
+Security Update for Microsoft Office 201… {90160000-0011-0000-1000-0000000FF1CE}_Of… Unknown                     
+Update for Microsoft Office 2016 (KB4011… {90160000-0011-0000-1000-0000000FF1CE}_Of… Unknown                     
+Update for Microsoft Office 2016 (KB4486… {90160000-0011-0000-1000-0000000FF1CE}_Of… Unknown                     
+Update for Microsoft Office 2016 (KB2920… {90160000-0011-0000-1000-0000000FF1CE}_Of… Unknown                     
+Definition Update for Microsoft Office 2… {90160000-0011-0000-1000-0000000FF1CE}_Of… Unknown                     
+Security Update for Microsoft Office 201… {90160000-0011-0000-1000-0000000FF1CE}_Of… Unknown                     
+Update for Microsoft Office 2016 (KB4022… {90160000-0011-0000-1000-0000000FF1CE}_Of… Unknown                     
+Update for Microsoft Office 2016 (KB3114… {90160000-0011-0000-1000-0000000FF1CE}_Of… Unknown                     
+Update for Microsoft Outlook 2016 (KB500… {90160000-0011-0000-1000-0000000FF1CE}_Of… Unknown                     
+Security Update for Microsoft Office 201… {90160000-0011-0000-1000-0000000FF1CE}_Of… Unknown                     
+Security Update for Microsoft Office 201… {90160000-0011-0000-1000-0000000FF1CE}_Of… Unknown                     
+Update for Microsoft Office 2016 (KB3115… {90160000-0011-0000-1000-0000000FF1CE}_Of… Unknown                     
+Security Update for Microsoft Office 201… {90160000-0011-0000-1000-0000000FF1CE}_Of… Unknown                     
+Update for Microsoft Office 2016 (KB4484… {90160000-0011-0000-1000-0000000FF1CE}_Of… Unknown                     
+Update for Microsoft Office 2016 (KB4011… {90160000-0011-0000-1000-0000000FF1CE}_Of… Unknown                     
+Update for Microsoft Office 2016 (KB3118… {90160000-0011-0000-1000-0000000FF1CE}_Of… Unknown                     
+Update for Microsoft Office 2016 (KB2920… {90160000-0011-0000-1000-0000000FF1CE}_Of… Unknown                     
+Update for Microsoft Access 2016 (KB5001… {90160000-0011-0000-1000-0000000FF1CE}_Of… Unknown                     
+Update for Microsoft Office 2016 (KB4484… {90160000-0011-0000-1000-0000000FF1CE}_Of… Unknown                     
+Update for Microsoft Office 2016 (KB4011… {90160000-0011-0000-1000-0000000FF1CE}_Of… Unknown                     
+Update for Microsoft Project 2016 (KB450… {90160000-0011-0000-1000-0000000FF1CE}_Of… Unknown                     
+Update for Microsoft Office 2016 (KB3114… {90160000-0011-0000-1000-0000000FF1CE}_Of… Unknown                     
+Security Update for Microsoft Office 201… {90160000-0011-0000-1000-0000000FF1CE}_Of… Unknown                     
+Update for Microsoft Office 2016 (KB3118… {90160000-0011-0000-1000-0000000FF1CE}_Of… Unknown                     
+Update for Microsoft Visio 2016 (KB45047… {90160000-0011-0000-1000-0000000FF1CE}_Of… Unknown                     
+Security Update for Microsoft Office 201… {90160000-0011-0000-1000-0000000FF1CE}_Of… Unknown                     
+Update for Microsoft Office 2016 (KB3191… {90160000-0011-0000-1000-0000000FF1CE}_Of… Unknown                     
+Update for Microsoft Office 2016 (KB4011… {90160000-0011-0000-1000-0000000FF1CE}_Of… Unknown                     
+Update for Microsoft Office 2016 (KB2920… {90160000-0011-0000-1000-0000000FF1CE}_Of… Unknown                     
+Update for Microsoft Office 2016 (KB3118… {90160000-0011-0000-1000-0000000FF1CE}_Of… Unknown                     
+Security Update for Microsoft Word 2016 … {90160000-0011-0000-1000-0000000FF1CE}_Of… Unknown                     
+Update for Microsoft Office 2016 (KB4011… {90160000-0011-0000-1000-0000000FF1CE}_Of… Unknown                     
+Update for Microsoft OneDrive for Busine… {90160000-0011-0000-1000-0000000FF1CE}_Of… Unknown                     
+Security Update for Microsoft Office 201… {90160000-0011-0000-1000-0000000FF1CE}_Of… Unknown                     
+Security Update for Microsoft Office 201… {90160000-0011-0000-1000-0000000FF1CE}_Of… Unknown                     
+Security Update for Microsoft Office 201… {90160000-0011-0000-1000-0000000FF1CE}_Of… Unknown                     
+Update for Skype for Business 2016 (KB50… {90160000-0011-0000-1000-0000000FF1CE}_Of… Unknown                     
+Update for Microsoft Office 2016 (KB5002… {90160000-0011-0000-1000-0000000FF1CE}_Of… Unknown                     
+Security Update for Microsoft PowerPoint… {90160000-0011-0000-1000-0000000FF1CE}_Of… Unknown                     
+Update for Microsoft Office 2016 (KB4462… {90160000-0011-0000-1000-0000000FF1CE}_Of… Unknown                     
+Update for Microsoft Office 2016 (KB2920… {90160000-0011-0000-1000-0000000FF1CE}_Of… Unknown                     
+Update for Microsoft Office 2016 (KB4486… {90160000-0011-0000-1000-0000000FF1CE}_Of… Unknown                     
+Update for Microsoft Publisher 2016 (KB4… {90160000-0011-0000-1000-0000000FF1CE}_Of… Unknown                     
+Update for Microsoft Visio Viewer 2016 (… {90160000-0011-0000-1000-0000000FF1CE}_Of… Unknown                     
+Update for Microsoft Office 2016 (KB4464… {90160000-0011-0000-1000-0000000FF1CE}_Of… Unknown                     
+Update for Microsoft Office 2016 (KB3178… {90160000-0011-0000-1000-0000000FF1CE}_Of… Unknown                     
+Security Update for Microsoft Office 201… {90160000-0011-0000-1000-0000000FF1CE}_Of… Unknown                     
+Update for Microsoft Office 2016 (KB4464… {90160000-0011-0000-1000-0000000FF1CE}_Of… Unknown                     
+Update for Microsoft Office 2016 (KB4032… {90160000-0011-0000-1000-0000000FF1CE}_Of… Unknown                     
+Security Update for Microsoft Excel 2016… {90160000-0011-0000-1000-0000000FF1CE}_Of… Unknown                     
+Security Update for Microsoft Office 201… {90160000-0011-0000-1000-0000000FF1CE}_Of… Unknown                     
+Update for Microsoft Office 2016 (KB4011… {90160000-0016-0409-1000-0000000FF1CE}_Of… Unknown                     
+Security Update for Microsoft Excel 2016… {90160000-0016-0409-1000-0000000FF1CE}_Of… Unknown                     
+Security Update for Microsoft PowerPoint… {90160000-0018-0409-1000-0000000FF1CE}_Of… Unknown                     
+Security Update for Microsoft Excel 2016… {90160000-0018-0409-1000-0000000FF1CE}_Of… Unknown                     
+Update for Microsoft Publisher 2016 (KB4… {90160000-0019-0409-1000-0000000FF1CE}_Of… Unknown                     
+Update for Microsoft Outlook 2016 (KB500… {90160000-001A-0409-1000-0000000FF1CE}_Of… Unknown                     
+Security Update for Microsoft Word 2016 … {90160000-001A-0409-1000-0000000FF1CE}_Of… Unknown                     
+Security Update for Microsoft Word 2016 … {90160000-001B-0409-1000-0000000FF1CE}_Of… Unknown                     
+Security Update for Microsoft Excel 2016… {90160000-001B-0409-1000-0000000FF1CE}_Of… Unknown                     
+Update for Microsoft Office 2016 (KB4464… {90160000-001F-0409-1000-0000000FF1CE}_Of… Unknown                     
+Update for Microsoft Office 2016 (KB4464… {90160000-001F-040C-1000-0000000FF1CE}_Of… Unknown                     
+Update for Microsoft Office 2016 (KB4464… {90160000-001F-0C0A-1000-0000000FF1CE}_Of… Unknown                     
+Update for Microsoft Office 2016 (KB4486… {90160000-006E-0409-1000-0000000FF1CE}_Of… Unknown                     
+Security Update for Microsoft Office 201… {90160000-006E-0409-1000-0000000FF1CE}_Of… Unknown                     
+Security Update for Microsoft Office 201… {90160000-006E-0409-1000-0000000FF1CE}_Of… Unknown                     
+Security Update for Microsoft Office 201… {90160000-006E-0409-1000-0000000FF1CE}_Of… Unknown                     
+Security Update for Microsoft Office 201… {90160000-006E-0409-1000-0000000FF1CE}_Of… Unknown                     
+Security Update for Microsoft Office 201… {90160000-006E-0409-1000-0000000FF1CE}_Of… Unknown                     
+Update for Microsoft OneNote 2016 (KB448… {90160000-00A1-0409-1000-0000000FF1CE}_Of… Unknown                     
+Update for Microsoft OneDrive for Busine… {90160000-00BA-0409-1000-0000000FF1CE}_Of… Unknown                     
+Update for Microsoft Office 2016 (KB4486… {90160000-00C1-0000-1000-0000000FF1CE}_Of… Unknown                     
+Update for Microsoft OneNote 2016 (KB448… {90160000-00C1-0000-1000-0000000FF1CE}_Of… Unknown                     
+Update for Microsoft Office 2016 (KB3213… {90160000-00C1-0000-1000-0000000FF1CE}_Of… Unknown                     
+Update for Microsoft Office 2016 (KB4462… {90160000-00C1-0000-1000-0000000FF1CE}_Of… Unknown                     
+Security Update for Microsoft Office 201… {90160000-00C1-0000-1000-0000000FF1CE}_Of… Unknown                     
+Security Update for Microsoft Office 201… {90160000-00C1-0000-1000-0000000FF1CE}_Of… Unknown                     
+Security Update for Microsoft Office 201… {90160000-00C1-0000-1000-0000000FF1CE}_Of… Unknown                     
+Update for Microsoft Office 2016 (KB4484… {90160000-00C1-0000-1000-0000000FF1CE}_Of… Unknown                     
+Update for Microsoft Access 2016 (KB5001… {90160000-00C1-0000-1000-0000000FF1CE}_Of… Unknown                     
+Update for Microsoft Office 2016 (KB4011… {90160000-00C1-0000-1000-0000000FF1CE}_Of… Unknown                     
+Update for Microsoft Project 2016 (KB450… {90160000-00C1-0000-1000-0000000FF1CE}_Of… Unknown                     
+Security Update for Microsoft Office 201… {90160000-00C1-0000-1000-0000000FF1CE}_Of… Unknown                     
+Update for Microsoft Visio 2016 (KB45047… {90160000-00C1-0000-1000-0000000FF1CE}_Of… Unknown                     
+Security Update for Microsoft Office 201… {90160000-00C1-0000-1000-0000000FF1CE}_Of… Unknown                     
+Security Update for Microsoft Word 2016 … {90160000-00C1-0000-1000-0000000FF1CE}_Of… Unknown                     
+Update for Microsoft OneDrive for Busine… {90160000-00C1-0000-1000-0000000FF1CE}_Of… Unknown                     
+Security Update for Microsoft Office 201… {90160000-00C1-0000-1000-0000000FF1CE}_Of… Unknown                     
+Update for Skype for Business 2016 (KB50… {90160000-00C1-0000-1000-0000000FF1CE}_Of… Unknown                     
+Security Update for Microsoft PowerPoint… {90160000-00C1-0000-1000-0000000FF1CE}_Of… Unknown                     
+Update for Microsoft Office 2016 (KB2920… {90160000-00C1-0000-1000-0000000FF1CE}_Of… Unknown                     
+Update for Microsoft Publisher 2016 (KB4… {90160000-00C1-0000-1000-0000000FF1CE}_Of… Unknown                     
+Security Update for Microsoft Excel 2016… {90160000-00C1-0000-1000-0000000FF1CE}_Of… Unknown                     
+Update for Microsoft Office 2016 (KB4486… {90160000-00C1-0409-1000-0000000FF1CE}_Of… Unknown                     
+Security Update for Microsoft Office 201… {90160000-00C1-0409-1000-0000000FF1CE}_Of… Unknown                     
+Update for Microsoft OneDrive for Busine… {90160000-00C1-0409-1000-0000000FF1CE}_Of… Unknown                     
+Security Update for Microsoft Excel 2016… {90160000-00C1-0409-1000-0000000FF1CE}_Of… Unknown                     
+Security Update for Microsoft Word 2016 … {90160000-012B-0409-1000-0000000FF1CE}_Of… Unknown                     
+Update for Skype for Business 2016 (KB50… {90160000-012B-0409-1000-0000000FF1CE}_Of… Unknown                     
+NordVPN network TAP                       {97DEC5D6-2BE9-45BB-BFC5-274B851B486B}     1.0.1                       
+Intel(R) Serial IO                        {9FD91C5C-44AE-4D9D-85BE-AE52816B0294}     30.100.2020.7               
+Intel® Integrated Sensor Solution         {9e9834fd-84c9-48ce-af83-b764428095d5}     3.10.100.4122               
+Microsoft .NET Framework 4.6.2 Targeting… {A18D4C2A-07A8-40E4-9797-DD324E6EA4FC}     4.6.01590                   
+PDFsam Basic                              PDFsam.PDFsam                              4.2.12.0                    winget
+Adobe Acrobat DC (64-bit)                 Adobe.Acrobat.Reader.64-bit                22.001.20085                winget
+Meld                                      Meld.Meld                                  3.20.4                      winget
+gsudo                                     gerardog.gsudo                             1.2.0.0                     winget
+Windows PC Health Check                   Microsoft.WindowsPCHealthCheck             3.2.2110.14001 3.3.2110.22… winget
+NVIDIA Graphics Driver 512.15             {B2FE1952-0186-46C3-BAEC-A80AA35AC5B8}_Di… 512.15                      
+NVIDIA GeForce Experience                 Nvidia.GeForceExperience                   3.25.0.84                   winget
+NVIDIA PhysX System Software              Nvidia.PhysX                               9.21.0713                   winget
+NVIDIA FrameView SDK 1.2.7321.30900954    {B2FE1952-0186-46C3-BAEC-A80AA35AC5B8}_Fr… 1.2.7321.3090…              
+NVIDIA HD Audio Driver 1.3.39.3           {B2FE1952-0186-46C3-BAEC-A80AA35AC5B8}_HD… 1.3.39.3                    
+Nvidia Broadcast                          Nvidia.Broadcast                           1.3.0.45                    winget
+NVIDIA USBC Driver 1.46.831.832           {B2FE1952-0186-46C3-BAEC-A80AA35AC5B8}_US… 1.46.831.832                
+Microsoft .NET Framework 4.7.2 Targeting… {B517DBD3-B542-4FC8-9957-FFB2C3E65D1D}     4.7.03062                   
+GitHub CLI                                GitHub.cli                                 2.6.0                       winget
+NordVPN network TUN                       {BD0E4F38-D3F6-452D-A32E-B14D721839AC}     1.0.1                       
+Dual Controller                           {BFF9E0A4-2669-4139-8320-9C5F76727DAA}     2.73                        
+Microsoft .NET Framework 4.6.2 Targeting… {C80951BD-6904-474F-BBC5-03A6C777F37C}     4.6.01590                   
+Update for  (KB2504637)                   {CFEF48A8-BFB8-3EAC-8BA5-DE4F8AA267CE}.KB… 1                           
+Microsoft XNA Framework Redistributable … Microsoft.XNARedist                        4.0.30901.0                 winget
+Dell SupportAssist                        {E0659C89-D276-4B77-A5EC-A8F2F042E78F}     3.10.4.18                   
+Windows SDK AddOn                         {E18618EC-D9DB-4BCE-B382-85ADA2CBB340}     10.1.0.0                    
+OnScreen Control                          {E5C1B339-0E4E-49A5-859E-5E1DE1938706}     7.24.0                      
+usbipd-win                                dorssel.usbipd-win                         2.2.0                       winget
+Microsoft Visual C++ 2010 x86 Redistribu… Microsoft.VC++2010Redist-x86               10.0.40219                  winget
+iCloud Outlook                            {F35C51FC-B854-4106-89D2-50709F12A4B5}     12.5.0.74                   
+Microsoft .NET Framework 4.7.2 SDK        {F42C96C1-746B-442A-B58C-9F0FD5F3AB8A}     4.7.03081                   
+Windows Subsystem for Linux Update        {F8474A47-8B5D-4466-ACE3-78EAB3BF21A8}     5.10.102.1                  
+pCloud Drive                              {b1666673-4862-4d10-81fe-99c0a40cb190}     3.11.10.0                   
+AdGuard                                   AdGuard.AdGuard                            7.9.3855.0     7.9.3869.0   winget
+Microsoft Visual C++ 2012 Redistributabl… Microsoft.VC++2012Redist-x64               11.0.61030.0                winget
+Microsoft Windows Desktop Runtime - 3 (x… Microsoft.dotnetRuntime.3-x64              3.1.23.31022                winget
+Microsoft Windows Desktop Runtime - 6.0.… {f443bbdb-acaa-4eab-9d5d-098b722891ed}     6.0.2.30914                 
