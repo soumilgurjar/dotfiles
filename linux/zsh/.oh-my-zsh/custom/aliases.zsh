@@ -26,6 +26,7 @@ alias vivim='vim ~/.vimrc'
 alias fs='du -sh'
 alias ls='clear; ls --color'
 alias la='ls -a'
+alias cpwd="pwd | clip.exe"
 alias rm='rm -i'
 alias gr='grep -r -n'
 alias cl='clear'

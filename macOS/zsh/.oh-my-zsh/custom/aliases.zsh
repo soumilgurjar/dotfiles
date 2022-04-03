@@ -29,6 +29,7 @@ alias vivim='vim ~/.vimrc'
 alias fs='du -sh'
 alias la='ls -a'
 alias ls='clear; ls'
+alias cpwd="pwd | pbcopy"
 alias rm='rm -i'
 alias gr='grep -r -n'
 alias cl='clear'
