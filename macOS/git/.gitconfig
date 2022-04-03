@@ -31,5 +31,12 @@
 	sslCAInfo = /usr/local/etc/openssl/cert.pem
 [init]
     defaultBranch = master
-[includeIf "gitdir:/Users/sgurjar/Github_Repositories"]
-    path = ~/.gitconfig-github
+[credential]
+	helper = store
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
+[merge]
+	tool = vimdiff
+	conflictstyle = diff3

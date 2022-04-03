@@ -26,7 +26,15 @@
 	untracked = red bold
 [alias]
     lg = log --graph --pretty=format:'%C(yellow)%h%C(auto)%d%Creset %s %C(white)- %an, %ar%Creset'
+	d = difftool
 [init]
     defaultBranch = master
 [credential]
 	helper = store
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
+[merge]
+	tool = vimdiff
+	conflictstyle = diff3
