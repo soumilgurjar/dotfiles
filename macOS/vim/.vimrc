@@ -10,6 +10,8 @@ Plug 'VundleVim/Vundle.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
 Plug 'scrooloose/nerdtree'
 Plug 'bling/vim-bufferline'
 Plug 'simnalamburt/vim-mundo'
@@ -23,18 +25,30 @@ Plug 'aymericbeaumet/vim-symlink'
 Plug 'moll/vim-bbye'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'sheerun/vim-polyglot'
+Plug 'vimwiki/vimwiki'
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc-syntax'
 
 " Theme plugins
 Plug 'itchyny/lightline.vim'
 " Plug 'mengelbrecht/lightline-bufferline'
 Plug 'drewtempelmeyer/palenight.vim'
-Plug 'altercation/vim-colors-solarized'
-Plug 'gosukiwi/vim-atom-dark'
+" Plug 'altercation/vim-colors-solarized'
+" Plug 'gosukiwi/vim-atom-dark'
 
 " Plugin settings
 let g:ctrlp_user_command = ['.git/', 'git ls-files --cached --others  --exclude-standard %s']
 let g:yankring_history_file = '.yankring_history'
+let g:vimwiki_list = [{'path': '/mnt/c/Users/soumi/Dropbox/Apps/vimwiki/',
+                      \ 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_listsyms = '✗○◐●✓'
+" autocmd FileType vimwiki setlocal shiftwidth=4 tabstop=4 noexpandtab
 " let g:highlightedyank_highlight_duration = "200"
+" === Goyo
+let g:undotree_CustomUndotreeCmd = 'vertical 32 new'
+let g:undotree_CustomDiffpanelCmd= 'belowright 12 new'
+let g:goyo_width = 120
+let g:goyo_linenr = 1
 
 " All of your Plugins must be added before the following line
 call plug#end()
@@ -80,6 +94,7 @@ set undofile
 set undodir=~/.vim/undo
 set updatetime=1000             " Sets time between git diff run by gitgutter
 set backspace=indent,eol,start  " Vim 8.2 update had changed default backspace behaviour. This reverts it.
+set noro                        " Set no read only mode. Useful when using git difftool.
 
 """"""" ---------- VIM Autocommands -----------------------
 " Only do this part when compiled with support for autocommands
@@ -126,11 +141,6 @@ autocmd ColorScheme * highlight! link SignColumn LineNr
 " colorscheme solarized
 " let g:lightline = { 'colorscheme': 'solarized' }
 
-" ---- Atom Dark
-" set background=dark
-" colorscheme atom-dark
-" let g:lightline = { 'colorscheme': 'atom-dark' }
-
 " ---- Palenight
 " set background=dark
 " colorscheme palenight
@@ -141,6 +151,28 @@ let g:lightline = {
       \ 'active': { 'left': [ [ 'mode', 'paste' ], [ 'gitbranch', 'readonly', 'filename', 'modified' ] ] },
       \ 'component_function': { 'gitbranch': 'fugitive#head' },
       \ }
+
+""""""""" --------------- Goyo settings ----------------------
+function! s:goyo_enter()
+  let b:quitting = 0
+  let b:quitting_bang = 0
+  autocmd QuitPre <buffer> let b:quitting = 1
+  cabbrev <buffer> q! let b:quitting_bang = 1 <bar> q!
+endfunction
+
+function! s:goyo_leave()
+  " Quit Vim if this is the only remaining buffer
+  if b:quitting && len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
+    if b:quitting_bang
+      qa!
+    else
+      qa
+    endif
+  endif
+endfunction
+
+autocmd! User GoyoEnter call <SID>goyo_enter()
+autocmd! User GoyoLeave call <SID>goyo_leave()
 
 """"""""" --------------- VIM Buffer ----------------------
 "make vim save and load the folding of the document each time it loads"
@@ -174,6 +206,8 @@ nnoremap <leader>si :w<CR> :source ~/.ideavimrc <CR> :echo "Sourced ideavimrc" <
 " Open and source zshrc
 nnoremap <leader>ez :w<CR> :e ~/.zshrc <CR>
 nnoremap <leader>sz :w<CR> :source ~/.zshrc <CR> :echo "Sourced zshrc" <CR>
+" Open zsh aliases
+nnoremap <leader>ea :w<CR> :e ~/.oh-my-zsh/custom/aliases.zsh <CR>
 " Open and source vimrc
 nnoremap <leader>ev :w<CR> :e ~/.vimrc <CR>
 nnoremap <leader>sv :w<CR> :source ~/.vimrc <CR> :echo "Sourced vimrc" <CR>
@@ -182,7 +216,7 @@ nnoremap <leader>eb :w<CR> :e ~/.bashrc <CR>
 nnoremap <leader>sb :w<CR> :source ~/.bashrc <CR> :echo "Sourced bashrc" <CR>
 " Open and source tmux conf
 nnoremap <leader>et :w<CR> :e ~/.tmux.conf <CR>
-nnoremap <leader>st :w<CR> <C-a> : source ~/.tmux.conf <CR>
+" nnoremap <leader>st :w<CR> <C-a> : source ~/.tmux.conf <CR>
 
 " Install Plugins
 nnoremap <leader>pi :PlugInstall<CR>
@@ -195,11 +229,17 @@ nnoremap <leader>O O<Esc>
 " Removes highlighting until next search
 nnoremap <leader>hl :noh<CR>
 
+" Removes highlighting until next search
+nnoremap <leader>nu :set number!<CR> :set relativenumber!<CR>
+
 " Switch between the last two files
 nnoremap <leader><leader> :w<CR><C-^>
 
 " Show undo tree
 nnoremap <leader>uu :MundoToggle<CR>
+
+" Column mode selection
+nnoremap <leader>vv <C-v>
 
 " Show yank buffer
 nnoremap <leader>yy :YRShow<CR>
@@ -209,6 +249,9 @@ nnoremap <leader>nn :NERDTreeToggle<CR>
 
 " CtrlP toggle
 nnoremap <silent> <leader>pp :w<CR>:CtrlP<CR>
+
+" Goyo mappings
+nnoremap <leader>gg :Goyo<CR>
 
 " Git Fugitive mappings
 nnoremap <leader>gb :Git blame<CR>
@@ -230,12 +273,12 @@ nnoremap <leader>5  :w<CR>:5b<CR>
 " Go to next or previous window
 nnoremap <leader>[  :w<CR><C-w>h
 nnoremap <leader>]  :w<CR><C-w>l
+nnoremap <leader>jj  :w<CR><C-w>j
+nnoremap <leader>kk  :w<CR><C-w>k
 
-"Close current buffer
+"Save or Close current buffer
 nnoremap <leader>aa :w<CR>:Bdelete<CR>
-
-"Save current buffer
-nnoremap <leader>ww :wq<CR>
+nnoremap <leader>rr :wq<CR>
 nnoremap <leader>ee :w<CR><Esc>
 nnoremap <leader>zz :w<CR><Esc>
 
@@ -258,7 +301,7 @@ nnoremap <Down> :echoe "Use j"<CR>
 " inoremap <Right> <NOP>
 " inoremap <Up> <NOP>
 " inoremap <Down> <NOP>
-inoremap <Esc> <NOP>
+" inoremap <Esc> <NOP>
 
 " Allows easy copying to end of line
 nnoremap Y y$
