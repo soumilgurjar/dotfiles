@@ -1,10 +1,3 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-# export PATH=/usr/local/bin:$PATH
-# export PYENV_ROOT="$HOME/.pyenv"
-# export PATH="$PYENV_ROOT/bin:$PATH"
-# export PATH="$PYENV_ROOT/shims:$PATH"
-
 # Set colors for 'ls' command
 eval `dircolors ~/Git_Repositories/dircolors-solarized/dircolors.256dark`
 export TERM=xterm-256color        # for common 256 color terminals (e.g. gnome-terminal)
@@ -35,7 +28,7 @@ zstyle ':omz:update' frequency 13
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=62'
-VIM_MODE_VICMD_KEY='jj'                 # jhis allows escape from insert to normal mode with 'jj'
+VIM_MODE_VICMD_KEY='jj'                 # This allows escape from insert to normal mode with 'jj'
 
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
@@ -45,8 +38,10 @@ plugins=(
     themes
     web-search
     zsh-autosuggestions
+    zsh-history-substring-search
     zsh-syntax-highlighting
     zsh-vim-mode                        # This vi-mode plugin keeps the push-line ^q functionality
+    zsh-viexchange
     z
 )
 
@@ -58,6 +53,7 @@ MODE_CURSOR_VICMD="#ffffff steady block"
 MODE_CURSOR_SEARCH="#ff00ff steady underline"
 MODE_CURSOR_VISUAL="#ffff00 steady block"
 MODE_CURSOR_VLINE="#00ffff steady block"
+
 source $ZSH/oh-my-zsh.sh
 
 

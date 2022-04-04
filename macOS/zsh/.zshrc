@@ -18,7 +18,8 @@ export ZSH="/Users/sgurjar/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell" 
+ZSH_THEME="robbyrussell"
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -37,7 +38,7 @@ zstyle ':omz:update' frequency 13
 # DISABLE_MAGIC_FUNCTIONS="true"
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=62'
 VIM_MODE_VICMD_KEY='jj'                 # This allows escape from insert to normal mode with 'jj'
-# Which plugins would you like to load?
+
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
@@ -50,6 +51,7 @@ plugins=(
     zsh-history-substring-search
     zsh-syntax-highlighting
     zsh-vim-mode                        # This vi-mode plugin keeps the push-line ^q functionality
+    zsh-viexchange
     z
 )
 
