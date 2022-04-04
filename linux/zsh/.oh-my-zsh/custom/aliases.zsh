@@ -67,7 +67,13 @@ alias win='cd /mnt/c/Users/soumi/'
 alias winget_all='winget list > ~/.dotfiles/windows/winget_apps_all.txt'
 alias winget_export='winget export -o ./winget_apps.json'               # Need to run this from a powershell window
 
-#Simple utility commands
+# Brew search and install commands
+alias bs="brew search"
+alias bi="brew install"
+alias bic="brew install --cask"
+alias bl="brew list"
+alias bu="brew upgrade && brew update"
+alias bun="brew uninstall"
 
 # TMUX plugin install and update
 alias tpi="~/.tmux/plugins/tpm/bin/install_plugins"
