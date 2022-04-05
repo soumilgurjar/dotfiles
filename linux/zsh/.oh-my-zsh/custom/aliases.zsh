@@ -1,9 +1,6 @@
 # This file should be added to ~/.oh-my-zsh/custom/ directory
 # Example aliases
-alias zalias="vim ~/.oh-my-zsh/custom/aliases.zsh"
-alias zconfig="vim ~/.zshrc"
 alias ohmyzsh="cd ~/.oh-my-zsh/custom/plugins/"
-alias reload="source ~/.zshrc"
 alias switch_zsh="chsh -s $(which zsh)"
 alias switch_bash="chsh -s $(which bash)"
 
@@ -12,24 +9,43 @@ alias switch_bash="chsh -s $(which bash)"
 # alias python=/usr/local/bin/python3
 
 #Euler login with SSH
-alias eu='ssh sgurjar@euler.ethz.ch'
-alias euy='ssh -Y sgurjar@euler.ethz.ch'
-alias eux='ssh -X sgurjar@euler.ethz.ch'
+alias eu="ssh sgurjar@euler.ethz.ch"
+alias euy="ssh -Y sgurjar@euler.ethz.ch"
+alias eux="ssh -X sgurjar@euler.ethz.ch"
+
+# Add Euler Keychain
+function eus() {
+	/usr/bin/keychain $HOME/.ssh/id_ed25519_euler
+	source $HOME/.keychain/Dell-G5-sh
+}
+
+# Open and Source Config files
+alias viz="vim ~/.zshrc"
+alias via="vim ~/.oh-my-zsh/custom/aliases.zsh"
+alias vib="vim ~/.bashrc"
+alias vibp="vim ~/.bash_profile"
+alias viv="vim ~/.vimrc"
+alias vit="vim ~/.tmux.conf"
+alias soz="source ~/.zshrc"
+alias sob="source ~/.bashrc"
+alias sobp="source ~/.bash_profile"
+alias sot="tmux source-file ~/.tmux.conf"
 
 #Terminal navigation
-alias vi=vim
-alias vib='vim ~/.bashrc'
-alias sob='source ~/.bashrc'
-alias vibp='vim ~/.bash_profile'
-alias sobp='source ~/.bash_profile'
-alias vivim='vim ~/.vimrc'
-alias fs='du -sh'
-alias ls='clear; ls --color'
-alias la='ls -a'
+alias vi="vim"
+alias fs="du -sh"
+alias ls="clear; ls --color"
+alias la="ls -a"
 alias cpwd="pwd | clip.exe"
-alias rm='rm -i'
-alias gr='grep -r -n'
-alias cl='clear'
+alias rm="rm -ir"
+alias rmf="rm -irf"
+alias gr="grep -r -n"
+alias cl="clear"
+
+# Tmux related
+alias tn="tmux new -As Local"
+alias tnn="tmux new -As Test"
+alias tds="tmux detach-client"
 
 # Git related
 alias glog="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --branches"
@@ -61,11 +77,11 @@ function unstow() {
 
 
 #Commonly accessed directories
-alias win='cd /mnt/c/Users/soumi/'
+alias win="cd /mnt/c/Users/soumi/"
 
 # Winget save app list
-alias winget_all='winget list > ~/.dotfiles/windows/winget_apps_all.txt'
-alias winget_export='winget export -o ./winget_apps.json'               # Need to run this from a powershell window
+alias winget_all="winget list > ~/.dotfiles/windows/winget_apps_all.txt"
+alias winget_export="winget export -o ./winget_apps.json"               # Need to run this from a powershell window
 
 # Brew search and install commands
 alias bs="brew search"
