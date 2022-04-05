@@ -9,13 +9,19 @@ call plug#begin('~/.vim/plugged')
 Plug 'sheerun/vim-polyglot'						"Provides syntax for multiple filetypes
 Plug 'airblade/vim-gitgutter'					"Show changes in file from previous commit
 Plug 'tpope/vim-fugitive'						"Git integration plugin
+Plug 'justinmk/vim-sneak'						"Better search with 2,3 starting letters with s/S, operators with z/Z
+Plug 'easymotion/vim-easymotion'				"New way of moving within vim
 Plug 'tpope/vim-commentary'						"Allows commenting lines/selection with gc
 Plug 'tpope/vim-surround'						"Allows surrounding words/selection with cs
 Plug 'tpope/vim-repeat'							"Allows repeating more previous commands with .
 Plug 'tommcdo/vim-exchange'						"Allows exchanging words/selection with cx/X
-Plug 'jiangmiao/auto-pairs'						"Automatically creates bracket pairs
+Plug 'tpope/vim-endwise'						"Automatically ends functions like if etc.
+Plug 'Raimondi/delimitMate'						"Automatically creates bracket pairs
 Plug 'michaeljsmith/vim-indent-object'			"Autoindents lines
 Plug 'machakann/vim-highlightedyank'			"Highlights yanks for short period
+Plug 'SirVer/ultisnips'							" Track the snippet engine
+Plug 'honza/vim-snippets'						" Snippets are separated from the engine 
+Plug 'ycm-core/YouCompleteMe'					"Autocompletion
 Plug 'ctrlpvim/ctrlp.vim'						"Fuzzy finding within vim with :Ctrlp
 Plug 'vim-scripts/YankRing.vim'					"Stores multiples yanks
 Plug 'simnalamburt/vim-mundo'					"Stores multiples undos
@@ -26,6 +32,7 @@ Plug 'junegunn/goyo.vim'						"Distraction free vim
 Plug 'vimwiki/vimwiki'							"Easy note taking and diary maintaining
 Plug 'vim-pandoc/vim-pandoc'					"Pandoc support from within vim
 Plug 'vim-pandoc/vim-pandoc-syntax'				"Pandoc syntax for relevant files
+Plug 'kbarrette/mediummode'						"Disable common vim navigation functions to help learn vim faster
 
 """ Theme plugins
 Plug 'morhetz/gruvbox'
@@ -42,18 +49,40 @@ Plug 'bling/vim-bufferline'
 " Plug 'mengelbrecht/lightline-bufferline'
 
 """""""" ----------------- Plugin Settings ---------------
+""" YouCompleteMe
+let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+set completeopt-=preview
+let g:ycm_show_diagnostics_ui = 0
+let g:ycm_language_server =
+  \ [{
+  \   'name': 'ccls',
+  \   'cmdline': [ 'ccls' ],
+  \   'filetypes': [ 'c', 'cpp', 'cc', 'h', 'hpp', 'cuda' ],
+  \   'project_root_files': [ '.ccls-root', 'compile_commands.json' ]
+  \ }]
 """ Ctrl-P
 let g:ctrlp_user_command = ['.git/', 'git ls-files --cached --others  --exclude-standard %s']
 let g:ctrlp_working_path_mode = 'rw'
 " let g:ctrlp_show_hidden = 1
 " set runtimepath^=~/.vim/plug/ctrlp.vim
 
+" Ultisnips (do not use tab as it may conflict with autocompletion engine)
+let g:UltiSnipsExpandTrigger = "<C-s>"
+let g:UltiSnipsListSnippets = "<C-j>"
+let g:UltiSnipsJumpForwardTrigger = "<C-b>"
+let g:UltiSnipsJumpBackwardTrigger = "<C-z>"
+let g:UltiSnipsEditSplit = "vertical"
+
 """ Highlight Yank
 let g:yankring_history_file = '.yankring_history'
 " let g:highlightedyank_highlight_duration = "200"
 
-"""" Toggle AutoPairs
+""" Toggle AutoPairs
 let g:AutoPairsShortcutToggle = '<leader>ap'
+
+""" Mediummode
+let g:mediummode_enabled = 1
+let g:mediummode_allowed_motions = 4
 
 """ VimWiki
 let g:vimwiki_list = [{'path': '/mnt/c/Users/soumi/Dropbox/Apps/vimwiki/',
@@ -61,10 +90,23 @@ let g:vimwiki_list = [{'path': '/mnt/c/Users/soumi/Dropbox/Apps/vimwiki/',
 let g:vimwiki_listsyms = '✗○◐●✓'
 " autocmd FileType vimwiki setlocal shiftwidth=4 tabstop=4 noexpandtab
 
+""" Sneak
+let g:sneak#label = 1			"Show labels for easy motion
+let g:sneak#use_ic_scs = 1		"Search is case smart
+
+""" EasyMotion
+let g:EasyMotion_keys = 'jkdslaeiruvmcghwoxtybnzqp;slf' "default : 'asdghklqwertyuiopzxcvbnmfj;'
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+let g:EasyMotion_smartcase = 1 " Turn on case-insensitive feature
+let g:EasyMotion_use_smartsign_us = 1 " Similar case insensitive for symbol for US keyboards
+let g:EasyMotion_startofline = 1 "Move cursor to start line with line motions
+let g:EasyMotion_space_jump_first = 1
+
 """ Goyo
 let g:undotree_CustomUndotreeCmd = 'vertical 32 new'
 let g:undotree_CustomDiffpanelCmd= 'belowright 12 new'
 let g:goyo_width = 120
+let g:goyo_height = '100%'
 let g:goyo_linenr = 1
 
 """ Gitgutter
@@ -121,7 +163,7 @@ set number                      " show absolute line numbers
 set relativenumber              " show relative line numbers (except current)
 set ruler                       " show column in console
 " set list                        " show trailing whitespace
-set listchars=tab:▸\ ,trail:▫   "
+set listchars=tab:▸\ ,trail:▫   " list of characters to show
 set wrap                        " do not automatically wrap on load
 set breakindent                 " enable indentation on linebreak
 set linebreak                   " enable softwrap without breaking words
@@ -152,8 +194,8 @@ if &term =~ '^xterm'
     let &t_EI .= "\<Esc>[2 q"
     " insert mode
     let &t_SI .= "\<Esc>[6 q"
-    " replace mode
-    let &t_SR.="\<Esc>[3 q"
+    " replace mode (is causing a weird cursor refresh every 5 sec)
+    " let &t_SR .="\<Esc>[4 q"
 endif
 
 """"""""" ---------------  WSL yank support --------------------
@@ -233,7 +275,7 @@ set wildignore+=*.swp,*.tmp.
 " leader is now set to Spacebar
 let mapleader = " "
 " localleader is now set to comma
-let localleader = ","
+" let localleader = ","
 
 " Switch between the last two files
 nnoremap <leader><leader> :w<CR><C-^>
@@ -275,6 +317,11 @@ nnoremap <leader>O O<Esc>j
 " Removes highlighting until next search
 nnoremap <leader>hl :noh<CR>
 
+" Removes highlighting until next search
+nnoremap <leader>he :vert bo h 
+" Medium mode enable and disable
+nnoremap <leader>hm :MediumModeToggle<CR>
+
 " Nerdtree toggle
 nnoremap <leader>nn :NERDTreeToggle<CR>
 
@@ -296,6 +343,7 @@ nnoremap <leader>yy :YRShow<CR>
 
 " Goyo mappings
 nnoremap <leader>go :Goyo<CR>
+nnoremap <leader>gy :Goyo 120x100%<CR>
 
 " Git Fugitive mappings
 nnoremap <leader>gs :Git<CR>
@@ -305,18 +353,16 @@ nnoremap <leader>gp :Git push<CR>
 nnoremap <leader>gl :Git log<CR>
 
 " Go to specific buffer
-nnoremap <leader>hh  :w<CR>:bp<CR>
-nnoremap <leader>ll  :w<CR>:bn<CR>
+nnoremap <leader>hh :w<CR>:bp<CR>
+nnoremap <leader>ll :w<CR>:bn<CR>
+" nnoremap <leader>hl <C-a><Right>
+" nnoremap <leader>lh <C-a><Left>
 
 " Go to next or previous window
 nnoremap <leader>kj  <C-w>h
 nnoremap <leader>jk  <C-w>l
 nnoremap <leader>jj  <C-w>j
 nnoremap <leader>kk  <C-w>k
-" nnoremap <leader>[  :w<CR><C-w>h
-" nnoremap <leader>]  :w<CR><C-w>l
-" nnoremap <leader>jj  :w<CR><C-w>j
-" nnoremap <leader>kk  :w<CR><C-w>k
 
 "Save or Close current buffer(s)
 nnoremap <leader>aa :w<CR>:Bdelete<CR>
@@ -324,8 +370,6 @@ nnoremap <leader>rr :wq<CR>
 nnoremap <leader>ee :w<CR><Esc>
 nnoremap <leader>re :q<CR>
 nnoremap <leader>er :wqa<CR>
-
-"Quit current buffer without saving
 nnoremap <leader>qq :q!<CR>
 
 """""""" --------------- Mappings ------------------------
@@ -365,5 +409,22 @@ inoremap <C-k> <esc>:m .-2<CR>==
 nnoremap <C-j> :m .+1<CR>==
 nnoremap <C-k> :m .-2<CR>==
 
+" Map Sneak backward moving key to \
+" map \ <Plug>Sneak_,
+
+" Easymotion - `s{char}{char}{label}`
+nmap s <Plug>(easymotion-overwin-f2)
+vmap s <Plug>(easymotion-s2)
+map  f <Plug>(easymotion-fl)
+map  F <Plug>(easymotion-tl)
+map  t <Plug>(easymotion-Fl)
+map  T <Plug>(easymotion-Tl)
+" JK motions: Line motions
+map ; <Plug>(easymotion-k)
+map , <Plug>(easymotion-j)
+map  / <Plug>(easymotion-sn)
+omap / <Plug>(easymotion-tn)
+" map  n <Plug>(easymotion-next)
+" map  N <Plug>(easymotion-prev)
 """"""" _______________ Abbreviations ___________________
 " iabbrev @@ soumilgurjar@gmail.com
