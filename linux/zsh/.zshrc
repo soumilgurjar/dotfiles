@@ -73,5 +73,8 @@ export NVM_DIR="$HOME/.nvm"
 # fi
 
 # Enable Public Access on X11 server under Windows (for Paraview on Euler)
-export DISPLAY=$(ip route list default | awk '{print $3}'):0
-export LIBGL_ALWAYS_INDIRECT=1
+# export DISPLAY=$(ip route list default | awk '{print $3}'):0
+# export LIBGL_ALWAYS_INDIRECT=1
+
+# For being able to view pdfs with zathura
+export DISPLAY=127.0.0.1:0.0

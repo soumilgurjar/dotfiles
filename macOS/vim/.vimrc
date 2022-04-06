@@ -16,11 +16,12 @@ Plug 'tpope/vim-surround'						"Allows surrounding words/selection with cs
 Plug 'tpope/vim-repeat'							"Allows repeating more previous commands with .
 Plug 'tommcdo/vim-exchange'						"Allows exchanging words/selection with cx/X
 Plug 'tpope/vim-endwise'						"Automatically ends functions like if etc.
+Plug 'tpope/vim-abolish'						"Better robust substition and easier case changing
 Plug 'Raimondi/delimitMate'						"Automatically creates bracket pairs
 Plug 'michaeljsmith/vim-indent-object'			"Autoindents lines
 Plug 'machakann/vim-highlightedyank'			"Highlights yanks for short period
-Plug 'SirVer/ultisnips'							" Track the snippet engine
-Plug 'honza/vim-snippets'						" Snippets are separated from the engine 
+Plug 'SirVer/ultisnips'							"Track the snippet engine
+Plug 'honza/vim-snippets'						"Snippets are separated from the engine 
 Plug 'ycm-core/YouCompleteMe'					"Autocompletion
 Plug 'ctrlpvim/ctrlp.vim'						"Fuzzy finding within vim with :Ctrlp
 Plug 'vim-scripts/YankRing.vim'					"Stores multiples yanks
@@ -30,6 +31,7 @@ Plug 'aymericbeaumet/vim-symlink'				"Follows symlink rather than editing the sy
 Plug 'moll/vim-bbye'							"Better buffer management with :Bdelete etc.
 Plug 'junegunn/goyo.vim'						"Distraction free vim
 Plug 'vimwiki/vimwiki'							"Easy note taking and diary maintaining
+Plug 'lervag/vimtex'							"Latex syntax plugin that provides viewing with zathura
 Plug 'vim-pandoc/vim-pandoc'					"Pandoc support from within vim
 Plug 'vim-pandoc/vim-pandoc-syntax'				"Pandoc syntax for relevant files
 Plug 'kbarrette/mediummode'						"Disable common vim navigation functions to help learn vim faster
@@ -51,8 +53,8 @@ Plug 'bling/vim-bufferline'
 """""""" ----------------- Plugin Settings ---------------
 """ YouCompleteMe
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
-set completeopt-=preview
-let g:ycm_show_diagnostics_ui = 0
+" set completeopt-=preview
+" let g:ycm_show_diagnostics_ui = 0
 let g:ycm_language_server =
   \ [{
   \   'name': 'ccls',
@@ -60,6 +62,15 @@ let g:ycm_language_server =
   \   'filetypes': [ 'c', 'cpp', 'cc', 'h', 'hpp', 'cuda' ],
   \   'project_root_files': [ '.ccls-root', 'compile_commands.json' ]
   \ }]
+let s:lsp_ft_maps = 'gdscript,go,python' "Change filetypes to show hover info with K or go to declaration with gd
+augroup ycm_settings | au!
+    exe printf('au FileType %s call Ycm_mappings()', s:lsp_ft_maps)
+augroup end
+func! Ycm_mappings() abort
+    nmap <silent><buffer> <F3> <plug>(YCMHover)
+    nnoremap <silent><buffer> <F4> :YcmCompleter GoTo<CR>
+endfunc
+
 """ Ctrl-P
 let g:ctrlp_user_command = ['.git/', 'git ls-files --cached --others  --exclude-standard %s']
 let g:ctrlp_working_path_mode = 'rw'
@@ -89,6 +100,13 @@ let g:vimwiki_list = [{'path': '/mnt/c/Users/soumi/Dropbox/Apps/vimwiki/',
                       \ 'syntax': 'markdown', 'ext': '.md'}]
 let g:vimwiki_listsyms = '✗○◐●✓'
 " autocmd FileType vimwiki setlocal shiftwidth=4 tabstop=4 noexpandtab
+
+""" Vimtex
+let g:vimtex_view_method = 'zathura'
+if !exists('g:ycm_semantic_triggers')
+	let g:ycm_semantic_triggers = {}
+endif
+au VimEnter * let g:ycm_semantic_triggers.tex=g:vimtex#re#youcompleteme
 
 """ Sneak
 let g:sneak#label = 1			"Show labels for easy motion
@@ -180,7 +198,7 @@ set showcmd                     " shows the current command
 set laststatus=2                " 2 - Always display the status bar.
 set termguicolors               " Set true color (use only when terminal supports true colors)
 set background=dark             " For colorscheme
-
+set shortmess=a					" Abbreviates file messages to prevent hit enter to continue message
 """"""""" ---------------  VIM Cursor --------------------
 " 1 or 0 -> blinking block
 " 2 solid block
@@ -267,6 +285,9 @@ set wildignore+=*.pdf,*.doc,*.xlsx,*.dmg,*.zip,*.app,*.mp4,*.mkv,*.ogg,*.mp3
 set wildignore+=.DS_Store,.git,.hg,.svn
 set wildignore+=*.swp,*.tmp.
 " - :b lets you autocomplete any open buffer
+
+"""""""" --------------- Python Highlighting------------------------
+autocmd BufRead,BufNewFile *.py let python_highlight_all=1
 
 """""""" --------------- leader Mappings ------------------------
 " leader is now set to Spacebar
