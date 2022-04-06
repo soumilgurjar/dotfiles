@@ -223,6 +223,7 @@ endif
 
 
 """"""""" ---------------  VIM Themes --------------------
+
 " ---- Solarized Dark True Color
 " autocmd vimenter * ++nested colorscheme solarized8_flat
 " let g:airline_theme= 'solarized'

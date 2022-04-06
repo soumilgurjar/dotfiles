@@ -46,6 +46,16 @@ alias cl="clear"
 alias tn="tmux new -As Local"
 alias tnn="tmux new -As Test"
 alias tds="tmux detach-client"
+alias tpi="~/.tmux/plugins/tpm/bin/install_plugins"
+alias tpu="~/.tmux/plugins/tpm/bin/update_plugins all"
+
+# Brew search and install commands
+alias bs="brew search"
+alias bi="brew install"
+alias bic="brew install --cask"
+alias bl="brew list"
+alias bu="brew upgrade && brew update"
+alias bun="brew uninstall"
 
 # Git related
 alias glog="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --branches"
@@ -54,6 +64,18 @@ alias gco="git checkout"
 alias gaa="git add ."
 alias ga="git add"
 alias gcm="git commit -m"
+
+# Adds commits and pushes files with the argument as the commit message
+function gcam() {
+  git add .
+  git commit -m "$1"
+}
+# Adds commits and pushes files with the argument as the commit message
+function gcap() {
+  git add .
+  git commit -m "$1"
+  git push
+}
 
 # Stow related
 function stow_adopt_test() {
@@ -83,27 +105,6 @@ alias win="cd /mnt/c/Users/soumi/"
 alias winget_all="winget list > ~/.dotfiles/windows/winget_apps_all.txt"
 alias winget_export="winget export -o ./winget_apps.json"               # Need to run this from a powershell window
 
-# Brew search and install commands
-alias bs="brew search"
-alias bi="brew install"
-alias bic="brew install --cask"
-alias bl="brew list"
-alias bu="brew upgrade && brew update"
-alias bun="brew uninstall"
 
-# TMUX plugin install and update
-alias tpi="~/.tmux/plugins/tpm/bin/install_plugins"
-alias tpu="~/.tmux/plugins/tpm/bin/update_plugins all"
-
-# Adds commits and pushes files with the argument as the commit message
-function gcam() {
-  git add .
-  git commit -m "$1"
-}
-# Adds commits and pushes files with the argument as the commit message
-function gcap() {
-  git add .
-  git commit -m "$1"
-  git push
-}
 function winget { (cd /mnt/c; cmd.exe /c "winget $@";) }
+

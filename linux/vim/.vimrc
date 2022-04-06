@@ -229,9 +229,6 @@ endif
 
 " ---- Solarized Dark True Color
 " autocmd vimenter * ++nested colorscheme solarized8_flat
-" let g:solarized_extra_hi_groups = 1
-" highlight! link SignColumn LineNr
-" autocmd ColorScheme * highlight! link SignColumn LineNr
 " let g:airline_theme= 'solarized'
 " let g:airline_solarized_bg='dark'
 " let g:lightline.colorscheme = 'solarized'
