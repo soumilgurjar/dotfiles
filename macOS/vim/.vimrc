@@ -22,7 +22,7 @@ Plug 'michaeljsmith/vim-indent-object'			"Autoindents lines
 Plug 'machakann/vim-highlightedyank'			"Highlights yanks for short period
 Plug 'SirVer/ultisnips'							"Track the snippet engine
 Plug 'honza/vim-snippets'						"Snippets are separated from the engine 
-Plug 'ycm-core/YouCompleteMe'					"Autocompletion
+" Plug 'ycm-core/YouCompleteMe'					"Autocompletion
 Plug 'ctrlpvim/ctrlp.vim'						"Fuzzy finding within vim with :Ctrlp
 Plug 'vim-scripts/YankRing.vim'					"Stores multiples yanks
 Plug 'simnalamburt/vim-mundo'					"Stores multiples undos
@@ -51,25 +51,25 @@ Plug 'bling/vim-bufferline'
 " Plug 'mengelbrecht/lightline-bufferline'
 
 """""""" ----------------- Plugin Settings ---------------
-""" YouCompleteMe
-let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
-" set completeopt-=preview
-" let g:ycm_show_diagnostics_ui = 0
-let g:ycm_language_server =
-  \ [{
-  \   'name': 'ccls',
-  \   'cmdline': [ 'ccls' ],
-  \   'filetypes': [ 'c', 'cpp', 'cc', 'h', 'hpp', 'cuda' ],
-  \   'project_root_files': [ '.ccls-root', 'compile_commands.json' ]
-  \ }]
-let s:lsp_ft_maps = 'gdscript,go,python' "Change filetypes to show hover info with K or go to declaration with gd
-augroup ycm_settings | au!
-    exe printf('au FileType %s call Ycm_mappings()', s:lsp_ft_maps)
-augroup end
-func! Ycm_mappings() abort
-    nmap <silent><buffer> <F3> <plug>(YCMHover)
-    nnoremap <silent><buffer> <F4> :YcmCompleter GoTo<CR>
-endfunc
+" """ YouCompleteMe
+" let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+" " set completeopt-=preview
+" " let g:ycm_show_diagnostics_ui = 0
+" let g:ycm_language_server =
+"   \ [{
+"   \   'name': 'ccls',
+"   \   'cmdline': [ 'ccls' ],
+"   \   'filetypes': [ 'c', 'cpp', 'cc', 'h', 'hpp', 'cuda' ],
+"   \   'project_root_files': [ '.ccls-root', 'compile_commands.json' ]
+"   \ }]
+" let s:lsp_ft_maps = 'gdscript,go,python' "Change filetypes to show hover info with K or go to declaration with gd
+" augroup ycm_settings | au!
+"     exe printf('au FileType %s call Ycm_mappings()', s:lsp_ft_maps)
+" augroup end
+" func! Ycm_mappings() abort
+"     nmap <silent><buffer> <F3> <plug>(YCMHover)
+"     nnoremap <silent><buffer> <F4> :YcmCompleter GoTo<CR>
+" endfunc
 
 """ Ctrl-P
 let g:ctrlp_user_command = ['.git/', 'git ls-files --cached --others  --exclude-standard %s']
@@ -92,7 +92,7 @@ let g:yankring_history_file = '.yankring_history'
 let g:AutoPairsShortcutToggle = '<leader>ap'
 
 """ Mediummode
-let g:mediummode_enabled = 1
+let g:mediummode_enabled = 0
 let g:mediummode_allowed_motions = 4
 
 """ VimWiki
@@ -106,7 +106,7 @@ let g:vimtex_view_method = 'zathura'
 if !exists('g:ycm_semantic_triggers')
 	let g:ycm_semantic_triggers = {}
 endif
-au VimEnter * let g:ycm_semantic_triggers.tex=g:vimtex#re#youcompleteme
+" au VimEnter * let g:ycm_semantic_triggers.tex=g:vimtex#re#youcompleteme
 
 """ Sneak
 let g:sneak#label = 1			"Show labels for easy motion
@@ -196,9 +196,14 @@ set backspace=indent,eol,start  " Vim 8.2 update had changed default backspace b
 set noro                        " Set no read only mode. Useful when using git difftool.
 set showcmd                     " shows the current command
 set laststatus=2                " 2 - Always display the status bar.
-set termguicolors               " Set true color (use only when terminal supports true colors)
 set background=dark             " For colorscheme
 set shortmess=a					" Abbreviates file messages to prevent hit enter to continue message
+" if !$TERM_PROGRAM =~ "Apple_Terminal"
+" if $TERM_PROGRAM == "iTerm.app"
+  let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors				" Set true color (use only when terminal supports true colors)
+" endif
 """"""""" ---------------  VIM Cursor --------------------
 " 1 or 0 -> blinking block
 " 2 solid block
@@ -218,19 +223,15 @@ endif
 
 
 """"""""" ---------------  VIM Themes --------------------
-" ---- Solarized Dark
-colorscheme solarized
-let g:lightline = { 'colorscheme': 'solarized' }
-highlight! link SignColumn LineNr
-autocmd ColorScheme * highlight! link SignColumn LineNr
-
 " ---- Solarized Dark True Color
 " autocmd vimenter * ++nested colorscheme solarized8_flat
-" let g:solarized_extra_hi_groups = 1
-" highlight! link SignColumn LineNr
-" autocmd ColorScheme * highlight! link SignColumn LineNr
 " let g:airline_theme= 'solarized'
-" let g:airline_solarized_bg='dark'
+" let g:lightline.colorscheme = 'solarized'
+
+" ---- Solarized Dark
+" set t_Co=256
+" colorscheme solarized
+" let g:airline_theme= 'solarized'
 " let g:lightline.colorscheme = 'solarized'
 
 " ---- Palenight

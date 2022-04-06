@@ -7,6 +7,7 @@ export PATH="$PYENV_ROOT/shims:$PATH"
 
 # Set colors for 'ls' command
 export CLICOLOR=1
+[[ -n $TMUX ]] && export TERM="xterm-256color"
 
 # Set editor to vim
 export EDITOR=vim

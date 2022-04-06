@@ -15,9 +15,10 @@ alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
 # alias python=/usr/local/bin/python3
 
 #Euler login with SSH
-alias eu='ssh sgurjar@euler.ethz.ch'
-alias euy='ssh -Y sgurjar@euler.ethz.ch'
-alias eux='ssh -X sgurjar@euler.ethz.ch'
+alias ssht="TERM=xterm-256color ssh"
+alias eu='ssht sgurjar@euler.ethz.ch'
+alias euy='ssht -Y sgurjar@euler.ethz.ch'
+alias eux='ssht -X sgurjar@euler.ethz.ch'
 
 #Terminal navigation
 alias vi=vim
@@ -91,7 +92,7 @@ alias bs="brew search"
 alias bi="brew install"
 alias bic="brew install --cask"
 alias bl="brew list"
-alias bu="brew upgrade && brew update"
+alias bu="brew update && brew upgrade"
 alias bun="brew uninstall"
 
 # TMUX plugin install and update
