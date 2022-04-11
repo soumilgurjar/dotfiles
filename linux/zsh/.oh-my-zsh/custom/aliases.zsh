@@ -54,15 +54,17 @@ alias bs="brew search"
 alias bi="brew install"
 alias bic="brew install --cask"
 alias bl="brew list"
-alias bu="brew upgrade && brew update"
+alias buu="brew upgrade && brew update"
 alias bun="brew uninstall"
 
 # Git related
 alias glog="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --branches"
 alias gs="git status"
+alias gst="git stash save "
 alias gco="git checkout"
 alias gaa="git add ."
 alias ga="git add"
+alias gap="git add -p"
 alias gcm="git commit -m"
 
 # Adds commits and pushes files with the argument as the commit message
@@ -78,24 +80,12 @@ function gcap() {
 }
 
 # Stow related
-function stow_adopt_test() {
-    stow --adopt -nvSt ~ $1
-}
-function stow_adopt() {
-    stow --adopt -vSt ~ $1
-}
-function stowth_test() {
-    stow -nvSt ~ $1
-}
-function stowth() {
-    stow -vSt ~ $1
-}
-function unstow_test() {
-    stow -nvDt ~ $1
-}
-function unstow() {
-    stow -vDt ~ $1
-}
+function stow_adopt_test() { stow --adopt -nvSt ~ $1 }
+function stow_adopt() { stow --adopt -vSt ~ $1 }
+function stowth_test() { stow -nvSt ~ $1 }
+function stowth() { stow -vSt ~ $1 }
+function unstow_test() { stow -nvDt ~ $1 }
+function unstow() { stow -vDt ~ $1 }
 
 
 #Commonly accessed directories

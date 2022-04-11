@@ -33,7 +33,7 @@ alias vi="vim"
 alias fs="du -sh"
 alias ls="clear; ls"
 alias la="ls -a"
-alias cpwd="pwd | clip.exe"
+alias cpwd="pwd | pbcopy"
 alias rm="rm -ir"
 alias rmf="rm -irf"
 alias gr="grep -r -n"
@@ -51,15 +51,17 @@ alias bs="brew search"
 alias bi="brew install"
 alias bic="brew install --cask"
 alias bl="brew list"
-alias bu="brew upgrade && brew update"
+alias buu="brew upgrade && brew update"
 alias bun="brew uninstall"
 
 # Git related
 alias glog="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --branches"
 alias gs="git status"
+alias gst="git stash save "
 alias gco="git checkout"
 alias gaa="git add ."
 alias ga="git add"
+alias gap="git add -p"
 alias gcm="git commit -m"
 
 # Adds commits and pushes files with the argument as the commit message
@@ -75,24 +77,12 @@ function gcap() {
 }
 
 # Stow related
-function stow_adopt_test() {
-    stow --adopt -nvSt ~ $1
-}
-function stow_adopt() {
-    stow --adopt -vSt ~ $1
-}
-function stowth_test() {
-    stow -nvSt ~ $1
-}
-function stowth() {
-    stow -vSt ~ $1
-}
-function unstow_test() {
-    stow -nvDt ~ $1
-}
-function unstow() {
-    stow -vDt ~ $1
-}
+function stow_adopt_test() { stow --adopt -nvSt ~ $1 }
+function stow_adopt() { stow --adopt -vSt ~ $1 }
+function stowth_test() { stow -nvSt ~ $1 }
+function stowth() { stow -vSt ~ $1 }
+function unstow_test() { stow -nvDt ~ $1 }
+function unstow() { stow -vDt ~ $1 }
 
 # Change terminal profile and looks
 alias man_page="osascript ~/.dotfiles/macOS/terminal_profile_scripts/terminal_profile_man_page.scpt"
@@ -108,6 +98,7 @@ alias dlsc='cd ~/polybox/ETHZ_Material/Fall_2021/DeepLearningInScientificComputi
 alias scr='cd /Users/sgurjar/Scratch_Bryant/'
 alias of='cd /Users/sgurjar/Scratch_Bryant/OpenFOAM_Cases/'
 alias matlab="/Applications/MATLAB_R2021a.app/bin/matlab -nojvm -nodesktop -nodisplay -nosplash"
+alias thesis="/Users/sgurjar/Dropbox/Apps/Overleaf/Doctoral Thesis - Soumil"
 alias sem="cd /Users/sgurjar/polybox/ETHZ_Material/Spring_2022"
 alias gmsh="/Applications/Gmsh.app/Contents/MacOS/gmsh"
 alias mmgs="/Applications/mmgs_debug"
