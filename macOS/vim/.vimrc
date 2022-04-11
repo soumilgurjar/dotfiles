@@ -9,6 +9,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'sheerun/vim-polyglot'						"Provides syntax for multiple filetypes
 Plug 'airblade/vim-gitgutter'					"Show changes in file from previous commit
 Plug 'tpope/vim-fugitive'						"Git integration plugin
+Plug 'tpope/vim-rhubarb'						"Git browse command to go to webpage directly
 Plug 'justinmk/vim-sneak'						"Better search with 2,3 starting letters with s/S, operators with z/Z
 Plug 'easymotion/vim-easymotion'				"New way of moving within vim
 Plug 'tpope/vim-commentary'						"Allows commenting lines/selection with gc
@@ -163,7 +164,7 @@ set autoindent
 set autoread
 set autowrite                   " allows changing buffer with save
 set hidden
-set clipboard=unnamedplus       " yank and paste with the system clipboard
+set clipboard=unnamed			" yank and paste with the system clipboard
 set encoding=utf-8
 set noexpandtab                 " tabs are spaces
 set shiftround                  " When shifting lines, round the indentation to the nearest multiple of “shiftwidth.”
@@ -180,7 +181,7 @@ set noerrorbells
 set number                      " show absolute line numbers
 set relativenumber              " show relative line numbers (except current)
 set ruler                       " show column in console
-" set list                        " show trailing whitespace
+set list                        " show trailing whitespace
 set listchars=tab:▸\ ,trail:▫   " list of characters to show
 set wrap                        " do not automatically wrap on load
 set breakindent                 " enable indentation on linebreak

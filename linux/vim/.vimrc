@@ -9,6 +9,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'sheerun/vim-polyglot'						"Provides syntax for multiple filetypes
 Plug 'airblade/vim-gitgutter'					"Show changes in file from previous commit
 Plug 'tpope/vim-fugitive'						"Git integration plugin
+Plug 'tpope/vim-rhubarb'						"Git browse command to go to webpage directly
 Plug 'justinmk/vim-sneak'						"Better search with 2,3 starting letters with s/S, operators with z/Z
 Plug 'easymotion/vim-easymotion'				"New way of moving within vim
 Plug 'tpope/vim-commentary'						"Allows commenting lines/selection with gc
@@ -92,7 +93,7 @@ let g:yankring_history_file = '.yankring_history'
 let g:AutoPairsShortcutToggle = '<leader>ap'
 
 """ Mediummode
-let g:mediummode_enabled = 1
+let g:mediummode_enabled = 0
 let g:mediummode_allowed_motions = 4
 
 """ VimWiki
