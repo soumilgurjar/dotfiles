@@ -42,7 +42,6 @@ VIM_MODE_VICMD_KEY='jj'                 # This allows escape from insert to norm
 
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     colored-man-pages
@@ -80,3 +79,36 @@ fi
 # Needed for zathura and vimtex usage
 export DBUS_SESSION_BUS_ADDRESS='unix:path='$DBUS_LAUNCHD_SESSION_BUS_SOCKET
 
+# FZF configuration
+# One needs to run the '/usr/local/opt/fzf/install' script after brew install for shortcuts and ** to start working
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_COMPLETION_TRIGGER="'"
+export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --smart-case'
+export FZF_CTRL_T_COMMAND='rg --files --hidden --follow --smart-case'
+export FZF_ALT_C_COMMAND="fd --type directory --hidden --follow --ignore --color=never . $HOME"
+export FZF_DEFAULT_OPTS="-m --height 50% --layout=reverse --border --inline-info
+  --preview-window=:hidden
+  --preview '([[ -f {} ]] && (bat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'
+  --bind '?:toggle-preview'"
+_fzf_compgen_path() {
+  fd --hidden --follow --exclude ".git" . "$1"
+}
+_fzf_compgen_dir() {
+  fd --type d --hidden --follow --exclude ".git" . "$1"
+}
+
+# fz / Alt-C - cd to selected directory
+bindkey "ç" fzf-cd-widget                           # Allows use of Alt-C for directory search with fzf
+fz() {
+  local dir
+  dir=$(find ${1:-.} -path '*/\.*' -prune \
+                  -o -type d -print 2> /dev/null | fzf +m) &&
+  cd "$dir"
+}
+# fh - search in your command history and execute selected command
+fh() {
+  eval $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
+}
+
+# ripgrep configuration
+export RIPGREP_CONFIG_PATH="$HOME/.ripgrep"

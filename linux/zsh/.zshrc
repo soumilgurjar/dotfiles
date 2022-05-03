@@ -1,6 +1,8 @@
 # Set colors for 'ls' command
 eval `dircolors ~/Git_Repositories/dircolors-solarized/dircolors.256dark`
 export TERM=xterm-256color        # for common 256 color terminals (e.g. gnome-terminal)
+# Set editor to vim
+export EDITOR=vim
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/soumilgurjar/.oh-my-zsh"
@@ -47,9 +49,9 @@ plugins=(
 
 # Plugin preferences
 # bindkey '^ ' autosuggest-accept # This sets the Ctrl+Space as the hotkey for acception the suggestions
-MODE_CURSOR_VICMD="#ffff00 steady underline"
 MODE_CURSOR_VIINS="#ffff00 steady bar"
 MODE_CURSOR_REPLACE="#ff0000 blinking block"
+MODE_CURSOR_VICMD="#ffffff steady block"
 MODE_CURSOR_SEARCH="#ff00ff steady underline"
 MODE_CURSOR_VISUAL="#ffff00 steady block"
 MODE_CURSOR_VLINE="#00ffff steady block"
@@ -67,14 +69,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# Automatically start tmux session on opening terminal tab
-# if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-#     tmux attach -t Local || tmux new -s Local
-# fi
-
-# Enable Public Access on X11 server under Windows (for Paraview on Euler)
-# export DISPLAY=$(ip route list default | awk '{print $3}'):0
-# export LIBGL_ALWAYS_INDIRECT=1
-
 # For being able to view pdfs with zathura
 export DISPLAY=127.0.0.1:0.0
+
+# FZF configuration
+
+# ripgrep configuration

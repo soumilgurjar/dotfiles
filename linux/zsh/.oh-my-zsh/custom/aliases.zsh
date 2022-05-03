@@ -26,6 +26,7 @@ alias vib="vim ~/.bashrc"
 alias vibp="vim ~/.bash_profile"
 alias viv="vim ~/.vimrc"
 alias vit="vim ~/.tmux.conf"
+alias viw="vim ~/Dropbox/Apps/vimwiki/index.md"
 alias soz="source ~/.zshrc"
 alias sob="source ~/.bashrc"
 alias sobp="source ~/.bash_profile"
@@ -40,7 +41,8 @@ alias cpwd="pwd | clip.exe"
 alias rm="rm -ir"
 alias rmf="rm -irf"
 alias gr="grep -r -n"
-alias cl="clear"
+alias rgf="rg --files-with-matches"             #Return files which have query in them
+alias cat='bat'
 
 # Tmux related
 alias tn="tmux new -As Local"
@@ -54,11 +56,11 @@ alias bs="brew search"
 alias bi="brew install"
 alias bic="brew install --cask"
 alias bl="brew list"
-alias buu="brew upgrade && brew update"
+alias buu="brew upgrade && brew update "
 alias bun="brew uninstall"
 
 # Git related
-alias glog="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --branches"
+alias glog="git log --color --graph --pretty=format:'%C(yellow)%h%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --branches"
 alias gs="git status"
 alias gst="git stash save "
 alias gco="git checkout"
@@ -87,6 +89,8 @@ function stowth() { stow -vSt ~ $1 }
 function unstow_test() { stow -nvDt ~ $1 }
 function unstow() { stow -vDt ~ $1 }
 
+# Taskwarrior related
+alias tt="taskwarrior-tui"
 
 #Commonly accessed directories
 alias win="cd /mnt/c/Users/soumi/"
