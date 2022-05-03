@@ -1,42 +1,8 @@
-[user]
-    name = Soumil Gurjar
-	email = soumil.gurjar@sam.math.ethz.ch
-[core]
-	editor = vim
-	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
-    excludesfile = ~/.gitignore
-	autocrlf = input
-[web]
-	browser = google-chrome
-[color]
-	ui = auto
-[color "branch"]
-	current = yellow bold
-	local = green bold
-	remote = cyan bold
-[color "diff"]
-	meta = yellow bold
-	frag = magenta bold
-	old = red bold
-	new = green bold
-	whitespace = red reverse
-[color "status"]
-	added = green bold
-	changed = yellow bold
-	untracked = red bold
-[alias]
-    lg = log --graph --pretty=format:'%C(yellow)%h%C(auto)%d%Creset %s %C(white)- %an, %ar%Creset'
-[http]
-	sslVerify = true
-	sslCAInfo = /usr/local/etc/openssl/cert.pem
-[init]
-    defaultBranch = master
-[credential]
-	helper = store
-[diff]
-	tool = vimdiff
-[difftool]
-	prompt = false
-[merge]
-	tool = vimdiff
-	conflictstyle = diff3
+[includeIf "gitdir:~/Github_Repositories/"] # include for all .git projects under Github_Repositories/
+path = ~/.gitconfig-github
+
+[includeIf "gitdir:~/.dotfiles/"] # include for all .git projects under ~/.dotfiles/
+path = ~/.gitconfig-github
+
+[includeIf "gitdir:~/Gitlab_Repositories/"] # include for all .git projects under Gitlab_Repositories/
+path = ~/.gitconfig-gitlab
