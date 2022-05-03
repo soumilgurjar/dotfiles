@@ -84,3 +84,4 @@ g11(){
 g14(){ 
     g++ -std=gnu++14 -I/usr/local/include/eigen3/ $1 -o $2
 }
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
