@@ -28,7 +28,15 @@
     untracked = red bold
 [alias]
     lg = log --graph --pretty=format:'%C(yellow)%h%C(auto)%d%Creset %s %C(white)- %an, %ar%Creset'
+    d = difftool
     ; lg = log --graph --pretty=format:'%C(yellow)%h%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --branches
+    l = log --pretty=format:'%<|(16)%C(yellow)%h %Cblue%ad %Creset%s%Cgreen [%cn] %Cred%d' --decorate --date=short --graph
+    amend = commit --amend --reuse-message=HEAD
+    d = "!f() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; f"
+    fixup = "!f() { git rebase -i HEAD~$1; }; f"
+    unstage = reset HEAD
+    unmerge = reset --hard HEAD
+    here = !git init && git add . && git commit -m \"Init repo\"
 [http]
     sslVerify = true
     sslCAInfo = /usr/local/etc/openssl/cert.pem
