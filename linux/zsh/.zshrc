@@ -7,17 +7,8 @@ export EDITOR=vim
 # Path to your oh-my-zsh installation.
 export ZSH="/home/soumilgurjar/.oh-my-zsh"
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+# Set name of the theme to load
 ZSH_THEME="robbyrussell"
-
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment one of the following lines to change the auto-update behavior
 # zstyle ':omz:update' mode disabled  # disable automatic updates
@@ -43,7 +34,6 @@ plugins=(
     zsh-history-substring-search
     zsh-syntax-highlighting
     zsh-vim-mode                        # This vi-mode plugin keeps the push-line ^q functionality
-    zsh-viexchange
     z
 )
 
@@ -75,3 +65,8 @@ export DISPLAY=127.0.0.1:0.0
 # FZF configuration
 
 # ripgrep configuration
+export RIPGREP_CONFIG_PATH="$HOME/.ripgrep"
+
+# Switch to vim for editing current command
+bindkey '^x^x' edit-command-line
+

@@ -15,8 +15,8 @@ alias eux="ssh -X sgurjar@euler.ethz.ch"
 
 # Add Euler Keychain
 function eus() {
-	/usr/bin/keychain $HOME/.ssh/id_ed25519_euler
-	source $HOME/.keychain/Dell-G5-sh
+    /usr/bin/keychain $HOME/.ssh/id_ed25519_euler
+    source $HOME/.keychain/Dell-G5-sh
 }
 
 # Open and Source Config files
@@ -27,6 +27,10 @@ alias vibp="vim ~/.bash_profile"
 alias viv="vim ~/.vimrc"
 alias vit="vim ~/.tmux.conf"
 alias viw="vim ~/Dropbox/Apps/vimwiki/index.md"
+alias vsc="vim -S ~/.vim/sessions/configurations-session.vim"
+alias vsn="vim -S ~/.vim/sessions/neomutt-session.vim"
+alias vsnp="vim -S ~/.vim/sessions/neomutt-powerline-session.vim"
+alias vsw="vim -S ~/.vim/sessions/vimwiki-session.vim"
 alias soz="source ~/.zshrc"
 alias sob="source ~/.bashrc"
 alias sobp="source ~/.bash_profile"
@@ -36,7 +40,7 @@ alias sot="tmux source-file ~/.tmux.conf"
 alias vi="vim"
 alias fs="du -sh"
 alias ls="clear; ls --color"
-alias la="ls -a"
+alias la="ls -la"
 alias cpwd="pwd | clip.exe"
 alias rm="rm -ir"
 alias rmf="rm -irf"

@@ -24,6 +24,10 @@ alias vibp="vim ~/.bash_profile"
 alias viv="vim ~/.vimrc"
 alias vit="vim ~/.tmux.conf"
 alias viw="vim ~/Dropbox/Apps/vimwiki/index.md"
+alias vsc="vim -S ~/.vim/sessions/configurations-session.vim"
+alias vsn="vim -S ~/.vim/sessions/neomutt-session.vim"
+alias vsnp="vim -S ~/.vim/sessions/neomutt-powerline-session.vim"
+alias vsw="vim -S ~/.vim/sessions/vimwiki-session.vim"
 alias soz="source ~/.zshrc"
 alias sob="source ~/.bashrc"
 alias sobp="source ~/.bash_profile"
@@ -32,8 +36,7 @@ alias sot="tmux source-file ~/.tmux.conf"
 #Terminal navigation
 alias vi="vim"
 alias fs="du -sh"
-alias ls="clear; ls"
-alias la="ls -a"
+alias la="ls -la"
 alias cpwd="pwd | pbcopy"
 alias rm="rm -ir"
 alias rmf="rm -irf"
@@ -88,6 +91,9 @@ function unstow() { stow -vDt ~ $1 }
 
 # Taskwarrior related
 alias tt="taskwarrior-tui"
+
+# Termpdf for viewing pdfs in kitty
+alias termpdf="~/Github_Repositories/termpdf.py/termpdf.py $1"
 
 #Commonly accessed directories
 alias dlsc='cd ~/polybox/ETHZ_Material/Fall_2021/DeepLearningInScientificComputing/'

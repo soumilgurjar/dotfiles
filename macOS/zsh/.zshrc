@@ -5,8 +5,6 @@ export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 export PATH="$PYENV_ROOT/shims:$PATH"
 
-# Set colors for 'ls' command
-export CLICOLOR=1
 [[ -n $TMUX ]] && export TERM="xterm-256color"
 
 # Set editor to vim
@@ -15,17 +13,8 @@ export EDITOR=vim
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/sgurjar/.oh-my-zsh"
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+# Set name of the theme to load
 ZSH_THEME="robbyrussell"
-
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment one of the following lines to change the auto-update behavior
 # zstyle ':omz:update' mode disabled  # disable automatic updates
@@ -51,7 +40,6 @@ plugins=(
     zsh-history-substring-search
     zsh-syntax-highlighting
     zsh-vim-mode                        # This vi-mode plugin keeps the push-line ^q functionality
-    zsh-viexchange
     z
 )
 
@@ -65,6 +53,10 @@ MODE_CURSOR_VISUAL="#ffff00 steady block"
 MODE_CURSOR_VLINE="#00ffff steady block"
 
 source $ZSH/oh-my-zsh.sh
+
+# Set colors for 'ls' command (Needs to be after theme is sourced)
+export CLICOLOR=1
+export LSCOLORS=gxfxcxdxbxegedabagacad
 
 # Play nice with pyenv
 if command -v pyenv 1>/dev/null 2>&1; then
@@ -86,10 +78,10 @@ export FZF_COMPLETION_TRIGGER="'"
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --smart-case'
 export FZF_CTRL_T_COMMAND='rg --files --hidden --follow --smart-case'
 export FZF_ALT_C_COMMAND="fd --type directory --hidden --follow --ignore --color=never . $HOME"
-export FZF_DEFAULT_OPTS="-m --height 50% --layout=reverse --border --inline-info
+export FZF_DEFAULT_OPTS="-m --height 90% --layout=reverse --border --inline-info
   --preview-window=:hidden
   --preview '([[ -f {} ]] && (bat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'
-  --bind '?:toggle-preview'"
+  --bind 'ctrl-j:preview-page-down' --bind 'ctrl-k:preview-page-up' --bind '?:toggle-preview'"
 _fzf_compgen_path() {
   fd --hidden --follow --exclude ".git" . "$1"
 }
@@ -112,3 +104,14 @@ fh() {
 
 # ripgrep configuration
 export RIPGREP_CONFIG_PATH="$HOME/.ripgrep"
+
+# Unable to use C-o in neomutt without this
+stty discard undef
+
+# Automatically source shell integration tools such as imgcat
+export ITERM_ENABLE_SHELL_INTEGRATION_WITH_TMUX=YES
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# Switch to vim for editing current command
+bindkey '^x^x' edit-command-line
+
