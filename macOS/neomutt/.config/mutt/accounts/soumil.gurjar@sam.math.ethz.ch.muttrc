@@ -1,0 +1,64 @@
+# vim: filetype=neomuttrc
+# muttrc file for account soumil.gurjar@sam.math.ethz.ch
+# User settings
+source /usr/local/share/mutt-wizard/switch.muttrc
+set from="Soumil Gurjar <soumil.gurjar@sam.math.ethz.ch>"
+set realname="Soumil Gurjar"
+set imap_user="sgurjar"
+set my_password = "`pass eth_mail_id/sgurjar@mail.ethz.ch`"
+set smtp_url="smtp://sgurjar@mail.ethz.ch:587"
+set smtp_pass=$my_password
+set hostname="math.ethz.ch"
+#set signature="~/.signature"
+set header_cache = "~/.cache/mutt-wizard/mail.ethz.ch/headers"
+set message_cachedir = "~/.cache/mutt-wizard/mail.ethz.ch/bodies"
+# set sendmail = "msmtp -a soumil.gurjar@sam.math.ethz.ch"
+
+# Mail server
+set folder="/Users/sgurjar/.local/share/mail/mail.ethz.ch"
+set spoolfile="+INBOX"
+set record="+Sent Items"
+set postponed="+Drafts"
+set smtp_authenticators="login:gssapi:digest-md5:cram-md5"
+set imap_idle="yes"
+set imap_pipeline_depth="0"
+set send_charset="us-ascii:iso-8859-15:utf-8:iso-8859-1"
+set certificate_file=~/.mutt_certs
+
+set pgp_default_key="A93DA447E00F262D954E28CA951B9AD3AE3D335C"
+
+# Mutt settings
+set timeout=30 # 30 seconds inactivity before checking mail
+set print_command="a2ps" # print command
+set print_decode="no" # prints "umlaut"
+set hidden_host
+set confirm_append="no"
+# set edit_headers
+
+macro index \cx ":set autoedit=no fast_reply=yes editor=true<enter>fsgurjar+spam@math.ethz.ch<enter>f^u<enter>ys=spam<enter>:set autoedit=yes fast_reply=no editor=vim<enter>"
+
+mailboxes "=ASVZ" "=AVETH" "=Calendar" "=Contacts" "=Correspondence with Perry" "=Correspondence with Sid" "=Deleted Items" "=Drafts" "=Euler Cases" "=INBOX" "=Journal" "=Junk Email" "=Miscellaneous" "=Notes" "=Outbox" "=Payslip" "=Private do not archive" "=Sent Items" "=Tasks" "=Trash"
+# mailboxes "=Correspondence with Perry" "=Correspondence with Sid" "=Euler Cases" "=INBOX" "=Miscellaneous" "=Payslip"
+
+set sidebar_new_mail_only               # Only mailboxes with new/flagged email
+sidebar_whitelist "=INBOX" "=Drafts" "=Sent Items" # Always display these mailboxes
+
+macro index,pager gd "<change-folder>=Drafts<enter>" "go to drafts"
+macro index,pager Md ";<save-message>=Drafts<enter>" "move mail to drafts"
+macro index,pager Cd ";<copy-message>=Drafts<enter>" "copy mail to drafts"
+macro index,pager gj "<change-folder>=Junk\ Email<enter>" "go to spam"
+macro index,pager Mj ";<save-message>=Junk\ Email<enter>" "move mail to spam"
+macro index,pager Cj ";<copy-message>=Junk\ Email<enter>" "copy mail to spam"
+macro index,pager gt "<change-folder>=Trash<enter>" "go to trash"
+macro index,pager Mt ";<save-message>=Trash<enter>" "move mail to trash"
+macro index,pager Ct ";<copy-message>=Trash<enter>" "copy mail to trash"
+macro index,pager gs "<change-folder>=Sent\ Items<enter>" "go to sent"
+macro index,pager Ms ";<save-message>=Sent\ Items<enter>" "move mail to sent"
+macro index,pager Cs ";<copy-message>=Sent\ Items<enter>" "copy mail to sent"
+# macro index,pager ga "<change-folder>=Starred<enter>" "go to starred"
+# macro index,pager Ma ";<save-message>=Starred<enter>" "move mail to starred"
+# macro index,pager Ca ";<copy-message>=Starred<enter>" "copy mail to starred"
+
+macro index O "<shell-escape>/Users/sgurjar/.config/mutt/syncmail.sh soumil.gurjar@sam.math.ethz.ch<enter>" "run mbsync to sync soumil.gurjar@sam.math.ethz.ch"
+# macro index O "<shell-escape>mw -y soumil.gurjar@sam.math.ethz.ch<enter>" "run mbsync to sync soumil.gurjar@sam.math.ethz.ch"
+

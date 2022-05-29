@@ -1,0 +1,16 @@
+text/plain; $EDITOR %s ;
+text/html; /usr/local/lib/mutt-wizard/openfile %s ; nametemplate=%s.html
+text/html; lynx -assume_charset=%{charset} -display_charset=utf-8 -dump -width=1024 %s; nametemplate=%s.html; copiousoutput;
+# image/*; (clear && /Users/sgurjar/.iterm2/imgcat %s && read -N 1); needsterminal
+image/*; kitty +kitten icat --silent --hold %s; copiousoutput
+# image/*; /usr/local/lib/mutt-wizard/openfile %s ;
+video/*; setsid mpv --quiet %s &; copiousoutput
+audio/*; mpv %s ;
+# application/pdf; /usr/local/lib/mutt-wizard/openfile %s ;
+# application/pdf; pdftotext -layout %s -; copiousoutput;
+application/pdf; ~/Github_Repositories/termpdf.py/termpdf.py %s ;
+application/vnd.openxmlformats-officedocument.wordprocessingml.document; pandoc --from docx --to markdown %s; copiousoutput
+application/vnd.oasis.opendocument.text; pandoc --from odt --to markdown %s; copiousoutput
+application/pgp-encrypted; gpg -d '%s'; copiousoutput;
+application/pgp-keys; gpg --import '%s'; copiousoutput;
+application/pkcs7-signature; openssl pkcs7 -in %s -inform der -noout -print_certs -text | less; needsterminal
