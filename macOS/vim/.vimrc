@@ -20,6 +20,8 @@ Plug 'tpope/vim-repeat'                         "Allows repeating more previous 
 Plug 'tommcdo/vim-exchange'                     "Allows exchanging words/selection with cx/X
 Plug 'tpope/vim-endwise'                        "Automatically ends functions like if etc.
 Plug 'tpope/vim-abolish'                        "Better robust substition and easier case changing
+Plug 'tpope/vim-unimpaired'                     "Complementary pair of mappings for quickfix, line addition, toggle settings etc.
+Plug 'tpope/vim-obsession'                      "Allows easier management of vim sessions
 Plug 'Raimondi/delimitMate'                     "Automatically creates bracket pairs
 Plug 'michaeljsmith/vim-indent-object'          "Autoindents lines
 Plug 'machakann/vim-highlightedyank'            "Highlights yanks for short period
@@ -30,15 +32,17 @@ Plug 'ycm-core/YouCompleteMe'                   "Autocompletion
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'                         "Fuzzy finding within vim with :Files
 Plug 'pbogut/fzf-mru.vim'                       "Bring Most Recently Used Functionality to FZF
+Plug 'airblade/vim-rooter'                      "Autochanges current directory to project root when found; Helpful for fzf
 Plug 'vim-scripts/YankRing.vim'                 "Stores multiples yanks
 Plug 'simnalamburt/vim-mundo'                   "Stores multiples undos
 Plug 'scrooloose/nerdtree'                      "Allows navigation of file tree
 Plug 'aymericbeaumet/vim-symlink'               "Follows symlink rather than editing the symlink
-Plug 'moll/vim-bbye'                            "Better buffer management with :Bdelete etc.
+Plug 'moll/vim-bbye'                            "Better buffer management with :Bdelete, :Bwipeout etc.
 Plug 'junegunn/goyo.vim'                        "Distraction free vim
 Plug 'vimwiki/vimwiki', { 'branch': 'dev' }     "Easy note taking and diary maintaining
 Plug 'tbabej/taskwiki'                          "Integration of taskwarrior with vimwiki
 Plug 'lervag/vimtex'                            "Latex syntax plugin that provides viewing with zathura
+Plug 'rhysd/vim-grammarous'
 Plug 'vim-pandoc/vim-pandoc'                    "Pandoc support from within vim
 Plug 'vim-pandoc/vim-pandoc-syntax'             "Pandoc syntax for relevant files
 Plug 'kbarrette/mediummode'                     "Disable common vim navigation functions to help learn vim faster
@@ -77,9 +81,15 @@ let g:ycm_key_list_select_completion = ['<Down>']                   "Default is 
 let g:ycm_key_list_previous_completion = ['<S-TAB>', '<Up>']
 
 """ fzf
-let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.7} }
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9} }
 " This command changes the default :Rg command to work with hidden files
 command! -bang -nargs=* Rg call fzf#vim#grep("rg --hidden --follow --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
+
+""" vim-rooter
+let g:rooter_patterns = ['.vimroot', '.git/', '.python-version', 'Makefile', '*.sln']
+let g:rooter_change_directory_for_non_project_files = 'current'
+let g:rooter_resolve_links = 1
+" let g:rooter_silent_chdir = 1
 
 " Ultisnips (if using tab as expand trigger, change corresponding usage in YCM)
 " let g:UltiSnipsExpandTrigger = "<tab>"
@@ -159,7 +169,6 @@ let g:airline_left_sep=''
 let g:airline_right_sep=''
 let g:airline_detect_modified=1
 let g:airline_detect_paste=1
-let g:airline_theme='dark'
 let g:airline_stl_path_style = 'short'
 let g:airline_powerline_fonts = 1
 if !exists('g:airline_symbols')
@@ -173,6 +182,10 @@ let g:airline_symbols.maxlinenr= ''
 let g:airline#extensions#bufferline#enabled = 1
 let g:airline#extensions#fzf#enabled = 1
 let g:airline#extensions#gutentags#enabled = 1
+let g:airline#extensions#obsession#enabled = 1
+let g:airline#extensions#obsession#indicator_text = '$'
+
+""" Obsession
 
 """ All of your Plugins must be added before the following line
 call plug#end()
@@ -222,7 +235,10 @@ set showcmd                     " shows the current command
 set laststatus=2                " 2 - Always display the status bar.
 set background=dark             " For colorscheme
 set shortmess=a                 " Abbreviates file messages to prevent hit enter to continue message
-set grepprg=rg\ --vimgrep\ --smart-case\ --follow\ --hidden
+if executable('rg')
+    set grepprg=rg\ --vimgrep
+    set grepformat=%f:%l:%c:%m
+endif
 set nrformats+=alpha
 
 " if !$TERM_PROGRAM =~ "Apple_Terminal"
@@ -291,7 +307,6 @@ autocmd BufWinLeave ?* mkview 1
 autocmd BufWinEnter ?* silent loadview 1
 
 " Sets current directory to the directory of file in current window
-autocmd BufEnter * silent! lcd %:p:h
 
 """""""" ---------------- VIM Finding Files ------------------
 " Search down into subfolders
@@ -310,6 +325,7 @@ set wildignore+=*.swp,*.tmp.
 autocmd BufRead,BufNewFile *.py let python_highlight_all=1
 " autocmd FileType vim setlocal shiftwidth=4 tabstop=4 expandtab
 " autocmd FileType tex setlocal shiftwidth=4 tabstop=4 expandtab
+autocmd BufRead,BufNewFile *.gitconfig-* set filetype=gitconfig
 augroup vimrc-vimwiki
     autocmd!
     autocmd FileType vimwiki
@@ -318,6 +334,13 @@ augroup vimrc-vimwiki
     autocmd FileType vimwiki highlight link VimwikiHeader2 GruvboxYellowBold
 augroup END
 
+augroup vimrc-tex
+    autocmd!
+    autocmd FileType tex nnoremap j gj
+    autocmd FileType tex vnoremap j gj
+    autocmd FileType tex nnoremap k gk
+    autocmd FileType tex vnoremap k gk
+augroup END
 """""""" --------------- leader Mappings ------------------------
 " leader is now set to Spacebar
 let mapleader = " "
@@ -353,27 +376,34 @@ nnoremap <silent> <leader>pc <Cmd>PlugClean<CR>
 nnoremap <silent> <localleader>ff <Cmd>FZFMru<CR>
 nnoremap <silent> <localleader>fs <Cmd>Files<CR>
 nnoremap <silent> <localleader>fg <Cmd>GFiles<CR>
+nnoremap <silent> <localleader>fl <Cmd>Lines<CR>
 nnoremap <silent> <localleader>fb <Cmd>BCommits<CR>
 nnoremap <silent> <localleader>fc <Cmd>Commits<CR>
 nnoremap <silent> <localleader>fu <Cmd>Buffers<CR>
 nnoremap <silent> <localleader>ft <Cmd>Tags<CR>
+nnoremap <silent> <localleader>ftb <Cmd>BTags<CR>
 nnoremap <silent> <localleader>fh <Cmd>Files ~<CR>
 nnoremap <silent> <localleader>fd <Cmd>Files ~/.dotfiles<CR>
 nnoremap <silent> <localleader>fa <Cmd>Files ~/Github_Repositories/Overleaf/DoctoralThesis-Overleaf<CR>
 nnoremap <silent> <localleader>fj <Cmd>Files ~/Github_Repositories/Overleaf/Job_Application_CV-Github<CR>
 nnoremap <silent> <localleader>fw <Cmd>Files ~/Dropbox/Apps/vimwiki<CR>
-nnoremap <silent> <leader>/ <Cmd>BLines<CR>
+nnoremap <silent> <leader>/ <Cmd>Lines<CR>
 nnoremap <silent> <leader>' <Cmd>Marks<CR>
 
 " Git Fugitive mappings
 nnoremap <silent> <leader>gs <Cmd>Git<CR>
 nnoremap <silent> <leader>gb <Cmd>Git blame<CR>
-nnoremap <silent> <leader>gc <Cmd>Git commit<CR>
+nnoremap <silent> <leader>gcm <Cmd>Git commit<CR>
+nnoremap <silent> <leader>gcl <Cmd>0Gclog<CR>
 nnoremap <silent> <leader>gp <Cmd>Git push<CR>
 nnoremap <silent> <leader>gl <Cmd>Git log<CR>
 nnoremap <silent> <leader>grs ciwsquash<Esc>0j
 nnoremap <silent> <leader>grf ciwfixup<Esc>0j
 nnoremap <silent> <leader>grp ciwpick<Esc>0j
+nnoremap <silent> <leader>grr ciwreword<Esc>0j
+nnoremap <silent> <leader>gds <Cmd>Gvdiffsplit<CR>
+" Allows using FZF BCommits to get commit hash to clipboard and then compare it with current state of file
+nnoremap <silent> <leader>gdc :Gvdiffsplit <C-r>0<CR>
 
 " Goyo mappings
 nnoremap <silent> <leader>go <Cmd>Goyo<CR>
@@ -405,8 +435,8 @@ nnoremap <leader>uu <Cmd>MundoToggle<CR>
 nnoremap <leader>vv <C-v>
 
 " VimDiff mode
-nnoremap <leader>dp <Cmd>diffput<CR>
-nnoremap <leader>do <Cmd>diffobtain<CR>
+vnoremap <leader>dp :diffput<CR>
+vnoremap <leader>do :diffobtain<CR>
 
 " Diff mode
 nnoremap <leader>df <Cmd>vert diffsplit 
@@ -451,6 +481,12 @@ map , <Plug>(easymotion-j)
 " Quickly save out of insert mode directly
 inoremap ZZ <Cmd>wq<CR>
 
+" Quickly delete current buffer
+nnoremap q <Cmd>Bdelete<CR>
+
+" Quickly save out of insert mode directly
+nnoremap Q q
+
 " Map arrows keys to more useful functions like changing buffers and page up/down
 nnoremap <Left> <Cmd>bprevious<CR>
 nnoremap <Right> <Cmd>bnext<CR>
@@ -458,6 +494,9 @@ nnoremap <Up> <C-b>
 nnoremap <Down> <C-f>
 vnoremap <Up> <C-b>
 vnoremap <Down> <C-f>
+
+" Allows easy searching of word under cursor within current project
+nnoremap gw :Rg <cWORD><CR>
 
 " Allows easy copying to end of line
 nnoremap Y y$
@@ -481,14 +520,35 @@ inoremap ˚ <esc><Cmd>m .-2<CR>==gi
 nnoremap ∆ <Cmd>m .+1<CR>==
 nnoremap ˚ <Cmd>m .-2<CR>==
 
+" Create an undo checkpoint for writing prose easier
+inoremap ! !<C-g>u
+inoremap , ,<C-g>u
+inoremap . .<C-g>u
+inoremap : :<C-g>u
+inoremap ; ;<C-g>u
+inoremap ? ?<C-g>u
+inoremap ( <C-g>u(
+inoremap ) )<C-g>u
+
 """""""" --------------- CTRL Mappings ------------------------
-nnoremap <C-s> <Cmd>w<CR>
+nnoremap <C-s> :w<CR>
 nnoremap <C-f> <Cmd>Rg<CR>
+nnoremap <C-e> :!rg vimwiki ~/Dropbox/Apps/vimwiki<CR>
 
 " Create an undo checkpoint before deleting words or lines in insert mode
 inoremap <C-u> <C-g>u<C-u>
 inoremap <C-w> <C-g>u<C-w>
 
+" Switch functions for easier jumping to definition and showing list of all tags
+nnoremap <c-]> g<c-]>
+vnoremap <c-]> g<c-]>
+nnoremap g<c-]> <c-]>
+vnoremap g<c-]> <c-]>
+
 """""""" --------------- Function Mappings ------------------------
 " Insert current date and time
 nnoremap <F5> "=strftime("%c")<CR>P
+
+"""""""" --------------- Abbreviations ------------------------
+" iabbrev ;eth soumil.gurjar@sam.math.ethz.ch
+" iabbrev ;gm soumilgurjar@gmail.com
