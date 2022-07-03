@@ -16,6 +16,9 @@ Plug 'easymotion/vim-easymotion'                "New way of moving within vim
 Plug 'tpope/vim-commentary'                     "Allows commenting lines/selection with gc
 Plug 'tpope/vim-surround'                       "Allows surrounding words/selection with cs
 Plug 'wellle/targets.vim'                       "Provides more operators than standard vim e.g v2il'
+Plug 'michaeljsmith/vim-indent-object'          "Provide text objects ai,ii,aI,iI to operate on indent
+Plug 'christoomey/vim-sort-motion'              "Easy sorting of lines with gs command
+Plug 'svermeulen/vim-subversive'                "Easier substitution of text object with register
 Plug 'tpope/vim-repeat'                         "Allows repeating more previous commands with .
 Plug 'tommcdo/vim-exchange'                     "Allows exchanging words/selection with cx/X
 Plug 'tpope/vim-endwise'                        "Automatically ends functions like if etc.
@@ -23,7 +26,6 @@ Plug 'tpope/vim-abolish'                        "Better robust substition and ea
 Plug 'tpope/vim-unimpaired'                     "Complementary pair of mappings for quickfix, line addition, toggle settings etc.
 Plug 'tpope/vim-obsession'                      "Allows easier management of vim sessions
 Plug 'Raimondi/delimitMate'                     "Automatically creates bracket pairs
-Plug 'michaeljsmith/vim-indent-object'          "Autoindents lines
 Plug 'machakann/vim-highlightedyank'            "Highlights yanks for short period
 Plug 'SirVer/ultisnips'                         "Track the snippet engine
 Plug 'honza/vim-snippets'                       "Snippets are separated from the engine
@@ -38,6 +40,7 @@ Plug 'simnalamburt/vim-mundo'                   "Stores multiples undos
 Plug 'scrooloose/nerdtree'                      "Allows navigation of file tree
 Plug 'aymericbeaumet/vim-symlink'               "Follows symlink rather than editing the symlink
 Plug 'moll/vim-bbye'                            "Better buffer management with :Bdelete, :Bwipeout etc.
+Plug 'christoomey/vim-system-copy'              "Don't pollute system clipboard, instead use cp or cv commands; cP, cV for current line
 Plug 'junegunn/goyo.vim'                        "Distraction free vim
 Plug 'vimwiki/vimwiki', { 'branch': 'dev' }     "Easy note taking and diary maintaining
 Plug 'tbabej/taskwiki'                          "Integration of taskwarrior with vimwiki
@@ -46,6 +49,9 @@ Plug 'rhysd/vim-grammarous'
 Plug 'vim-pandoc/vim-pandoc'                    "Pandoc support from within vim
 Plug 'vim-pandoc/vim-pandoc-syntax'             "Pandoc syntax for relevant files
 Plug 'kbarrette/mediummode'                     "Disable common vim navigation functions to help learn vim faster
+Plug 'Fymyte/mbsync.vim'                        "Enable syntax for mbsyncrc
+Plug 'liuchengxu/vim-which-key'
+Plug 'chaoren/vim-wordmotion'                   "Better word movement when dealing with acronyms, camelcase etc.
 
 """ Theme plugins
 Plug 'morhetz/gruvbox'
@@ -57,6 +63,13 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'bling/vim-bufferline'
 
 """""""" ----------------- Plugin Settings ---------------
+""" Macvim
+if has("gui_macvim")
+    let macvim_hig_shift_movement = 1
+    let macvim_skip_colorscheme=1
+    set guifont=Monaco:h14
+endif
+
 """ YouCompleteMe
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 set completeopt+=popup
@@ -115,7 +128,7 @@ let g:yankring_zap_keys = ''                "Helps prevent yankring for hijackin
 
 """ Mediummode
 let g:mediummode_enabled = 0
-let g:mediummode_allowed_motions = 4
+let g:mediummode_allowed_motions = 5
 
 """ VimWiki
 let g:vimwiki_list = [{'path': '~/Dropbox/Apps/vimwiki/',
@@ -157,6 +170,7 @@ let g:goyo_linenr = 1
 
 """ Gitgutter
 let g:gitgutter_override_sign_column_highlight = 1
+let g:gitgutter_close_preview_on_escape = 1
 highlight! link SignColumn LineNr
 autocmd ColorScheme * highlight! link SignColumn LineNr
 
@@ -199,7 +213,7 @@ set autoindent
 set autoread
 set autowrite                   " allows changing buffer with save
 set hidden
-set clipboard=unnamed           " yank and paste with the system clipboard
+" set clipboard=unnamed           " yank and paste with the system clipboard
 set encoding=utf-8
 set expandtab                   " tabs are spaces
 set shiftround                  " When shifting lines, round the indentation to the nearest multiple of “shiftwidth.”
@@ -386,9 +400,14 @@ nnoremap <silent> <localleader>fh <Cmd>Files ~<CR>
 nnoremap <silent> <localleader>fd <Cmd>Files ~/.dotfiles<CR>
 nnoremap <silent> <localleader>fa <Cmd>Files ~/Github_Repositories/Overleaf/DoctoralThesis-Overleaf<CR>
 nnoremap <silent> <localleader>fj <Cmd>Files ~/Github_Repositories/Overleaf/Job_Application_CV-Github<CR>
+nnoremap <silent> <localleader>fk <Cmd>Files ~/Github_Repositories/Overleaf/Cover_Letter-Github<CR>
 nnoremap <silent> <localleader>fw <Cmd>Files ~/Dropbox/Apps/vimwiki<CR>
 nnoremap <silent> <leader>/ <Cmd>Lines<CR>
 nnoremap <silent> <leader>' <Cmd>Marks<CR>
+" Mapping selecting mappings
+nmap <leader><tab> <plug>(fzf-maps-n)
+xmap <leader><tab> <plug>(fzf-maps-x)
+omap <leader><tab> <plug>(fzf-maps-o)
 
 " Git Fugitive mappings
 nnoremap <silent> <leader>gs <Cmd>Git<CR>
@@ -431,6 +450,10 @@ nnoremap <leader>nu <Cmd>set number!<CR> <Cmd>set relativenumber!<CR>
 " Show undo tree
 nnoremap <leader>uu <Cmd>MundoToggle<CR>
 
+" Show which key following leader
+nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
+" nnoremap <silent> <localleader> :WhichKey '<BS>'<CR>
+
 " Column mode selection
 nnoremap <leader>vv <C-v>
 
@@ -461,6 +484,7 @@ nnoremap <leader>rr ZZ<CR>
 nnoremap <leader>re <Cmd>wqall<CR>
 nnoremap <leader>ee <Cmd>wall<CR><Esc>
 nnoremap <leader>qq <Cmd>q!<CR>
+nnoremap <leader>qc <Cmd>cclose<CR>
 
 """""""" --------------- Mappings ------------------------
 " Pressing j twice in insert mode will lead to Esc
@@ -478,13 +502,15 @@ omap / <Plug>(easymotion-tn)
 map ; <Plug>(easymotion-k)
 map , <Plug>(easymotion-j)
 
+" Subversive substitution command
+nmap S <plug>(SubversiveSubstitute)
+
 " Quickly save out of insert mode directly
 inoremap ZZ <Cmd>wq<CR>
 
 " Quickly delete current buffer
-nnoremap q <Cmd>Bdelete<CR>
-
-" Quickly save out of insert mode directly
+nnoremap q :bdelete<CR>
+" Start macro with Q instead of q
 nnoremap Q q
 
 " Map arrows keys to more useful functions like changing buffers and page up/down
@@ -545,10 +571,28 @@ vnoremap <c-]> g<c-]>
 nnoremap g<c-]> <c-]>
 vnoremap g<c-]> <c-]>
 
+" FZF Insert mode completion
+imap <c-x><c-d> <plug>(fzf-complete-word)
+imap <c-x><c-f> <plug>(fzf-complete-path)
+imap <c-x><c-g> <plug>(fzf-complete-line)
+
+"FZF common commands
+nnoremap <silent> <c-b> <Cmd>BCommits<CR>
+
 """""""" --------------- Function Mappings ------------------------
 " Insert current date and time
-nnoremap <F5> "=strftime("%c")<CR>P
+nnoremap <F3>  "=strftime("%d %b %Y")<CR>p
+nnoremap <F4>  "=strftime("%H:%M")<CR>p
+nnoremap <F5>  "=strftime("%d %b %Y (%a) - %H:%M")<CR>p
+
+"""""""" --------------- Text Objects ------------------------
+" (entire line sans white-space; cursor at beginning--ie, ^)
+xnoremap <silent> il :<c-u>normal! g_v^<cr>
+onoremap <silent> il :<c-u>normal! g_v^<cr>
+" (entire line sans trailing newline; cursor at beginning--ie, 0)
+xnoremap <silent> al :<c-u>normal! $v0<cr>
+onoremap <silent> al :<c-u>normal! $v0<cr>
 
 """""""" --------------- Abbreviations ------------------------
-" iabbrev ;eth soumil.gurjar@sam.math.ethz.ch
-" iabbrev ;gm soumilgurjar@gmail.com
+iabbrev ;eth soumil.gurjar@sam.math.ethz.ch
+iabbrev ;gm soumilgurjar@gmail.com
