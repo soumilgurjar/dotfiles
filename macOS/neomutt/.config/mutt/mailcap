@@ -1,6 +1,7 @@
 text/plain; $EDITOR %s ;
 text/html; /usr/local/lib/mutt-wizard/openfile %s ; nametemplate=%s.html
 text/html; lynx -assume_charset=%{charset} -display_charset=utf-8 -dump -width=1024 %s; nametemplate=%s.html; copiousoutput;
+# text/html; w3m -I %{charset} -T text/html; copiousoutput;
 # image/*; (clear && /Users/sgurjar/.iterm2/imgcat %s && read -N 1); needsterminal
 image/*; kitty +kitten icat --silent --hold %s; copiousoutput
 # image/*; /usr/local/lib/mutt-wizard/openfile %s ;

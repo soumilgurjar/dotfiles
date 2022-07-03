@@ -1,0 +1,57 @@
+
+IMAPAccount soumilgurjar@gmail.com
+Host imap.gmail.com
+Port 993
+User soumilgurjar@gmail.com
+PassCmd "pass mutt_gmail_app_password/soumilgurjar@gmail.com"
+AuthMechs LOGIN
+SSLType IMAPS
+CertificateFile /etc/ssl/cert.pem
+
+IMAPStore soumilgurjar@gmail.com-remote
+Account soumilgurjar@gmail.com
+
+MaildirStore soumilgurjar@gmail.com-local
+Subfolders Verbatim
+Path /Users/sgurjar/.local/share/mail/soumilgurjar@gmail.com/
+Inbox /Users/sgurjar/.local/share/mail/soumilgurjar@gmail.com/INBOX
+
+Channel soumilgurjar@gmail.com
+Far :soumilgurjar@gmail.com-remote:
+Near :soumilgurjar@gmail.com-local:
+Patterns * !"[Gmail]/All Mail" !"[Gmail]/Important" !"ETHZmail*" !"Apping Mails" !"Facebook" !"Finances/Billsup" !"Finances/Dena Bank Statements" !"News/Ted*" !"WISCmail*" !"Tennis/GoTCourts" !"Tennis/ASVZ Tennis" !"Personal" !"News/Al Jazeera" !"WISCmail/Professor" !"Zurich Housing/JUWO"
+Create Both
+Expunge Both
+SyncState *
+MaxMessages 0
+ExpireUnread no
+############################################
+
+IMAPAccount soumil.gurjar@sam.math.ethz.ch
+Host mail.ethz.ch
+Port 993
+User sgurjar@ethz.ch
+PassCmd "pass eth_mail_id/sgurjar@mail.ethz.ch"
+AuthMechs LOGIN
+SSLType IMAPS
+CertificateFile ~/.mutt_certs
+
+IMAPStore soumil.gurjar@sam.math.ethz.ch-remote
+Account soumil.gurjar@sam.math.ethz.ch
+
+MaildirStore soumil.gurjar@sam.math.ethz.ch-local
+Subfolders Verbatim
+Path ~/.local/share/mail/mail.ethz.ch/
+Inbox ~/.local/share/mail/mail.ethz.ch/INBOX
+
+Channel soumil.gurjar@sam.math.ethz.ch
+Far :soumil.gurjar@sam.math.ethz.ch-remote:
+Near :soumil.gurjar@sam.math.ethz.ch-local:
+Patterns * !"Inbox" !"Calendar" !"Contacts" !"Notes" !"Journal"
+Create Both
+Expunge Both
+SyncState *
+MaxMessages 0
+ExpireUnread no
+############################################
+

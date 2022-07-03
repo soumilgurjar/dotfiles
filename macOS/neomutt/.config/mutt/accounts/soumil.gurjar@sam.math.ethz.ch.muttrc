@@ -35,7 +35,7 @@ set hidden_host
 set confirm_append="no"
 # set edit_headers
 
-macro index \cx ":set autoedit=no fast_reply=yes editor=true<enter>fsgurjar+spam@math.ethz.ch<enter>f^u<enter>ys=spam<enter>:set autoedit=yes fast_reply=no editor=vim<enter>"
+# macro index \cx ":set autoedit=no fast_reply=yes editor=true<enter>fsgurjar+spam@math.ethz.ch<enter>f^u<enter>ys=spam<enter>:set autoedit=yes fast_reply=no editor=vim<enter>"
 
 mailboxes "=ASVZ" "=AVETH" "=Calendar" "=Contacts" "=Correspondence with Perry" "=Correspondence with Sid" "=Deleted Items" "=Drafts" "=Euler Cases" "=INBOX" "=Journal" "=Junk Email" "=Miscellaneous" "=Notes" "=Outbox" "=Payslip" "=Private do not archive" "=Sent Items" "=Tasks" "=Trash"
 # mailboxes "=Correspondence with Perry" "=Correspondence with Sid" "=Euler Cases" "=INBOX" "=Miscellaneous" "=Payslip"
@@ -59,6 +59,6 @@ macro index,pager Cs ";<copy-message>=Sent\ Items<enter>" "copy mail to sent"
 # macro index,pager Ma ";<save-message>=Starred<enter>" "move mail to starred"
 # macro index,pager Ca ";<copy-message>=Starred<enter>" "copy mail to starred"
 
-macro index O "<shell-escape>/Users/sgurjar/.config/mutt/syncmail.sh soumil.gurjar@sam.math.ethz.ch<enter>" "run mbsync to sync soumil.gurjar@sam.math.ethz.ch"
-# macro index O "<shell-escape>mw -y soumil.gurjar@sam.math.ethz.ch<enter>" "run mbsync to sync soumil.gurjar@sam.math.ethz.ch"
+macro index o "<shell-escape>/Users/sgurjar/.config/mutt/syncmail.sh soumil.gurjar@sam.math.ethz.ch<enter>" "run mbsync to sync soumil.gurjar@sam.math.ethz.ch"
+# macro index o "<shell-escape>mw -y soumil.gurjar@sam.math.ethz.ch<enter>" "run mbsync to sync soumil.gurjar@sam.math.ethz.ch"
 
