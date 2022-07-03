@@ -28,7 +28,7 @@
     untracked = red bold
 [alias]
     lg = log --graph --pretty=format:'%C(yellow)%h%C(auto)%d%Creset %s %C(white)- %an, %ar%Creset'
-    d = difftool
+    df = difftool
     ; lg = log --graph --pretty=format:'%C(yellow)%h%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --branches
     l = log --pretty=format:'%<|(16)%C(yellow)%h %Cblue%ad %Creset%s%Cgreen [%cn] %Cred%d' --decorate --date=short --graph
     amend = commit --amend --reuse-message=HEAD

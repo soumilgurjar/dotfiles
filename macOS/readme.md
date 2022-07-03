@@ -48,6 +48,7 @@ The following applications could not be installed with the brewfile method. So w
 - polybox
 - pcloud
 - Textsniper
+- Vimac
 
 ## Mackup restore
 Mackup should already be installed from the Brewfile. Restore the backed up preferences from Dropbox with the following command:

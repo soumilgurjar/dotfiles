@@ -28,13 +28,15 @@ alias vsc="vim -S ~/.vim/sessions/configurations-session.vim"
 alias vsn="vim -S ~/.vim/sessions/neomutt-session.vim"
 alias vsnp="vim -S ~/.vim/sessions/neomutt-powerline-session.vim"
 alias vsw="vim -S ~/.vim/sessions/vimwiki-session.vim"
+alias vsk="vim -S ~/.vim/sessions/kitty-config.vim"
+alias vscl="vim -S ~/.vim/sessions/cover-letter-jobsearch.vim"
+alias vscv="vim -S ~/.vim/sessions/cv-jobsearch.vim"
 alias soz="source ~/.zshrc"
 alias sob="source ~/.bashrc"
 alias sobp="source ~/.bash_profile"
 alias sot="tmux source-file ~/.tmux.conf"
 
 #Terminal navigation
-alias vi="vim"
 alias fs="du -sh"
 alias la="ls -la"
 alias cpwd="pwd | pbcopy"
@@ -58,6 +60,13 @@ alias bic="brew install --cask"
 alias bl="brew list"
 alias buu="brew upgrade && brew update "
 alias bun="brew uninstall"
+
+# Neomutt related
+alias nm="neomutt"
+alias nme="neomutt -e 'source /Users/sgurjar/.config/mutt/accounts/soumil.gurjar@sam.math.ethz.ch.muttrc' "
+alias nms="~/.config/mutt/neomutt_startup.sh"
+alias nmenv="source ~/VirtualEnvs/neomutt_env/bin/activate && neomutt -e 'source /Users/sgurjar/.config/mutt/accounts/soumilgurjar@gmail.com.muttrc' "
+alias nmeenv="source ~/VirtualEnvs/neomutt_env/bin/activate && neomutt -e 'source /Users/sgurjar/.config/mutt/accounts/soumil.gurjar@sam.math.ethz.ch.muttrc' "
 
 # Git related
 alias glog="git log --color --graph --pretty=format:'%C(yellow)%h%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --branches"
@@ -92,8 +101,25 @@ function unstow() { stow -vDt ~ $1 }
 # Taskwarrior related
 alias tt="taskwarrior-tui"
 
-# Termpdf for viewing pdfs in kitty
+# Open directory in finder
+# function pfd() {
+    # osascript 2>/dev/null <<EOF
+#         tell application "Finder"
+#            return POSIX path of (target of window 1 as alias)
+#         end tell
+#     EOF
+# }
+
+# function cdf() {
+#     cd "$(pfd)"
+# }
+
+# Aliases for github scripts
 alias termpdf="~/Github_Repositories/termpdf.py/termpdf.py $1"
+alias mpv_server="~/Github_Repositories/play-with-mpv/play_with_mpv.py $1"
+
+# Aliases for kitty related commands
+alias icat="kitty +kitten icat"
 
 #Commonly accessed directories
 alias dlsc='cd ~/polybox/ETHZ_Material/Fall_2021/DeepLearningInScientificComputing/'
@@ -109,5 +135,6 @@ alias cases='cd /Users/sgurjar/Scratch_Bryant/OpenFOAM_Cases/Useful_Euler_Cases/
 alias plover='/Applications/Plover.app/Contents/MacOS/Plover'
 
 # Activate environments with alias
+alias neomutt_env='source ~/VirtualEnvs/neomutt_env/bin/activate'
 alias dlsc_env='source ~/VirtualEnvs/dlsc_env/bin/activate'
 alias vogelwarte_env='source ~/Git_Repositories/vogelwarte/vogelwarte-env/bin/activate'

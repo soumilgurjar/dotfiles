@@ -41,6 +41,7 @@ plugins=(
     zsh-syntax-highlighting
     zsh-vim-mode                        # This vi-mode plugin keeps the push-line ^q functionality
     z
+    fzf
 )
 
 # Plugin preferences
@@ -115,3 +116,14 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 # Switch to vim for editing current command
 bindkey '^x^x' edit-command-line
 
+# Copy to system clipboard from zsh-vi-mode
+function vi-yank-clipboard {
+    zle vi-yank
+   echo "$CUTBUFFER" | pbcopy
+}
+zle -N vi-yank-clipboard
+bindkey -M vicmd 'y' vi-yank-clipboard
+
+# Testing if this fixes gpg-agent issues on computer restart
+GPG_TTY=$(tty)
+export GPG_TTY
