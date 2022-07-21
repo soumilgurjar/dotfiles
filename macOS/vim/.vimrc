@@ -532,6 +532,10 @@ nnoremap n nzzzv
 nnoremap N Nzzzv
 nnoremap J mzJ`z
 
+" Easy move to start and end of line
+nnoremap H ^
+nnoremap L $
+
 " Insert line below or above without entering insert mode (works with Count)
 nnoremap <silent> oo :<C-u>call append(line("."),   repeat([""], v:count1))<CR>
 nnoremap <silent> OO :<C-u>call append(line(".")-1, repeat([""], v:count1))<CR>
@@ -594,5 +598,5 @@ xnoremap <silent> al :<c-u>normal! $v0<cr>
 onoremap <silent> al :<c-u>normal! $v0<cr>
 
 """""""" --------------- Abbreviations ------------------------
-iabbrev ;eth soumil.gurjar@sam.math.ethz.ch
-iabbrev ;gm soumilgurjar@gmail.com
+" iabbrev ;eth soumil.gurjar@sam.math.ethz.ch
+" iabbrev ;gm soumilgurjar@gmail.com
