@@ -1,5 +1,6 @@
 # vim: filetype=neomuttrc
 # muttrc file for account soumilgurjar@gmail.com
+source /usr/local/share/mutt-wizard/switch.muttrc
 set realname = "Soumil Gurjar"
 set from = "soumilgurjar@gmail.com"
 # set sendmail = "msmtp -a soumilgurjar@gmail.com"
@@ -12,11 +13,9 @@ set header_cache = "/Users/sgurjar/.cache/mutt-wizard/soumilgurjar@gmail.com/hea
 set message_cachedir = "/Users/sgurjar/.cache/mutt-wizard/soumilgurjar@gmail.com/bodies"
 set mbox_type = Maildir
 set hostname = "gmail.com"
-source /usr/local/share/mutt-wizard/switch.muttrc
 set spoolfile = +INBOX
 set postponed = "+[Gmail]/Drafts"
 set trash = "+[Gmail]/Bin"
-# set record = "+[Gmail]/Sent Mail"
 set record = /dev/null
 set imap_pipeline_depth="0"
 set pager_context = 3
@@ -29,7 +28,7 @@ set smime_default_key="0x5A5A58E9"
 mailboxes "=Alerts/Flight Alerts" "=Alerts/Google Scholar Alerts" "=Amazon_Digitec_Galaxus" "=Apping Mails" "=Apple Account" "=EAT.ch" "=ETHZmail/ASVZ" "=ETHZmail/AVETH" "=ETHZmail/CMEA II" "=ETHZmail/Deutsch ZGSM" "=ETHZmail/FIM Bulletin" "=ETHZmail/FIM Tea" "=ETHZmail/HPC" "=ETHZmail/Perry's emails" "=ETHZmail/Sid's emails" "=ETHZmail/ZH Colloquium Math" "=Facebook" "=Finances/Billsup" "=Finances/Dena Bank Statements" "=Finances/Paypal" "=INBOX" "=Job Search/JS2022" "=LinkedIn" "=News/Al Jazeera" "=News/NY Times" "=News/NZZ" "=News/Skimm" "=News/Splainer" "=News/SwissInfo" "=News/TED/Important TEDTalks" "=News/The Local" "=Personal" "=Steam" "=SwissPost_DHL_DPD" "=Tennis/ASVZ Tennis" "=Tennis/GoTCourts" "=Tennis/TennisClub Lerchenberg" "=UWCU" "=WISCmail/Professor" "=Zurich Housing/JUWO" "=[Gmail]/Bin" "=[Gmail]/Chats" "=[Gmail]/Drafts" "=[Gmail]/Sent Mail" "=[Gmail]/Spam" "=[Gmail]/Starred"
 
 set sidebar_new_mail_only               # Only mailboxes with new/flagged email
-sidebar_whitelist INBOX "[Gmail]/Drafts" "[Gmail]/Sent Mail" "[Gmail]/Starred"  # Always display these mailboxes
+sidebar_whitelist =INBOX "=[Gmail]/Drafts" "=[Gmail]/Sent Mail" "=[Gmail]/Starred"  # Always display these mailboxes
 
 macro index,pager gd "<change-folder>=[Gmail]/Drafts<enter>" "go to drafts"
 macro index,pager Md ";<save-message>=[Gmail]/Drafts<enter>" "move mail to drafts"

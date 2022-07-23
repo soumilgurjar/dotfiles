@@ -64,9 +64,11 @@ alias bun="brew uninstall"
 # Neomutt related
 alias nm="neomutt"
 alias nme="neomutt -e 'source /Users/sgurjar/.config/mutt/accounts/soumil.gurjar@sam.math.ethz.ch.muttrc' "
+alias nmd="neomutt -e 'source /Users/sgurjar/.config/mutt/accounts/soumil.gurjar@d-one.ai.muttrc' "
 alias nms="~/.config/mutt/neomutt_startup.sh"
 alias nmenv="source ~/VirtualEnvs/neomutt_env/bin/activate && neomutt -e 'source /Users/sgurjar/.config/mutt/accounts/soumilgurjar@gmail.com.muttrc' "
 alias nmeenv="source ~/VirtualEnvs/neomutt_env/bin/activate && neomutt -e 'source /Users/sgurjar/.config/mutt/accounts/soumil.gurjar@sam.math.ethz.ch.muttrc' "
+alias nmdenv="source ~/VirtualEnvs/neomutt_env/bin/activate && neomutt -e 'source /Users/sgurjar/.config/mutt/accounts/soumil.gurjar@d-one.ai.muttrc' "
 
 # Git related
 alias glog="git log --color --graph --pretty=format:'%C(yellow)%h%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --branches"

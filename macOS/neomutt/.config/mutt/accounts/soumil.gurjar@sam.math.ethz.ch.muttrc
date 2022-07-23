@@ -38,7 +38,6 @@ set confirm_append="no"
 # macro index \cx ":set autoedit=no fast_reply=yes editor=true<enter>fsgurjar+spam@math.ethz.ch<enter>f^u<enter>ys=spam<enter>:set autoedit=yes fast_reply=no editor=vim<enter>"
 
 mailboxes "=ASVZ" "=AVETH" "=Calendar" "=Contacts" "=Correspondence with Perry" "=Correspondence with Sid" "=Deleted Items" "=Drafts" "=Euler Cases" "=INBOX" "=Journal" "=Junk Email" "=Miscellaneous" "=Notes" "=Outbox" "=Payslip" "=Private do not archive" "=Sent Items" "=Tasks" "=Trash"
-# mailboxes "=Correspondence with Perry" "=Correspondence with Sid" "=Euler Cases" "=INBOX" "=Miscellaneous" "=Payslip"
 
 set sidebar_new_mail_only               # Only mailboxes with new/flagged email
 sidebar_whitelist "=INBOX" "=Drafts" "=Sent Items" # Always display these mailboxes

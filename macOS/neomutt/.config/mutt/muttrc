@@ -58,6 +58,7 @@ macro index,pager a "<enter-command>set my_pipe_decode=\$pipe_decode pipe_decode
 # Set default account and then provide macros for switching accounts
 source /Users/sgurjar/.config/mutt/accounts/soumilgurjar@gmail.com.muttrc
 # source /Users/sgurjar/.config/mutt/accounts/soumil.gurjar@sam.math.ethz.ch.muttrc
+# source /Users/sgurjar/.config/mutt/accounts/soumil.gurjar@d-one.ai.muttrc
+macro index,pager i4 '<sync-mailbox><enter-command>source /Users/sgurjar/.config/mutt/accounts/soumil.gurjar@d-one.ai.muttrc<enter><change-folder>!<enter>;<check-stats>' "switch to soumil.gurjar@d-one.ai"
 macro index,pager i3 '<sync-mailbox><enter-command>source /Users/sgurjar/.config/mutt/accounts/soumilgurjar@gmail.com.muttrc<enter><change-folder>!<enter>;<check-stats>' "switch to soumilgurjar@gmail.com"
 macro index,pager i2 '<sync-mailbox><enter-command>source /Users/sgurjar/.config/mutt/accounts/soumil.gurjar@sam.math.ethz.ch.muttrc<enter><change-folder>!<enter>;<check-stats>' "switch to soumil.gurjar@sam.math.ethz.ch"
-

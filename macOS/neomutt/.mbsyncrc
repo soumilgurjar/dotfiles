@@ -25,6 +25,7 @@ Expunge Both
 SyncState *
 MaxMessages 0
 ExpireUnread no
+# End profile
 ############################################
 
 IMAPAccount soumil.gurjar@sam.math.ethz.ch
@@ -53,5 +54,34 @@ Expunge Both
 SyncState *
 MaxMessages 0
 ExpireUnread no
+# End profile
 ############################################
+
+IMAPAccount soumil.gurjar@d-one.ai
+Host imap.gmail.com
+Port 993
+User soumil.gurjar@d-one.ai
+PassCmd "pass mutt_d-one_app_password/soumil.gurjar@d-one.ai"
+AuthMechs LOGIN
+SSLType IMAPS
+CertificateFile /etc/ssl/cert.pem
+
+IMAPStore soumil.gurjar@d-one.ai-remote
+Account soumil.gurjar@d-one.ai
+
+MaildirStore soumil.gurjar@d-one.ai-local
+Subfolders Verbatim
+Path /Users/sgurjar/.local/share/mail/soumil.gurjar@d-one.ai/
+Inbox /Users/sgurjar/.local/share/mail/soumil.gurjar@d-one.ai/INBOX
+
+Channel soumil.gurjar@d-one.ai
+Far :soumil.gurjar@d-one.ai-remote:
+Near :soumil.gurjar@d-one.ai-local:
+Patterns * !"[Gmail]/All Mail"
+Create Both
+Expunge Both
+SyncState *
+MaxMessages 0
+ExpireUnread no
+# End profile
 
