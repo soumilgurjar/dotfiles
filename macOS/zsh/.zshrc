@@ -82,7 +82,7 @@ export FZF_ALT_C_COMMAND="fd --type directory --hidden --follow --ignore --color
 export FZF_DEFAULT_OPTS="-m --height 90% --layout=reverse --border --inline-info
   --preview-window=:hidden
   --preview '([[ -f {} ]] && (bat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'
-  --bind 'ctrl-j:preview-page-down' --bind 'ctrl-k:preview-page-up' --bind '?:toggle-preview'"
+  --bind 'ctrl-d:preview-page-down' --bind 'ctrl-u:preview-page-up' --bind '?:toggle-preview'"
 _fzf_compgen_path() {
   fd --hidden --follow --exclude ".git" . "$1"
 }

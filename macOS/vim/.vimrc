@@ -335,6 +335,20 @@ set wildignore+=.DS_Store,.git,.hg,.svn
 set wildignore+=*.swp,*.tmp.
 " - :b lets you autocomplete any open buffer
 
+"""""""" --------------- FZF actions ------------------------
+set rtp+=/usr/local/opt/fzf
+function! s:insert_file_path(lines)
+    let @@ = fnamemodify(a:lines[0], ":p")
+    normal! p
+endfunction
+function! s:insert_relative_file_path(lines)
+    let @@ = fnamemodify(a:lines[0], ":f")
+    normal! p
+endfunction
+let g:fzf_action = {
+            \ 'ctrl-r': function('s:insert_relative_file_path'),
+            \ 'ctrl-e': function('s:insert_file_path') }
+
 """""""" --------------- File Specific Autocommands ------------------------
 autocmd BufRead,BufNewFile *.py let python_highlight_all=1
 " autocmd FileType vim setlocal shiftwidth=4 tabstop=4 expandtab
@@ -355,6 +369,7 @@ augroup vimrc-tex
     autocmd FileType tex nnoremap k gk
     autocmd FileType tex vnoremap k gk
 augroup END
+
 """""""" --------------- leader Mappings ------------------------
 " leader is now set to Spacebar
 let mapleader = " "
@@ -390,7 +405,6 @@ nnoremap <silent> <leader>pc <Cmd>PlugClean<CR>
 nnoremap <silent> <localleader>ff <Cmd>FZFMru<CR>
 nnoremap <silent> <localleader>fs <Cmd>Files<CR>
 nnoremap <silent> <localleader>fg <Cmd>GFiles<CR>
-nnoremap <silent> <localleader>fl <Cmd>Lines<CR>
 nnoremap <silent> <localleader>fb <Cmd>BCommits<CR>
 nnoremap <silent> <localleader>fc <Cmd>Commits<CR>
 nnoremap <silent> <localleader>fu <Cmd>Buffers<CR>
@@ -399,8 +413,6 @@ nnoremap <silent> <localleader>ftb <Cmd>BTags<CR>
 nnoremap <silent> <localleader>fh <Cmd>Files ~<CR>
 nnoremap <silent> <localleader>fd <Cmd>Files ~/.dotfiles<CR>
 nnoremap <silent> <localleader>fa <Cmd>Files ~/Github_Repositories/Overleaf/DoctoralThesis-Overleaf<CR>
-nnoremap <silent> <localleader>fj <Cmd>Files ~/Github_Repositories/Overleaf/Job_Application_CV-Github<CR>
-nnoremap <silent> <localleader>fk <Cmd>Files ~/Github_Repositories/Overleaf/Cover_Letter-Github<CR>
 nnoremap <silent> <localleader>fw <Cmd>Files ~/Dropbox/Apps/vimwiki<CR>
 nnoremap <silent> <leader>/ <Cmd>Lines<CR>
 nnoremap <silent> <leader>' <Cmd>Marks<CR>
