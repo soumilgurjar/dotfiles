@@ -1,0 +1,91 @@
+# Test files
+.git
+node_modules
+vendor
+
+# OS specific files
+.DS_Store
+
+# Folders for ignoring with 
+.Spotlight-V100
+.Trash
+.adobe
+.android
+.atom
+.bash_sessions
+.cache
+.cisco
+.cmake
+.config
+.cups
+.dbus-keyrings
+.docker
+.dotfiles
+.dropbox
+.iterm2
+.kodi
+.local
+.matplotlib
+.mono
+.mozilla
+.npm
+.oh-my-zsh
+.oracle_jre_usage
+.parallel
+.pcloud
+.prefs
+.putty
+.pyenv
+.python27_compiled
+.ssh
+.ssh-old
+.terminfo
+.thinlinc
+.thumbnails
+.tldrc
+.tmux
+.vim
+.vnc
+.vscode
+Applications
+Desktop
+Documents
+Downloads
+Dropbox
+Github_Repositories
+Gitlab_Repositories
+Google Drive
+Library
+Movies
+Music
+Pictures
+Scratch_Bryant
+Sites
+VirtualEnvs
+Zotero
+bin
+pCloud Drive
+polybox
+# now un-ignore the ones I care about
+!Applications
+!Desktop
+!Documents
+!Downloads
+!Dropbox
+!Github_Repositories
+!Gitlab_Repositories
+!Google Drive
+!Movies
+!Music
+!Pictures
+!Scratch_Bryant
+!VirtualEnvs
+!Zotero
+!pCloud Drive
+!polybox
+!.config
+!.dotfiles
+!.oh-my-zsh
+!.ssh
+!.tmux
+!.vim
