@@ -235,7 +235,9 @@ set number                      " show absolute line numbers
 set relativenumber              " show relative line numbers (except current)
 set ruler                       " show column in console
 set list                        " show trailing whitespace
-set listchars=tab:▸\ ,trail:▫   " list of characters to show
+" set listchars=tab:▸\ ,trail:▫   " list of characters to show
+" set listchars=tab:▷▷⋮,trail:▫   " list of characters to show
+set listchars=tab:▷\ ,trail:▫   " list of characters to show
 set wrap                        " automatically wrap on load
 set wrapscan                    " Allow search to wrap to start of file
 set breakindent                 " enable indentation on linebreak
@@ -258,13 +260,10 @@ if executable('rg')
     set grepformat=%f:%l:%c:%m
 endif
 set nrformats+=alpha
+let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
+set termguicolors             " Set true color (use only when terminal supports true colors)
 
-" if !$TERM_PROGRAM =~ "Apple_Terminal"
-" if $TERM_PROGRAM == "iTerm.app"
-  let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
-  let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
-  set termguicolors             " Set true color (use only when terminal supports true colors)
-" endif
 """"""""" ---------------  VIM Cursor --------------------
 " 1 or 0 -> blinking block
 " 2 solid block
@@ -358,6 +357,14 @@ autocmd BufRead,BufNewFile *.py let python_highlight_all=1
 " autocmd FileType vim setlocal shiftwidth=4 tabstop=4 expandtab
 " autocmd FileType tex setlocal shiftwidth=4 tabstop=4 expandtab
 autocmd BufRead,BufNewFile *.gitconfig-* set filetype=gitconfig
+
+augroup zmkkeymap-devicetree
+    autocmd!
+    autocmd FileType devicetree set invlist
+    autocmd FileType devicetree set noexpandtab
+    autocmd FileType devicetree set nowrap
+augroup END
+
 augroup vimrc-vimwiki
     autocmd!
     autocmd FileType vimwiki
