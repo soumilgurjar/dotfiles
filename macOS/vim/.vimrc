@@ -52,6 +52,7 @@ Plug 'kbarrette/mediummode'                     "Disable common vim navigation f
 Plug 'Fymyte/mbsync.vim'                        "Enable syntax for mbsyncrc
 Plug 'liuchengxu/vim-which-key'
 Plug 'chaoren/vim-wordmotion'                   "Better word movement when dealing with acronyms, camelcase etc.
+Plug 'romainl/vim-cool'                         "Better search highlighting which disappears after moving away from search
 
 """ Theme plugins
 Plug 'morhetz/gruvbox'
@@ -167,6 +168,9 @@ let g:undotree_CustomDiffpanelCmd= 'belowright 12 new'
 let g:goyo_width = 120
 let g:goyo_height = '100%'
 let g:goyo_linenr = 1
+
+""" Vimcool
+let g:CoolTotalMatches = 1
 
 """ Gitgutter
 let g:gitgutter_override_sign_column_highlight = 1
