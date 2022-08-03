@@ -1,0 +1,57 @@
+# vim: filetype=neomuttrc
+source /usr/local/share/mutt-wizard/mutt-wizard.muttrc
+
+## Color scheme
+# source /home/soumilgurjar/.config/mutt/powerline/colors/gruvbox-powerline.neomuttrc
+# source /home/soumilgurjar/.config/mutt/powerline/powerline-rounded.neomuttrc
+source /home/soumilgurjar/.config/mutt/powerline/powerline.neomuttrc
+
+# color indicator brightblack default         # (overrule)
+color indicator default color238               # (overrule)
+color sidebar_highlight blue default        # (overrule)
+color sidebar_flagged default default       # (overrule)
+color sidebar_new green default               # (overrule)
+
+# General config should go here
+set editor="vim -c 'set textwidth=0' -c 'set spell spelllang=en,de'"
+auto_view text/html text/calendar application/ics
+alternative_order text/plain text/enriched text/html text/*
+set sidebar_format = '%D%*  %?N?%N?'         # Show name and number of unread (overrule)
+set sidebar_width = 15                  # Set sidebar width (overrule)
+set sidebar_delim_chars="/"             # Delete everything up to the last / character
+set sidebar_next_new_wrap = yes              # Wrap from bottom to top in sidebar
+# set sidebar_folder_indent               # Indent folders whose names we've shortened
+# set sidebar_indent_string="  "          # Indent with two spaces
+set date_format="!%a, %d %h %y, %H:%M"      # (overrule)
+# set date_format="!%d.%m.%y, %H:%M"      # (overrule)
+set query_format="%2c %t %-45.45n %-45.45a %?e?(%e)?"
+# set new_mail_command="%?n?terminal-notifier -title '%v' -subtitle '%n new messages, %u unread.' -message '' -activate 'com.apple.Terminal'?"
+set abort_noattach = "ask-yes" # "yes": always abort; "ask-yes" : ask whether to abort; "no": send the mail
+# set abort_noattach_regex = "\<(attach|attached|attachment|attachments|anhängen|angehängt|anhang|anhänge|hängt an?)\>"
+set sort = 'reverse-threads'
+set sort_aux = 'last-date-received' #order of sort_aux and sort is important
+set collapse_all = 'yes'
+set uncollapse_new = 'yes'
+
+## New bindings
+bind pager gg top
+bind pager G bottom
+bind index h collapse-thread
+bind index \ch collapse-all
+bind index \cx purge-message
+bind index,pager \Cp sidebar-prev
+bind index,pager \Cn sidebar-next
+
+# macro index O "<shell-escape>/home/soumilgurjar/.config/mutt/syncmail.sh<enter>" "run syncmail script to sync all mail"  # (overrule)
+# macro index,pager \cb "<pipe-message> urlscan<Enter>" "call urlscan to extract URLs out of a message"       # (overrule)
+# macro attach,compose \cb "<pipe-entry> urlscan<Enter>" "call urlscan to extract URLs out of a message"      # (overrule)
+macro index,pager a "<enter-command>set my_pipe_decode=\$pipe_decode pipe_decode<return><pipe-message>abook --add-email-quiet<return><enter-command>set pipe_decode=\$my_pipe_decode; unset my_pipe_decode<return>" "add the sender address to abook"              # (overrule)
+
+# Set default account and then provide macros for switching accounts
+source /home/soumilgurjar/.config/mutt/accounts/soumilgurjar@gmail.com.muttrc
+# source /home/soumilgurjar/.config/mutt/accounts/soumil.gurjar@sam.math.ethz.ch.muttrc
+# source /home/soumilgurjar/.config/mutt/accounts/soumil.gurjar@d-one.ai.muttrc
+macro index,pager i4 '<sync-mailbox><enter-command>source /home/soumilgurjar/.config/mutt/accounts/soumil.gurjar@d-one.ai.muttrc<enter><change-folder>!<enter>;<check-stats>' "switch to soumil.gurjar@d-one.ai"
+macro index,pager i3 '<sync-mailbox><enter-command>source /home/soumilgurjar/.config/mutt/accounts/soumilgurjar@gmail.com.muttrc<enter><change-folder>!<enter>;<check-stats>' "switch to soumilgurjar@gmail.com"
+# macro index,pager i2 '<sync-mailbox><enter-command>source /home/soumilgurjar/.config/mutt/accounts/soumil.gurjar@sam.math.ethz.ch.muttrc<enter><change-folder>!<enter>;<check-stats>' "switch to soumil.gurjar@sam.math.ethz.ch"
+macro index,pager i1 '<sync-mailbox><enter-command>source /home/soumilgurjar/.config/mutt/accounts/soumil.gurjar@d-one.ai.muttrc<enter><change-folder>!<enter>;<check-stats>' "switch to soumil.gurjar@d-one.ai"

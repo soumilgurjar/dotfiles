@@ -1,0 +1,54 @@
+
+IMAPAccount soumilgurjar@gmail.com
+Host imap.gmail.com
+Port 993
+User soumilgurjar@gmail.com
+PassCmd "pass mutt_gmail_app_password/soumilgurjar@gmail.com"
+AuthMechs LOGIN
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+IMAPStore soumilgurjar@gmail.com-remote
+Account soumilgurjar@gmail.com
+
+MaildirStore soumilgurjar@gmail.com-local
+Subfolders Verbatim
+Path /home/soumilgurjar/.local/share/mail/soumilgurjar@gmail.com/
+Inbox /home/soumilgurjar/.local/share/mail/soumilgurjar@gmail.com/INBOX
+
+Channel soumilgurjar@gmail.com
+Far :soumilgurjar@gmail.com-remote:
+Near :soumilgurjar@gmail.com-local:
+Patterns * !"[Gmail]/All Mail" !"[Gmail]/Important" !"ETHZmail*" !"Apping Mails" !"Facebook" !"Finances/Billsup" !"Finances/Dena Bank Statements" !"News/Ted*" !"WISCmail*" !"Tennis/GoTCourts" !"Tennis/ASVZ Tennis" !"Personal" !"News/Al Jazeera" !"WISCmail/Professor" !"Zurich Housing/JUWO"
+Create Both
+Expunge Both
+SyncState *
+MaxMessages 0
+ExpireUnread no
+# End profile
+
+IMAPStore soumil.gurjar@d-one.ai-remote
+Host imap.gmail.com
+Port 993
+User soumil.gurjar@d-one.ai
+PassCmd "pass soumil.gurjar@d-one.ai"
+AuthMechs LOGIN
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+MaildirStore soumil.gurjar@d-one.ai-local
+Subfolders Verbatim
+Path /home/soumilgurjar/.local/share/mail/soumil.gurjar@d-one.ai/
+Inbox /home/soumilgurjar/.local/share/mail/soumil.gurjar@d-one.ai/INBOX
+
+Channel soumil.gurjar@d-one.ai
+Expunge Both
+Master :soumil.gurjar@d-one.ai-remote:
+Slave :soumil.gurjar@d-one.ai-local:
+Patterns * !"[Gmail]/All Mail"
+Create Both
+SyncState *
+MaxMessages 0
+ExpireUnread no
+# End profile
+

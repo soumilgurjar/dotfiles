@@ -39,9 +39,7 @@ alias sobp="source ~/.bash_profile"
 alias sot="tmux source-file ~/.tmux.conf"
 
 #Terminal navigation
-alias vi="vim"
 alias fs="du -sh"
-alias ls="clear; ls --color"
 alias la="ls -la"
 alias cpwd="pwd | clip.exe"
 alias rm="rm -ir"
@@ -67,7 +65,11 @@ alias bun="brew uninstall"
 
 # Neomutt related
 alias nm="neomutt"
-alias nme="neomutt -e 'source /Users/sgurjar/.config/mutt/accounts/soumil.gurjar@sam.math.ethz.ch.muttrc' "
+alias nmd="neomutt -e 'source /Users/sgurjar/.config/mutt/accounts/soumil.gurjar@d-one.ai.muttrc' "
+alias nms="~/.config/mutt/neomutt_startup.sh"
+alias nmenv="source ~/VirtualEnvs/neomutt_env/bin/activate && neomutt -e 'source /Users/sgurjar/.config/mutt/accounts/soumilgurjar@gmail.com.muttrc' "
+alias nmdenv="source ~/VirtualEnvs/neomutt_env/bin/activate && neomutt -e 'source /Users/sgurjar/.config/mutt/accounts/soumil.gurjar@d-one.ai.muttrc' "
+
 # Git related
 alias glog="git log --color --graph --pretty=format:'%C(yellow)%h%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --branches"
 alias gs="git status"
