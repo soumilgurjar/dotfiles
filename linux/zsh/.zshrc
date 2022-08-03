@@ -35,7 +35,6 @@ plugins=(
     zsh-syntax-highlighting
     zsh-vim-mode                        # This vi-mode plugin keeps the push-line ^q functionality
     z
-    fzf
 )
 
 # Plugin preferences

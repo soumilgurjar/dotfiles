@@ -43,7 +43,7 @@ Plug 'moll/vim-bbye'                            "Better buffer management with :
 Plug 'christoomey/vim-system-copy'              "Don't pollute system clipboard, instead use cp or cv commands; cP, cV for current line
 Plug 'junegunn/goyo.vim'                        "Distraction free vim
 Plug 'vimwiki/vimwiki', { 'branch': 'dev' }     "Easy note taking and diary maintaining
-Plug 'tbabej/taskwiki'                          "Integration of taskwarrior with vimwiki
+" Plug 'tbabej/taskwiki'                          "Integration of taskwarrior with vimwiki
 Plug 'lervag/vimtex'                            "Latex syntax plugin that provides viewing with zathura
 Plug 'rhysd/vim-grammarous'
 Plug 'vim-pandoc/vim-pandoc'                    "Pandoc support from within vim
@@ -52,6 +52,7 @@ Plug 'kbarrette/mediummode'                     "Disable common vim navigation f
 Plug 'Fymyte/mbsync.vim'                        "Enable syntax for mbsyncrc
 Plug 'liuchengxu/vim-which-key'
 Plug 'chaoren/vim-wordmotion'                   "Better word movement when dealing with acronyms, camelcase etc.
+Plug 'romainl/vim-cool'                         "Better search highlighting which disappears after moving away from search
 
 """ Theme plugins
 Plug 'morhetz/gruvbox'
@@ -133,7 +134,7 @@ let g:vimwiki_markdown_link_ext = 1             "Generates links as [text](text.
 
 """ TaskWiki
 " let g:taskwiki_disable="yes"
-" let g:taskwiki_suppress_mappings="yes"
+let g:taskwiki_suppress_mappings="yes"
 let g:taskwiki_dont_fold="yes"
 let g:taskwiki_markup_syntax = 'markdown'       "Has no documentation as of 20 Apr 2022
 let g:taskwiki_disable_concealcursor="yes"
@@ -160,6 +161,9 @@ let g:undotree_CustomDiffpanelCmd= 'belowright 12 new'
 let g:goyo_width = 120
 let g:goyo_height = '100%'
 let g:goyo_linenr = 1
+
+""" Vimcool
+let g:CoolTotalMatches = 1
 
 """ Gitgutter
 let g:gitgutter_override_sign_column_highlight = 1
