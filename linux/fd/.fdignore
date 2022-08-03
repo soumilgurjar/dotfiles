@@ -72,6 +72,7 @@ Virtual_Envs
 !.ssh
 !.taskrc
 !.tmux
+!.tmux.conf
 !.vim
 !.vimrc
 !.zshrc
