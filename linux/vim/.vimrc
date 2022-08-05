@@ -125,8 +125,8 @@ let g:mediummode_enabled = 0
 let g:mediummode_allowed_motions = 5
 
 """ VimWiki
-" let g:vimwiki_list = [{'path': '/mnt/c/Users/soumi/Dropbox/Apps/vimwiki/',
-let g:vimwiki_list = [{'path': '~/vimwiki/',
+" let g:vimwiki_list = [{'path': '~/vimwiki/',
+let g:vimwiki_list = [{'path': '/mnt/c/Users/soumi/Dropbox/Apps/vimwiki/',
                         \ 'syntax': 'markdown', 'ext': '.md',
                         \ 'links_space_char': '-',
                         \ 'auto_diary_index': 1}]
@@ -136,7 +136,7 @@ let g:vimwiki_global_ext = 0
 
 """ TaskWiki
 " let g:taskwiki_disable="yes"
-let g:taskwiki_suppress_mappings="yes"
+" let g:taskwiki_suppress_mappings="yes"
 let g:taskwiki_dont_fold="yes"
 let g:taskwiki_markup_syntax = 'markdown'       "Has no documentation as of 20 Apr 2022
 let g:taskwiki_disable_concealcursor="yes"
@@ -357,6 +357,14 @@ autocmd BufRead,BufNewFile *.py let python_highlight_all=1
 " autocmd FileType vim setlocal shiftwidth=4 tabstop=4 expandtab
 " autocmd FileType tex setlocal shiftwidth=4 tabstop=4 expandtab
 autocmd BufRead,BufNewFile *.gitconfig-* set filetype=gitconfig
+
+augroup zmkkeymap-devicetree
+    autocmd!
+    autocmd FileType devicetree set invlist
+    autocmd FileType devicetree set noexpandtab
+    autocmd FileType devicetree set nowrap
+augroup END
+
 augroup vimrc-vimwiki
     autocmd!
     autocmd FileType vimwiki
@@ -549,8 +557,8 @@ nnoremap N Nzzzv
 nnoremap J mzJ`z
 
 " Easy move to start and end of line
-nnoremap H ^
-nnoremap L $
+" nnoremap H ^
+" nnoremap L $
 
 " Insert line below or above without entering insert mode (works with Count)
 nnoremap <silent> oo :<C-u>call append(line("."),   repeat([""], v:count1))<CR>

@@ -138,6 +138,7 @@ let g:vimwiki_list = [{'path': '~/Dropbox/Apps/vimwiki/',
                         \ 'auto_diary_index': 1}]
 let g:vimwiki_markdown_link_ext = 1             "Generates links as [text](text.md)
 " let g:vimwiki_listsyms = '✗○◐●✓'              "Unable to use these because taskwiki does not allow these unicode characters
+let g:vimwiki_global_ext = 0
 
 """ TaskWiki
 " let g:taskwiki_disable="yes"
@@ -512,6 +513,7 @@ nnoremap <leader>qc <Cmd>cclose<CR>
 """""""" --------------- Mappings ------------------------
 " Pressing j twice in insert mode will lead to Esc
 inoremap jj <Esc>
+inoremap JJ <Esc>
 
 " Easymotion - `s{char}{char}{label}`
 nmap s <Plug>(easymotion-overwin-f2)

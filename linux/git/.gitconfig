@@ -45,7 +45,9 @@
     tool = vimdiff
     guitool = diffmerge
     submodule = log
-    algorithm = patience
+    ; algorithm = patience
+    ; algorithm = minimal
+    algorithm = histogram
     indentHeuristic = true
     colorMoved = default
 [difftool]
