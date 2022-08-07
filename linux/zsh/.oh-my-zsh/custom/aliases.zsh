@@ -79,6 +79,7 @@ alias gaa="git add ."
 alias ga="git add"
 alias gap="git add -p"
 alias gcm="git commit -m"
+alias gd="git df"
 
 # Adds commits and pushes files with the argument as the commit message
 function gcam() {
