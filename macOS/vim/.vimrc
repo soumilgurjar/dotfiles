@@ -204,8 +204,6 @@ let g:airline#extensions#gutentags#enabled = 1
 let g:airline#extensions#obsession#enabled = 1
 let g:airline#extensions#obsession#indicator_text = '$'
 
-""" Obsession
-
 """ All of your Plugins must be added before the following line
 call plug#end()
 filetype plugin indent on    " required
@@ -236,9 +234,7 @@ set number                      " show absolute line numbers
 set relativenumber              " show relative line numbers (except current)
 set ruler                       " show column in console
 set list                        " show trailing whitespace
-" set listchars=tab:▸\ ,trail:▫   " list of characters to show
-" set listchars=tab:▷▷⋮,trail:▫   " list of characters to show
-set listchars=tab:▷\ ,trail:▫   " list of characters to show
+set listchars=tab:▸\ ,trail:▫   " list of characters to show
 set wrap                        " automatically wrap on load
 set wrapscan                    " Allow search to wrap to start of file
 set breakindent                 " enable indentation on linebreak
@@ -254,6 +250,7 @@ set backspace=indent,eol,start  " Vim 8.2 update had changed default backspace b
 set noro                        " Set no read only mode. Useful when using git difftool.
 set showcmd                     " shows the current command
 set laststatus=2                " 2 - Always display the status bar.
+set termguicolors               " Set true color (use only when terminal supports true colors)
 set background=dark             " For colorscheme
 set shortmess=a                 " Abbreviates file messages to prevent hit enter to continue message
 if executable('rg')
@@ -263,7 +260,6 @@ endif
 set nrformats+=alpha
 let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
-set termguicolors             " Set true color (use only when terminal supports true colors)
 
 """"""""" ---------------  VIM Cursor --------------------
 " 1 or 0 -> blinking block
@@ -558,8 +554,8 @@ nnoremap N Nzzzv
 nnoremap J mzJ`z
 
 " Easy move to start and end of line
-nnoremap H ^
-nnoremap L $
+" nnoremap H ^
+" nnoremap L $
 
 " Insert line below or above without entering insert mode (works with Count)
 nnoremap <silent> oo :<C-u>call append(line("."),   repeat([""], v:count1))<CR>

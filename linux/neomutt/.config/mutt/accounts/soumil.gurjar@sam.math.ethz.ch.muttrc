@@ -26,8 +26,6 @@ set imap_pipeline_depth="0"
 set send_charset="us-ascii:iso-8859-15:utf-8:iso-8859-1"
 set certificate_file=~/.mutt_certs
 
-set pgp_default_key="A93DA447E00F262D954E28CA951B9AD3AE3D335C"
-
 # Mutt settings
 set timeout=30 # 30 seconds inactivity before checking mail
 set print_command="a2ps" # print command

@@ -78,9 +78,9 @@ export DBUS_SESSION_BUS_ADDRESS='unix:path='$DBUS_LAUNCHD_SESSION_BUS_SOCKET
 export FZF_COMPLETION_TRIGGER="'"
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --smart-case'
 export FZF_CTRL_T_COMMAND='rg --files --hidden --follow --smart-case'
-export FZF_ALT_C_COMMAND="fd --type directory --hidden --follow --ignore --color=never . $HOME"
+export FZF_ALT_C_COMMAND="fd --type directory --hidden --exclude \".git\" --follow --ignore --color=never . $HOME"
 export FZF_DEFAULT_OPTS="-m --height 90% --layout=reverse --border --inline-info
-  --preview-window=:hidden
+  --preview-window=:nohidden
   --preview '([[ -f {} ]] && (bat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'
   --bind 'ctrl-d:preview-page-down' --bind 'ctrl-u:preview-page-up' --bind '?:toggle-preview'"
 _fzf_compgen_path() {

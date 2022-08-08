@@ -16,7 +16,13 @@ alias eu="ssh sgurjar@euler.ethz.ch"
 alias euy="ssh -Y sgurjar@euler.ethz.ch"
 alias eux="ssh -X sgurjar@euler.ethz.ch"
 
-# Open and Source Config files
+# Source Config files
+alias soz="source ~/.zshrc"
+alias sob="source ~/.bashrc"
+alias sobp="source ~/.bash_profile"
+alias sot="tmux source-file ~/.tmux.conf"
+
+# Vim related
 alias viz="vim ~/.zshrc"
 alias via="vim ~/.oh-my-zsh/custom/aliases.zsh"
 alias vib="vim ~/.bashrc"
@@ -31,10 +37,10 @@ alias vsw="vim -S ~/.vim/sessions/vimwiki-session.vim"
 alias vsk="vim -S ~/.vim/sessions/kitty-config.vim"
 alias vscl="vim -S ~/.vim/sessions/cover-letter-jobsearch.vim"
 alias vscv="vim -S ~/.vim/sessions/cv-jobsearch.vim"
-alias soz="source ~/.zshrc"
-alias sob="source ~/.bashrc"
-alias sobp="source ~/.bash_profile"
-alias sot="tmux source-file ~/.tmux.conf"
+
+function vvs() {
+  vimdiff ~/.dotfiles/macOS/$1 ~/.dotfiles/linux/$1
+}
 
 #Terminal navigation
 alias fs="du -sh"
@@ -79,6 +85,7 @@ alias gaa="git add ."
 alias ga="git add"
 alias gap="git add -p"
 alias gcm="git commit -m"
+alias gd="git df"
 
 # Adds commits and pushes files with the argument as the commit message
 function gcam() {

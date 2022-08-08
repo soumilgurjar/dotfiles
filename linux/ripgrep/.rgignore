@@ -6,7 +6,7 @@ vendor
 # OS specific files
 .DS_Store
 
-# Files and Folders for ignoring with ripgrep
+# Files and Folders for ignoring
 .android
 .bash_history
 .bash_logout
@@ -72,6 +72,7 @@ Virtual_Envs
 !.ssh
 !.taskrc
 !.tmux
+!.tmux.conf
 !.vim
 !.vimrc
 !.zshrc

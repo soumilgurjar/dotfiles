@@ -35,6 +35,7 @@ plugins=(
     zsh-syntax-highlighting
     zsh-vim-mode                        # This vi-mode plugin keeps the push-line ^q functionality
     z
+    fzf
 )
 
 # Plugin preferences
@@ -68,8 +69,7 @@ export DISPLAY=127.0.0.1:0.0
 export FZF_COMPLETION_TRIGGER="'"
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --smart-case'
 export FZF_CTRL_T_COMMAND='rg --files --hidden --follow --smart-case'
-# export FZF_ALT_C_COMMAND="fd --type directory --hidden --follow --ignore --color=never . $HOME"
-# export FZF_ALT_C_COMMAND="fd --type directory --hidden --exclude \".git\" --follow --ignore --color=never . $HOME"
+export FZF_ALT_C_COMMAND="fd --type directory --hidden --exclude \".git\" --follow --ignore --color=never . $HOME"
 export FZF_DEFAULT_OPTS="-m --height 90% --layout=reverse --border --inline-info
   --preview-window=:nohidden
   --preview '([[ -f {} ]] && (bat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'
@@ -100,3 +100,9 @@ export RIPGREP_CONFIG_PATH="$HOME/.ripgrep"
 # Switch to vim for editing current command
 bindkey '^x^x' edit-command-line
 
+# Testing if this fixes gpg-agent issues on computer restart
+GPG_TTY=$(tty)
+export GPG_TTY
+
+# Lesspipe
+export LESSOPEN="|/home/linuxbrew/.linuxbrew/bin/lesspipe.sh %s"

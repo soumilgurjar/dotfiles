@@ -8,9 +8,9 @@ set my_password = "`pass mutt_d-one_app_password/soumil.gurjar@d-one.ai`"
 set smtp_url="smtp://soumil.gurjar@d-one.ai@smtp.gmail.com:587"
 set smtp_pass=$my_password
 alias me Soumil Gurjar <soumil.gurjar@d-one.ai>
-set folder = "/Users/sgurjar/.local/share/mail/soumil.gurjar@d-one.ai"
-set header_cache = /Users/sgurjar/.cache/mutt-wizard/soumil.gurjar@d-one.ai/headers
-set message_cachedir = /Users/sgurjar/.cache/mutt-wizard/soumil.gurjar@d-one.ai/bodies
+set folder = "/home/soumilgurjar/.local/share/mail/soumil.gurjar@d-one.ai"
+set header_cache = "/home/soumilgurjar/.cache/mutt-wizard/soumil.gurjar@d-one.ai/headers"
+set message_cachedir = "/home/soumilgurjar/.cache/mutt-wizard/soumil.gurjar@d-one.ai/bodies"
 set mbox_type = Maildir
 set hostname = "gmail.com"
 # set hostname = "d-one.ai"
@@ -22,7 +22,7 @@ set imap_pipeline_depth="0"
 set pager_context = 3
 set pager_index_lines = 10
 
-mailboxes "=INBOX" "=[Gmail]/Trash" "=[Gmail]/Drafts" "=[Gmail]/Sent Mail" "=[Gmail]/Spam" "=[Gmail]/Starred"
+mailboxes "=INBOX" "=[Gmail]/Trash" "=[Gmail]/Drafts" "=[Gmail]/Sent Mail" "=[Gmail]/Spam" "=[Gmail]/Starred" "=Currents - D One Plaza"
 
 set sidebar_new_mail_only               # Only mailboxes with new/flagged email
 sidebar_whitelist =INBOX "=[Gmail]/Drafts" "=[Gmail]/Sent Mail" "=[Gmail]/Starred"  # Always display these mailboxes
@@ -43,7 +43,7 @@ macro index,pager ga "<change-folder>=[Gmail]/Starred<enter>" "go to starred"
 macro index,pager Ma ";<save-message>=[Gmail]/Starred<enter>" "move mail to starred"
 macro index,pager Ca ";<copy-message>=[Gmail]/Starred<enter>" "copy mail to starred"
 
-macro index o "<shell-escape>/Users/sgurjar/.config/mutt/syncmail.sh soumil.gurjar@d-one.ai<enter>" "run mbsync to sync soumil.gurjar@d-one.ai"
+macro index o "<shell-escape>~/.config/mutt/syncmail.sh soumil.gurjar@d-one.ai<enter>" "run mbsync to sync soumil.gurjar@d-one.ai"
 # macro index o "<shell-escape>mw -y soumil.gurjar@d-one.ai<enter>" "run mbsync to sync soumil.gurjar@d-one.ai"
 macro index \eg "<enter-command>unset wait_key<enter><shell-escape>gpg --list-secret-keys; printf 'Enter email ID of user to publish: '; read eID; printf 'Enter fingerprint of GPG key to publish: '; read eFGPT; /usr/local/libexec/gpg-wks-client --create \$eFGPT \$eID | msmtp --read-envelope-from --read-recipients -a soumil.gurjar@d-one.ai<enter>"  "publish GPG key to WKS provider"
 macro index \eh "<pipe-message>/usr/local/libexec/gpg-wks-client --receive | msmtp --read-envelope-from --read-recipients -a soumil.gurjar@d-one.ai<enter>" "confirm GPG publication"

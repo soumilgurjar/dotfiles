@@ -2,9 +2,7 @@
 source /usr/local/share/mutt-wizard/mutt-wizard.muttrc
 
 ## Color scheme
-# source /Users/sgurjar/.config/mutt/powerline/colors/gruvbox-powerline.neomuttrc
-# source /Users/sgurjar/.config/mutt/powerline/powerline-rounded.neomuttrc
-source /Users/sgurjar/.config/mutt/powerline/powerline.neomuttrc
+source ~/.config/mutt/powerline/powerline.neomuttrc
 
 # color indicator brightblack default         # (overrule)
 color indicator default color238               # (overrule)
@@ -33,7 +31,7 @@ set sort_aux = 'last-date-received' #order of sort_aux and sort is important
 set collapse_all = 'yes'
 set uncollapse_new = 'yes'
 
-# # default list of header fields to weed out when displaying mail; ignore them all and then unignore what you want to see
+# default list of header fields to weed out when displaying mail; ignore them all and then unignore what you want to see
 ignore *
 unignore Date To From: Cc Subject
 hdr_order Date From To Cc Subject
@@ -45,27 +43,19 @@ bind index h collapse-thread
 bind index \ch collapse-all
 bind index \cx purge-message
 
-macro index O "<shell-escape>/Users/sgurjar/.config/mutt/syncmail.sh<enter>" "run syncmail script to sync all mail"  # (overrule)
+macro index O "<shell-escape>~/.config/mutt/syncmail.sh<enter>" "run syncmail script to sync all mail"  # (overrule)
 macro index,pager \cb "<pipe-message> urlscan<Enter>" "call urlscan to extract URLs out of a message"       # (overrule)
 macro attach,compose \cb "<pipe-entry> urlscan<Enter>" "call urlscan to extract URLs out of a message"      # (overrule)
 macro index,pager a "<enter-command>set my_pipe_decode=\$pipe_decode pipe_decode<return><pipe-message>abook --add-email-quiet<return><enter-command>set pipe_decode=\$my_pipe_decode; unset my_pipe_decode<return>" "add the sender address to abook"              # (overrule)
-#Mail attachment save to a specific directory
+
+# Mail attachment save to a specific directory
 macro attach S "<save-entry><kill-line>~/Downloads/<enter>y"
 macro attach D "<save-entry><kill-line>~/Dropbox/Items to Print/<enter>y"
 
-#smime related settings
-# source ~/.config/mutt/smime.rc
-# set smime_keys = "~/.smime/keys"
-# set smime_certificates = "~/.smime/certificates"
-# set smime_ca_location="~/.smime/cacert.pem"
-# set smime_ca_location=/usr/local/etc/openssl/cert.pem
-# set smime_is_default
-# set crypt_autosign
-
 # Set default account and then provide macros for switching accounts
-source /Users/sgurjar/.config/mutt/accounts/soumilgurjar@gmail.com.muttrc
-# source /Users/sgurjar/.config/mutt/accounts/soumil.gurjar@sam.math.ethz.ch.muttrc
-# source /Users/sgurjar/.config/mutt/accounts/soumil.gurjar@d-one.ai.muttrc
-macro index,pager i4 '<sync-mailbox><enter-command>source /Users/sgurjar/.config/mutt/accounts/soumil.gurjar@d-one.ai.muttrc<enter><change-folder>!<enter>;<check-stats>' "switch to soumil.gurjar@d-one.ai"
-macro index,pager i3 '<sync-mailbox><enter-command>source /Users/sgurjar/.config/mutt/accounts/soumilgurjar@gmail.com.muttrc<enter><change-folder>!<enter>;<check-stats>' "switch to soumilgurjar@gmail.com"
-macro index,pager i2 '<sync-mailbox><enter-command>source /Users/sgurjar/.config/mutt/accounts/soumil.gurjar@sam.math.ethz.ch.muttrc<enter><change-folder>!<enter>;<check-stats>' "switch to soumil.gurjar@sam.math.ethz.ch"
+source ~/.config/mutt/accounts/soumilgurjar@gmail.com.muttrc
+# source ~/.config/mutt/accounts/soumil.gurjar@sam.math.ethz.ch.muttrc
+# source ~/.config/mutt/accounts/soumil.gurjar@d-one.ai.muttrc
+macro index,pager i4 '<sync-mailbox><enter-command>source ~/.config/mutt/accounts/soumil.gurjar@d-one.ai.muttrc<enter><change-folder>!<enter>;<check-stats>' "switch to soumil.gurjar@d-one.ai"
+macro index,pager i3 '<sync-mailbox><enter-command>source ~/.config/mutt/accounts/soumilgurjar@gmail.com.muttrc<enter><change-folder>!<enter>;<check-stats>' "switch to soumilgurjar@gmail.com"
+macro index,pager i2 '<sync-mailbox><enter-command>source ~/.config/mutt/accounts/soumil.gurjar@sam.math.ethz.ch.muttrc<enter><change-folder>!<enter>;<check-stats>' "switch to soumil.gurjar@sam.math.ethz.ch"

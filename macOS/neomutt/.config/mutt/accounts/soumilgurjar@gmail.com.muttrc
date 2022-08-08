@@ -8,9 +8,9 @@ set my_password = "`pass mutt_gmail_app_password/soumilgurjar@gmail.com`"
 set smtp_url="smtp://soumilgurjar@smtp.gmail.com:587"
 set smtp_pass=$my_password
 # alias me Soumil Gurjar <soumilgurjar@gmail.com>
-set folder = "/Users/sgurjar/.local/share/mail/soumilgurjar@gmail.com"
-set header_cache = "/Users/sgurjar/.cache/mutt-wizard/soumilgurjar@gmail.com/headers"
-set message_cachedir = "/Users/sgurjar/.cache/mutt-wizard/soumilgurjar@gmail.com/bodies"
+set folder = "~/.local/share/mail/soumilgurjar@gmail.com"
+set header_cache = "~/.cache/mutt-wizard/soumilgurjar@gmail.com/headers"
+set message_cachedir = "~/.cache/mutt-wizard/soumilgurjar@gmail.com/bodies"
 set mbox_type = Maildir
 set hostname = "gmail.com"
 set spoolfile = +INBOX
@@ -21,11 +21,11 @@ set imap_pipeline_depth="0"
 set pager_context = 3
 set pager_index_lines = 10
 
-# SMIME Signing
+# PGP Signing
 set pgp_default_key="09F9267C277FC390F0A0F9DE2E4A69A50577AAF2"
-set smime_default_key="0x5A5A58E9"
 
-mailboxes "=Alerts/Flight Alerts" "=Alerts/Google Scholar Alerts" "=Amazon_Digitec_Galaxus" "=Apping Mails" "=Apple Account" "=EAT.ch" "=ETHZmail/ASVZ" "=ETHZmail/AVETH" "=ETHZmail/CMEA II" "=ETHZmail/Deutsch ZGSM" "=ETHZmail/FIM Bulletin" "=ETHZmail/FIM Tea" "=ETHZmail/HPC" "=ETHZmail/Perry's emails" "=ETHZmail/Sid's emails" "=ETHZmail/ZH Colloquium Math" "=Facebook" "=Finances/Billsup" "=Finances/Dena Bank Statements" "=Finances/Paypal" "=INBOX" "=Job Search/JS2022" "=LinkedIn" "=News/Al Jazeera" "=News/NY Times" "=News/NZZ" "=News/Skimm" "=News/Splainer" "=News/SwissInfo" "=News/TED/Important TEDTalks" "=News/The Local" "=Personal" "=Steam" "=SwissPost_DHL_DPD" "=Tennis/ASVZ Tennis" "=Tennis/GoTCourts" "=Tennis/TennisClub Lerchenberg" "=UWCU" "=WISCmail/Professor" "=Zurich Housing/JUWO" "=[Gmail]/Bin" "=[Gmail]/Chats" "=[Gmail]/Drafts" "=[Gmail]/Sent Mail" "=[Gmail]/Spam" "=[Gmail]/Starred"
+# mailboxes "=Alerts/Flight Alerts" "=Alerts/Google Scholar Alerts" "=Amazon_Digitec_Galaxus" "=Apple Account" "=EAT.ch" "=Finances/Paypal" "=INBOX" "=Job Search/JS2022" "=LinkedIn" "=News/NY Times" "=News/Splainer" "=News/SwissInfo" "=News/TED/Important TEDTalks" "=News/The Local" "=Personal" "=Steam" "=SwissPost_DHL_DPD" "=Tennis/TennisClub Lerchenberg" "=UWCU" "=WISCmail/Professor" "=Zurich Housing/JUWO" "=[Gmail]/Bin" "=[Gmail]/Chats" "=[Gmail]/Drafts" "=[Gmail]/Sent Mail" "=[Gmail]/Spam" "=[Gmail]/Starred"
+mailboxes "=Alerts/Flight Alerts" "=Alerts/Google Scholar Alerts" "=Amazon_Digitec_Galaxus" "=Apple Account" "=EAT.ch" "=Finances/Paypal" "=INBOX" "=Job Search" "=Job Search/JS2022" "=LinkedIn" "=News/NY Times" "=News/Splainer" "=News/SwissInfo" "=News/TED/Important TEDTalks" "=News/The Local" "=Steam" "=SwissPost_DHL_DPD" "=UWCU" "=[Gmail]/Bin" "=[Gmail]/Chats" "=[Gmail]/Drafts" "=[Gmail]/Sent Mail" "=[Gmail]/Spam" "=[Gmail]/Starred"
 
 set sidebar_new_mail_only               # Only mailboxes with new/flagged email
 sidebar_whitelist =INBOX "=[Gmail]/Drafts" "=[Gmail]/Sent Mail" "=[Gmail]/Starred"  # Always display these mailboxes
@@ -46,7 +46,7 @@ macro index,pager ga "<change-folder>=[Gmail]/Starred<enter>" "go to starred"
 macro index,pager Ma ";<save-message>=[Gmail]/Starred<enter>" "move mail to starred"
 macro index,pager Ca ";<copy-message>=[Gmail]/Starred<enter>" "copy mail to starred"
 
-macro index o "<shell-escape>/Users/sgurjar/.config/mutt/syncmail.sh soumilgurjar@gmail.com<enter>" "run mbsync to sync soumilgurjar@gmail.com"
+macro index o "<shell-escape>~/.config/mutt/syncmail.sh soumilgurjar@gmail.com<enter>" "run mbsync to sync soumilgurjar@gmail.com"
 # macro index o "<shell-escape>mw -y soumilgurjar@gmail.com<enter>" "run mbsync to sync soumilgurjar@gmail.com"
 macro index \eg "<enter-command>unset wait_key<enter><shell-escape>gpg --list-secret-keys; printf 'Enter email ID of user to publish: '; read eID; printf 'Enter fingerprint of GPG key to publish: '; read eFGPT; /usr/local/libexec/gpg-wks-client --create \$eFGPT \$eID | msmtp --read-envelope-from --read-recipients -a soumilgurjar@gmail.com<enter>"  "publish GPG key to WKS provider"
 macro index \eh "<pipe-message>/usr/local/libexec/gpg-wks-client --receive | msmtp --read-envelope-from --read-recipients -a soumilgurjar@gmail.com<enter>" "confirm GPG publication"

@@ -1,8 +1,14 @@
 text/plain; $EDITOR %s ;
-text/html; /usr/local/lib/mutt-wizard/openfile %s ; nametemplate=%s.html
+# text/html; /usr/local/lib/mutt-wizard/openfile %s ; nametemplate=%s.html
+# text/html; w3m -I %{charset} -T text/html; copiousoutput;
 text/html; lynx -assume_charset=%{charset} -display_charset=utf-8 -dump -width=1024 %s; nametemplate=%s.html; copiousoutput;
+text/htm        ; lynx -dump -force_html %s ; copiousoutput
+message/html    ; lynx -dump -force_html %s ; copiousoutput
+message/htm     ; lynx -dump -force_html %s ; copiousoutput
+text/*; LESSQUIET=1 lesspipe.sh '%s'; copiousoutput
 image/*; /usr/local/lib/mutt-wizard/openfile %s ;
-application/pdf; /usr/local/lib/mutt-wizard/openfile %s ;
+# application/pdf; /usr/local/lib/mutt-wizard/openfile %s ;
+application/pdf; "${PDFVIEWER:-zathura}" --mode fullscreen %s ;
 # application/msword; pandoc --from docx --to markdown %s; copiousoutput
 # application/vnd.oasis.opendocument.text; pandoc --from odt --to markdown %s; copiousoutput
 # application/rtf; pandoc --from rtf --to plain %s; copiousoutput

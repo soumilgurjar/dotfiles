@@ -71,9 +71,11 @@ alias bun="brew uninstall"
 
 # Neomutt related
 alias nm="neomutt"
-alias nmd="neomutt -e 'source /Users/sgurjar/.config/mutt/accounts/soumil.gurjar@d-one.ai.muttrc' "
+alias nme="neomutt -e 'source ~/.config/mutt/accounts/soumil.gurjar@sam.math.ethz.ch.muttrc' "
+alias nmd="neomutt -e 'source ~/.config/mutt/accounts/soumil.gurjar@d-one.ai.muttrc' "
 alias nms="~/.config/mutt/neomutt_startup.sh"
 alias nmenv="source ~/VirtualEnvs/neomutt_env/bin/activate && neomutt -e 'source /Users/sgurjar/.config/mutt/accounts/soumilgurjar@gmail.com.muttrc' "
+alias nmeenv="source ~/VirtualEnvs/neomutt_env/bin/activate && neomutt -e 'source /Users/sgurjar/.config/mutt/accounts/soumil.gurjar@sam.math.ethz.ch.muttrc' "
 alias nmdenv="source ~/VirtualEnvs/neomutt_env/bin/activate && neomutt -e 'source /Users/sgurjar/.config/mutt/accounts/soumil.gurjar@d-one.ai.muttrc' "
 
 # Git related

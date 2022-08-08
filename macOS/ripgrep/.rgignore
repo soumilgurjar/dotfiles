@@ -6,7 +6,7 @@ vendor
 # OS specific files
 .DS_Store
 
-# Folders for ignoring with 
+# Files and Folders for ignoring
 .Spotlight-V100
 .Trash
 .adobe
@@ -69,23 +69,18 @@ polybox
 # now un-ignore the ones I care about
 !Applications
 !Desktop
-!Documents
-!Downloads
-!Dropbox
-!Github_Repositories
-!Gitlab_Repositories
-!Google Drive
-!Movies
-!Music
-!Pictures
-!Scratch_Bryant
-!VirtualEnvs
-!Zotero
-!pCloud Drive
-!polybox
+!.bashrc
 !.config
 !.dotfiles
+!.git-credentials
+!.gitconfig
 !.oh-my-zsh
+!.rgignore
+!.ripgrep
 !.ssh
+!.taskrc
 !.tmux
+!.tmux.conf
 !.vim
+!.vimrc
+!.zshrc
