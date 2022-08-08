@@ -33,6 +33,11 @@ set sort_aux = 'last-date-received' #order of sort_aux and sort is important
 set collapse_all = 'yes'
 set uncollapse_new = 'yes'
 
+# # default list of header fields to weed out when displaying mail; ignore them all and then unignore what you want to see
+ignore *
+unignore Date To From: Cc Subject
+hdr_order Date From To Cc Subject
+
 ## New bindings
 bind pager gg top
 bind pager G bottom
@@ -44,7 +49,9 @@ macro index O "<shell-escape>/Users/sgurjar/.config/mutt/syncmail.sh<enter>" "ru
 macro index,pager \cb "<pipe-message> urlscan<Enter>" "call urlscan to extract URLs out of a message"       # (overrule)
 macro attach,compose \cb "<pipe-entry> urlscan<Enter>" "call urlscan to extract URLs out of a message"      # (overrule)
 macro index,pager a "<enter-command>set my_pipe_decode=\$pipe_decode pipe_decode<return><pipe-message>abook --add-email-quiet<return><enter-command>set pipe_decode=\$my_pipe_decode; unset my_pipe_decode<return>" "add the sender address to abook"              # (overrule)
-
+#Mail attachment save to a specific directory
+macro attach S "<save-entry><kill-line>~/Downloads/<enter>y"
+macro attach D "<save-entry><kill-line>~/Dropbox/Items to Print/<enter>y"
 
 #smime related settings
 # source ~/.config/mutt/smime.rc

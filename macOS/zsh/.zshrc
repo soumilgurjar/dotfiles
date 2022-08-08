@@ -127,3 +127,9 @@ bindkey -M vicmd 'y' vi-yank-clipboard
 # Testing if this fixes gpg-agent issues on computer restart
 GPG_TTY=$(tty)
 export GPG_TTY
+
+# Lesspipe if found
+export LESS='-R --ignore-case --LONG-PROMPT --tabs=4 --window=-4'
+if type /usr/local/bin/lesspipe.sh >/dev/null 2>&1; then
+    export LESSOPEN="|/usr/local/bin/lesspipe.sh %s"
+fi

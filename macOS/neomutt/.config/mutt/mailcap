@@ -1,12 +1,16 @@
 text/plain; $EDITOR %s ;
-text/html; /usr/local/lib/mutt-wizard/openfile %s ; nametemplate=%s.html
-text/html; lynx -assume_charset=%{charset} -display_charset=utf-8 -dump -width=1024 %s; nametemplate=%s.html; copiousoutput;
+# text/html; /usr/local/lib/mutt-wizard/openfile %s ; nametemplate=%s.html
 # text/html; w3m -I %{charset} -T text/html; copiousoutput;
+text/html; lynx -assume_charset=%{charset} -display_charset=utf-8 -dump -width=1024 %s; nametemplate=%s.html; copiousoutput;
+text/htm        ; lynx -dump -force_html %s ; copiousoutput
+message/html    ; lynx -dump -force_html %s ; copiousoutput
+message/htm     ; lynx -dump -force_html %s ; copiousoutput
+text/*; LESSQUIET=1 lesspipe.sh '%s'; copiousoutput
+# image/*; /usr/local/lib/mutt-wizard/openfile %s ;
 # image/*; (clear && /Users/sgurjar/.iterm2/imgcat %s && read -N 1); needsterminal
 image/*; kitty +kitten icat --silent --hold %s; copiousoutput
-# image/*; /usr/local/lib/mutt-wizard/openfile %s ;
-video/*; setsid mpv --quiet %s &; copiousoutput
-audio/*; mpv %s ;
+video/*; setsid mpv --quiet %s &; copiousoutput;  description = "Video";
+audio/*; mpv %s ; description = "Audio";
 # application/pdf; /usr/local/lib/mutt-wizard/openfile %s ;
 # application/pdf; pdftotext -layout %s -; copiousoutput;
 application/pdf; ~/Github_Repositories/termpdf.py/termpdf.py %s ;
