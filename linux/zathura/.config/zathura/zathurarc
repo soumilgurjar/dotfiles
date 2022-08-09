@@ -1,0 +1,8 @@
+set sandbox none
+set selection-clipboard clipboard
+set synctex-editor-command "vim --remote-silent +%{line} %{input}"
+set guioptions sv
+map J scroll down
+map K scroll up
+map j navigate next
+map k navigate previous

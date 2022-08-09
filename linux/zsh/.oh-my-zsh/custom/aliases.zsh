@@ -112,6 +112,9 @@ function unstow() { stow -vDt ~ $1 }
 # Taskwarrior related
 alias tt="taskwarrior-tui"
 
+# Zathura related
+alias zathura="zathura --mode fullscreen"
+
 #Commonly accessed directories
 alias win="cd /mnt/c/Users/soumi/"
 

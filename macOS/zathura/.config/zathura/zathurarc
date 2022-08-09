@@ -1,0 +1,7 @@
+set sandbox none
+set selection-clipboard clipboard
+
+map J scroll down
+map K scroll up
+map j navigate next
+map k navigate previous
