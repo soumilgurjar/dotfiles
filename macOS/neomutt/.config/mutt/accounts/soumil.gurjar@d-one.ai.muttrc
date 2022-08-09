@@ -8,9 +8,9 @@ set my_password = "`pass mutt_d-one_app_password/soumil.gurjar@d-one.ai`"
 set smtp_url="smtp://soumil.gurjar@d-one.ai@smtp.gmail.com:587"
 set smtp_pass=$my_password
 alias me Soumil Gurjar <soumil.gurjar@d-one.ai>
-set folder = "/home/soumilgurjar/.local/share/mail/soumil.gurjar@d-one.ai"
-set header_cache = "/home/soumilgurjar/.cache/mutt-wizard/soumil.gurjar@d-one.ai/headers"
-set message_cachedir = "/home/soumilgurjar/.cache/mutt-wizard/soumil.gurjar@d-one.ai/bodies"
+set folder = "~/.local/share/mail/soumil.gurjar@d-one.ai"
+set header_cache = "~/.cache/mutt-wizard/soumil.gurjar@d-one.ai/headers"
+set message_cachedir = "~/.cache/mutt-wizard/soumil.gurjar@d-one.ai/bodies"
 set mbox_type = Maildir
 set hostname = "gmail.com"
 # set hostname = "d-one.ai"

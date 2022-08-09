@@ -40,8 +40,11 @@ hdr_order Date From To Cc Subject
 bind pager gg top
 bind pager G bottom
 bind index h collapse-thread
-bind index \ch collapse-all
+bind index z collapse-all
 bind index \cx purge-message
+bind index \cy undelete-thread
+bind index,pager \ci sidebar-prev
+bind index,pager \cu sidebar-next
 
 macro index O "<shell-escape>~/.config/mutt/syncmail.sh<enter>" "run syncmail script to sync all mail"  # (overrule)
 macro index,pager \cb "<pipe-message> urlscan<Enter>" "call urlscan to extract URLs out of a message"       # (overrule)
