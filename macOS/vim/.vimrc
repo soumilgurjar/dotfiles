@@ -194,7 +194,7 @@ if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
 let g:airline#extensions#hunks#enabled = 0
-let g:airline_detect_spelllang=0
+let g:airline_detect_spelllang=1
 let g:airline_section_y = ''
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline_symbols.maxlinenr= ''
@@ -378,6 +378,16 @@ augroup vimrc-tex
     autocmd FileType tex vnoremap k gk
 augroup END
 
+augroup markdown-txt-Spell
+    autocmd!
+    autocmd FileType markdown,vimwiki,text setlocal spell
+    autocmd FileType markdown,vimwiki,text setlocal spelllang=en,de
+    autocmd FileType markdown,vimwiki,text highlight SpellBad cterm=underline
+    autocmd BufRead,BufNewFile *.md,*.txt,*.rst setlocal spell
+    autocmd BufRead,BufNewFile *.md,*.txt,*.rst setlocal spelllang=en,de
+    autocmd BufRead,BufNewFile *.md,*.txt,*.rst highlight SpellBad cterm=underline
+augroup END
+
 """""""" --------------- leader Mappings ------------------------
 " leader is now set to Spacebar
 let mapleader = " "
@@ -487,6 +497,9 @@ nnoremap <leader>ds <Cmd>windo diffthis<CR>
 
 " Show yank buffer
 nnoremap <silent> <leader>yy <Cmd>YRShow<CR>
+
+" Show/hide spell check underline
+nnoremap <silent> <leader>spl <Cmd>setlocal spell! spelllang=en,de<CR> <Cmd>echo "Spellcheck toggled"<CR>
 
 " Go to specific buffer
 " nnoremap <leader>hh <Cmd>bp<CR>
