@@ -11,7 +11,6 @@ Plug 'sheerun/vim-polyglot'                     "Provides syntax for multiple fi
 Plug 'airblade/vim-gitgutter'                   "Show changes in file from previous commit
 Plug 'tpope/vim-fugitive'                       "Git integration plugin
 Plug 'tpope/vim-rhubarb'                        "Git browse command to go to webpage directly
-" Plug 'justinmk/vim-sneak'                       "Better search with 2,3 starting letters with s/S, operators with z/Z
 Plug 'easymotion/vim-easymotion'                "New way of moving within vim
 Plug 'tpope/vim-commentary'                     "Allows commenting lines/selection with gc
 Plug 'tpope/vim-surround'                       "Allows surrounding words/selection with cs
@@ -40,7 +39,6 @@ Plug 'simnalamburt/vim-mundo'                   "Stores multiples undos
 Plug 'scrooloose/nerdtree'                      "Allows navigation of file tree
 Plug 'aymericbeaumet/vim-symlink'               "Follows symlink rather than editing the symlink
 Plug 'moll/vim-bbye'                            "Better buffer management with :Bdelete, :Bwipeout etc.
-Plug 'christoomey/vim-system-copy'              "Don't pollute system clipboard, instead use cp or cv commands; cP, cV for current line
 Plug 'junegunn/goyo.vim'                        "Distraction free vim
 Plug 'vimwiki/vimwiki', { 'branch': 'dev' }     "Easy note taking and diary maintaining
 " Plug 'tbabej/taskwiki'                          "Integration of taskwarrior with vimwiki
@@ -125,7 +123,6 @@ let g:mediummode_enabled = 0
 let g:mediummode_allowed_motions = 5
 
 """ VimWiki
-" let g:vimwiki_list = [{'path': '~/vimwiki/',
 let g:vimwiki_list = [{'path': '/mnt/c/Users/soumi/Dropbox/Apps/vimwiki/',
                         \ 'syntax': 'markdown', 'ext': '.md',
                         \ 'links_space_char': '-',
@@ -188,7 +185,7 @@ if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
 let g:airline#extensions#hunks#enabled = 0
-let g:airline_detect_spelllang=0
+let g:airline_detect_spelllang=1
 let g:airline_section_y = ''
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline_symbols.maxlinenr= ''
@@ -381,6 +378,16 @@ augroup vimrc-tex
     autocmd FileType tex vnoremap k gk
 augroup END
 
+augroup markdown-txt-Spell
+    autocmd!
+    autocmd FileType markdown,vimwiki,text setlocal spell
+    autocmd FileType markdown,vimwiki,text setlocal spelllang=en
+    autocmd FileType markdown,vimwiki,text highlight SpellBad cterm=underline
+    autocmd BufRead,BufNewFile *.md,*.txt,*.rst setlocal spell
+    autocmd BufRead,BufNewFile *.md,*.txt,*.rst setlocal spelllang=en
+    autocmd BufRead,BufNewFile *.md,*.txt,*.rst highlight SpellBad cterm=underline
+augroup END
+
 """""""" --------------- leader Mappings ------------------------
 " leader is now set to Spacebar
 let mapleader = " "
@@ -491,6 +498,9 @@ nnoremap <leader>ds <Cmd>windo diffthis<CR>
 " Show yank buffer
 nnoremap <silent> <leader>yy <Cmd>YRShow<CR>
 
+" Show/hide spell check underline
+nnoremap <silent> <leader>spl <Cmd>setlocal spell! spelllang=en,de<CR> <Cmd>echo "Spellcheck toggled"<CR>
+
 " Go to specific buffer
 " nnoremap <leader>hh <Cmd>bp<CR>
 " nnoremap <leader>ll <Cmd>bn<CR>
@@ -556,10 +566,6 @@ nnoremap n nzzzv
 nnoremap N Nzzzv
 nnoremap J mzJ`z
 
-" Easy move to start and end of line
-" nnoremap H ^
-" nnoremap L $
-
 " Insert line below or above without entering insert mode (works with Count)
 nnoremap <silent> oo :<C-u>call append(line("."),   repeat([""], v:count1))<CR>
 nnoremap <silent> OO :<C-u>call append(line(".")-1, repeat([""], v:count1))<CR>
@@ -620,7 +626,3 @@ onoremap <silent> il :<c-u>normal! g_v^<cr>
 " (entire line sans trailing newline; cursor at beginning--ie, 0)
 xnoremap <silent> al :<c-u>normal! $v0<cr>
 onoremap <silent> al :<c-u>normal! $v0<cr>
-
-"""""""" --------------- Abbreviations ------------------------
-" iabbrev ;eth soumil.gurjar@sam.math.ethz.ch
-" iabbrev ;gm soumilgurjar@gmail.com

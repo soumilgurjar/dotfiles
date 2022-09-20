@@ -11,7 +11,6 @@ Plug 'sheerun/vim-polyglot'                     "Provides syntax for multiple fi
 Plug 'airblade/vim-gitgutter'                   "Show changes in file from previous commit
 Plug 'tpope/vim-fugitive'                       "Git integration plugin
 Plug 'tpope/vim-rhubarb'                        "Git browse command to go to webpage directly
-" Plug 'justinmk/vim-sneak'                       "Better search with 2,3 starting letters with s/S, operators with z/Z
 Plug 'easymotion/vim-easymotion'                "New way of moving within vim
 Plug 'tpope/vim-commentary'                     "Allows commenting lines/selection with gc
 Plug 'tpope/vim-surround'                       "Allows surrounding words/selection with cs
@@ -40,7 +39,6 @@ Plug 'simnalamburt/vim-mundo'                   "Stores multiples undos
 Plug 'scrooloose/nerdtree'                      "Allows navigation of file tree
 Plug 'aymericbeaumet/vim-symlink'               "Follows symlink rather than editing the symlink
 Plug 'moll/vim-bbye'                            "Better buffer management with :Bdelete, :Bwipeout etc.
-Plug 'christoomey/vim-system-copy'              "Don't pollute system clipboard, instead use cp or cv commands; cP, cV for current line
 Plug 'junegunn/goyo.vim'                        "Distraction free vim
 Plug 'vimwiki/vimwiki', { 'branch': 'dev' }     "Easy note taking and diary maintaining
 Plug 'tbabej/taskwiki'                          "Integration of taskwarrior with vimwiki
@@ -216,7 +214,7 @@ set autoindent
 set autoread
 set autowrite                   " allows changing buffer with save
 set hidden
-" set clipboard=unnamed           " yank and paste with the system clipboard
+set clipboard=unnamed           " yank and paste with the system clipboard
 set encoding=utf-8
 set expandtab                   " tabs are spaces
 set shiftround                  " When shifting lines, round the indentation to the nearest multiple of “shiftwidth.”
@@ -381,10 +379,10 @@ augroup END
 augroup markdown-txt-Spell
     autocmd!
     autocmd FileType markdown,vimwiki,text setlocal spell
-    autocmd FileType markdown,vimwiki,text setlocal spelllang=en,de
+    autocmd FileType markdown,vimwiki,text setlocal spelllang=en
     autocmd FileType markdown,vimwiki,text highlight SpellBad cterm=underline
     autocmd BufRead,BufNewFile *.md,*.txt,*.rst setlocal spell
-    autocmd BufRead,BufNewFile *.md,*.txt,*.rst setlocal spelllang=en,de
+    autocmd BufRead,BufNewFile *.md,*.txt,*.rst setlocal spelllang=en
     autocmd BufRead,BufNewFile *.md,*.txt,*.rst highlight SpellBad cterm=underline
 augroup END
 
@@ -566,10 +564,6 @@ nnoremap n nzzzv
 nnoremap N Nzzzv
 nnoremap J mzJ`z
 
-" Easy move to start and end of line
-" nnoremap H ^
-" nnoremap L $
-
 " Insert line below or above without entering insert mode (works with Count)
 nnoremap <silent> oo :<C-u>call append(line("."),   repeat([""], v:count1))<CR>
 nnoremap <silent> OO :<C-u>call append(line(".")-1, repeat([""], v:count1))<CR>
@@ -630,7 +624,3 @@ onoremap <silent> il :<c-u>normal! g_v^<cr>
 " (entire line sans trailing newline; cursor at beginning--ie, 0)
 xnoremap <silent> al :<c-u>normal! $v0<cr>
 onoremap <silent> al :<c-u>normal! $v0<cr>
-
-"""""""" --------------- Abbreviations ------------------------
-" iabbrev ;eth soumil.gurjar@sam.math.ethz.ch
-" iabbrev ;gm soumilgurjar@gmail.com
