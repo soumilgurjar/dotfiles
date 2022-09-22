@@ -3,7 +3,7 @@
 # User settings
 source /usr/local/share/mutt-wizard/switch.muttrc
 set from="Soumil Gurjar <soumil.gurjar@sam.math.ethz.ch>"
-set realname="Soumil Gurjar"
+set real_name="Soumil Gurjar"
 set imap_user="sgurjar"
 set my_password = "`pass eth_mail_id/sgurjar@mail.ethz.ch`"
 set smtp_url="smtp://sgurjar@mail.ethz.ch:587"
@@ -16,7 +16,7 @@ set message_cachedir = "~/.cache/mutt-wizard/mail.ethz.ch/bodies"
 
 # Mail server
 set folder="~/.local/share/mail/mail.ethz.ch"
-set spoolfile="+INBOX"
+set spool_file="+INBOX"
 set record="+Sent Items"
 set postponed="+Drafts"
 set trash = "+Deleted Items"

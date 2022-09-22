@@ -1,7 +1,7 @@
 # vim: filetype=neomuttrc
 # muttrc file for account soumilgurjar@gmail.com
 source /usr/local/share/mutt-wizard/switch.muttrc
-set realname = "Soumil Gurjar"
+set real_name = "Soumil Gurjar"
 set from = "soumilgurjar@gmail.com"
 # set sendmail = "msmtp -a soumilgurjar@gmail.com"
 set my_password = "`pass mutt_gmail_app_password/soumilgurjar@gmail.com`"
@@ -13,7 +13,7 @@ set header_cache = "~/.cache/mutt-wizard/soumilgurjar@gmail.com/headers"
 set message_cachedir = "~/.cache/mutt-wizard/soumilgurjar@gmail.com/bodies"
 set mbox_type = Maildir
 set hostname = "gmail.com"
-set spoolfile = +INBOX
+set spool_file = +INBOX
 set postponed = "+[Gmail]/Drafts"
 set trash = "+[Gmail]/Bin"
 set record = /dev/null

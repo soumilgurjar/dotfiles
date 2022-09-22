@@ -1,7 +1,7 @@
 # vim: filetype=neomuttrc
 # muttrc file for account soumil.gurjar@d-one.ai
 source /usr/local/share/mutt-wizard/switch.muttrc
-set realname = "Soumil Gurjar"
+set real_name = "Soumil Gurjar"
 set from = "soumil.gurjar@d-one.ai"
 # set sendmail = "msmtp -a soumil.gurjar@d-one.ai"
 set my_password = "`pass mutt_d-one_app_password/soumil.gurjar@d-one.ai`"
@@ -14,7 +14,7 @@ set message_cachedir = "~/.cache/mutt-wizard/soumil.gurjar@d-one.ai/bodies"
 set mbox_type = Maildir
 set hostname = "gmail.com"
 # set hostname = "d-one.ai"
-set spoolfile = +INBOX
+set spool_file = +INBOX
 set postponed = "+[Gmail]/Drafts"
 set trash = "+[Gmail]/Trash"
 set record = /dev/null
