@@ -5,3 +5,5 @@ map J scroll down
 map K scroll up
 map j navigate next
 map k navigate previous
+
+include catppuccin-macchiato
