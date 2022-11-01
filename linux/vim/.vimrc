@@ -29,7 +29,6 @@ Plug 'machakann/vim-highlightedyank'            "Highlights yanks for short peri
 Plug 'SirVer/ultisnips'                         "Track the snippet engine
 Plug 'honza/vim-snippets'                       "Snippets are separated from the engine
 Plug 'ludovicchabant/vim-gutentags'             "Auto generation of tags
-Plug 'ycm-core/YouCompleteMe'                   "Autocompletion
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'                         "Fuzzy finding within vim with :Files
 Plug 'pbogut/fzf-mru.vim'                       "Bring Most Recently Used Functionality to FZF
@@ -62,29 +61,6 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'bling/vim-bufferline'
 
 """""""" ----------------- Plugin Settings ---------------
-""" YouCompleteMe
-let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
-set completeopt+=popup
-" set completeopt-=preview
-" let g:ycm_show_diagnostics_ui = 0
-let g:ycm_language_server =
-  \ [{
-  \   'name': 'ccls',
-  \   'cmdline': [ 'ccls' ],
-  \   'filetypes': [ 'c', 'cpp', 'cc', 'h', 'hpp', 'cuda' ],
-  \   'project_root_files': [ '.ccls-root', 'compile_commands.json' ]
-  \ }]
-let s:lsp_ft_maps = 'gdscript,go,python' "Change filetypes to show hover info with K or go to declaration with gd
-augroup ycm_settings | au!
-    exe printf('au FileType %s call Ycm_mappings()', s:lsp_ft_maps)
-augroup end
-func! Ycm_mappings() abort
-    nmap <silent><buffer> <F3> <plug>(YCMHover)
-    nnoremap <silent><buffer> <F4> :YcmCompleter GoTo<CR>
-endfunc
-let g:ycm_key_list_select_completion = ['<Down>']                   "Default is Tab and Down
-let g:ycm_key_list_previous_completion = ['<S-TAB>', '<Up>']
-
 """ fzf
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9} }
 " This command changes the default :Rg command to work with hidden files
@@ -96,7 +72,7 @@ let g:rooter_change_directory_for_non_project_files = 'current'
 let g:rooter_resolve_links = 1
 " let g:rooter_silent_chdir = 1
 
-" Ultisnips (if using tab as expand trigger, change corresponding usage in YCM)
+" Ultisnips
 " let g:UltiSnipsExpandTrigger = "<tab>"
 " let g:UltiSnipsListSnippets = "<c-tab>"
 " let g:UltiSnipsJumpForwardTrigger = "<c-j>"
@@ -141,10 +117,6 @@ let g:taskwiki_disable_concealcursor="yes"
 
 """ Vimtex
 let g:vimtex_view_method = 'zathura'
-if !exists('g:ycm_semantic_triggers')
-    let g:ycm_semantic_triggers = {}
-endif
-autocmd VimEnter * let g:ycm_semantic_triggers.tex=g:vimtex#re#youcompleteme
 
 """ EasyMotion
 let g:EasyMotion_keys = 'jkdslaeiruvmcghwoxtybnzqp;slf' "default : 'asdghklqwertyuiopzxcvbnmfj;'
