@@ -18,6 +18,7 @@ export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-${ZSH_VERSION}
 
 # Set name of the theme to load
 ZSH_THEME="robbyrussell"
+source ~/.oh-my-zsh/custom/themes/zsh-syntax-highlighting-catppuccin/themes/catppuccin_macchiato-zsh-syntax-highlighting.zsh
 
 # OMZ auto-update behavior
 zstyle ':omz:update' mode auto      # update automatically without asking
@@ -80,8 +81,9 @@ export FZF_DEFAULT_OPTS="-m --height 90% --layout=reverse --border --inline-info
 --preview-window=:nohidden
 --preview '([[ -f {} ]] && [[ {} =~ ('.jpg'|'.JPG'|'.jpeg'|'.png'|'.PNG'|'.gif')$ ]] && (timg -clear -g60x30 --frames=1 {})) || ([[ -f {} ]] && (bat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'
 --bind 'ctrl-d:preview-page-down' --bind 'ctrl-u:preview-page-up' --bind '?:toggle-preview'
---color fg:#ebdbb2,bg:#282828,hl:#fabd2f,fg+:#ebdbb2,bg+:#3c3836,hl+:#fabd2f
---color info:#83a598,prompt:#bdae93,spinner:#fabd2f,pointer:#83a598,marker:#fe8019,header:#665c54"
+--color=bg+:#363a4f,bg:#24273a,spinner:#f4dbd6,hl:#ed8796
+--color=fg:#cad3f5,header:#ed8796,info:#c6a0f6,pointer:#f4dbd6
+--color=marker:#f4dbd6,fg+:#cad3f5,prompt:#c6a0f6,hl+:#ed8796"
 # --preview '([[ -f {} ]] && (bat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'
 # --preview '([[ -f {} ]] && [[ {} =~ ('.jpg'|'.JPG'|'.jpeg'|'.png'|'.PNG')$ ]] && (kitty icat --place `expr $COLUMNS / 2`\x`expr $LINES / 2`@`expr $COLUMNS / 2`\x`expr $LINES / 3` --transfer-mode file {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'
 # --preview '([[ -f {} ]] && [[ {} =~ ('.jpg'|'.JPG'|'.jpeg'|'.png'|'.PNG')$ ]] && (catimg -w `expr $COLUMNS` {})) || ([[ -f {} ]] && (bat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'
