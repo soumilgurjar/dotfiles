@@ -9,8 +9,9 @@ export PIPENV_DEFAULT_PYTHON_VERSION=$(pyenv which python)  #Necessary for pipen
 [[ -n $TMUX ]] && export TERM="xterm-256color"
 
 # Set editor to vim
-export EDITOR='nvim'
-export MANPAGER='nvim +Man!'
+export VISUAL="nvim"
+export EDITOR="nvim"
+export MANPAGER="nvim +Man!"
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/sgurjar/.oh-my-zsh"
@@ -21,13 +22,13 @@ ZSH_THEME="robbyrussell"
 source ~/.oh-my-zsh/custom/themes/zsh-syntax-highlighting-catppuccin/themes/catppuccin_macchiato-zsh-syntax-highlighting.zsh
 
 # OMZ auto-update behavior
-zstyle ':omz:update' mode auto      # update automatically without asking
-zstyle ':omz:update' frequency 13
+zstyle ":omz:update" mode auto      # update automatically without asking
+zstyle ":omz:update" frequency 13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=62'
-VIM_MODE_VICMD_KEY='jj'                 # This allows escape from insert to normal mode with 'jj'
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=62"
+VIM_MODE_VICMD_KEY="jj"                 # This allows escape from insert to normal mode with 'jj'
 
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/

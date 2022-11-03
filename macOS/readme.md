@@ -21,25 +21,31 @@ Follow these install instructions to setup a new Mac.
 11. Source the zshrc with `source ~/.zshrc`
 12. Install vim plugins with `vivim` and then `:PluginInstall`
 13. Restart your computer to finalize the process
-Your Mac is now ready to use!
+    Your Mac is now ready to use!
 
 ## Clone dotfiles repo
+
 The dotfiles repo can be cloned as follows:
+
 ```zsh
 mkdir ~/.dotfiles
 cd ~/.dotfiles
 git clone https://gitlab.math.ethz.ch/sgurjar/dotfiles.git .
 ```
 
-## Install applications 
+## Install applications
+
 The script can be run as follows
+
 ```
 cd ~/.dotfiles/macOS/
 ./install_apps.sh
 ```
 
 ## Install applications manually
+
 The following applications could not be installed with the brewfile method. So we need to install them manually.
+
 - Logitech G Hub, Logi Options, Logi Capture
 - Matlab
 - Mendeley
@@ -48,26 +54,30 @@ The following applications could not be installed with the brewfile method. So w
 - polybox
 - pcloud
 - Textsniper
-- Vimac
+- Homerow
 
 ## Mackup restore
+
 Mackup should already be installed from the Brewfile. Restore the backed up preferences from Dropbox with the following command:
+
 ```zsh
 cd ~
 mackup restore
 ```
 
-## Stow Dotfiles 
+## Stow Dotfiles
+
 Use stow to put your bash git vim & zsh config files into place with symbolic links
 
 ```zsh
 cd ~/.dotfiles/macOS/
-stow -nvSt ~ bash git vim zsh tmux
-stow -vSt ~ bash git vim zsh tmux
+stow -nvSt ~ git vim zsh tmux neovim
+stow -vSt ~ git vim zsh tmux neovim
 ```
+
 ## ZSH plugins download
+
 ```zsh
 cd ~/.dotfiles/macOS/
 ./download_zsh_plugins.sh
 ```
-

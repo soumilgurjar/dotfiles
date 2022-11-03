@@ -84,7 +84,7 @@ alias ga="git add"
 alias gap="git add -p"
 alias gcm="git commit -m"
 alias gd="git df"
-alias grt="git rev-parse --show-toplevel | cd"
+alias grt='cd "$(git rev-parse --show-toplevel)"'
 
 # Adds commits and pushes files with the argument as the commit message
 function gcam() {
