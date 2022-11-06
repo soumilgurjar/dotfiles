@@ -1,78 +1,43 @@
-# Test files
-.git
-node_modules
-vendor
+# Generally ignored folders
+.git/
+.github/
+node_modules/
+vendor/
 
 # OS specific files
 .DS_Store
 
 # Files and Folders for ignoring
-.android
-.bash_history
-.bash_logout
-.bash_profile
-.bashrc
-.cache
-.cmake
-.config
-.docker
-.dbus
-.dotfiles
-.fzf.bash
-.fzf.zsh
-.git-credentials
-.gitconfig
-.keychain
-.landscape
-.latexmkrc
-.lesshst
-.local
-.motd_shown
-.npm
-.nvm
-.oh-my-zsh
-.profile
-.rgignore
-.ripgrep
-.ssh
-.sudo_as_admin_successful
-.taskrc
-.terminfo
-.tmux
-.tmux.conf
-.vim
-.vim/plugged
-.vim/autoload
-.vim/view
-.viminfo
-.vimrc
-.vscode-server
-.yankring_history_v2.txt
-.z
-.zcompdump
-.zcompdump-Dell-G5-5.8
-.zcompdump-Dell-G5-5.8.1
-.zprofile
-.zsh_history
-.zshrc
-Git_Repositories
-Virtual_Envs
 
-# now un-ignore the ones I care about
-!Git_Repositories
-!Virtual_Envs
-!.bashrc
+## Hidden directories
+.abook/
+.android/
+.cache/
+.config/
+.dbus/
+.dotfiles/
+.gnupg/
+.keychain/
+.landscape/
+.local/
+.npm/
+.nvm/
+.oh-my-zsh/
+.password-store/
+.ssh/
+.terminfo/
+.tmux/
+.vim/
+.vscode-server/
+lib/
+bin/
+
+## Directories
+
+# Hidden directories need to be un-ignored specifically
 !.config
 !.dotfiles
-!.git-credentials
-!.gitconfig
-!.oh-my-zsh
-!.rgignore
+!.oh-my-zsh/custom/
 !.ripgrep
 !.ssh
-!.taskrc
 !.tmux
-!.tmux.conf
-!.vim
-!.vimrc
-!.zshrc

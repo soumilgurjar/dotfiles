@@ -45,14 +45,18 @@
     tool = vimdiff
     guitool = diffmerge
     submodule = log
-    ; algorithm = patience
-    ; algorithm = minimal
     algorithm = histogram
     indentHeuristic = true
     colorMoved = default
+[difftool "vimdiff"]
+    path = nvim
 [difftool]
     prompt = false
 [merge]
     tool = vimdiff
     guitool = diffmerge
     conflictstyle = diff3
+[mergetool "vimdiff"]
+	path = nvim
+[pull]
+    ff = only

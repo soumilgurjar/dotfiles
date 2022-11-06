@@ -35,9 +35,9 @@ color status red default ''
 color status black blue '(.*)' 1
 color status blue default '.*()' 1
 color status black blue '  [0-9] '
-color status blue black '()  [0-9] ' 1
-color status yellow black '()  ([0-9]) ' 1
+color status blue default '()  [0-9] ' 1
+color status yellow default '()  ([0-9]) ' 1
 color status blue yellow '  [0-9] '
 # color status black yellow ' [0-9]'
-color status blue black '() ([0-9]+%|all|end)  \s*' 1
+color status blue default '() ([0-9]+%|all|end)  \s*' 1
 color status black blue ' ([0-9]+%|all|end)  \s*'
