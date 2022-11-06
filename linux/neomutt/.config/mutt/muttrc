@@ -11,7 +11,7 @@ color sidebar_flagged default default       # (overrule)
 color sidebar_new green default               # (overrule)
 
 # General config should go here
-set editor="vim -c 'set textwidth=0' -c 'set spell spelllang=en,de'"
+set editor="nvim -c 'set textwidth=0' -c 'set spell spelllang=en_gb,de_ch'"
 auto_view text/html text/calendar application/ics
 alternative_order text/plain text/enriched text/html text/*
 set sidebar_format = '%D%*  %?N?%N?'         # Show name and number of unread (overrule)

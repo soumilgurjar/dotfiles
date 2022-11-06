@@ -5,6 +5,7 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 export PIPENV_PYTHON="$PYENV_ROOT/shims/python" #Necessary for pipenv to respect pyenv local/global versions?
 export PIPENV_DEFAULT_PYTHON_VERSION=$(pyenv which python)  #Necessary for pipenv to respect pyenv local/global versions
+export BROWSER="/usr/bin/open"
 
 [[ -n $TMUX ]] && export TERM="xterm-256color"
 
