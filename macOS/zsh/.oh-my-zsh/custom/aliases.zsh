@@ -113,6 +113,7 @@ alias tt="taskwarrior-tui"
 alias termpdf="~/Github_Repositories/termpdf.py/termpdf.py $1"
 
 # Aliases for kitty related commands
+alias savekitty="~/.config/kitty/session_save.sh"
 alias icat="kitty +kitten icat"
 
 #Commonly accessed directories
