@@ -57,7 +57,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 	callback = function()
 		vim.opt_local.wrap = true
 		vim.opt_local.spelllang = "en_gb,de_ch" -- Set spell language to English and German
-		vim.opt_local.spell = true
+		-- vim.opt_local.spell = true
 		keymap({ "n", "v" }, "j", "gj", opts)
 		keymap({ "n", "v" }, "k", "gk", opts)
 		keymap({ "n" }, "<Right>", "g$", opts)
