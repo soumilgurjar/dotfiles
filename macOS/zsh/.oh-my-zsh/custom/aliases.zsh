@@ -15,6 +15,7 @@ alias eux="ssh -X sgurjar@euler.ethz.ch"
 # Source Config files
 # alias soza="kitty @ send-text --all soz\n" # TODO: Escape <CR> or \n properly
 alias soz="clear && rm -f '$ZSH_COMPDUMP' && exec zsh"
+alias sow="source ~/.zshrc"
 alias sob="source ~/.bashrc"
 alias sobp="source ~/.bash_profile"
 alias sot="tmux source-file ~/.tmux.conf"

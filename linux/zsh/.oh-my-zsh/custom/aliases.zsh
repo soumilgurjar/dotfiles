@@ -21,6 +21,7 @@ function eus() {
 
 # Source Config files
 alias soz="clear && rm -f '$ZSH_COMPDUMP' && exec zsh"
+alias sow="source ~/.zshrc"
 alias sob="source ~/.bashrc"
 alias sobp="source ~/.bash_profile"
 alias sot="tmux source-file ~/.tmux.conf"
