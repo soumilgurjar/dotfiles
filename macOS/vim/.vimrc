@@ -54,6 +54,7 @@ Plug 'romainl/vim-cool'                         "Better search highlighting whic
 """ Theme plugins
 Plug 'morhetz/gruvbox'
 Plug 'lifepillar/vim-solarized8'
+Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 
 """ Airline/Lightline/Bufferline plugins
 Plug 'vim-airline/vim-airline'
@@ -261,6 +262,9 @@ let g:gruvbox_italic=1
 colorscheme gruvbox
 let g:airline_theme= 'gruvbox'
 " let g:lightline.colorscheme = 'gruvbox'
+
+" ---- Catppuccin
+" colorscheme catppuccin_macchiato
 
 """"""""" --------------- Goyo settings ----------------------
 function! s:goyo_enter()
