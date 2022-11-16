@@ -13,9 +13,9 @@ trouble.setup({
 })
 
 -- TODO: Move to appropriate place and consider switching keybinding to <leader>tt
-keymap("n", "<leader>xx", "<cmd>TroubleToggle<cr>", { desc = "Trouble Toggle" })
-keymap("n", "<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<cr>", { desc = "Trouble Workspace" })
-keymap("n", "<leader>xd", "<cmd>TroubleToggle document_diagnostics<cr>", { desc = "Trouble Document" })
-keymap("n", "<leader>xl", "<cmd>TroubleToggle loclist<cr>", { desc = "Trouble Loclist" })
-keymap("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>", { desc = "Trouble Quickfix" })
-keymap("n", "gR", "<cmd>TroubleToggle lsp_references<cr>", { desc = "Trouble LSP References" })
+keymap("n", "<leader>xx", "<Cmd>TroubleToggle<CR>", { desc = "Trouble Toggle" })
+keymap("n", "<leader>xw", "<Cmd>TroubleToggle workspace_diagnostics<CR>", { desc = "Trouble Workspace" })
+keymap("n", "<leader>xd", "<Cmd>TroubleToggle document_diagnostics<CR>", { desc = "Trouble Document" })
+keymap("n", "<leader>xl", "<Cmd>TroubleToggle loclist<CR>", { desc = "Trouble Loclist" })
+keymap("n", "<leader>xq", "<Cmd>TroubleToggle quickfix<CR>", { desc = "Trouble Quickfix" })
+keymap("n", "gR", "<Cmd>TroubleToggle lsp_references<CR>", { desc = "Trouble LSP References" })

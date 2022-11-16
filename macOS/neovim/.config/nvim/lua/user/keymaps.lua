@@ -41,8 +41,10 @@ keymap("n", "˚", ":m .-2<CR>==", { desc = "Move line up" })
 -- Remove highlight
 keymap("n", "<Leader>hl", "<Cmd>nohlsearch<CR>", { desc = "Remove highlighting" })
 
+-- Repeat last used macro
+keymap({ "n" }, ",", "<Cmd>norm @@<CR>", { desc = "Repeat last used macro or command" })
 -- Repeat last command from command line
-keymap({ "n", "v" }, ",", "<cmd>norm @:<CR>", { desc = "Repeat last command" })
+keymap({ "n", "v" }, "<Leader>,", "<cmd>norm @:<CR>", { desc = "Repeat last command" })
 
 -- Save and quit buffers and windows
 keymap("n", ";", "<Cmd>update<CR>", { desc = "Save Buffer" })
