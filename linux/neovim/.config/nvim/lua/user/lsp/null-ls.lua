@@ -57,12 +57,13 @@ null_ls.setup({
 		formatting.black.with({ extra_args = { "--fast" } }), -- Formatter for python
 		formatting.stylua,                                  -- Lua formatter
 		formatting.shfmt,                                   -- Shell script formatting
+		formatting.markdownlint,                            -- Markdown formatter
 		formatting.clang_format,                            -- CPP script formatting
 		formatting.beautysh.with({ extra_args = { "--indent-size 4", "--tab 4" } }), -- ZSH Shell script formatting
 		formatting.prettierd,                               -- Json formatter
 		-- formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
 		diagnostics.flake8.with({ extra_args = {"--max-line-length=300", "--ignore=E501"}}),                                 -- Check style and quality of Python code
-		diagnostics.markdownlint,                                  -- Linter for Markdown
+		-- diagnostics.markdownlint.with({ extra_filetypes = {"vimwiki"}}),                           -- Linter for Markdown
 		-- diagnostics.proselint,                              -- English prose linter
 		-- diagnostics.shellcheck,                             --shellscript static analysis too
 		diagnostics.cpplint.with({ extra_args = { "--indent-size 4", "--tab 4" } }), --C++ diagnostics

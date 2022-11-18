@@ -39,7 +39,7 @@ packer.init({
 		end,
 	},
 	git = {
-		clone_timeout = 1000, -- Timeout, in seconds, for git clones
+		clone_timeout = 300, -- Timeout, in seconds, for git clones
 	},
 })
 

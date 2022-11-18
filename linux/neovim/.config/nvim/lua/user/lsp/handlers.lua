@@ -68,9 +68,9 @@ local function lsp_keymaps(bufnr)
 	-- TODO: Add descriptions
 	local keymap = vim.keymap.set
 	local opts = { buffer = bufnr, silent = true }
-	keymap("n", "<leader>la", vim.lsp.buf.code_action, opts)
-	keymap("n", "<leader>ld", "<cmd>Telescope lsp_document_diagnostics<cr>", opts)
-	keymap("n", "<leader>lD", "<cmd>Telescope lsp_workspace_diagnostics<cr>", opts)
+	-- keymap("n", "<leader>la", vim.lsp.buf.code_action, opts)
+	-- keymap("n", "<leader>ld", "<cmd>Telescope lsp_document_diagnostics<cr>", opts)
+	-- keymap("n", "<leader>lD", "<cmd>Telescope lsp_workspace_diagnostics<cr>", opts)
 	keymap({ "n", "v" }, "<leader>lf", vim.lsp.buf.format, opts)
 	keymap("n", "<leader>lj", vim.diagnostic.goto_next, opts)
 	keymap("n", "<leader>lk", vim.diagnostic.goto_prev, opts)

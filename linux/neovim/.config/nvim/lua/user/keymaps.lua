@@ -34,6 +34,9 @@ keymap("n", "<C-Down>", "<Cmd>resize +2<CR>", { desc = "Increase vertical size" 
 keymap("n", "<C-Left>", "<Cmd>vertical resize -2<CR>", { desc = "Reduce horizontal size" })
 keymap("n", "<C-Right>", "<Cmd>vertical resize +2<CR>", { desc = "Reduce horizontal size" })
 
+-- Column selection
+keymap("n", "<Leader>vv", "<C-v>", { desc = "Column visual selection" })
+
 -- Move text up and down
 keymap("n", "∆", ":m .+1<CR>==", { desc = "Move line down" })
 keymap("n", "˚", ":m .-2<CR>==", { desc = "Move line up" })
@@ -41,6 +44,8 @@ keymap("n", "˚", ":m .-2<CR>==", { desc = "Move line up" })
 -- Remove highlight
 keymap("n", "<Leader>hl", "<Cmd>nohlsearch<CR>", { desc = "Remove highlighting" })
 
+-- Repeat last used macro
+keymap({ "n" }, ",", "<Cmd>norm @@<CR>", { desc = "Repeat last used macro or command" })
 -- Repeat last command from command line
 keymap({ "n", "v" }, ",", "<cmd>norm @:<CR>", { desc = "Repeat last command" })
 
