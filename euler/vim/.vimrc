@@ -322,18 +322,18 @@ nnoremap <silent> <leader>pu :PlugUpdate<CR>
 nnoremap <silent> <leader>pc :PlugClean<CR>
 
 " Fuzzy searching with fzf
-nnoremap <silent> <localleader>ff :FZFMru<CR>
-nnoremap <silent> <localleader>fs :Files<CR>
-nnoremap <silent> <localleader>fg :GFiles<CR>
-nnoremap <silent> <localleader>fb :BCommits<CR>
-nnoremap <silent> <localleader>fc :Commits<CR>
-nnoremap <silent> <localleader>fu :Buffers<CR>
-nnoremap <silent> <localleader>ft :Tags<CR>
-nnoremap <silent> <localleader>ftb :BTags<CR>
-nnoremap <silent> <localleader>fh :Files ~<CR>
-nnoremap <silent> <localleader>fd :Files ~/.dotfiles<CR>
-nnoremap <silent> <localleader>fa :Files ~/Github_Repositories/Overleaf/DoctoralThesis-Overleaf<CR>
-nnoremap <silent> <localleader>fw :Files ~/Dropbox/Apps/vimwiki<CR>
+nnoremap <silent> <leader>ff :FZFMru<CR>
+nnoremap <silent> <leader>fs :Files<CR>
+nnoremap <silent> <leader>fg :GFiles<CR>
+nnoremap <silent> <leader>fb :BCommits<CR>
+nnoremap <silent> <leader>fc :Commits<CR>
+nnoremap <silent> <leader>fu :Buffers<CR>
+nnoremap <silent> <leader>ft :Tags<CR>
+nnoremap <silent> <leader>ftb :BTags<CR>
+nnoremap <silent> <leader>fh :Files ~<CR>
+nnoremap <silent> <leader>fd :Files ~/.dotfiles<CR>
+nnoremap <silent> <leader>fa :Files ~/Github_Repositories/Overleaf/DoctoralThesis-Overleaf<CR>
+nnoremap <silent> <leader>fw :Files ~/Dropbox/Apps/vimwiki<CR>
 nnoremap <silent> <leader>/ :Lines<CR>
 nnoremap <silent> <leader>' :Marks<CR>
 " Mapping selecting mappings
@@ -342,7 +342,7 @@ xmap <leader><tab> <plug>(fzf-maps-x)
 omap <leader><tab> <plug>(fzf-maps-o)
 
 " Git Fugitive mappings
-nnoremap <silent> <leader>gs :Git<CR>
+nnoremap <silent> <leader>gg :Git<CR>
 nnoremap <silent> <leader>gb :Git blame<CR>
 nnoremap <silent> <leader>gcm :Git commit<CR>
 nnoremap <silent> <leader>gcl :0Gclog<CR>
@@ -417,6 +417,7 @@ nnoremap <leader>qc :cclose<CR>
 """""""" --------------- Mappings ------------------------
 " Pressing j twice in insert mode will lead to Esc
 inoremap jj <Esc>
+inoremap JJ <Esc>
 
 " Easymotion - `s{char}{char}{label}`
 nmap s <Plug>(easymotion-overwin-f2)
@@ -427,8 +428,6 @@ map  t <Plug>(easymotion-tl)
 map  T <Plug>(easymotion-Tl)
 map  / <Plug>(easymotion-sn)
 omap / <Plug>(easymotion-tn)
-map ; <Plug>(easymotion-k)
-map , <Plug>(easymotion-j)
 
 " Subversive substitution command
 nmap S <plug>(SubversiveSubstitute)
@@ -442,18 +441,26 @@ nnoremap q :bdelete<CR>
 nnoremap Q q
 
 " Map arrows keys to more useful functions like changing buffers and page up/down
-nnoremap <Left> :bprevious<CR>
-nnoremap <Right> :bnext<CR>
+nnoremap <S-h> <Cmd>bprevious<CR>
+nnoremap <S-l> <Cmd>bnext<CR>
+nnoremap <Left> ^
+nnoremap <Right> $
 nnoremap <Up> <C-b>
 nnoremap <Down> <C-f>
 vnoremap <Up> <C-b>
 vnoremap <Down> <C-f>
+vnoremap <Left> ^
+vnoremap <Right> $
+
+" No overwriting of paste register
+nnoremap x "_x
+nnoremap d "_dP
 
 " Allows easy searching of word under cursor within current project
 nnoremap gw :Rg <cWORD><CR>
 
 " Allows easy copying to end of line
-nnoremap Y y$
+nnoremap <S-y> y$
 
 " Keeps stuff centered when searching in file
 nnoremap n nzzzv

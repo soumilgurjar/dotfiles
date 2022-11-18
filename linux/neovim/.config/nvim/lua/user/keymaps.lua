@@ -16,10 +16,10 @@ vim.cmd([[let maplocalleader = "\<BS>"]])
 
 ------------------------------- Normal -----------------------------------------
 -- Better buffer navigation
-keymap("n", "<Up>", "<C-b>", { desc = "Page Up" })
-keymap("n", "<Down>", "<C-f>", { desc = "Page Down" })
-keymap("n", "<Left>", "^", { desc = "Start of Line" })
-keymap("n", "<Right>", "$", { desc = "End of Line" })
+keymap({ "n", "v" }, "<Up>", "<C-b>", { desc = "Page Up" })
+keymap({ "n", "v" }, "<Down>", "<C-f>", { desc = "Page Down" })
+keymap({ "n", "v" }, "<Left>", "^", { desc = "Start of Line" })
+keymap({ "n", "v" }, "<Right>", "$", { desc = "End of Line" })
 keymap("n", "<Leader>`", "<C-6>", { desc = "Previous Buffer" })
 
 -- Better window navigation
@@ -47,7 +47,7 @@ keymap("n", "<Leader>hl", "<Cmd>nohlsearch<CR>", { desc = "Remove highlighting" 
 -- Repeat last used macro
 keymap({ "n" }, ",", "<Cmd>norm @@<CR>", { desc = "Repeat last used macro or command" })
 -- Repeat last command from command line
-keymap({ "n", "v" }, ",", "<cmd>norm @:<CR>", { desc = "Repeat last command" })
+keymap({ "n", "v" }, "<Leader>,", "<cmd>norm @:<CR>", { desc = "Repeat last command" })
 
 -- Save and quit buffers and windows
 keymap("n", ";", "<Cmd>update<CR>", { desc = "Save Buffer" })

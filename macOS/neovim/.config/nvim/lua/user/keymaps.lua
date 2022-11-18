@@ -16,10 +16,10 @@ vim.cmd([[let maplocalleader = "\<BS>"]])
 
 ------------------------------- Normal -----------------------------------------
 -- Better buffer navigation
-keymap("n", "<Up>", "<C-b>", { desc = "Page Up" })
-keymap("n", "<Down>", "<C-f>", { desc = "Page Down" })
-keymap("n", "<Left>", "^", { desc = "Start of Line" })
-keymap("n", "<Right>", "$", { desc = "End of Line" })
+keymap({ "n", "v" }, "<Up>", "<C-b>", { desc = "Page Up" })
+keymap({ "n", "v" }, "<Down>", "<C-f>", { desc = "Page Down" })
+keymap({ "n", "v" }, "<Left>", "^", { desc = "Start of Line" })
+keymap({ "n", "v" }, "<Right>", "$", { desc = "End of Line" })
 keymap("n", "<Leader>`", "<C-6>", { desc = "Previous Buffer" })
 
 -- Better window navigation

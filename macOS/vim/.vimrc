@@ -394,18 +394,18 @@ nnoremap <silent> <leader>pu <Cmd>PlugUpdate<CR>
 nnoremap <silent> <leader>pc <Cmd>PlugClean<CR>
 
 " Fuzzy searching with fzf
-nnoremap <silent> <localleader>ff <Cmd>FZFMru<CR>
-nnoremap <silent> <localleader>fs <Cmd>Files<CR>
-nnoremap <silent> <localleader>fg <Cmd>GFiles<CR>
-nnoremap <silent> <localleader>fb <Cmd>BCommits<CR>
-nnoremap <silent> <localleader>fc <Cmd>Commits<CR>
-nnoremap <silent> <localleader>fu <Cmd>Buffers<CR>
-nnoremap <silent> <localleader>ft <Cmd>Tags<CR>
-nnoremap <silent> <localleader>ftb <Cmd>BTags<CR>
-nnoremap <silent> <localleader>fh <Cmd>Files ~<CR>
-nnoremap <silent> <localleader>fd <Cmd>Files ~/.dotfiles<CR>
-nnoremap <silent> <localleader>fa <Cmd>Files ~/Github_Repositories/Overleaf/DoctoralThesis-Overleaf<CR>
-nnoremap <silent> <localleader>fw <Cmd>Files ~/Dropbox/Apps/vimwiki<CR>
+nnoremap <silent> <leader>ff <Cmd>FZFMru<CR>
+nnoremap <silent> <leader>fs <Cmd>Files<CR>
+nnoremap <silent> <leader>fg <Cmd>GFiles<CR>
+nnoremap <silent> <leader>fb <Cmd>BCommits<CR>
+nnoremap <silent> <leader>fc <Cmd>Commits<CR>
+nnoremap <silent> <leader>fu <Cmd>Buffers<CR>
+nnoremap <silent> <leader>ft <Cmd>Tags<CR>
+nnoremap <silent> <leader>ftb <Cmd>BTags<CR>
+nnoremap <silent> <leader>fh <Cmd>Files ~<CR>
+nnoremap <silent> <leader>fd <Cmd>Files ~/.dotfiles<CR>
+nnoremap <silent> <leader>fa <Cmd>Files ~/Github_Repositories/Overleaf/DoctoralThesis-Overleaf<CR>
+nnoremap <silent> <leader>fw <Cmd>Files ~/Dropbox/Apps/vimwiki<CR>
 nnoremap <silent> <leader>/ <Cmd>Lines<CR>
 nnoremap <silent> <leader>' <Cmd>Marks<CR>
 " Mapping selecting mappings
@@ -414,7 +414,7 @@ xmap <leader><tab> <plug>(fzf-maps-x)
 omap <leader><tab> <plug>(fzf-maps-o)
 
 " Git Fugitive mappings
-nnoremap <silent> <leader>gs <Cmd>Git<CR>
+nnoremap <silent> <leader>gg <Cmd>Git<CR>
 nnoremap <silent> <leader>gb <Cmd>Git blame<CR>
 nnoremap <silent> <leader>gcm <Cmd>Git commit<CR>
 nnoremap <silent> <leader>gcl <Cmd>0Gclog<CR>
@@ -485,13 +485,16 @@ nnoremap <leader>jk  <C-w>l
 nnoremap <leader>jj  <C-w>j
 nnoremap <leader>kk  <C-w>k
 
-"Save or Close current buffer(s)
-nnoremap <leader>aa <Cmd>Bdelete<CR>
-nnoremap <leader>rr ZZ<CR>
-nnoremap <leader>re <Cmd>wqall<CR>
-nnoremap <leader>ee <Cmd>wall<CR><Esc>
-nnoremap <leader>qq <Cmd>q!<CR>
+"Save or Close current buffer(s) or windows
+nnoremap <leader>q <Cmd>qall<CR>
+nnoremap <leader>; <Cmd>wall<CR>
+nnoremap <leader>wq <Cmd>close<CR>
+nnoremap <leader>wo <Cmd>only<CR>
+
 nnoremap <leader>qc <Cmd>cclose<CR>
+
+" Repeat last command from command line
+nnoremap <Leader>, <Cmd>norm @:<CR>
 
 """""""" --------------- Mappings ------------------------
 " Pressing j twice in insert mode will lead to Esc
@@ -507,8 +510,6 @@ map  t <Plug>(easymotion-tl)
 map  T <Plug>(easymotion-Tl)
 map  / <Plug>(easymotion-sn)
 omap / <Plug>(easymotion-tn)
-map ; <Plug>(easymotion-k)
-map , <Plug>(easymotion-j)
 
 " Subversive substitution command
 nmap S <plug>(SubversiveSubstitute)
@@ -516,24 +517,38 @@ nmap S <plug>(SubversiveSubstitute)
 " Quickly save out of insert mode directly
 inoremap ZZ <Cmd>wq<CR>
 
+" Save current buffer
+nnoremap ; <Cmd>update<CR>
+
 " Quickly delete current buffer
-nnoremap q :bdelete<CR>
+nnoremap q <Cmd>Bdelete<CR>
 " Start macro with Q instead of q
 nnoremap Q q
 
+" Repeat last used macro
+nnoremap , <Cmd>norm @@<CR>
+
 " Map arrows keys to more useful functions like changing buffers and page up/down
-nnoremap <Left> <Cmd>bprevious<CR>
-nnoremap <Right> <Cmd>bnext<CR>
+nnoremap <S-h> <Cmd>bprevious<CR>
+nnoremap <S-l> <Cmd>bnext<CR>
+nnoremap <Left> ^
+nnoremap <Right> $
 nnoremap <Up> <C-b>
 nnoremap <Down> <C-f>
 vnoremap <Up> <C-b>
 vnoremap <Down> <C-f>
+vnoremap <Left> ^
+vnoremap <Right> $
+
+" No overwriting of paste register
+nnoremap x "_x
+nnoremap d "_dP
 
 " Allows easy searching of word under cursor within current project
 nnoremap gw :Rg <cWORD><CR>
 
 " Allows easy copying to end of line
-nnoremap Y y$
+nnoremap <S-y> y$
 
 " Keeps stuff centered when searching in file
 nnoremap n nzzzv
@@ -568,6 +583,12 @@ inoremap ) )<C-g>u
 nnoremap <C-s> :w<CR>
 nnoremap <C-f> <Cmd>Rg<CR>
 nnoremap <C-e> :!rg vimwiki ~/Dropbox/Apps/vimwiki<CR>
+
+"Resize with arrows
+nnoremap <C-Up> <Cmd>resize -2<CR> 
+nnoremap <C-Down> <Cmd>resize +2<CR> 
+nnoremap <C-Left> <Cmd>vertical resize -2<CR> 
+nnoremap <C-Right> <Cmd>vertical resize +2<CR> 
 
 " Create an undo checkpoint before deleting words or lines in insert mode
 inoremap <C-u> <C-g>u<C-u>
