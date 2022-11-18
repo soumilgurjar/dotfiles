@@ -140,3 +140,6 @@ zstyle ':fzf-tab:*' fzf-bindings 'tab:accept'
 zstyle ':fzf-tab:*' accept-line enter
 zstyle ':fzf-tab:*' continuous-trigger 'space'
 zstyle ':fzf-tab:*' switch-group ',' '.'
+
+# Starship cross-platform prompt
+eval "$(starship init zsh)"
