@@ -42,8 +42,10 @@ function vvs() {
 
 #Terminal navigation
 alias fs="du -sh"
+alias lso="/bin/ls"
 alias l="ls -la"
 alias la="ls -a"
+alias ls="exa -x --icons --group-directories-first"
 alias cpwd="pwd | clip.exe"
 alias rm="rm -ir"
 alias rmf="rm -irf"
@@ -115,7 +117,7 @@ function unstow() {  cd ~/.dotfiles/linux && stow -vDt ~ $1 && cd - }
 alias tt="taskwarrior-tui"
 
 # Zathura related
-# alias zathura="zathura --mode fullscreen"
+alias zathura="zathura --mode fullscreen"
 
 #Commonly accessed directories
 alias win="cd /mnt/c/Users/soumi/"
