@@ -1,6 +1,6 @@
 vim.g.vimwiki_list = {
 	{
-		path = "~/Dropbox/Apps/vimwiki/",
+		path = "/mnt/c/Users/soumi/Dropbox/Apps/vimwiki/",
 		syntax = "markdown",
 		ext = ".md",
 		links_space_char = "-",

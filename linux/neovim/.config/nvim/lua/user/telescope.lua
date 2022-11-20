@@ -146,12 +146,12 @@ telescope.setup({
 			workspaces = {
 				["config"] = home .. "/.config",
 				["dotfiles"] = home .. "/.dotfiles",
-				["dropbox"] = home .. "/Dropbox",
+				["dropbox"] = "/mnt/c/Users/soumi/Dropbox",
 				["home"] = home .. "/",
 				["packer"] = home .. "/.local/share/nvim/site/pack/packer/start/",
-				["repos"] = home .. "/Github_Repositories",
-				["thesis"] = home .. "/Github_Repositories/Overleaf/DoctoralThesis-Overleaf/",
-				["wiki"] = home .. "/Dropbox/Apps/vimwiki",
+				["repos"] = home .. "/Git_Repositories",
+				-- ["thesis"] = home .. "/Git_Repositories/Overleaf/DoctoralThesis-Overleaf/",
+				["wiki"] = "/mnt/c/Users/soumi/Dropbox/Apps/vimwiki",
 			},
 		},
 		file_browser = {
