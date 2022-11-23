@@ -124,6 +124,8 @@ let g:taskwiki_disable_concealcursor="yes"
 " let g:taskwiki_maplocalleader="\t"
 
 """ Vimtex
+let g:vimtex_quickfix_autoclose_after_keystrokes = 1
+let g:vimtex_quickfix_open_on_warning = 1
 let g:vimtex_view_method = 'zathura'
 
 """ EasyMotion
@@ -542,7 +544,7 @@ vnoremap <Right> $
 
 " No overwriting of paste register
 nnoremap x "_x
-nnoremap d "_dP
+vnoremap p "_dP
 
 " Allows easy searching of word under cursor within current project
 nnoremap gw :Rg <cWORD><CR>

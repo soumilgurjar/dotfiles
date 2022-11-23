@@ -32,7 +32,7 @@ Plug 'honza/vim-snippets'                       "Snippets are separated from the
 " Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 " Plug 'junegunn/fzf.vim'                         "Fuzzy finding within vim with :Files
 " Plug 'pbogut/fzf-mru.vim'                       "Bring Most Recently Used Functionality to FZF
-" Plug 'airblade/vim-rooter'                      "Autochanges current directory to project root when found; Helpful for fzf
+Plug 'airblade/vim-rooter'                      "Autochanges current directory to project root when found; Helpful for fzf
 Plug 'vim-scripts/YankRing.vim'                 "Stores multiples yanks
 Plug 'simnalamburt/vim-mundo'                   "Stores multiples undos
 Plug 'scrooloose/nerdtree'                      "Allows navigation of file tree
@@ -58,10 +58,10 @@ Plug 'bling/vim-bufferline'
 " command! -bang -nargs=* Rg call fzf#vim#grep("rg --hidden --follow --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
 
 """ vim-rooter
-" let g:rooter_patterns = ['.vimroot', '.git/', '.python-version', 'Makefile', '*.sln']
-" let g:rooter_change_directory_for_non_project_files = 'current'
-" let g:rooter_resolve_links = 1
-" " let g:rooter_silent_chdir = 1
+let g:rooter_patterns = ['.vimroot', '.git/', '.python-version', 'Makefile', '*.sln']
+let g:rooter_change_directory_for_non_project_files = 'current'
+let g:rooter_resolve_links = 1
+" let g:rooter_silent_chdir = 1
 
 """ Ultisnips
 " let g:UltiSnipsExpandTrigger = "<tab>"
@@ -406,13 +406,16 @@ nnoremap <leader>jk  <C-w>l
 nnoremap <leader>jj  <C-w>j
 nnoremap <leader>kk  <C-w>k
 
-"Save or Close current buffer(s)
-nnoremap <leader>aa :Bdelete<CR>
-nnoremap <leader>rr ZZ<CR>
-nnoremap <leader>re :wqall<CR>
-nnoremap <leader>ee :wall<CR><Esc>
-nnoremap <leader>qq :q!<CR>
-nnoremap <leader>qc :cclose<CR>
+"Save or Close current buffer(s) or windows
+nnoremap <leader>q <Cmd>qall<CR>
+nnoremap <leader>; <Cmd>wall<CR>
+nnoremap <leader>wq <Cmd>close<CR>
+nnoremap <leader>wo <Cmd>only<CR>
+
+nnoremap <leader>qc <Cmd>cclose<CR>
+
+" Repeat last command from command line
+nnoremap <Leader>, <Cmd>norm @:<CR>
 
 """""""" --------------- Mappings ------------------------
 " Pressing j twice in insert mode will lead to Esc
@@ -436,9 +439,12 @@ nmap S <plug>(SubversiveSubstitute)
 inoremap ZZ :wq<CR>
 
 " Quickly delete current buffer
-nnoremap q :bdelete<CR>
+nnoremap q :Bdelete<CR>
 " Start macro with Q instead of q
 nnoremap Q q
+
+" Repeat last used macro
+nnoremap , <Cmd>norm @@<CR>
 
 " Map arrows keys to more useful functions like changing buffers and page up/down
 nnoremap <S-h> <Cmd>bprevious<CR>
@@ -454,7 +460,7 @@ vnoremap <Right> $
 
 " No overwriting of paste register
 nnoremap x "_x
-nnoremap d "_dP
+vnoremap p "_dP
 
 " Allows easy searching of word under cursor within current project
 nnoremap gw :Rg <cWORD><CR>
@@ -495,6 +501,12 @@ inoremap ) )<C-g>u
 nnoremap <C-s> :w<CR>
 nnoremap <C-f> :Rg<CR>
 nnoremap <C-e> :!rg vimwiki ~/Dropbox/Apps/vimwiki<CR>
+
+"Resize with arrows
+nnoremap <C-Up> <Cmd>resize -2<CR> 
+nnoremap <C-Down> <Cmd>resize +2<CR> 
+nnoremap <C-Left> <Cmd>vertical resize -2<CR> 
+nnoremap <C-Right> <Cmd>vertical resize +2<CR> 
 
 " Create an undo checkpoint before deleting words or lines in insert mode
 inoremap <C-u> <C-g>u<C-u>
