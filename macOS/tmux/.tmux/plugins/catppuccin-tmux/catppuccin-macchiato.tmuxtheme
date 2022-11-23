@@ -55,7 +55,7 @@ setw window-status-style "fg=${thm_fg},bg=${thm_bg},none"
 
 # --------=== Statusline
 
-set status-left "#{?client_prefix,#[fg=$thm_red],#[fg=$thm_blue]}#[bg=$thm_blue] #{?client_prefix,#[bg=$thm_red],#[bg=$thm_blue]}#[fg=$thm_bg] #[fg=$thm_fg,bg=$thm_gray] #S "
+set status-left "#{?client_prefix,#[bg=$thm_red],#[bg=$thm_blue]}#[fg=$thm_blue] #{?client_prefix,#[bg=$thm_red],#[bg=$thm_blue]}#[fg=$thm_bg] #[fg=$thm_fg,bg=$thm_gray] #S "
 set status-right ""
 
 # current_dir
