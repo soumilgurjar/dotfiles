@@ -55,4 +55,19 @@ end
 
 -- Start Refactoring --
 
+-- Soumil's snippets go here --
+
+cs( -- Cite with page number{{{
+	"page_cite",
+	fmt(
+		[=[
+\cite[{}]{{{}}}
+  ]=],
+		{
+			i(1, "page_number"),
+			i(2, "cite_key"),
+		}
+	),
+	nil
+) --}}}
 return snippets, autosnippets

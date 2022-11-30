@@ -10,8 +10,8 @@ local servers = {
 	"marksman",
 	"pyright",
 	"sumneko_lua",
-	-- "ltex",
-	"texlab",
+	"ltex",
+	-- "texlab",
 	"lemminx",
 }
 
