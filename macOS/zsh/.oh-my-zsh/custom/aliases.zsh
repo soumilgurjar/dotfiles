@@ -117,9 +117,16 @@ alias termpdf="~/Github_Repositories/termpdf.py/termpdf.py $1"
 alias savekitty="~/.config/kitty/session_save.sh"
 alias icat="kitty +kitten icat"
 
+# Openfoam docker containers
+alias of9="openfoam9-macos -d /Users/sgurjar/OpenFOAM/sgurjar-9"
+alias of10="openfoam10-macos -d /Users/sgurjar/OpenFOAM/sgurjar-10"
+alias of2112="cd /Users/sgurjar/openfoam/openfoam2112/ && openfoam-docker -default -2112"
+alias of2206="cd /Users/sgurjar/openfoam/openfoam2112/ && openfoam-docker -default -2206"
+
 #Commonly accessed directories
 alias scr="cd /Users/sgurjar/Scratch_Bryant/OpenFOAM_Cases/"
 alias of="cd /Users/sgurjar/openfoam/sgurjar-10/run/"
+alias thesis="cd /Users/sgurjar/Github_Repositories/Overleaf/Doctoral_Dissertation/"
 alias matlab="/Applications/MATLAB_R2021a.app/bin/matlab -nojvm -nodesktop -nodisplay -nosplash"
 alias gmsh="/Applications/Gmsh.app/Contents/MacOS/gmsh"
 alias mmgs="/Applications/mmgs_debug"

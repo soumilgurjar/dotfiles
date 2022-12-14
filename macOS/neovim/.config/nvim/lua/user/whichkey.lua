@@ -79,7 +79,7 @@ local opts = {
 }
 
 local mappings = {
-	["<leader>"] = {
+	["<localleader>"] = {
 		-- "<Cmd>lua require('telescope').extensions.frecency.frecency({ sorter = require('telescope').extensions.fzf.native_fzf_sorter()})<CR>",
 		"<Cmd>Telescope frecency<CR>",
 		"Find frecent files",

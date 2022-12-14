@@ -1,5 +1,13 @@
 vim.g.vimtex_quickfix_autoclose_after_keystrokes = 1
 vim.g.vimtex_quickfix_open_on_warning = 1
+vim.g.vimtex_syntax_conceal_disable = 1
+-- vim.g.vimtex_syntax_conceal = { math_bounds = 0 }
+-- vim.cmd([[    let g:vimtex_syntax_custom_cmds = [
+--     \ {'name': 'textcite', 'conceal': v:true},
+--     \ {'name': 'autocite', 'conceal': v:true},
+--     \]
+--  ]])
+-- vim.g.vimtex_syntax_custom_cmds = { { name = "textcite", conceal = "v:true" }, { name = "autocite", conceal = "v:true" } }
 vim.g.vimtex_compiler_latexmk = { build_dir = "build" }
 -- vim.g.vimtex_view_method = "zathura"
 

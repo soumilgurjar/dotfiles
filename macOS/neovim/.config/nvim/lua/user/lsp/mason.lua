@@ -11,7 +11,7 @@ local servers = {
 	"pyright",
 	"sumneko_lua",
 	"ltex",
-	-- "texlab",
+	"texlab",
 	"lemminx",
 }
 

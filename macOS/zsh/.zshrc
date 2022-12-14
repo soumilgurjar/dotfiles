@@ -2,7 +2,7 @@
 export PATH="/usr/local/sbin:$PATH"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+# eval "$(pyenv virtualenv-init -)" # No longer needed if using starship
 export PIPENV_PYTHON="$PYENV_ROOT/shims/python" #Necessary for pipenv to respect pyenv local/global versions?
 export PIPENV_DEFAULT_PYTHON_VERSION=$(pyenv which python)  #Necessary for pipenv to respect pyenv local/global versions
 export BROWSER="/usr/bin/open"

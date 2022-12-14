@@ -55,6 +55,7 @@ return packer.startup(function(use)
 	use({ "lewis6991/impatient.nvim" }) -- Better neovim startup time
 	use({ "ggandor/leap.nvim", requires = { "tpope/vim-repeat" } }) -- Better motions without being too intrusive
 	use({ "ggandor/flit.nvim" }) -- Better f/t motions without being too intrusive
+	use({ "ggandor/leap-spooky.nvim" }) -- Leap for remote operations on text objects
 	use({ "folke/which-key.nvim" }) -- Popup for showing possible keymaps relevant to current state
 	use({ "karb94/neoscroll.nvim" }) -- Smooth scroll
 	use({ "famiu/bufdelete.nvim" }) -- Keep window layout after closing buffers
@@ -151,8 +152,9 @@ return packer.startup(function(use)
 	use({ "vimwiki/vimwiki", branch = "dev" }) -- Vimscript Plugin; Change if possible
 	use({ "tools-life/taskwiki" }) -- Vimscript Plugin; Need to provide python virtualenv path with packages installed; See vimwiki;
 
-	-- Vimtex
+	-- Latex
 	use({ "lervag/vimtex" }) -- Vimscript Plugin; Compile latex from inside neovim
+	use({ "anufrievroman/vim-angry-reviewer" }) -- Provides style suggestions for academic texts
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

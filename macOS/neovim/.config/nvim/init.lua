@@ -51,8 +51,9 @@ require("user.trouble")
 require("user.taskwiki")
 require("user.vimwiki")
 
--- Vimtex
+-- Latex
 require("user.vimtex")
+require("user.angryreviewer")
 
 -- Others
 -- require("user.delaytrain")

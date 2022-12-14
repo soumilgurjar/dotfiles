@@ -7,12 +7,12 @@ return {
 			-- enabled = "tex",
 		},
 	},
-	-- filetypes = {
-	-- 	-- "tex",
-	-- 	-- "bibtex",
-	-- 	-- "markdown",
-	-- 	-- "text",
-	-- },
+	filetypes = {
+		"tex",
+		"bibtex",
+		-- "markdown",
+		-- "text",
+	},
 	root_dir = function(fname)
 		return util.root_pattern(".git", "main.tex", ".vimroot", "requirements.txt")(fname) or util.path.dirname(fname)
 	end,

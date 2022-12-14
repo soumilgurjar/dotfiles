@@ -56,12 +56,24 @@ end
 -- Start Refactoring --
 
 -- Soumil's snippets go here --
-
-cs( -- Cite with page number{{{
-	"page_cite",
+cs( -- Cite{{{
+	"autocite",
 	fmt(
 		[=[
-\cite[{}]{{{}}}
+\autocite{{{}}}
+  ]=],
+		{
+			i(1, "cite_key"),
+		}
+	),
+	nil
+) --}}}
+
+cs( -- Cite with page number{{{
+	"page_autocite",
+	fmt(
+		[=[
+\autocite[{}]{{{}}}
   ]=],
 		{
 			i(1, "page_number"),
@@ -70,4 +82,31 @@ cs( -- Cite with page number{{{
 	),
 	nil
 ) --}}}
+
+cs( -- Units (meter / second){{{
+	"mps",
+	fmt(
+		[=[
+\qty[per-mode=symbol]{{{}}}{{\meter\per\second}}
+  ]=],
+		{
+			i(1, "speed"),
+		}
+	),
+	nil
+) --}}}
+
+cs( -- Units (kg / m^3){{{
+	"mps",
+	fmt(
+		[=[
+\qty[per-mode=symbol]{{{}}}{{\kg\per\metre\cubed}}
+  ]=],
+		{
+			i(1, "density"),
+		}
+	),
+	nil
+) --}}}
+
 return snippets, autosnippets

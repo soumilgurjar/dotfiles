@@ -3,4 +3,26 @@ if not status_ok then
 	return
 end
 
-leap.set_default_keymaps()
+local status_ok_2, leap_spooky = pcall(require, "leap-spooky")
+if not status_ok_2 then
+	return
+end
+
+leap.add_default_mappings()
+leap.opts.equivalence_classes = { '"', "'", "`" }
+leap.opts.special_keys.prev_target = { "<s-enter>", "," }
+leap_spooky.setup({
+	affixes = {
+		-- These will generate mappings for all native text objects, like:
+		-- (ir|ar|iR|aR|im|am|iM|aM){obj}.
+		-- Special line objects will also be added, by repeating the affixes.
+		-- E.g. `yrr<leap>` and `ymm<leap>` will yank a line in the current
+		-- window.
+		-- You can also use 'rest' & 'move' as mnemonics.
+		remote = { window = "r", cross_window = "R" },
+		magnetic = { window = "m", cross_window = "M" },
+	},
+	-- If this option is set to true, the yanked text will automatically be pasted
+	-- at the cursor position if the unnamed register is in use.
+	paste_on_remote_yank = false,
+})

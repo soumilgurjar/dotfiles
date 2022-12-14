@@ -48,7 +48,7 @@ configs.setup({
 			},
 		},
 		move = {
-			enable = true,
+			enable = false,
 			set_jumps = true,
 			-- Granular control over motions on key-values and dictionaries
 			-- if you want it
@@ -70,7 +70,7 @@ configs.setup({
 			},
 		},
 		swap = {
-			enable = true,
+			enable = false,
 			-- Swap parameters; ie. if a key-value has multiple values
 			-- and you want to swap them
 			swap_next = {
@@ -82,7 +82,7 @@ configs.setup({
 		},
 	},
 	textsubjects = {
-		enable = true,
+		enable = false,
 		prev_selection = ",", -- (Optional) keymap to select the previous selection
 		keymaps = {
 			["."] = "textsubjects-smart",

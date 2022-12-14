@@ -39,6 +39,8 @@ local null_ls_servers = {
 	"flake8",
 	"markdownlint",
 	"cpplint",
+	-- "chktex",
+	-- "vale",
 	-- hover
 	"dictionary",
 }
@@ -66,6 +68,8 @@ null_ls.setup({
 		-- diagnostics.markdownlint.with({ extra_filetypes = {"vimwiki"}}),                           -- Linter for Markdown
 		-- diagnostics.proselint,                              -- English prose linter
 		-- diagnostics.shellcheck,                             --shellscript static analysis too
+		-- diagnostics.chktex,                                    --latex semantic linter
+		-- diagnostics.vale.with({ filetypes = { "tex" } }),      --latex semantic linter
 		diagnostics.cpplint.with({ extra_args = { "--indent-size 4", "--tab 4" } }), --C++ diagnostics
 		hover.dictionary,                                   --Hover for dictionary
 	},
