@@ -155,6 +155,7 @@ return packer.startup(function(use)
 	-- Latex
 	use({ "lervag/vimtex" }) -- Vimscript Plugin; Compile latex from inside neovim
 	use({ "anufrievroman/vim-angry-reviewer" }) -- Provides style suggestions for academic texts
+	use({ "Konfekt/FastFold" }) -- Better and faster folding
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

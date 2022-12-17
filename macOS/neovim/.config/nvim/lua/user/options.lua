@@ -10,6 +10,7 @@ vim.opt.cursorline = false                      -- highlight the current line
 vim.opt.diffopt:append("vertical,algorithm:histogram") -- highlight the current line
 vim.opt.expandtab = true                        -- convert tabs to spaces
 vim.opt.fileencoding = "utf-8"                  -- the encoding written to a file
+vim.opt.fillchars="fold: "
 vim.opt.formatoptions:remove("cro")             -- influence how vim formats text: no continued comments
 vim.opt.hlsearch = true                         -- highlight all matches on previous search pattern
 vim.opt.ignorecase = true                       -- ignore case in search patterns
