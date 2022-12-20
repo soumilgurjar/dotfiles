@@ -8,7 +8,7 @@ alias switch_bash="chsh -s $(which bash)"
 alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
 
 #Euler login with SSH
-alias eu="ssh sgurjar@euler.ethz.ch"
+alias eu="ssh euler"
 alias euy="ssh -Y sgurjar@euler.ethz.ch"
 alias eux="ssh -X sgurjar@euler.ethz.ch"
 
@@ -121,7 +121,7 @@ alias icat="kitty +kitten icat"
 alias of9="openfoam9-macos -d /Users/sgurjar/OpenFOAM/sgurjar-9"
 alias of10="openfoam10-macos -d /Users/sgurjar/OpenFOAM/sgurjar-10"
 alias of2112="cd /Users/sgurjar/openfoam/openfoam2112/ && openfoam-docker -default -2112"
-alias of2206="cd /Users/sgurjar/openfoam/openfoam2112/ && openfoam-docker -default -2206"
+alias of2206="cd /Users/sgurjar/openfoam/openfoam2206/ && openfoam-docker -default -2206"
 
 #Commonly accessed directories
 alias scr="cd /Users/sgurjar/Scratch_Bryant/OpenFOAM_Cases/"

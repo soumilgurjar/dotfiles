@@ -83,30 +83,4 @@ cs( -- Cite with page number{{{
 	nil
 ) --}}}
 
-cs( -- Units (meter / second){{{
-	"mps",
-	fmt(
-		[=[
-\qty[per-mode=symbol]{{{}}}{{\meter\per\second}}
-  ]=],
-		{
-			i(1, "speed"),
-		}
-	),
-	nil
-) --}}}
-
-cs( -- Units (kg / m^3){{{
-	"mps",
-	fmt(
-		[=[
-\qty[per-mode=symbol]{{{}}}{{\kg\per\metre\cubed}}
-  ]=],
-		{
-			i(1, "density"),
-		}
-	),
-	nil
-) --}}}
-
 return snippets, autosnippets
