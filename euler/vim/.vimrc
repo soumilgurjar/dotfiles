@@ -26,12 +26,12 @@ Plug 'tpope/vim-unimpaired'                     "Complementary pair of mappings 
 Plug 'tpope/vim-obsession'                      "Allows easier management of vim sessions
 Plug 'Raimondi/delimitMate'                     "Automatically creates bracket pairs
 Plug 'machakann/vim-highlightedyank'            "Highlights yanks for short period
-Plug 'SirVer/ultisnips'                         "Track the snippet engine
+" Plug 'SirVer/ultisnips'                         "Track the snippet engine
 Plug 'honza/vim-snippets'                       "Snippets are separated from the engine
 " Plug 'ludovicchabant/vim-gutentags'             "Auto generation of tags
-" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-" Plug 'junegunn/fzf.vim'                         "Fuzzy finding within vim with :Files
-" Plug 'pbogut/fzf-mru.vim'                       "Bring Most Recently Used Functionality to FZF
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'                         "Fuzzy finding within vim with :Files
+Plug 'pbogut/fzf-mru.vim'                       "Bring Most Recently Used Functionality to FZF
 Plug 'airblade/vim-rooter'                      "Autochanges current directory to project root when found; Helpful for fzf
 Plug 'vim-scripts/YankRing.vim'                 "Stores multiples yanks
 Plug 'simnalamburt/vim-mundo'                   "Stores multiples undos
@@ -40,11 +40,11 @@ Plug 'aymericbeaumet/vim-symlink'               "Follows symlink rather than edi
 Plug 'moll/vim-bbye'                            "Better buffer management with :Bdelete, :Bwipeout etc.
 Plug 'junegunn/goyo.vim'                        "Distraction free vim
 Plug 'kbarrette/mediummode'                     "Disable common vim navigation functions to help learn vim faster
-Plug 'chaoren/vim-wordmotion'                   "Better word movement when dealing with acronyms, camelcase etc.
 Plug 'romainl/vim-cool'                         "Better search highlighting which disappears after moving away from search
 
 """ Theme plugins
 Plug 'morhetz/gruvbox'
+Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 
 """ Airline/Lightline/Bufferline plugins
 Plug 'vim-airline/vim-airline'
@@ -52,13 +52,9 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'bling/vim-bufferline'
 
 """""""" ----------------- Plugin Settings ---------------
-""" fzf
-" let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9} }
-" " This command changes the default :Rg command to work with hidden files
-" command! -bang -nargs=* Rg call fzf#vim#grep("rg --hidden --follow --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
 
 """ vim-rooter
-let g:rooter_patterns = ['.vimroot', '.git/', '.python-version', 'Makefile', '*.sln']
+let g:rooter_patterns = ['job.sh','.vimroot', '.git/', '.python-version', 'Makefile', '*.sln']
 let g:rooter_change_directory_for_non_project_files = 'current'
 let g:rooter_resolve_links = 1
 " let g:rooter_silent_chdir = 1
@@ -68,17 +64,7 @@ let g:rooter_resolve_links = 1
 " let g:UltiSnipsListSnippets = "<c-tab>"
 " let g:UltiSnipsJumpForwardTrigger = "<c-j>"
 " let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
-let g:UltiSnipsEditSplit = "vertical"
-
-""" Gutentags
-" set statusline+=%{gutentags#statusline()}                           " Shows when tags are being generated
-" let g:gutentags_cache_dir = expand('~/.cache/vim/ctags/')
-" let g:gutentags_resolve_symlinks = 1
-" let g:gutentags_project_root = ['index.md']
-" let g:gutentags_ctags_extra_args = [
-"       \ '--tag-relative=yes',
-"       \ '--fields=+ailmnS',
-"       \ ]
+" let g:UltiSnipsEditSplit = "vertical"
 
 """ Highlight Yank
 let g:yankring_history_file = '.yankring_history'
@@ -149,49 +135,54 @@ filetype plugin indent on    " required
 set autoindent
 set autoread
 set autowrite                   " allows changing buffer with save
-set hidden
+set background=dark             " For colorscheme
+set backspace=indent,eol,start  " Vim 8.2 update had changed default backspace behaviour. This reverts it.
+set breakindent                 " enable indentation on linebreak
 set clipboard=unnamedplus       " yank and paste with the system clipboard
 set encoding=utf-8
 set expandtab                   " tabs are spaces
-set shiftround                  " When shifting lines, round the indentation to the nearest multiple of “shiftwidth.”
-set shiftwidth=4
-set smarttab                    " Insert “tabstop” number of spaces when the “tab” key is pressed.
-set tabstop=4                   " number of visual spaces per TAB
-set softtabstop=4               " number of spaces in tab when editing
-set ignorecase                  " case-insensitive search
-set smartcase
-set incsearch                   " search as characters are entered
+set hidden
 set hlsearch
-set showmatch                   " highlight matching [{()}]
+set ignorecase                  " case-insensitive search
+set incsearch                   " search as characters are entered
+set laststatus=2                " 2 - Always display the status bar.
+set linebreak                   " enable softwrap without breaking words
+set list                        " show trailing whitespace
+set listchars=tab:›\ ,extends:»,precedes:‹,nbsp:·,trail:·   " list of characters to show
+set mouse=a
+set nobackup
 set noerrorbells
+set noro                        " Set no read only mode. Useful when using git difftool.
+set nrformats+=alpha
 set number                      " show absolute line numbers
 set relativenumber              " show relative line numbers (except current)
 set ruler                       " show column in console
-set list                        " show trailing whitespace
-set listchars=tab:▸\ ,trail:▫   " list of characters to show
+set scrolloff=4
+set shiftround                  " When shifting lines, round the indentation to the nearest multiple of “shiftwidth.”
+set shiftwidth=4
+set shortmess=a                 " Abbreviates file messages to prevent hit enter to continue message
+set showcmd                     " shows the current command
+set noshowmode                    " stop showing current mode
+set showmatch                   " highlight matching [{()}]
+set sidescrolloff=8
+set smartcase
+set smartindent
+set smarttab                    " Insert “tabstop” number of spaces when the “tab” key is pressed.
+set spelllang="en_gb,de_ch"
+set spelloptions="camel"
+set splitright
+set tabstop=4                   " number of visual spaces per TAB
+set termguicolors               " Set true color (use only when terminal supports true colors)
+set textwidth=0                 " No hard wrap of text; default 80
+set undodir=~/.vim/undo
+set undofile
+set updatetime=300             " Sets time between git diff run by gitgutter
 set wrap                        " automatically wrap on load
 set wrapscan                    " Allow search to wrap to start of file
-set breakindent                 " enable indentation on linebreak
-set linebreak                   " enable softwrap without breaking words
-set textwidth=0                 " No hard wrap of text; default 80
-set scrolloff=4
-set nobackup
-set mouse=a
-set undofile
-set undodir=~/.vim/undo
-set updatetime=1000             " Sets time between git diff run by gitgutter
-set backspace=indent,eol,start  " Vim 8.2 update had changed default backspace behaviour. This reverts it.
-set noro                        " Set no read only mode. Useful when using git difftool.
-set showcmd                     " shows the current command
-set laststatus=2                " 2 - Always display the status bar.
-" set termguicolors               " Set true color (use only when terminal supports true colors)
-set background=dark             " For colorscheme
-set shortmess=a                 " Abbreviates file messages to prevent hit enter to continue message
 if executable('rg')
     set grepprg=rg\ --vimgrep
     set grepformat=%f:%l:%c:%m
 endif
-set nrformats+=alpha
 
 """"""""" ---------------  VIM Cursor --------------------
 " 1 or 0 -> blinking block
@@ -212,9 +203,13 @@ endif
 
 """"""""" ---------------  VIM Themes --------------------
 " ---- Gruvbox
-let g:gruvbox_italic=1
-colorscheme gruvbox
-let g:airline_theme= 'gruvbox'
+" let g:gruvbox_italic=1
+" colorscheme gruvbox
+" let g:airline_theme= 'gruvbox'
+
+" ---- Catppuccin
+colorscheme catppuccin_macchiato
+let g:airline_theme= 'wombat'
 
 """"""""" --------------- Goyo settings ----------------------
 function! s:goyo_enter()
@@ -262,23 +257,28 @@ set wildignore+=*.swp,*.tmp.
 """""""" --------------- FZF actions ------------------------
 " " Might need to change rtp below
 " set rtp+=/usr/local/opt/fzf
-" function! s:insert_file_path(lines)
-"     let @@ = fnamemodify(a:lines[0], ":p")
-"     normal! p
-" endfunction
-" function! s:insert_relative_file_path(lines)
-"     let @@ = fnamemodify(a:lines[0], ":f")
-"     normal! p
-" endfunction
-" let g:fzf_action = {
-"             \ 'ctrl-r': function('s:insert_relative_file_path'),
-"             \ 'ctrl-e': function('s:insert_file_path') }
+function! s:insert_file_path(lines)
+    let @@ = fnamemodify(a:lines[0], ":p")
+    normal! p
+endfunction
+function! s:insert_relative_file_path(lines)
+    let @@ = fnamemodify(a:lines[0], ":f")
+    normal! p
+endfunction
+let g:fzf_action = {
+            \ 'ctrl-r': function('s:insert_relative_file_path'),
+            \ 'ctrl-e': function('s:insert_file_path') }
 
 """""""" --------------- File Specific Autocommands ------------------------
 autocmd BufRead,BufNewFile *.py let python_highlight_all=1
 " autocmd FileType vim setlocal shiftwidth=4 tabstop=4 expandtab
 " autocmd FileType tex setlocal shiftwidth=4 tabstop=4 expandtab
 autocmd BufRead,BufNewFile *.gitconfig-* set filetype=gitconfig
+
+augroup vim-help-right-split
+    autocmd!
+    autocmd FileType help wincmd L
+augroup END
 
 augroup vimrc-tex
     autocmd!
@@ -291,10 +291,10 @@ augroup END
 augroup markdown-txt-Spell
     autocmd!
     autocmd FileType markdown,vimwiki,text setlocal spell
-    autocmd FileType markdown,vimwiki,text setlocal spelllang=en
+    autocmd FileType markdown,vimwiki,text setlocal spelllang=en_gb
     autocmd FileType markdown,vimwiki,text highlight SpellBad cterm=underline
     autocmd BufRead,BufNewFile *.md,*.txt,*.rst setlocal spell
-    autocmd BufRead,BufNewFile *.md,*.txt,*.rst setlocal spelllang=en
+    autocmd BufRead,BufNewFile *.md,*.txt,*.rst setlocal spelllang=en_gb
     autocmd BufRead,BufNewFile *.md,*.txt,*.rst highlight SpellBad cterm=underline
 augroup END
 
@@ -322,8 +322,8 @@ nnoremap <silent> <leader>pu :PlugUpdate<CR>
 nnoremap <silent> <leader>pc :PlugClean<CR>
 
 " Fuzzy searching with fzf
-nnoremap <silent> <leader>ff :FZFMru<CR>
-nnoremap <silent> <leader>fs :Files<CR>
+nnoremap <silent> <leader><leader> :FZFMru<CR>
+nnoremap <silent> <leader>ff :Files<CR>
 nnoremap <silent> <leader>fg :GFiles<CR>
 nnoremap <silent> <leader>fb :BCommits<CR>
 nnoremap <silent> <leader>fc :Commits<CR>
@@ -331,9 +331,7 @@ nnoremap <silent> <leader>fu :Buffers<CR>
 nnoremap <silent> <leader>ft :Tags<CR>
 nnoremap <silent> <leader>ftb :BTags<CR>
 nnoremap <silent> <leader>fh :Files ~<CR>
-nnoremap <silent> <leader>fd :Files ~/.dotfiles<CR>
-nnoremap <silent> <leader>fa :Files ~/Github_Repositories/Overleaf/DoctoralThesis-Overleaf<CR>
-nnoremap <silent> <leader>fw :Files ~/Dropbox/Apps/vimwiki<CR>
+nnoremap <silent> <leader>fd :Files ~/Git_Repositories/dotfiles<CR>
 nnoremap <silent> <leader>/ :Lines<CR>
 nnoremap <silent> <leader>' :Marks<CR>
 " Mapping selecting mappings
@@ -433,10 +431,13 @@ map  / <Plug>(easymotion-sn)
 omap / <Plug>(easymotion-tn)
 
 " Subversive substitution command
-nmap S <plug>(SubversiveSubstitute)
+nmap S <Plug>(SubversiveSubstitute)
 
 " Quickly save out of insert mode directly
-inoremap ZZ :wq<CR>
+inoremap ZZ <Esc>:wq<CR>
+
+" Save current buffer
+nnoremap ; :update<CR>
 
 " Quickly delete current buffer
 nnoremap q :Bdelete<CR>
@@ -444,11 +445,11 @@ nnoremap q :Bdelete<CR>
 nnoremap Q q
 
 " Repeat last used macro
-nnoremap , <Cmd>norm @@<CR>
+nnoremap , :norm @@<CR>
 
 " Map arrows keys to more useful functions like changing buffers and page up/down
-nnoremap <S-h> <Cmd>bprevious<CR>
-nnoremap <S-l> <Cmd>bnext<CR>
+nnoremap <S-h> :bprevious<CR>
+nnoremap <S-l> :bnext<CR>
 nnoremap <Left> ^
 nnoremap <Right> $
 nnoremap <Up> <C-b>

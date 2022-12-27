@@ -56,5 +56,3 @@
     tool = vimdiff
     guitool = diffmerge
     conflictstyle = diff3
-[pull]
-    ff = only
