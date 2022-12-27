@@ -72,8 +72,10 @@ alias nms="~/.config/mutt/neomutt_startup.sh"
 alias zmk="pyenv activate zmk_build && source ~/Github_Repositories/zmk-build/zephyr/zephyr-env.sh && cd ~/Github_Repositories/zmk-config"
 alias lily_left="west build -s /Users/sgurjar/Github_Repositories/zmk-build/app/ -d build/left -b nice_nano_v2 -- -DSHIELD=lily58_left -DZMK_CONFIG='/Users/sgurjar/Github_Repositories/zmk-config/config/' > build_left.log 2>&1"
 alias lily_right="west build -s /Users/sgurjar/Github_Repositories/zmk-build/app/ -d build/right -b nice_nano_v2 -- -DSHIELD=lily58_right -DZMK_CONFIG='/Users/sgurjar/Github_Repositories/zmk-config/config/' > build_right.log 2>&1"
-alias lily_flash_left="cp ~/Github_Repositories/zmk-config/build/left/zephyr/zmk.uf2 /Volumes/NICENANO"
-alias lily_flash_right="cp ~/Github_Repositories/zmk-config/build/right/zephyr/zmk.uf2 /Volumes/NICENANO"
+alias sofle_left="west build -s /Users/sgurjar/Github_Repositories/zmk-build/app/ -d build/left -b nice_nano_v2 -- -DSHIELD=sofle_left -DZMK_CONFIG='/Users/sgurjar/Github_Repositories/zmk-config-sofle/config/' > build_left.log 2>&1"
+alias sofle_right="west build -s /Users/sgurjar/Github_Repositories/zmk-build/app/ -d build/right -b nice_nano_v2 -- -DSHIELD=sofle_right -DZMK_CONFIG='/Users/sgurjar/Github_Repositories/zmk-config-sofle/config/' > build_right.log 2>&1"
+alias flash_left="cp ~/Github_Repositories/zmk-config/build/left/zephyr/zmk.uf2 /Volumes/NICENANO"
+alias flash_right="cp ~/Github_Repositories/zmk-config/build/right/zephyr/zmk.uf2 /Volumes/NICENANO"
 
 # Git related
 alias glog="git log --color --graph --pretty=format:'%C(yellow)%h%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --branches"
