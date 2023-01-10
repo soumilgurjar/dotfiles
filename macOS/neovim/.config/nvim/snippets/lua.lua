@@ -176,7 +176,7 @@ end
 cs( -- [local_function] Lua function snippet{{{
 	"local_function",
 	fmt(
-		[[ 
+		[[
 local function {}({})
   {}
 end
@@ -193,7 +193,7 @@ end
 cs( -- [local] Lua local variable snippet{{{
 	"local",
 	fmt(
-		[[ 
+		[[
 local {} = {}
   ]],
 		{ i(1, ""), i(2, "") }
@@ -205,7 +205,7 @@ local {} = {}
 cs( -- [keymap_function] Keymap function{{{
 	"keymap_function",
 	fmt(
-		[=[ 
+		[=[
 local function keymap(mode, lhs, rhs, opts)
     opts = vim.tbl_extend("keep", opts, {{ noremap = true, silent = true }})
     vim.keymap.set(mode, lhs, rhs, opts)
@@ -219,7 +219,7 @@ end
 cs( -- [local] Keymap reference{{{
 	"keymap_reference",
 	fmt(
-		[=[ 
+		[=[
 keymap( "{}" , "{}" , "{}" , {{ desc = "{}" }} )
   ]=],
 		{
@@ -235,7 +235,7 @@ keymap( "{}" , "{}" , "{}" , {{ desc = "{}" }} )
 cs( -- [local] Keymap reference{{{
 	"pcall",
 	fmt(
-		[=[ 
+		[=[
 local {}, {} = pcall(require, "{}")
 if not {} then
 	return

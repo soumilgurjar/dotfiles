@@ -29,3 +29,10 @@ vim.g.vimtex_view_sioyek_exe = "/Applications/sioyek.app/Contents/MacOS/sioyek"
 -- vim.g.fastfold_fold_movement_commands = { "]z", "[z", "zj", "zk" }
 -- vim.g.tex_fold_enabled = 1
 -- vim.cmd([[autocmd FileType tex setlocal foldmethod=expr]])
+
+local opts = { noremap = true, silent = true }
+local keymap = vim.keymap.set
+
+-- Navigate buffers
+keymap("n", "<localleader>;", "<Cmd>VimtexCompileSS<CR>", opts)
+keymap("n", "<localleader>l;", "<Cmd>VimtexStop<CR>", opts)

@@ -83,4 +83,69 @@ cs( -- Cite with page number{{{
 	nil
 ) --}}}
 
+cs( -- [todo] Quick todo{{{
+	"todo",
+	fmt(
+		[=[
+% TODO: {}
+]=],
+		{
+			i(1, ""),
+		}
+	),
+	nil
+) --}}}
+
+cs( -- [fix] Quick todo{{{
+	"fix",
+	fmt(
+		[=[
+% FIX: {}
+]=],
+		{
+			i(1, ""),
+		}
+	),
+	nil
+) --}}}
+
+cs( -- \emph{} Quick emphasis
+	"emph",
+	fmt(
+		[=[
+\emph{{{}}}
+]=],
+		{
+			i(1, ""),
+		}
+	),
+	nil
+) --}}}
+
+cs( -- \autocite{} Quick autocite
+	"auct",
+	fmt(
+		[=[
+\autocite{{{}}}
+]=],
+		{
+			i(1, ""),
+		}
+	),
+	nil
+) --}}}
+
+cs( -- \autocite{} Quick autocite
+	"tct",
+	fmt(
+		[=[
+\textcite{{{}}}
+]=],
+		{
+			i(1, ""),
+		}
+	),
+	nil
+) --}}}
+
 return snippets, autosnippets

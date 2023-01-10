@@ -67,6 +67,13 @@ return packer.startup(function(use)
 	use({ "folke/trouble.nvim" }) -- Better looking lists for many things
 	use({ "folke/todo-comments.nvim" }) -- Highlight and Navigate To-dos
 	use({ "lewis6991/hover.nvim" }) -- Context aware hover
+	-- use({
+	-- 	"glacambre/firenvim",
+	-- 	run = function()
+	-- 		vim.fn["firenvim#install"](0)
+	-- 	end,
+	-- }) -- Allows usage of neovim in browser text fields
+	use({ "subnut/nvim-ghost.nvim" }) -- Allows usage of neovim in browser text fields
 
 	-- Colorschemes
 	use({ "catppuccin/nvim", as = "catppuccin" }) -- Catpuccin theme

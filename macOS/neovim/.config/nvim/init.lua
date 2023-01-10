@@ -57,6 +57,7 @@ require("user.angryreviewer")
 
 -- Others
 -- require("user.delaytrain")
+require("user.firenvim")
 
 -- No longer used
 -- require("user.alpha")
