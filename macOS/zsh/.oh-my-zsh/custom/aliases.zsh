@@ -40,6 +40,7 @@ alias lso="/bin/ls"
 alias l="ls -la"
 alias la="ls -a"
 alias ls="exa -x --icons --group-directories-first"
+alias ils="timg --grid=4x1 -U -F --center"
 alias cpwd="pwd | pbcopy"
 alias rm="rm -ir"
 alias rmf="rm -irf"
@@ -127,9 +128,9 @@ alias of2206="cd /Users/sgurjar/openfoam/openfoam2206/ && openfoam-docker -defau
 
 #Commonly accessed directories
 alias scr="cd /Users/sgurjar/Scratch_Bryant/OpenFOAM_Cases/"
-alias of="cd /Users/sgurjar/openfoam/sgurjar-10/run/"
+alias of="cd /Users/sgurjar/openfoam/openfoam2206/OpenFOAM/openfoam-v2206/run/"
 alias thesis="cd /Users/sgurjar/Github_Repositories/Overleaf/Doctoral_Dissertation/"
-alias matlab="/Applications/MATLAB_R2021a.app/bin/matlab -nojvm -nodesktop -nodisplay -nosplash"
+alias matlab="/Applications/MATLAB_R2021a.app/bin/matlab -nodesktop -nodisplay -nosplash"
 alias gmsh="/Applications/Gmsh.app/Contents/MacOS/gmsh"
 alias mmgs="/Applications/mmgs_debug"
 alias plover='/Applications/Plover.app/Contents/MacOS/Plover'

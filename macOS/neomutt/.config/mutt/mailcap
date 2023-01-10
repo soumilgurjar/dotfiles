@@ -13,7 +13,8 @@ video/*; setsid mpv --quiet %s &; copiousoutput;  description = "Video";
 audio/*; mpv %s ; description = "Audio";
 # application/pdf; /usr/local/lib/mutt-wizard/openfile %s ;
 # application/pdf; pdftotext -layout %s -; copiousoutput;
-application/pdf; ~/Github_Repositories/termpdf.py/termpdf.py %s ;
+# application/pdf; ~/Github_Repositories/termpdf.py/termpdf.py %s ;
+application/pdf; sioyek %s ;
 application/msword; pandoc --from docx --to markdown %s; copiousoutput
 application/vnd.oasis.opendocument.text; pandoc --from odt --to markdown %s; copiousoutput
 application/rtf; pandoc --from rtf --to plain %s; copiousoutput

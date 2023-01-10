@@ -81,7 +81,7 @@ export FZF_ALT_C_COMMAND="fd --type directory --follow --ignore --color=never . 
 # export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window :nohidden:wrap --bind '?:toggle-preview'"
 export FZF_DEFAULT_OPTS="-m --height 90% --layout=reverse --border --inline-info
 --preview-window=:nohidden
---preview '([[ -f {} ]] && [[ {} =~ ('.jpg'|'.JPG'|'.jpeg'|'.png'|'.PNG'|'.gif')$ ]] && (timg -clear -g60x30 --frames=1 {})) || ([[ -f {} ]] && (bat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'
+--preview '([[ -f {} ]] && [[ {} =~ ('.jpg'|'.JPG'|'.jpeg'|'.png'|'.PNG'|'.gif')$ ]] && (timg --clear -U -E -F -C -g60x30 --frames=1 {})) || ([[ -f {} ]] && (bat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'
 --bind 'ctrl-d:preview-page-down' --bind 'ctrl-u:preview-page-up' --bind '?:toggle-preview'
 --color=bg+:#363a4f,bg:#24273a,spinner:#f4dbd6,hl:#ed8796
 --color=fg:#cad3f5,header:#ed8796,info:#c6a0f6,pointer:#f4dbd6
@@ -89,7 +89,7 @@ export FZF_DEFAULT_OPTS="-m --height 90% --layout=reverse --border --inline-info
 # --preview '([[ -f {} ]] && (bat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'
 # --preview '([[ -f {} ]] && [[ {} =~ ('.jpg'|'.JPG'|'.jpeg'|'.png'|'.PNG')$ ]] && (kitty icat --place `expr $COLUMNS / 2`\x`expr $LINES / 2`@`expr $COLUMNS / 2`\x`expr $LINES / 3` --transfer-mode file {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'
 # --preview '([[ -f {} ]] && [[ {} =~ ('.jpg'|'.JPG'|'.jpeg'|'.png'|'.PNG')$ ]] && (catimg -w `expr $COLUMNS` {})) || ([[ -f {} ]] && (bat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'
-# --preview '([[ -f {} ]] && [[ {} =~ ('.jpg'|'.JPG'|'.jpeg'|'.png'|'.PNG'|'.gif')$ ]] && (timg -clear -g60x30 --frames=1 {})) || ([[ -f {} ]] && (bat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'
+# --preview '([[ -f {} ]] && [[ {} =~ ('.jpg'|'.JPG'|'.jpeg'|'.png'|'.PNG'|'.gif')$ ]] && (timg --clear -g60x30 -U --frames=1 {})) || ([[ -f {} ]] && (bat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'
 
 _fzf_compgen_path() {
     fd --hidden --follow --exclude ".git" . "$1"
@@ -160,7 +160,7 @@ zstyle ':completion:*:git-checkout:*' sort false
 zstyle ':completion:*:descriptions' format '[%d]'
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 # zstyle ':fzf-tab:complete:*' fzf-preview 'exa -1 --color=always $realpath'
-zstyle ':fzf-tab:complete:*' fzf-preview '([[ -f $realpath ]] && [[ $realpath =~ ('.jpg'|'.JPG'|'.jpeg'|'.png'|'.PNG'|'.gif')$ ]] && (timg -clear -g60x30 --frames=1 $realpath)) || ([[ -f $realpath ]] && (bat --style=numbers --color=always $realpath || cat $realpath)) || ([[ -d $realpath ]] && (tree -L 1 --gitignore -C $realpath | less)) || echo $realpath 2> /dev/null | head -200'
+zstyle ':fzf-tab:complete:*' fzf-preview '([[ -f $realpath ]] && [[ $realpath =~ ('.jpg'|'.JPG'|'.jpeg'|'.png'|'.PNG'|'.gif')$ ]] && (timg --clear -U -E -F -C -g60x30 --frames=1 $realpath)) || ([[ -f $realpath ]] && (bat --style=numbers --color=always $realpath || cat $realpath)) || ([[ -d $realpath ]] && (tree -L 1 --gitignore -C $realpath | less)) || echo $realpath 2> /dev/null | head -200'
 zstyle ':fzf-tab:complete:*:options' fzf-preview
 zstyle ':fzf-tab:complete:*:argument-1' fzf-preview
 zstyle ':fzf-tab:complete:brew-(install|uninstall|search|info):*-argument-rest' fzf-preview 'brew info $word'
