@@ -148,4 +148,43 @@ cs( -- \autocite{} Quick autocite
 	nil
 ) --}}}
 
+cs( -- \frame{} Quick frame environment for beamer
+	"frame",
+	fmt(
+		[=[
+\begin{{frame}}
+    \frametitle{{{}}}
+\end{{frame}}
+]=],
+		{
+			i(1, ""),
+		}
+	),
+	nil
+) --}}}
+
+cs( -- \columns{} Quick columns environment for beamer
+	"cols",
+	fmt(
+		[=[
+\begin{{columns}}
+
+    \begin{{column}}{{{}\textwidth}}
+
+    \end{{column}}
+
+    \begin{{column}}{{{}\textwidth}}
+
+    \end{{column}}
+
+\end{{columns}}
+]=],
+		{
+			i(1, "0.5"),
+			i(2, "0.5"),
+		}
+	),
+	nil
+) --}}}
+
 return snippets, autosnippets
