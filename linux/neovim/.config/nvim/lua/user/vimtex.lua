@@ -1,5 +1,9 @@
 vim.g.vimtex_quickfix_autoclose_after_keystrokes = 1
 vim.g.vimtex_quickfix_open_on_warning = 1
+vim.g.vimtex_syntax_conceal_disable = 1
+vim.g.vimtex_fold_enabled = 1
+vim.g.vimtex_fold_manual = 1
+vim.g.vimtex_compiler_latexmk = { build_dir = "build" }
 
 vim.g.vimtex_view_method = "zathura"
 
@@ -12,3 +16,10 @@ vim.g.vimtex_view_method = "zathura"
 -- vim.g.vimtex_view_method = "skim" -- Choose which program to use to view PDF file
 -- vim.g.vimtex_view_skim_sync = 1 -- Value 1 allows forward search after every successful compilation
 -- vim.g.vimtex_view_skim_activate = 1 -- Value 1 allows change focus to skim after command `:VimtexView` is given
+
+local opts = { noremap = true, silent = true }
+local keymap = vim.keymap.set
+
+-- Easier compilation keymaps
+keymap("n", "<localleader>;", "<Cmd>VimtexCompileSS<CR>", opts)
+keymap("n", "<localleader>l;", "<Cmd>VimtexStop<CR>", opts)
