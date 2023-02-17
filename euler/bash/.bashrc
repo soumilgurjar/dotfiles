@@ -5,13 +5,8 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
-# Load inputrc
-bind -f ~/.inputrc
+#### Command Line Prompt - Show git branch and commit status
 
-# User specific aliases and functions
-# PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$ '
-
-## Better prompt with git branch and commit status
 RESET=$(tput sgr0)
 GREY=$(tput setaf 244)
 RED=$(tput setaf 1)
@@ -37,15 +32,17 @@ git_prompt() {
 }
 PS1="${GREEN} ${CYAN}\W $(git_prompt) ${RESET}"
 
-#Bash history does not store duplicates and commands started with space are not stored in history
+# Bash history does not store duplicates and commands started with space are not stored in history
 HISTCONTROL=ignorespace:erasedups
+
+#### Vim related
 
 # Set editor to vim
 export EDITOR="$(which vim)"
 # Set command line to vim mode
 set -o vi
 
-#Vim related
+# Vim aliases
 alias vi="vim"
 alias vib="vim ~/.bashrc"
 alias sob="source ~/.bashrc"
@@ -55,12 +52,13 @@ alias viv="vim ~/.vimrc"
 alias vsc="vim -S ~/.vim/sessions/configuration-files.vim"
 alias vjo="vim -S job.vim"
 alias vit="vim ~/.tmux.conf"
+alias vis="vim -S *.vim"
 
 function vvs() {
     vimdiff ~/Git_Repositories/dotfiles/euler/$1 ~/Git_Repositories/dotfiles/macOS/$1
 }
 
-# Terminal navigation
+#### Terminal navigation
 alias fs="du -sh"
 alias l="ls -la --color=auto"
 alias la="ls -a --color=auto"
@@ -70,19 +68,20 @@ alias rmf="rm -irf"
 alias gr="grep -r -n"
 alias cl="clear"
 
-# Euler related
-alias ms="module spider"
-alias mli="module list"
-alias mlo="module load"
+# Navigate Directories
+alias ..="cd .."
+alias ...="cd ../../"
+alias ....="cd ../../../"
+alias scr="cd $SCRATCH/"
 
-# Tmux related
+#### Tmux related
 alias tn="tmux new -As Euler"
 alias tnn="tmux new -As Test"
 alias tds="tmux detach-client"
 alias tpi="~/.tmux/plugins/tpm/bin/install_plugins"
 alias tpu="~/.tmux/plugins/tpm/bin/update_plugins all"
 
-# Git related
+#### Git related
 alias glog="git log --color --graph --pretty=format:'%C(yellow)%h%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --branches"
 alias gs="git status"
 alias gst="git stash save "
@@ -102,13 +101,12 @@ function gcap() {
   git push
 }
 
-# Navigate Directories
-alias ..="cd .."
-alias ...="cd ../../"
-alias ....="cd ../../../"
-alias scr="cd $SCRATCH/"
+#### Euler specific commands
 
-# Euler specific commands
+# Modules related
+alias ms="module spider"
+alias mli="module list"
+alias mlo="module load"
 
 # Old job manager commands
 # alias bs="bjobs -w"
@@ -128,16 +126,12 @@ alias qs="quota -s"
 alias tfo="tail -f out*.log"
 alias vio="vi out*.log"
 
-# Openfoam specific commands
+#### Openfoam specific commands
+
+# Commonly accessed directories
 alias dir="cd $FOAM_RUN/2D_Cases"
 alias tutl="cd $FOAM_RUN/tutorials/"
 alias solv="cd $FOAM_RUN/../applications/solvers/"
-
-# Matlab related
-alias matlab="matlab -nojvm -nodesktop -nodisplay -nosplash"
-
-# Load Modules
-alias paraview="paraview --mesa"
 
 # Source Openfoam-com files: Needed only for openfoam-com/v1806 and v1906 modules
 source $OPENFOAM_COM_ROOT/etc/bashrc
