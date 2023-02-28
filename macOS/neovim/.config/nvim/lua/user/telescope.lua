@@ -30,7 +30,7 @@ local home = os.getenv("HOME")
 telescope.setup({
 	defaults = {
 
-		layout_strategy = "horizontal",
+		layout_strategy = "vertical",
 		layout_config = {
 			prompt_position = "top",
 			horizontal = {
