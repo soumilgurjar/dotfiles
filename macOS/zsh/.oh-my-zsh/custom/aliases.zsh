@@ -37,7 +37,7 @@ function vvs() {
 #Terminal navigation
 alias fs="du -sh"
 alias lso="/bin/ls"
-alias l="ls -la"
+alias l="ls -lha"
 alias la="ls -a"
 alias ls="exa -x --icons --group-directories-first"
 alias ils="timg --grid=4x1 -U -F --center"
@@ -73,11 +73,11 @@ alias nmd="neomutt -e 'source /Users/sgurjar/.config/mutt/accounts/soumil.gurjar
 alias nms="~/.config/mutt/neomutt_startup.sh"
 
 # ZMK related
-alias zmk="pyenv activate zmk_build && source ~/Github_Repositories/zmk-build/zephyr/zephyr-env.sh && cd ~/Github_Repositories/zmk-swweeep"
-alias lily_left="west build -s /Users/sgurjar/Github_Repositories/zmk-build/app/ -d build/left -b nice_nano_v2 -- -DSHIELD=lily58_left -DZMK_CONFIG='/Users/sgurjar/Github_Repositories/zmk-lily58/config/' > build_left.log 2>&1"
-alias lily_right="west build -s /Users/sgurjar/Github_Repositories/zmk-build/app/ -d build/right -b nice_nano_v2 -- -DSHIELD=lily58_right -DZMK_CONFIG='/Users/sgurjar/Github_Repositories/zmk-lily58/config/' > build_right.log 2>&1"
-alias sofle_left="west build -s /Users/sgurjar/Github_Repositories/zmk-build/app/ -d build/left -b nice_nano_v2 -- -DSHIELD=sofle_left -DZMK_CONFIG='/Users/sgurjar/Github_Repositories/zmk-sofle/config/' > build_left.log 2>&1"
-alias sofle_right="west build -s /Users/sgurjar/Github_Repositories/zmk-build/app/ -d build/right -b nice_nano_v2 -- -DSHIELD=sofle_right -DZMK_CONFIG='/Users/sgurjar/Github_Repositories/zmk-sofle/config/' > build_right.log 2>&1"
+alias zmk="pyenv activate zmk_build && source ~/Github_Repositories/zmk-build/zephyr/zephyr-env.sh && cd ~/Github_Repositories/zmk-lily58"
+alias lily_left="west build -p -s /Users/sgurjar/Github_Repositories/zmk-build/app/ -d build/left -b nice_nano_v2 -- -DSHIELD=lily58_left -DZMK_CONFIG='/Users/sgurjar/Github_Repositories/zmk-lily58/config' > build_left.log"
+alias lily_right="west build -p -s /Users/sgurjar/Github_Repositories/zmk-build/app/ -d build/right -b nice_nano_v2 -- -DSHIELD=lily58_right -DZMK_CONFIG='/Users/sgurjar/Github_Repositories/zmk-lily58/config' > build_right.log"
+alias sofle_left="west build -p -s /Users/sgurjar/Github_Repositories/zmk-build/app/ -d build/left -b nice_nano_v2 -- -DSHIELD=sofle_left -DZMK_CONFIG='/Users/sgurjar/Github_Repositories/zmk-sofle/config' > build_left.log 2>&1"
+alias sofle_right="west build -p -s /Users/sgurjar/Github_Repositories/zmk-build/app/ -d build/right -b nice_nano_v2 -- -DSHIELD=sofle_right -DZMK_CONFIG='/Users/sgurjar/Github_Repositories/zmk-sofle/config' > build_right.log 2>&1"
 alias flash_lily_left="cp ~/Github_Repositories/zmk-lily58/build/left/zephyr/zmk.uf2 /Volumes/NICENANO"
 alias flash_lily_right="cp ~/Github_Repositories/zmk-lily58/build/right/zephyr/zmk.uf2 /Volumes/NICENANO"
 
@@ -118,7 +118,7 @@ alias tt="taskwarrior-tui"
 
 # Aliases for scripts
 alias termpdf="~/Github_Repositories/termpdf.py/termpdf.py $1"
-alias birdnet_backup="~/Scripts/birdnet-pi_backup.sh"
+alias birdnet_backup="~/.dotfiles/macOS/birdnet/birdnet-pi_backup.sh"
 
 # Aliases for kitty related commands
 alias savekitty="~/.config/kitty/session_save.sh"
