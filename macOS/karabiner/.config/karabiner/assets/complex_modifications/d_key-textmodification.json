@@ -1,0 +1,238 @@
+{
+    "title": "Simultaneous_Key + Some_Key -> Action",
+    "rules": [
+        {
+            "description": "Simultaneous a + s + d == Alfred",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "simultaneous": [
+                            {
+                                "key_code": "d"
+                            },
+                            {
+                                "key_code": "s"
+                            },
+                            {
+                                "key_code": "a"
+                            }
+                        ],
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        },
+                        "simultaneous_options": {
+                            "key_down_order": "insensitive"
+                        }
+                    },
+                    "to": [
+                        {
+                            "shell_command": "open -a 'Alfred 4.app'"
+                        }
+                    ],
+                    "parameters": {
+                        "basic.simultaneous_threshold_milliseconds": 50
+                    }
+                }
+            ]
+        },
+        {
+            "description": "Simultaneous d + Some_Key == Text Navigation Keys",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "simultaneous": [
+                            {
+                                "key_code": "d"
+                            },
+                            {
+                                "key_code": "a"
+                            }
+                        ],
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        },
+                        "simultaneous_options": {
+                            "key_down_order": "insensitive"
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "left_arrow",
+                            "modifiers": [
+                                "option"
+                            ]
+                        }
+                    ],
+                    "parameters": {
+                        "basic.simultaneous_threshold_milliseconds": 50
+                    }
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "simultaneous": [
+                            {
+                                "key_code": "d"
+                            },
+                            {
+                                "key_code": "w"
+                            }
+                        ],
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        },
+                        "simultaneous_options": {
+                            "key_down_order": "insensitive"
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "right_arrow",
+                            "modifiers": [
+                                "option"
+                            ]
+                        }
+                    ],
+                    "parameters": {
+                        "basic.simultaneous_threshold_milliseconds": 150
+                    }
+                }
+            ]
+        },
+        {
+            "description": "Simultaneous k + Some_Key == Text Modification Keys",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "simultaneous": [
+                            {
+                                "key_code": "k"
+                            },
+                            {
+                                "key_code": "l"
+                            }
+                        ],
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        },
+                        "simultaneous_options": {
+                            "key_down_order": "insensitive"
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "delete_forward"
+                        }
+                    ],
+                    "parameters": {
+                        "basic.simultaneous_threshold_milliseconds": 50
+                    }
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "simultaneous": [
+                            {
+                                "key_code": "k"
+                            },
+                            {
+                                "key_code": "j"
+                            }
+                        ],
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        },
+                        "simultaneous_options": {
+                            "key_down_order": "insensitive"
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "delete_or_backspace"
+                        }
+                    ],
+                    "parameters": {
+                        "basic.simultaneous_threshold_milliseconds": 50
+                    }
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "simultaneous": [
+                            {
+                                "key_code": "k"
+                            },
+                            {
+                                "key_code": "h"
+                            }
+                        ],
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        },
+                        "simultaneous_options": {
+                            "key_down_order": "insensitive"
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "delete_or_backspace",
+                            "modifiers": [
+                                "command"
+                            ]
+                        }
+                    ],
+                    "parameters": {
+                        "basic.simultaneous_threshold_milliseconds": 50
+                    }
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "simultaneous": [
+                            {
+                                "key_code": "k"
+                            },
+                            {
+                                "key_code": "semicolon"
+                            }
+                        ],
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        },
+                        "simultaneous_options": {
+                            "key_down_order": "insensitive"
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "delete_forward",
+                            "modifiers": [
+                                "control"
+                            ]
+                        }
+                    ],
+                    "parameters": {
+                        "basic.simultaneous_threshold_milliseconds": 50
+                    }
+                }
+            ]
+        }
+    ]
+}
