@@ -62,7 +62,7 @@ alias bic="brew install --cask --no-quarantine"
 alias boc="brew outdated --cask --greedy --verbose"
 alias bl="brew list"
 alias buu="brew update && brew upgrade "
-alias buc="brew upgrade --cask --greedy --verbose"
+alias buc="brew upgrade --cask --greedy --verbose --no-quarantine"
 alias bun="brew uninstall"
 
 # Neomutt related
