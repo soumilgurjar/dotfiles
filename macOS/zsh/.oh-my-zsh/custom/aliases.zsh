@@ -57,6 +57,7 @@ alias tpu="~/.tmux/plugins/tpm/bin/update_plugins all"
 
 # Brew search and install commands
 alias bs="brew search"
+alias bcl="brew cleanup"
 alias bi="brew install"
 alias bic="brew install --cask --no-quarantine"
 alias boc="brew outdated --cask --greedy --verbose"
@@ -115,8 +116,9 @@ function unstow() {  cd ~/.dotfiles/macOS && stow -vDt ~ $1 && cd - }
 # Taskwarrior related
 alias tt="taskwarrior-tui"
 
-# Aliases for github scripts
+# Aliases for scripts
 alias termpdf="~/Github_Repositories/termpdf.py/termpdf.py $1"
+alias birdnet_backup="~/Scripts/birdnet-pi_backup.sh"
 
 # Aliases for kitty related commands
 alias savekitty="~/.config/kitty/session_save.sh"

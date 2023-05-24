@@ -6,6 +6,7 @@ eval "$(pyenv init -)"
 export PIPENV_PYTHON="$PYENV_ROOT/shims/python" #Necessary for pipenv to respect pyenv local/global versions?
 export PIPENV_DEFAULT_PYTHON_VERSION=$(pyenv which python)  #Necessary for pipenv to respect pyenv local/global versions
 export BROWSER="/usr/bin/open"
+export PATH=$PATH:~/.docker/bin  # Add docker path when choosing User-wide installation instead of System installation
 
 [[ -n $TMUX ]] && export TERM="xterm-256color"
 
