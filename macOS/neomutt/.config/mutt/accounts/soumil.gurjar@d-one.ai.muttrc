@@ -25,7 +25,7 @@ set pager_index_lines = 10
 mailboxes "=INBOX" "=[Gmail]/Trash" "=[Gmail]/Drafts" "=[Gmail]/Sent Mail" "=[Gmail]/Spam" "=[Gmail]/Starred" "=Currents - D One Plaza"
 
 set sidebar_new_mail_only               # Only mailboxes with new/flagged email
-sidebar_whitelist =INBOX "=[Gmail]/Drafts" "=[Gmail]/Sent Mail" "=[Gmail]/Starred"  # Always display these mailboxes
+sidebar_whitelist =INBOX "=[Gmail]/Drafts" "=[Gmail]/Sent Mail" "=[Gmail]/Starred" "=Currents - D One Plaza"  # Always display these mailboxes
 
 macro index,pager gd "<change-folder>=[Gmail]/Drafts<enter>" "go to drafts"
 macro index,pager Md ";<save-message>=[Gmail]/Drafts<enter>" "move mail to drafts"

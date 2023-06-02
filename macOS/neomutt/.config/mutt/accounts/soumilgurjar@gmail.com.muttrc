@@ -24,8 +24,7 @@ set pager_index_lines = 10
 # PGP Signing
 set pgp_default_key="09F9267C277FC390F0A0F9DE2E4A69A50577AAF2"
 
-# mailboxes "=Alerts/Flight Alerts" "=Alerts/Google Scholar Alerts" "=Amazon_Digitec_Galaxus" "=Apple Account" "=EAT.ch" "=Finances/Paypal" "=INBOX" "=Job Search/JS2022" "=LinkedIn" "=News/NY Times" "=News/Splainer" "=News/SwissInfo" "=News/TED/Important TEDTalks" "=News/The Local" "=Personal" "=Steam" "=SwissPost_DHL_DPD" "=Tennis/TennisClub Lerchenberg" "=UWCU" "=WISCmail/Professor" "=Zurich Housing/JUWO" "=[Gmail]/Bin" "=[Gmail]/Chats" "=[Gmail]/Drafts" "=[Gmail]/Sent Mail" "=[Gmail]/Spam" "=[Gmail]/Starred"
-mailboxes "=Alerts/Flight Alerts" "=Alerts/Google Scholar Alerts" "=Amazon_Digitec_Galaxus" "=Apple Account" "=EAT.ch" "=Finances/Paypal" "=INBOX" "=Job Search" "=Job Search/JS2022" "=LinkedIn" "=News/NY Times" "=News/Splainer" "=News/SwissInfo" "=News/TED/Important TEDTalks" "=News/The Local" "=Steam" "=SwissPost_DHL_DPD" "=UWCU" "=[Gmail]/Bin" "=[Gmail]/Chats" "=[Gmail]/Drafts" "=[Gmail]/Sent Mail" "=[Gmail]/Spam" "=[Gmail]/Starred"
+mailboxes "=Alerts/Flight Alerts" "=Alerts/Google Scholar Alerts" "=Amazon_Digitec_Galaxus" "=Apple Account" "=EAT.ch" "=Finances/Paypal" "=Github" "=INBOX" "=Job Search" "=Job Search/JS2022" "=LinkedIn" "=News/NY Times" "=News/Splainer" "=News/SwissInfo" "=News/TED/Important TEDTalks" "=News/The Local" "=SwissPost_DHL_DPD" "=UWCU" "=Video Games/Steam" "=[Gmail]/Bin" "=[Gmail]/Chats" "=[Gmail]/Drafts" "=[Gmail]/Sent Mail" "=[Gmail]/Spam" "=[Gmail]/Starred"
 
 set sidebar_new_mail_only               # Only mailboxes with new/flagged email
 sidebar_whitelist =INBOX "=[Gmail]/Drafts" "=[Gmail]/Sent Mail" "=[Gmail]/Starred"  # Always display these mailboxes
