@@ -1,398 +1,431 @@
 {
-  "title": "Key -> (If_held) | (If_alone)",
-  "rules": [
-    {
-      "description": "Caps_Lock -> Hyper | Enter",
-      "manipulators": [
+    "title": "Key -> (If_held) | (If_alone)",
+    "rules": [
         {
-          "from": {
-            "key_code": "caps_lock",
-            "modifiers": {}
-          },
-          "to": [
-            {
-              "key_code": "left_shift",
-              "modifiers": [
-                "left_command",
-                "left_control",
-                "left_option"
-              ]
-            }
-          ],
-          "to_if_alone": [
-            {
-              "key_code": "return_or_enter"
-            }
-          ],
-          "type": "basic"
+            "description": "Caps_Lock -> Hyper | Enter (Only Internal Keyboard)",
+            "manipulators": [
+                {
+                    "from": {
+                        "key_code": "caps_lock",
+                        "modifiers": {}
+                    },
+                    "to": [
+                        {
+                            "key_code": "left_shift",
+                            "modifiers": [
+                                "left_command",
+                                "left_control",
+                                "left_option"
+                            ]
+                        }
+                    ],
+                    "to_if_alone": [
+                        {
+                            "key_code": "return_or_enter"
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "vendor_id": 1452,
+                                    "product_id": 835
+                                }
+                            ]
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "description": "Avoid starting sysdiagnose with the built-in macOS shortcut cmd+shift+option+ctrl+,",
+                    "from": {
+                        "key_code": "comma",
+                        "modifiers": {
+                            "mandatory": [
+                                "command",
+                                "shift",
+                                "option",
+                                "control"
+                            ]
+                        }
+                    },
+                    "to": [],
+                    "type": "basic"
+                },
+                {
+                    "description": "Avoid starting sysdiagnose with the built-in macOS shortcut cmd+shift+option+ctrl+.",
+                    "from": {
+                        "key_code": "period",
+                        "modifiers": {
+                            "mandatory": [
+                                "command",
+                                "shift",
+                                "option",
+                                "control"
+                            ]
+                        }
+                    },
+                    "to": [],
+                    "type": "basic"
+                },
+                {
+                    "from": {
+                        "description": "Avoid starting sysdiagnose with the built-in macOS shortcut cmd+shift+option+ctrl+/",
+                        "key_code": "slash",
+                        "modifiers": {
+                            "mandatory": [
+                                "command",
+                                "shift",
+                                "option",
+                                "control"
+                            ]
+                        }
+                    },
+                    "to": [],
+                    "type": "basic"
+                }
+            ]
         },
         {
-          "description": "Avoid starting sysdiagnose with the built-in macOS shortcut cmd+shift+option+ctrl+,",
-          "from": {
-            "key_code": "comma",
-            "modifiers": {
-              "mandatory": [
-                "command",
-                "shift",
-                "option",
-                "control"
-              ]
-            }
-          },
-          "to": [],
-          "type": "basic"
+            "description": "Caps_Lock -> Hyper | Escape",
+            "manipulators": [
+                {
+                    "from": {
+                        "key_code": "caps_lock",
+                        "modifiers": {}
+                    },
+                    "to": [
+                        {
+                            "key_code": "left_shift",
+                            "modifiers": [
+                                "left_command",
+                                "left_control",
+                                "left_option"
+                            ]
+                        }
+                    ],
+                    "to_if_alone": [
+                        {
+                            "key_code": "escape"
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "description": "Avoid starting sysdiagnose with the built-in macOS shortcut cmd+shift+option+ctrl+,",
+                    "from": {
+                        "key_code": "comma",
+                        "modifiers": {
+                            "mandatory": [
+                                "command",
+                                "shift",
+                                "option",
+                                "control"
+                            ]
+                        }
+                    },
+                    "to": [],
+                    "type": "basic"
+                },
+                {
+                    "description": "Avoid starting sysdiagnose with the built-in macOS shortcut cmd+shift+option+ctrl+.",
+                    "from": {
+                        "key_code": "period",
+                        "modifiers": {
+                            "mandatory": [
+                                "command",
+                                "shift",
+                                "option",
+                                "control"
+                            ]
+                        }
+                    },
+                    "to": [],
+                    "type": "basic"
+                },
+                {
+                    "from": {
+                        "description": "Avoid starting sysdiagnose with the built-in macOS shortcut cmd+shift+option+ctrl+/",
+                        "key_code": "slash",
+                        "modifiers": {
+                            "mandatory": [
+                                "command",
+                                "shift",
+                                "option",
+                                "control"
+                            ]
+                        }
+                    },
+                    "to": [],
+                    "type": "basic"
+                }
+            ]
         },
         {
-          "description": "Avoid starting sysdiagnose with the built-in macOS shortcut cmd+shift+option+ctrl+.",
-          "from": {
-            "key_code": "period",
-            "modifiers": {
-              "mandatory": [
-                "command",
-                "shift",
-                "option",
-                "control"
-              ]
-            }
-          },
-          "to": [],
-          "type": "basic"
+            "description": "Tab -> Meh | Tab (Only Internal Keyboard)",
+            "manipulators": [
+                {
+                    "from": {
+                        "key_code": "tab",
+                        "modifiers": {}
+                    },
+                    "to": [
+                        {
+                            "key_code": "left_shift",
+                            "modifiers": [
+                                "left_command",
+                                "left_option"
+                            ]
+                        }
+                    ],
+                    "to_if_alone": [
+                        {
+                            "key_code": "tab"
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "vendor_id": 1452,
+                                    "product_id": 835
+                                }
+                            ]
+                        }
+                    ],
+                    "type": "basic"
+                }
+            ]
         },
         {
-          "from": {
-            "description": "Avoid starting sysdiagnose with the built-in macOS shortcut cmd+shift+option+ctrl+/",
-            "key_code": "slash",
-            "modifiers": {
-              "mandatory": [
-                "command",
-                "shift",
-                "option",
-                "control"
-              ]
-            }
-          },
-          "to": [],
-          "type": "basic"
-        }
-      ]
-    },
-    {
-      "description": "Caps_Lock -> Hyper | Escape",
-      "manipulators": [
-        {
-          "from": {
-            "key_code": "caps_lock",
-            "modifiers": {}
-          },
-          "to": [
-            {
-              "key_code": "left_shift",
-              "modifiers": [
-                "left_command",
-                "left_control",
-                "left_option"
-              ]
-            }
-          ],
-          "to_if_alone": [
-            {
-              "key_code": "escape"
-            }
-          ],
-          "type": "basic"
+            "description": "Function Key -> Esc",
+            "manipulators": [
+                {
+                    "from": {
+                        "key_code": "fn"
+                    },
+                    "parameters": {
+                        "basic.to_if_alone_timeout_milliseconds": 500
+                    },
+                    "to": [
+                        {
+                            "key_code": "fn"
+                        }
+                    ],
+                    "to_if_alone": [
+                        {
+                            "key_code": "escape"
+                        }
+                    ],
+                    "type": "basic"
+                }
+            ]
         },
         {
-          "description": "Avoid starting sysdiagnose with the built-in macOS shortcut cmd+shift+option+ctrl+,",
-          "from": {
-            "key_code": "comma",
-            "modifiers": {
-              "mandatory": [
-                "command",
-                "shift",
-                "option",
-                "control"
-              ]
-            }
-          },
-          "to": [],
-          "type": "basic"
+            "description": "Left Option -> (Option + Left_Arrow) | Left Option",
+            "manipulators": [
+                {
+                    "from": {
+                        "key_code": "left_option"
+                    },
+                    "parameters": {
+                        "basic.to_if_alone_timeout_milliseconds": 500
+                    },
+                    "to": [
+                        {
+                            "key_code": "left_option"
+                        }
+                    ],
+                    "to_if_alone": [
+                        {
+                            "key_code": "left_arrow",
+                            "modifiers": [
+                                "option"
+                            ]
+                        }
+                    ],
+                    "type": "basic"
+                }
+            ]
         },
         {
-          "description": "Avoid starting sysdiagnose with the built-in macOS shortcut cmd+shift+option+ctrl+.",
-          "from": {
-            "key_code": "period",
-            "modifiers": {
-              "mandatory": [
-                "command",
-                "shift",
-                "option",
-                "control"
-              ]
-            }
-          },
-          "to": [],
-          "type": "basic"
+            "description": "Right Option -> (Option + Right_Arrow) | Right Option",
+            "manipulators": [
+                {
+                    "from": {
+                        "key_code": "right_option"
+                    },
+                    "parameters": {
+                        "basic.to_if_alone_timeout_milliseconds": 500
+                    },
+                    "to": [
+                        {
+                            "key_code": "right_option"
+                        }
+                    ],
+                    "to_if_alone": [
+                        {
+                            "key_code": "right_arrow",
+                            "modifiers": [
+                                "option"
+                            ]
+                        }
+                    ],
+                    "type": "basic"
+                }
+            ]
         },
         {
-          "from": {
-            "description": "Avoid starting sysdiagnose with the built-in macOS shortcut cmd+shift+option+ctrl+/",
-            "key_code": "slash",
-            "modifiers": {
-              "mandatory": [
-                "command",
-                "shift",
-                "option",
-                "control"
-              ]
-            }
-          },
-          "to": [],
-          "type": "basic"
-        }
-      ]
-    },
-    {
-      "description": "Tab -> Meh | Tab",
-      "manipulators": [
+            "description": "Left Shift -> (Option + Left_Arrow) | Left Shift",
+            "manipulators": [
+                {
+                    "from": {
+                        "key_code": "left_shift"
+                    },
+                    "parameters": {
+                        "basic.to_if_alone_timeout_milliseconds": 200
+                    },
+                    "to": [
+                        {
+                            "key_code": "left_shift"
+                        }
+                    ],
+                    "to_if_alone": [
+                        {
+                            "key_code": "left_arrow",
+                            "modifiers": [
+                                "option"
+                            ]
+                        }
+                    ],
+                    "type": "basic"
+                }
+            ]
+        },
         {
-          "from": {
-            "key_code": "tab",
-            "modifiers": {}
-          },
-          "to": [
-            {
-              "key_code": "left_shift",
-              "modifiers": [
-                "left_command",
-                "left_option"
-              ]
-            }
-          ],
-          "to_if_alone": [
-            {
-              "key_code": "tab"
-            }
-          ],
-          "type": "basic"
-        }
-      ]
-    },
-    {
-      "description": "Function Key -> Esc",
-      "manipulators": [
+            "description": "Right Shift -> (Option + Right_Arrow) | Right Shift",
+            "manipulators": [
+                {
+                    "from": {
+                        "key_code": "right_shift"
+                    },
+                    "parameters": {
+                        "basic.to_if_alone_timeout_milliseconds": 200
+                    },
+                    "to": [
+                        {
+                            "key_code": "right_shift"
+                        }
+                    ],
+                    "to_if_alone": [
+                        {
+                            "key_code": "right_arrow",
+                            "modifiers": [
+                                "option"
+                            ]
+                        }
+                    ],
+                    "type": "basic"
+                }
+            ]
+        },
         {
-          "from": {
-            "key_code": "fn"
-          },
-          "parameters": {
-            "basic.to_if_alone_timeout_milliseconds": 500
-          },
-          "to": [
-            {
-              "key_code": "fn"
-            }
-          ],
-          "to_if_alone": [
-            {
-              "key_code": "escape"
-            }
-          ],
-          "type": "basic"
-        }
-      ]
-    },
-    {
-      "description": "Left Option -> (Option + Left_Arrow) | Left Option",
-      "manipulators": [
+            "description": "Left Shift -> (Option + Backspace) | Left Shift",
+            "manipulators": [
+                {
+                    "from": {
+                        "key_code": "left_shift"
+                    },
+                    "parameters": {
+                        "basic.to_if_alone_timeout_milliseconds": 500
+                    },
+                    "to": [
+                        {
+                            "key_code": "left_shift"
+                        }
+                    ],
+                    "to_if_alone": [
+                        {
+                            "key_code": "delete_or_backspace",
+                            "modifiers": [
+                                "option"
+                            ]
+                        }
+                    ],
+                    "type": "basic"
+                }
+            ]
+        },
         {
-          "from": {
-            "key_code": "left_option"
-          },
-          "parameters": {
-            "basic.to_if_alone_timeout_milliseconds": 500
-          },
-          "to": [
-            {
-              "key_code": "left_option"
-            }
-          ],
-          "to_if_alone": [
-            {
-              "key_code": "left_arrow",
-              "modifiers": [
-                "option"
-              ]
-            }
-          ],
-          "type": "basic"
-        }
-      ]
-    },
-    {
-      "description": "Right Option -> (Option + Right_Arrow) | Right Option",
-      "manipulators": [
+            "description": "Right Shift -> (Control + Forward_Delete) | Right Shift",
+            "manipulators": [
+                {
+                    "from": {
+                        "key_code": "right_shift"
+                    },
+                    "parameters": {
+                        "basic.to_if_alone_timeout_milliseconds": 500
+                    },
+                    "to": [
+                        {
+                            "key_code": "right_shift"
+                        }
+                    ],
+                    "to_if_alone": [
+                        {
+                            "key_code": "delete_forward",
+                            "modifiers": [
+                                "control"
+                            ]
+                        }
+                    ],
+                    "type": "basic"
+                }
+            ]
+        },
         {
-          "from": {
-            "key_code": "right_option"
-          },
-          "parameters": {
-            "basic.to_if_alone_timeout_milliseconds": 500
-          },
-          "to": [
-            {
-              "key_code": "right_option"
-            }
-          ],
-          "to_if_alone": [
-            {
-              "key_code": "right_arrow",
-              "modifiers": [
-                "option"
-              ]
-            }
-          ],
-          "type": "basic"
+            "description": "Left Command -> (Escape) | Left Command (Only Internal Keyboard)",
+            "manipulators": [
+                {
+                    "from": {
+                        "key_code": "left_command",
+                        "modifiers": {
+                            "optional": [
+                                "left_option",
+                                "right_command",
+                                "left_control"
+                            ]
+                        }
+                    },
+                    "parameters": {
+                        "basic.to_if_alone_timeout_milliseconds": 500
+                    },
+                    "to": [
+                        {
+                            "key_code": "left_command"
+                        }
+                    ],
+                    "to_if_alone": [
+                        {
+                            "key_code": "escape"
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "vendor_id": 1452,
+                                    "product_id": 835
+                                }
+                            ]
+                        }
+                    ],
+                    "type": "basic"
+                }
+            ]
         }
-      ]
-    },
-    {
-      "description": "Left Shift -> (Option + Left_Arrow) | Left Shift",
-      "manipulators": [
-        {
-          "from": {
-            "key_code": "left_shift"
-          },
-          "parameters": {
-            "basic.to_if_alone_timeout_milliseconds": 200
-          },
-          "to": [
-            {
-              "key_code": "left_shift"
-            }
-          ],
-          "to_if_alone": [
-            {
-              "key_code": "left_arrow",
-              "modifiers": [
-                "option"
-              ]
-            }
-          ],
-          "type": "basic"
-        }
-      ]
-    },
-    {
-      "description": "Right Shift -> (Option + Right_Arrow) | Right Shift",
-      "manipulators": [
-        {
-          "from": {
-            "key_code": "right_shift"
-          },
-          "parameters": {
-            "basic.to_if_alone_timeout_milliseconds": 200
-          },
-          "to": [
-            {
-              "key_code": "right_shift"
-            }
-          ],
-          "to_if_alone": [
-            {
-              "key_code": "right_arrow",
-              "modifiers": [
-                "option"
-              ]
-            }
-          ],
-          "type": "basic"
-        }
-      ]
-    },
-    {
-      "description": "Left Shift -> (Option + Backspace) | Left Shift",
-      "manipulators": [
-        {
-          "from": {
-            "key_code": "left_shift"
-          },
-          "parameters": {
-            "basic.to_if_alone_timeout_milliseconds": 500
-          },
-          "to": [
-            {
-              "key_code": "left_shift"
-            }
-          ],
-          "to_if_alone": [
-            {
-              "key_code": "delete_or_backspace",
-              "modifiers": [
-                "option"
-              ]
-            }
-          ],
-          "type": "basic"
-        }
-      ]
-    },
-    {
-      "description": "Right Shift -> (Control + Forward_Delete) | Right Shift",
-      "manipulators": [
-        {
-          "from": {
-            "key_code": "right_shift"
-          },
-          "parameters": {
-            "basic.to_if_alone_timeout_milliseconds": 500
-          },
-          "to": [
-            {
-              "key_code": "right_shift"
-            }
-          ],
-          "to_if_alone": [
-            {
-              "key_code": "delete_forward",
-              "modifiers": [
-                "control"
-              ]
-            }
-          ],
-          "type": "basic"
-        }
-      ]
-    },
-    {
-      "description": "Left Command -> (Escape) | Left Command",
-      "manipulators": [
-        {
-          "from": {
-            "key_code": "left_command",
-            "modifiers": {
-              "optional": [
-                "left_option",
-                "right_command",
-                "left_control"
-              ]
-            }
-          },
-          "parameters": {
-            "basic.to_if_alone_timeout_milliseconds": 500
-          },
-          "to": [
-            {
-              "key_code": "left_command"
-            }
-          ],
-          "to_if_alone": [
-            {
-              "key_code": "escape"
-            }
-          ],
-          "type": "basic"
-        }
-      ]
-    }
-  ]
+    ]
 }

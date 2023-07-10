@@ -2,7 +2,7 @@
     "title": "Left_shift + Right_shift -> Caps_lock",
     "rules": [
         {
-            "description": "Toggle caps_lock by pressing left_shift then right_shift",
+            "description": "Toggle caps_lock by pressing left_shift then right_shift (Only Internal Keyboard)",
             "manipulators": [
                 {
                     "from": {
@@ -24,6 +24,17 @@
                     "to_if_alone": [
                         {
                             "key_code": "left_shift"
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "vendor_id": 1452,
+                                    "product_id": 835
+                                }
+                            ]
                         }
                     ],
                     "type": "basic"
@@ -48,6 +59,17 @@
                     "to_if_alone": [
                         {
                             "key_code": "right_shift"
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "vendor_id": 1452,
+                                    "product_id": 835
+                                }
+                            ]
                         }
                     ],
                     "type": "basic"
