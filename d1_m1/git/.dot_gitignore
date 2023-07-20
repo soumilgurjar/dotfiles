@@ -1,0 +1,47 @@
+# Ignore Logs
+logs
+*.log
+
+# Ignore the project root directory
+.vimroot
+
+# Ignore the build directory
+/dist
+
+# Ignore the virtual environment directory
+.venv/
+
+# The file containing environment variables 
+.env
+
+# Pyenv version files
+.python-version
+
+# Files
+*.sw*
+*.gz
+*.tmproj
+*.7z
+*.ext.swp
+*.ext~
+*.tmp
+*=1.vim
+*.bak
+*.bak2
+*.bak3
+
+# IDE / Git / Node files
+.git
+node_modules/
+vendor/
+.vscode/
+.idea/
+
+# OS specific files
+.DS_Store
+_MACOSX
+Thumbs.db
+
+# Files and Folders for ignoring
+.Spotlight-V100
+.Trash/
