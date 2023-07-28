@@ -25,7 +25,11 @@ alias viv="nvim ~/.vimrc"
 alias vit="nvim ~/.tmux.conf"
 alias viw="nvim ~/Dropbox/Apps/vimwiki/index.md"
 
-function vvs() {
+function vidl() {
+    nvim -d ~/.dotfiles/d1_m1/$1 ~/.dotfiles/linux/$1
+}
+
+function vid() {
     nvim -d ~/.dotfiles/d1_m1/$1 ~/.dotfiles/macOS/$1
 }
 
@@ -113,8 +117,3 @@ alias birdnet_backup="~/.dotfiles/macOS/birdnet/birdnet-pi_backup.sh"
 alias savekitty="~/.config/kitty/session_save.sh"
 alias icat="kitty +kitten icat"
 alias kssh="kitty +kitten ssh"
-
-#Commonly accessed directories
-
-# Activate environments with alias
-alias neomutt_env='source ~/VirtualEnvs/neomutt_env/bin/activate'

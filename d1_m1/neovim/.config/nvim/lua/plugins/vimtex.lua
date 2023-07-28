@@ -12,7 +12,7 @@ return {
 		vim.g.vimtex_syntax_conceal_disable = 1
 		vim.g.vimtex_fold_enabled = 1
 		vim.g.vimtex_fold_manual = 1
-		vim.g.vimtex_compiler_latexmk = { build_dir = "build" }
+		vim.g.vimtex_compiler_latexmk = { out_dir = "build", aux_dir = "build" }
 		vim.g.vimtex_view_method = "sioyek"
 	end,
 }

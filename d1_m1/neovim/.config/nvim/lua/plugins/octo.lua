@@ -7,7 +7,5 @@ return {
 	},
 	enabled = true,
 	event = "VeryLazy",
-	config = function()
-		require("octo").setup()
-	end,
+	opts = {},
 }
