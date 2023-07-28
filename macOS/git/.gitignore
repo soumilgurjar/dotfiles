@@ -2,11 +2,14 @@
 logs
 *.log
 
-# Ignore the build directory
+# Ignore the project root directory
 .vimroot
 
 # Ignore the build directory
 /dist
+
+# Ignore the virtual environment directory
+.venv/
 
 # The file containing environment variables 
 .env
