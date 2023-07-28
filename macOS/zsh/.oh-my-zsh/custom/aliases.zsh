@@ -7,11 +7,6 @@ alias switch_bash="chsh -s $(which bash)"
 #To avoid brew python versions accidentally linking against a Pyenv-provided Python, we use a wrapper
 alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
 
-#Euler login with SSH
-alias eu="ssh euler"
-alias euy="ssh -Y sgurjar@euler.ethz.ch"
-alias eux="ssh -X sgurjar@euler.ethz.ch"
-
 # Source Config files
 # alias soza="kitty @ send-text --all soz\n" # TODO: Escape <CR> or \n properly
 alias soz="clear && rm -f '$ZSH_COMPDUMP' && exec zsh"
@@ -30,8 +25,12 @@ alias viv="nvim ~/.vimrc"
 alias vit="nvim ~/.tmux.conf"
 alias viw="nvim ~/Dropbox/Apps/vimwiki/index.md"
 
-function vvs() {
+function vidl() {
     nvim -d ~/.dotfiles/macOS/$1 ~/.dotfiles/linux/$1
+}
+
+function vid() {
+    nvim -d ~/.dotfiles/macOS/$1 ~/.dotfiles/d1_m1/$1
 }
 
 #Terminal navigation
@@ -60,9 +59,10 @@ alias bs="brew search"
 alias bcl="brew cleanup"
 alias bi="brew install"
 alias bic="brew install --cask --no-quarantine"
+alias bric="brew reinstall --cask --no-quarantine"
 alias boc="brew outdated --cask --greedy --verbose"
 alias bl="brew list"
-alias buu="brew update && brew upgrade "
+alias buu="brew update && brew upgrade --greedy  --verbose --no-quarantine"
 alias buc="brew upgrade --cask --greedy --verbose --no-quarantine"
 alias bun="brew uninstall"
 
@@ -84,7 +84,9 @@ alias flash_lily_right="cp ~/Github_Repositories/zmk-lily58/build/right/zephyr/z
 # Git related
 alias glog="git log --color --graph --pretty=format:'%C(yellow)%h%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --branches"
 alias gs="git status"
-alias gst="git stash save "
+alias gss="git stash save "
+alias gsp="git stash pop"
+alias gsw="git switch "
 alias gco="git checkout"
 alias gaa="git add ."
 alias ga="git add"
@@ -117,25 +119,17 @@ function unstow() {  cd ~/.dotfiles/macOS && stow -vDt ~ $1 && cd - }
 alias tt="taskwarrior-tui"
 
 # Aliases for scripts
-alias termpdf="~/Github_Repositories/termpdf.py/termpdf.py $1"
+alias termpdf="~/Git_Repositories/termpdf.py/termpdf.py $1"
 alias birdnet_backup="~/.dotfiles/macOS/birdnet/birdnet-pi_backup.sh"
 
 # Aliases for kitty related commands
 alias savekitty="~/.config/kitty/session_save.sh"
 alias icat="kitty +kitten icat"
+alias kssh="kitty +kitten ssh"
 
 # Openfoam docker containers
 alias of10="openfoam10-macos -d /Users/sgurjar/OpenFOAM/sgurjar-10"
 alias of2206="cd /Users/sgurjar/openfoam/openfoam2206/ && openfoam-docker -default -2206"
-
-#Commonly accessed directories
-alias scr="cd /Users/sgurjar/Scratch_Bryant/OpenFOAM_Cases/"
-alias of="cd /Users/sgurjar/openfoam/openfoam2206/OpenFOAM/openfoam-v2206/run/"
-alias thesis="cd /Users/sgurjar/Github_Repositories/Overleaf/Doctoral_Dissertation/"
-alias matlab="/Applications/MATLAB_R2021a.app/bin/matlab"
-alias gmsh="/Applications/Gmsh.app/Contents/MacOS/gmsh"
-alias mmgs="/Applications/mmgs_debug"
-alias plover='/Applications/Plover.app/Contents/MacOS/Plover'
 
 # Activate environments with alias
 alias neomutt_env='source ~/VirtualEnvs/neomutt_env/bin/activate'

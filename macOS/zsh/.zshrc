@@ -1,11 +1,9 @@
-# If you come from bash you might have to change your $PATH.
-export PATH="/usr/local/sbin:$PATH"
+export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
-# eval "$(pyenv virtualenv-init -)" # No longer needed if using starship
+FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}" # Brew completions: Must be before oh-my-zsh sourcing
 export PIPENV_PYTHON="$PYENV_ROOT/shims/python" #Necessary for pipenv to respect pyenv local/global versions?
 export PIPENV_DEFAULT_PYTHON_VERSION=$(pyenv which python)  #Necessary for pipenv to respect pyenv local/global versions
-export BROWSER="/usr/bin/open"
 export PATH=$PATH:~/.docker/bin  # Add docker path when choosing User-wide installation instead of System installation
 
 [[ -n $TMUX ]] && export TERM="xterm-256color"
@@ -16,12 +14,10 @@ export EDITOR="nvim"
 export MANPAGER="nvim +Man!"
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/sgurjar/.oh-my-zsh"
-export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-${ZSH_VERSION}
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load
 ZSH_THEME="robbyrussell"
-source ~/.oh-my-zsh/custom/themes/zsh-syntax-highlighting-catppuccin/themes/catppuccin_macchiato-zsh-syntax-highlighting.zsh
 
 # OMZ auto-update behavior
 zstyle ":omz:update" mode auto      # update automatically without asking
@@ -29,6 +25,7 @@ zstyle ":omz:update" frequency 13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
+
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=62"
 VIM_MODE_VICMD_KEY="jj"                 # This allows escape from insert to normal mode with 'jj'
 
@@ -38,12 +35,15 @@ VIM_MODE_VICMD_KEY="jj"                 # This allows escape from insert to norm
 plugins=(
     fzf-tab
     colored-man-pages
+    gcloud
     macos
     themes
     web-search
     zsh-autosuggestions
     zsh-history-substring-search
+    zsh-kitty
     zsh-syntax-highlighting
+    zsh-completions
     zsh-vim-mode                        # This vi-mode plugin keeps the push-line ^q functionality
     z
     fzf
@@ -59,10 +59,6 @@ MODE_CURSOR_VISUAL="#ffff00 steady block"
 MODE_CURSOR_VLINE="#00ffff steady block"
 
 source $ZSH/oh-my-zsh.sh
-
-# Set colors for 'ls' command (Needs to be after theme is sourced)
-# export CLICOLOR=1
-# export LSCOLORS=gxfxcxdxbxegedabagacad
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -87,10 +83,6 @@ export FZF_DEFAULT_OPTS="-m --height 90% --layout=reverse --border --inline-info
 --color=bg+:#363a4f,bg:#24273a,spinner:#f4dbd6,hl:#ed8796
 --color=fg:#cad3f5,header:#ed8796,info:#c6a0f6,pointer:#f4dbd6
 --color=marker:#f4dbd6,fg+:#cad3f5,prompt:#c6a0f6,hl+:#ed8796"
-# --preview '([[ -f {} ]] && (bat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'
-# --preview '([[ -f {} ]] && [[ {} =~ ('.jpg'|'.JPG'|'.jpeg'|'.png'|'.PNG')$ ]] && (kitty icat --place `expr $COLUMNS / 2`\x`expr $LINES / 2`@`expr $COLUMNS / 2`\x`expr $LINES / 3` --transfer-mode file {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'
-# --preview '([[ -f {} ]] && [[ {} =~ ('.jpg'|'.JPG'|'.jpeg'|'.png'|'.PNG')$ ]] && (catimg -w `expr $COLUMNS` {})) || ([[ -f {} ]] && (bat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'
-# --preview '([[ -f {} ]] && [[ {} =~ ('.jpg'|'.JPG'|'.jpeg'|'.png'|'.PNG'|'.gif')$ ]] && (timg --clear -g60x30 -U --frames=1 {})) || ([[ -f {} ]] && (bat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'
 
 _fzf_compgen_path() {
     fd --hidden --follow --exclude ".git" . "$1"
@@ -120,11 +112,7 @@ bip() {
         do; brew install $prog; done;
     fi
 }
-# unalias z 2> /dev/null
-# z() {
-#   [ $# -gt 0 ] && _z "$*" && return
-#   cd "$(_z -l 2>&1 | fzf --height 40% --nth 2.. --reverse --inline-info +s --tac --query "${*##-* }" | sed 's/^[0-9,.]* *//')"
-# }
+
 # ripgrep configuration
 export RIPGREP_CONFIG_PATH="$HOME/.ripgrep"
 
@@ -160,13 +148,11 @@ fi
 zstyle ':completion:*:git-checkout:*' sort false
 zstyle ':completion:*:descriptions' format '[%d]'
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-# zstyle ':fzf-tab:complete:*' fzf-preview 'exa -1 --color=always $realpath'
 zstyle ':fzf-tab:complete:*' fzf-preview '([[ -f $realpath ]] && [[ $realpath =~ ('.jpg'|'.JPG'|'.jpeg'|'.png'|'.PNG'|'.gif')$ ]] && (timg --clear -U -E -F -C -g60x30 --frames=1 $realpath)) || ([[ -f $realpath ]] && (bat --style=numbers --color=always $realpath || cat $realpath)) || ([[ -d $realpath ]] && (tree -L 1 --gitignore -C $realpath | less)) || echo $realpath 2> /dev/null | head -200'
 zstyle ':fzf-tab:complete:*:options' fzf-preview
 zstyle ':fzf-tab:complete:*:argument-1' fzf-preview
 zstyle ':fzf-tab:complete:brew-(install|uninstall|search|info):*-argument-rest' fzf-preview 'brew info $word'
 zstyle ':fzf-tab:complete:(-command-|-parameter-|-brace-parameter-|export|unset|expand):*' fzf-preview 'echo ${(P)word}'
-# zstyle ':fzf-tab:complete:-command-:*' fzf-preview '(out=$(tldr --color always "$word") 2>/dev/null && echo $out) || (out=$(MANWIDTH=$FZF_PREVIEW_COLUMNS man "$word") 2>/dev/null && echo $out) || (out=$(which "$word") && echo $out) || echo "${(P)word}"'
 zstyle ':fzf-tab:complete:*' fzf-pad 4
 zstyle ':fzf-tab:*' fzf-bindings 'tab:accept'
 zstyle ':fzf-tab:*' accept-line enter
@@ -175,3 +161,6 @@ zstyle ':fzf-tab:*' switch-group ',' '.'
 
 # Starship cross-platform prompt
 eval "$(starship init zsh)"
+
+# These need to placed after completions can be initialised
+eval "$(_PIPENV_COMPLETE=zsh_source pipenv)" # Needed for pipenv completions
