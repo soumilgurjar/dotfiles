@@ -18,9 +18,24 @@
                 },
                 "rules": [
                     {
-                        "description": "Hyper + Some_Key == Navigation Keys",
+                        "description": "Hyper + Some_Key == Navigation Keys (Only Internal Keyboard)",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 632,
+                                                "vendor_id": 1452
+                                            },
+                                            {
+                                                "product_id": 835,
+                                                "vendor_id": 1452
+                                            }
+                                        ],
+                                        "type": "device_if"
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "k",
                                     "modifiers": {
@@ -40,6 +55,21 @@
                                 "type": "basic"
                             },
                             {
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 632,
+                                                "vendor_id": 1452
+                                            },
+                                            {
+                                                "product_id": 835,
+                                                "vendor_id": 1452
+                                            }
+                                        ],
+                                        "type": "device_if"
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "h",
                                     "modifiers": {
@@ -59,6 +89,21 @@
                                 "type": "basic"
                             },
                             {
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 632,
+                                                "vendor_id": 1452
+                                            },
+                                            {
+                                                "product_id": 835,
+                                                "vendor_id": 1452
+                                            }
+                                        ],
+                                        "type": "device_if"
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "j",
                                     "modifiers": {
@@ -78,6 +123,21 @@
                                 "type": "basic"
                             },
                             {
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 632,
+                                                "vendor_id": 1452
+                                            },
+                                            {
+                                                "product_id": 835,
+                                                "vendor_id": 1452
+                                            }
+                                        ],
+                                        "type": "device_if"
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "l",
                                     "modifiers": {
@@ -97,6 +157,21 @@
                                 "type": "basic"
                             },
                             {
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 632,
+                                                "vendor_id": 1452
+                                            },
+                                            {
+                                                "product_id": 835,
+                                                "vendor_id": 1452
+                                            }
+                                        ],
+                                        "type": "device_if"
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "w",
                                     "modifiers": {
@@ -116,6 +191,21 @@
                                 "type": "basic"
                             },
                             {
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 632,
+                                                "vendor_id": 1452
+                                            },
+                                            {
+                                                "product_id": 835,
+                                                "vendor_id": 1452
+                                            }
+                                        ],
+                                        "type": "device_if"
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "s",
                                     "modifiers": {
@@ -283,9 +373,24 @@
                         ]
                     },
                     {
-                        "description": "Caps_Lock -> Hyper | Enter",
+                        "description": "Caps_Lock -> Hyper | Enter (Only Internal Keyboard)",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 632,
+                                                "vendor_id": 1452
+                                            },
+                                            {
+                                                "product_id": 835,
+                                                "vendor_id": 1452
+                                            }
+                                        ],
+                                        "type": "device_if"
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "caps_lock",
                                     "modifiers": {}
@@ -358,62 +463,24 @@
                         ]
                     },
                     {
-                        "description": "Toggle caps_lock by pressing left_shift then right_shift",
+                        "description": "Tab -> Meh | Tab (Only Internal Keyboard)",
                         "manipulators": [
                             {
-                                "from": {
-                                    "key_code": "left_shift",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "right_shift"
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 632,
+                                                "vendor_id": 1452
+                                            },
+                                            {
+                                                "product_id": 835,
+                                                "vendor_id": 1452
+                                            }
                                         ],
-                                        "optional": [
-                                            "caps_lock"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "caps_lock"
+                                        "type": "device_if"
                                     }
                                 ],
-                                "to_if_alone": [
-                                    {
-                                        "key_code": "left_shift"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "right_shift",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_shift"
-                                        ],
-                                        "optional": [
-                                            "caps_lock"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "caps_lock"
-                                    }
-                                ],
-                                "to_if_alone": [
-                                    {
-                                        "key_code": "right_shift"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Tab -> Meh | Tab",
-                        "manipulators": [
-                            {
                                 "from": {
                                     "key_code": "tab",
                                     "modifiers": {}
@@ -437,9 +504,24 @@
                         ]
                     },
                     {
-                        "description": "Left Command -> (Escape) | Left Command",
+                        "description": "Left Command -> (Escape) | Left Command (Only Internal Keyboard)",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 632,
+                                                "vendor_id": 1452
+                                            },
+                                            {
+                                                "product_id": 835,
+                                                "vendor_id": 1452
+                                            }
+                                        ],
+                                        "type": "device_if"
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "left_command",
                                     "modifiers": {
@@ -468,6 +550,138 @@
                         ]
                     },
                     {
+                        "description": "Use left_command+j/k to cycle through running applications (like command+tab).",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "k",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "tab",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "j",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "tab",
+                                        "modifiers": [
+                                            "left_command",
+                                            "left_shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Use left_command+h/l to switch tabs in an application.",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "l",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "tab",
+                                        "modifiers": [
+                                            "left_control"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "h",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "tab",
+                                        "modifiers": [
+                                            "left_control",
+                                            "left_shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Use left_command+;/' to switch windows of the foreground application .",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "semicolon",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "grave_accent_and_tilde",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "quote",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "grave_accent_and_tilde",
+                                        "modifiers": [
+                                            "left_command",
+                                            "left_shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "O-Launcher",
                         "manipulators": [
                             {
@@ -489,7 +703,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open -a 'SioyekRun.app'"
+                                        "shell_command": "open -a 'Alfred 5.app'"
                                     }
                                 ],
                                 "type": "basic"
@@ -534,7 +748,7 @@
                                         }
                                     },
                                     {
-                                        "shell_command": "open -a 'SioyekRun.app'"
+                                        "shell_command": "open -a 'Alfred 5.app'"
                                     }
                                 ],
                                 "type": "basic"
@@ -1110,7 +1324,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open -a 'Zotero.app'"
+                                        "shell_command": "open -a 'zoom.us.app'"
                                     }
                                 ],
                                 "type": "basic"
@@ -1155,7 +1369,7 @@
                                         }
                                     },
                                     {
-                                        "shell_command": "open -a 'Zotero.app'"
+                                        "shell_command": "open -a 'zoom.us.app'"
                                     }
                                 ],
                                 "type": "basic"
@@ -1179,7 +1393,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open -a 'Gmsh.app'"
+                                        "shell_command": "open -a 'Clock.app'"
                                     }
                                 ],
                                 "type": "basic"
@@ -1224,7 +1438,7 @@
                                         }
                                     },
                                     {
-                                        "shell_command": "open -a 'Gmsh.app'"
+                                        "shell_command": "open -a 'Clock.app'"
                                     }
                                 ],
                                 "type": "basic"
@@ -1248,7 +1462,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open -a 'Visual Studio Code.app'"
+                                        "shell_command": "open -a 'Calendar.app'"
                                     }
                                 ],
                                 "type": "basic"
@@ -1293,7 +1507,7 @@
                                         }
                                     },
                                     {
-                                        "shell_command": "open -a 'Visual Studio Code.app'"
+                                        "shell_command": "open -a 'Calendar.app'"
                                     }
                                 ],
                                 "type": "basic"
@@ -1317,7 +1531,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open -a 'ParaView-5.11.0.app'"
+                                        "shell_command": "open -a 'Visual Studio Code.app'"
                                     }
                                 ],
                                 "type": "basic"
@@ -1362,7 +1576,7 @@
                                         }
                                     },
                                     {
-                                        "shell_command": "open -a 'ParaView-5.11.0.app'"
+                                        "shell_command": "open -a 'Visual Studio Code.app'"
                                     }
                                 ],
                                 "type": "basic"
@@ -1386,7 +1600,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open -a 'MATLAB_R2021a.app'"
+                                        "shell_command": "open -a 'BetterTouchTool.app'"
                                     }
                                 ],
                                 "type": "basic"
@@ -1431,283 +1645,7 @@
                                         }
                                     },
                                     {
-                                        "shell_command": "open -a 'MATLAB_R2021a.app'"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "launcher_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "1",
-                                    "modifiers": {
-                                        "mandatory": [],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "open -a 'Google Chat.app'"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "modifiers": {
-                                        "mandatory": [],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    },
-                                    "simultaneous": [
-                                        {
-                                            "key_code": "o"
-                                        },
-                                        {
-                                            "key_code": "1"
-                                        }
-                                    ],
-                                    "simultaneous_options": {
-                                        "key_down_order": "strict",
-                                        "key_up_order": "strict_inverse",
-                                        "to_after_key_up": [
-                                            {
-                                                "set_variable": {
-                                                    "name": "launcher_mode",
-                                                    "value": 0
-                                                }
-                                            }
-                                        ]
-                                    }
-                                },
-                                "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 2000
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "launcher_mode",
-                                            "value": 1
-                                        }
-                                    },
-                                    {
-                                        "shell_command": "open -a 'Google Chat.app'"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "launcher_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "2",
-                                    "modifiers": {
-                                        "mandatory": [],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "open -a 'zoom.us.app'"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "modifiers": {
-                                        "mandatory": [],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    },
-                                    "simultaneous": [
-                                        {
-                                            "key_code": "o"
-                                        },
-                                        {
-                                            "key_code": "2"
-                                        }
-                                    ],
-                                    "simultaneous_options": {
-                                        "key_down_order": "strict",
-                                        "key_up_order": "strict_inverse",
-                                        "to_after_key_up": [
-                                            {
-                                                "set_variable": {
-                                                    "name": "launcher_mode",
-                                                    "value": 0
-                                                }
-                                            }
-                                        ]
-                                    }
-                                },
-                                "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 2000
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "launcher_mode",
-                                            "value": 1
-                                        }
-                                    },
-                                    {
-                                        "shell_command": "open -a 'zoom.us.app'"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "launcher_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "3",
-                                    "modifiers": {
-                                        "mandatory": [],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "open -a 'Discord.app'"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "modifiers": {
-                                        "mandatory": [],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    },
-                                    "simultaneous": [
-                                        {
-                                            "key_code": "o"
-                                        },
-                                        {
-                                            "key_code": "3"
-                                        }
-                                    ],
-                                    "simultaneous_options": {
-                                        "key_down_order": "strict",
-                                        "key_up_order": "strict_inverse",
-                                        "to_after_key_up": [
-                                            {
-                                                "set_variable": {
-                                                    "name": "launcher_mode",
-                                                    "value": 0
-                                                }
-                                            }
-                                        ]
-                                    }
-                                },
-                                "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 2000
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "launcher_mode",
-                                            "value": 1
-                                        }
-                                    },
-                                    {
-                                        "shell_command": "open -a 'Discord.app'"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "launcher_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "4",
-                                    "modifiers": {
-                                        "mandatory": [],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "open -a 'Mail.app'"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "modifiers": {
-                                        "mandatory": [],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    },
-                                    "simultaneous": [
-                                        {
-                                            "key_code": "o"
-                                        },
-                                        {
-                                            "key_code": "4"
-                                        }
-                                    ],
-                                    "simultaneous_options": {
-                                        "key_down_order": "strict",
-                                        "key_up_order": "strict_inverse",
-                                        "to_after_key_up": [
-                                            {
-                                                "set_variable": {
-                                                    "name": "launcher_mode",
-                                                    "value": 0
-                                                }
-                                            }
-                                        ]
-                                    }
-                                },
-                                "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 2000
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "launcher_mode",
-                                            "value": 1
-                                        }
-                                    },
-                                    {
-                                        "shell_command": "open -a 'Mail.app'"
+                                        "shell_command": "open -a 'BetterTouchTool.app'"
                                     }
                                 ],
                                 "type": "basic"
@@ -2007,7 +1945,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open ~/polybox"
+                                        "shell_command": "open ~/soumil.gurjar@d-one.ai - Google Drive/"
                                     }
                                 ],
                                 "type": "basic"
@@ -2052,7 +1990,7 @@
                                         }
                                     },
                                     {
-                                        "shell_command": "open ~/polybox"
+                                        "shell_command": "open ~/soumil.gurjar@d-one.ai - Google Drive/"
                                     }
                                 ],
                                 "type": "basic"
@@ -2122,138 +2060,6 @@
                                     },
                                     {
                                         "shell_command": "open -a 'Notes.app'"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Use left_command+j/k to cycle through running applications (like command+tab).",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "k",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_command"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "tab",
-                                        "modifiers": [
-                                            "left_command"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "j",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_command"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "tab",
-                                        "modifiers": [
-                                            "left_command",
-                                            "left_shift"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Use left_command+h/l to switch tabs in an application.",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "l",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_command"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "tab",
-                                        "modifiers": [
-                                            "left_control"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "h",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_command"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "tab",
-                                        "modifiers": [
-                                            "left_control",
-                                            "left_shift"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Use left_command+;/' to switch windows of the foreground application .",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "semicolon",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_command"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "grave_accent_and_tilde",
-                                        "modifiers": [
-                                            "left_command"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "quote",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_command"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "grave_accent_and_tilde",
-                                        "modifiers": [
-                                            "left_command",
-                                            "left_shift"
-                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -2681,6 +2487,138 @@
                         ]
                     },
                     {
+                        "description": "Use left_command+j/k to cycle through running applications (like command+tab).",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "k",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "tab",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "j",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "tab",
+                                        "modifiers": [
+                                            "left_command",
+                                            "left_shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Use left_command+h/l to switch tabs in an application.",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "l",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "tab",
+                                        "modifiers": [
+                                            "left_control"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "h",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "tab",
+                                        "modifiers": [
+                                            "left_control",
+                                            "left_shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Use left_command+;/' to switch windows of the foreground application .",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "semicolon",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "grave_accent_and_tilde",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "quote",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "grave_accent_and_tilde",
+                                        "modifiers": [
+                                            "left_command",
+                                            "left_shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "O-Launcher",
                         "manipulators": [
                             {
@@ -2702,7 +2640,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open -a 'SioyekRun.app'"
+                                        "shell_command": "open -a 'Alfred 5.app'"
                                     }
                                 ],
                                 "type": "basic"
@@ -2747,7 +2685,7 @@
                                         }
                                     },
                                     {
-                                        "shell_command": "open -a 'SioyekRun.app'"
+                                        "shell_command": "open -a 'Alfred 5.app'"
                                     }
                                 ],
                                 "type": "basic"
@@ -3323,7 +3261,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open -a 'Zotero.app'"
+                                        "shell_command": "open -a 'zoom.us.app'"
                                     }
                                 ],
                                 "type": "basic"
@@ -3368,7 +3306,7 @@
                                         }
                                     },
                                     {
-                                        "shell_command": "open -a 'Zotero.app'"
+                                        "shell_command": "open -a 'zoom.us.app'"
                                     }
                                 ],
                                 "type": "basic"
@@ -3392,7 +3330,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open -a 'Gmsh.app'"
+                                        "shell_command": "open -a 'Clock.app'"
                                     }
                                 ],
                                 "type": "basic"
@@ -3437,7 +3375,7 @@
                                         }
                                     },
                                     {
-                                        "shell_command": "open -a 'Gmsh.app'"
+                                        "shell_command": "open -a 'Clock.app'"
                                     }
                                 ],
                                 "type": "basic"
@@ -3461,7 +3399,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open -a 'Visual Studio Code.app'"
+                                        "shell_command": "open -a 'Calendar.app'"
                                     }
                                 ],
                                 "type": "basic"
@@ -3506,7 +3444,7 @@
                                         }
                                     },
                                     {
-                                        "shell_command": "open -a 'Visual Studio Code.app'"
+                                        "shell_command": "open -a 'Calendar.app'"
                                     }
                                 ],
                                 "type": "basic"
@@ -3530,7 +3468,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open -a 'ParaView-5.11.0.app'"
+                                        "shell_command": "open -a 'Visual Studio Code.app'"
                                     }
                                 ],
                                 "type": "basic"
@@ -3575,7 +3513,7 @@
                                         }
                                     },
                                     {
-                                        "shell_command": "open -a 'ParaView-5.11.0.app'"
+                                        "shell_command": "open -a 'Visual Studio Code.app'"
                                     }
                                 ],
                                 "type": "basic"
@@ -3599,7 +3537,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open -a 'MATLAB_R2021a.app'"
+                                        "shell_command": "open -a 'BetterTouchTool.app'"
                                     }
                                 ],
                                 "type": "basic"
@@ -3644,283 +3582,7 @@
                                         }
                                     },
                                     {
-                                        "shell_command": "open -a 'MATLAB_R2021a.app'"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "launcher_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "1",
-                                    "modifiers": {
-                                        "mandatory": [],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "open -a 'Google Chat.app'"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "modifiers": {
-                                        "mandatory": [],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    },
-                                    "simultaneous": [
-                                        {
-                                            "key_code": "o"
-                                        },
-                                        {
-                                            "key_code": "1"
-                                        }
-                                    ],
-                                    "simultaneous_options": {
-                                        "key_down_order": "strict",
-                                        "key_up_order": "strict_inverse",
-                                        "to_after_key_up": [
-                                            {
-                                                "set_variable": {
-                                                    "name": "launcher_mode",
-                                                    "value": 0
-                                                }
-                                            }
-                                        ]
-                                    }
-                                },
-                                "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 2000
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "launcher_mode",
-                                            "value": 1
-                                        }
-                                    },
-                                    {
-                                        "shell_command": "open -a 'Google Chat.app'"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "launcher_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "2",
-                                    "modifiers": {
-                                        "mandatory": [],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "open -a 'zoom.us.app'"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "modifiers": {
-                                        "mandatory": [],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    },
-                                    "simultaneous": [
-                                        {
-                                            "key_code": "o"
-                                        },
-                                        {
-                                            "key_code": "2"
-                                        }
-                                    ],
-                                    "simultaneous_options": {
-                                        "key_down_order": "strict",
-                                        "key_up_order": "strict_inverse",
-                                        "to_after_key_up": [
-                                            {
-                                                "set_variable": {
-                                                    "name": "launcher_mode",
-                                                    "value": 0
-                                                }
-                                            }
-                                        ]
-                                    }
-                                },
-                                "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 2000
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "launcher_mode",
-                                            "value": 1
-                                        }
-                                    },
-                                    {
-                                        "shell_command": "open -a 'zoom.us.app'"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "launcher_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "3",
-                                    "modifiers": {
-                                        "mandatory": [],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "open -a 'Discord.app'"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "modifiers": {
-                                        "mandatory": [],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    },
-                                    "simultaneous": [
-                                        {
-                                            "key_code": "o"
-                                        },
-                                        {
-                                            "key_code": "3"
-                                        }
-                                    ],
-                                    "simultaneous_options": {
-                                        "key_down_order": "strict",
-                                        "key_up_order": "strict_inverse",
-                                        "to_after_key_up": [
-                                            {
-                                                "set_variable": {
-                                                    "name": "launcher_mode",
-                                                    "value": 0
-                                                }
-                                            }
-                                        ]
-                                    }
-                                },
-                                "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 2000
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "launcher_mode",
-                                            "value": 1
-                                        }
-                                    },
-                                    {
-                                        "shell_command": "open -a 'Discord.app'"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "launcher_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "4",
-                                    "modifiers": {
-                                        "mandatory": [],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "open -a 'Mail.app'"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "modifiers": {
-                                        "mandatory": [],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    },
-                                    "simultaneous": [
-                                        {
-                                            "key_code": "o"
-                                        },
-                                        {
-                                            "key_code": "4"
-                                        }
-                                    ],
-                                    "simultaneous_options": {
-                                        "key_down_order": "strict",
-                                        "key_up_order": "strict_inverse",
-                                        "to_after_key_up": [
-                                            {
-                                                "set_variable": {
-                                                    "name": "launcher_mode",
-                                                    "value": 0
-                                                }
-                                            }
-                                        ]
-                                    }
-                                },
-                                "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 2000
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "launcher_mode",
-                                            "value": 1
-                                        }
-                                    },
-                                    {
-                                        "shell_command": "open -a 'Mail.app'"
+                                        "shell_command": "open -a 'BetterTouchTool.app'"
                                     }
                                 ],
                                 "type": "basic"
@@ -4220,7 +3882,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open ~/polybox"
+                                        "shell_command": "open ~/soumil.gurjar@d-one.ai - Google Drive/"
                                     }
                                 ],
                                 "type": "basic"
@@ -4265,7 +3927,7 @@
                                         }
                                     },
                                     {
-                                        "shell_command": "open ~/polybox"
+                                        "shell_command": "open ~/soumil.gurjar@d-one.ai - Google Drive/"
                                     }
                                 ],
                                 "type": "basic"
@@ -4335,138 +3997,6 @@
                                     },
                                     {
                                         "shell_command": "open -a 'Notes.app'"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Use left_command+j/k to cycle through running applications (like command+tab).",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "k",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_command"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "tab",
-                                        "modifiers": [
-                                            "left_command"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "j",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_command"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "tab",
-                                        "modifiers": [
-                                            "left_command",
-                                            "left_shift"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Use left_command+h/l to switch tabs in an application.",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "l",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_command"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "tab",
-                                        "modifiers": [
-                                            "left_control"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "h",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_command"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "tab",
-                                        "modifiers": [
-                                            "left_control",
-                                            "left_shift"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Use left_command+;/' to switch windows of the foreground application .",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "semicolon",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_command"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "grave_accent_and_tilde",
-                                        "modifiers": [
-                                            "left_command"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "quote",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_command"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "grave_accent_and_tilde",
-                                        "modifiers": [
-                                            "left_command",
-                                            "left_shift"
-                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -5060,59 +4590,6 @@
                         ]
                     },
                     {
-                        "description": "Toggle caps_lock by pressing left_shift then right_shift",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "left_shift",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "right_shift"
-                                        ],
-                                        "optional": [
-                                            "caps_lock"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "caps_lock"
-                                    }
-                                ],
-                                "to_if_alone": [
-                                    {
-                                        "key_code": "left_shift"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "right_shift",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_shift"
-                                        ],
-                                        "optional": [
-                                            "caps_lock"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "caps_lock"
-                                    }
-                                ],
-                                "to_if_alone": [
-                                    {
-                                        "key_code": "right_shift"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "Tab -> Meh | Tab",
                         "manipulators": [
                             {
@@ -5170,6 +4647,138 @@
                         ]
                     },
                     {
+                        "description": "Use left_command+j/k to cycle through running applications (like command+tab).",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "k",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "tab",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "j",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "tab",
+                                        "modifiers": [
+                                            "left_command",
+                                            "left_shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Use left_command+h/l to switch tabs in an application.",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "l",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "tab",
+                                        "modifiers": [
+                                            "left_control"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "h",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "tab",
+                                        "modifiers": [
+                                            "left_control",
+                                            "left_shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Use left_command+;/' to switch windows of the foreground application .",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "semicolon",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "grave_accent_and_tilde",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "quote",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "grave_accent_and_tilde",
+                                        "modifiers": [
+                                            "left_command",
+                                            "left_shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "O-Launcher",
                         "manipulators": [
                             {
@@ -5191,7 +4800,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open -a 'SioyekRun.app'"
+                                        "shell_command": "open -a 'Alfred 5.app'"
                                     }
                                 ],
                                 "type": "basic"
@@ -5236,7 +4845,7 @@
                                         }
                                     },
                                     {
-                                        "shell_command": "open -a 'SioyekRun.app'"
+                                        "shell_command": "open -a 'Alfred 5.app'"
                                     }
                                 ],
                                 "type": "basic"
@@ -5812,7 +5421,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open -a 'Zotero.app'"
+                                        "shell_command": "open -a 'zoom.us.app'"
                                     }
                                 ],
                                 "type": "basic"
@@ -5857,7 +5466,7 @@
                                         }
                                     },
                                     {
-                                        "shell_command": "open -a 'Zotero.app'"
+                                        "shell_command": "open -a 'zoom.us.app'"
                                     }
                                 ],
                                 "type": "basic"
@@ -5881,7 +5490,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open -a 'Gmsh.app'"
+                                        "shell_command": "open -a 'Clock.app'"
                                     }
                                 ],
                                 "type": "basic"
@@ -5926,7 +5535,7 @@
                                         }
                                     },
                                     {
-                                        "shell_command": "open -a 'Gmsh.app'"
+                                        "shell_command": "open -a 'Clock.app'"
                                     }
                                 ],
                                 "type": "basic"
@@ -5950,7 +5559,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open -a 'Visual Studio Code.app'"
+                                        "shell_command": "open -a 'Calendar.app'"
                                     }
                                 ],
                                 "type": "basic"
@@ -5995,7 +5604,7 @@
                                         }
                                     },
                                     {
-                                        "shell_command": "open -a 'Visual Studio Code.app'"
+                                        "shell_command": "open -a 'Calendar.app'"
                                     }
                                 ],
                                 "type": "basic"
@@ -6019,7 +5628,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open -a 'ParaView-5.11.0.app'"
+                                        "shell_command": "open -a 'Visual Studio Code.app'"
                                     }
                                 ],
                                 "type": "basic"
@@ -6064,7 +5673,7 @@
                                         }
                                     },
                                     {
-                                        "shell_command": "open -a 'ParaView-5.11.0.app'"
+                                        "shell_command": "open -a 'Visual Studio Code.app'"
                                     }
                                 ],
                                 "type": "basic"
@@ -6088,7 +5697,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open -a 'MATLAB_R2021a.app'"
+                                        "shell_command": "open -a 'BetterTouchTool.app'"
                                     }
                                 ],
                                 "type": "basic"
@@ -6133,283 +5742,7 @@
                                         }
                                     },
                                     {
-                                        "shell_command": "open -a 'MATLAB_R2021a.app'"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "launcher_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "1",
-                                    "modifiers": {
-                                        "mandatory": [],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "open -a 'Google Chat.app'"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "modifiers": {
-                                        "mandatory": [],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    },
-                                    "simultaneous": [
-                                        {
-                                            "key_code": "o"
-                                        },
-                                        {
-                                            "key_code": "1"
-                                        }
-                                    ],
-                                    "simultaneous_options": {
-                                        "key_down_order": "strict",
-                                        "key_up_order": "strict_inverse",
-                                        "to_after_key_up": [
-                                            {
-                                                "set_variable": {
-                                                    "name": "launcher_mode",
-                                                    "value": 0
-                                                }
-                                            }
-                                        ]
-                                    }
-                                },
-                                "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 2000
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "launcher_mode",
-                                            "value": 1
-                                        }
-                                    },
-                                    {
-                                        "shell_command": "open -a 'Google Chat.app'"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "launcher_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "2",
-                                    "modifiers": {
-                                        "mandatory": [],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "open -a 'zoom.us.app'"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "modifiers": {
-                                        "mandatory": [],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    },
-                                    "simultaneous": [
-                                        {
-                                            "key_code": "o"
-                                        },
-                                        {
-                                            "key_code": "2"
-                                        }
-                                    ],
-                                    "simultaneous_options": {
-                                        "key_down_order": "strict",
-                                        "key_up_order": "strict_inverse",
-                                        "to_after_key_up": [
-                                            {
-                                                "set_variable": {
-                                                    "name": "launcher_mode",
-                                                    "value": 0
-                                                }
-                                            }
-                                        ]
-                                    }
-                                },
-                                "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 2000
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "launcher_mode",
-                                            "value": 1
-                                        }
-                                    },
-                                    {
-                                        "shell_command": "open -a 'zoom.us.app'"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "launcher_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "3",
-                                    "modifiers": {
-                                        "mandatory": [],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "open -a 'Discord.app'"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "modifiers": {
-                                        "mandatory": [],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    },
-                                    "simultaneous": [
-                                        {
-                                            "key_code": "o"
-                                        },
-                                        {
-                                            "key_code": "3"
-                                        }
-                                    ],
-                                    "simultaneous_options": {
-                                        "key_down_order": "strict",
-                                        "key_up_order": "strict_inverse",
-                                        "to_after_key_up": [
-                                            {
-                                                "set_variable": {
-                                                    "name": "launcher_mode",
-                                                    "value": 0
-                                                }
-                                            }
-                                        ]
-                                    }
-                                },
-                                "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 2000
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "launcher_mode",
-                                            "value": 1
-                                        }
-                                    },
-                                    {
-                                        "shell_command": "open -a 'Discord.app'"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "launcher_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "4",
-                                    "modifiers": {
-                                        "mandatory": [],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "open -a 'Mail.app'"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "modifiers": {
-                                        "mandatory": [],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    },
-                                    "simultaneous": [
-                                        {
-                                            "key_code": "o"
-                                        },
-                                        {
-                                            "key_code": "4"
-                                        }
-                                    ],
-                                    "simultaneous_options": {
-                                        "key_down_order": "strict",
-                                        "key_up_order": "strict_inverse",
-                                        "to_after_key_up": [
-                                            {
-                                                "set_variable": {
-                                                    "name": "launcher_mode",
-                                                    "value": 0
-                                                }
-                                            }
-                                        ]
-                                    }
-                                },
-                                "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 2000
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "launcher_mode",
-                                            "value": 1
-                                        }
-                                    },
-                                    {
-                                        "shell_command": "open -a 'Mail.app'"
+                                        "shell_command": "open -a 'BetterTouchTool.app'"
                                     }
                                 ],
                                 "type": "basic"
@@ -6709,7 +6042,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open ~/polybox"
+                                        "shell_command": "open ~/soumil.gurjar@d-one.ai - Google Drive/"
                                     }
                                 ],
                                 "type": "basic"
@@ -6754,7 +6087,7 @@
                                         }
                                     },
                                     {
-                                        "shell_command": "open ~/polybox"
+                                        "shell_command": "open ~/soumil.gurjar@d-one.ai - Google Drive/"
                                     }
                                 ],
                                 "type": "basic"
@@ -6824,138 +6157,6 @@
                                     },
                                     {
                                         "shell_command": "open -a 'Notes.app'"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Use left_command+j/k to cycle through running applications (like command+tab).",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "k",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_command"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "tab",
-                                        "modifiers": [
-                                            "left_command"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "j",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_command"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "tab",
-                                        "modifiers": [
-                                            "left_command",
-                                            "left_shift"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Use left_command+h/l to switch tabs in an application.",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "l",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_command"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "tab",
-                                        "modifiers": [
-                                            "left_control"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "h",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_command"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "tab",
-                                        "modifiers": [
-                                            "left_control",
-                                            "left_shift"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Use left_command+;/' to switch windows of the foreground application .",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "semicolon",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_command"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "grave_accent_and_tilde",
-                                        "modifiers": [
-                                            "left_command"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "quote",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_command"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "grave_accent_and_tilde",
-                                        "modifiers": [
-                                            "left_command",
-                                            "left_shift"
-                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -7453,6 +6654,20 @@
                         "vendor_id": 1452
                     },
                     "ignore": false,
+                    "manipulate_caps_lock_led": false,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": false,
+                        "is_pointing_device": true,
+                        "product_id": 45108,
+                        "vendor_id": 1133
+                    },
+                    "ignore": true,
                     "manipulate_caps_lock_led": false,
                     "simple_modifications": [],
                     "treat_as_built_in_keyboard": false
@@ -8189,7 +7404,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open -a 'SioyekRun.app'"
+                                        "shell_command": "open -a 'Alfred 5.app'"
                                     }
                                 ],
                                 "type": "basic"
@@ -8234,7 +7449,7 @@
                                         }
                                     },
                                     {
-                                        "shell_command": "open -a 'SioyekRun.app'"
+                                        "shell_command": "open -a 'Alfred 5.app'"
                                     }
                                 ],
                                 "type": "basic"
@@ -8810,7 +8025,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open -a 'Zotero.app'"
+                                        "shell_command": "open -a 'zoom.us.app'"
                                     }
                                 ],
                                 "type": "basic"
@@ -8855,7 +8070,7 @@
                                         }
                                     },
                                     {
-                                        "shell_command": "open -a 'Zotero.app'"
+                                        "shell_command": "open -a 'zoom.us.app'"
                                     }
                                 ],
                                 "type": "basic"
@@ -8879,7 +8094,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open -a 'Gmsh.app'"
+                                        "shell_command": "open -a 'Clock.app'"
                                     }
                                 ],
                                 "type": "basic"
@@ -8924,7 +8139,7 @@
                                         }
                                     },
                                     {
-                                        "shell_command": "open -a 'Gmsh.app'"
+                                        "shell_command": "open -a 'Clock.app'"
                                     }
                                 ],
                                 "type": "basic"
@@ -8948,7 +8163,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open -a 'Visual Studio Code.app'"
+                                        "shell_command": "open -a 'Calendar.app'"
                                     }
                                 ],
                                 "type": "basic"
@@ -8993,7 +8208,7 @@
                                         }
                                     },
                                     {
-                                        "shell_command": "open -a 'Visual Studio Code.app'"
+                                        "shell_command": "open -a 'Calendar.app'"
                                     }
                                 ],
                                 "type": "basic"
@@ -9017,7 +8232,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open -a 'ParaView-5.11.0.app'"
+                                        "shell_command": "open -a 'Visual Studio Code.app'"
                                     }
                                 ],
                                 "type": "basic"
@@ -9062,7 +8277,7 @@
                                         }
                                     },
                                     {
-                                        "shell_command": "open -a 'ParaView-5.11.0.app'"
+                                        "shell_command": "open -a 'Visual Studio Code.app'"
                                     }
                                 ],
                                 "type": "basic"
@@ -9086,7 +8301,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open -a 'MATLAB_R2021a.app'"
+                                        "shell_command": "open -a 'BetterTouchTool.app'"
                                     }
                                 ],
                                 "type": "basic"
@@ -9131,283 +8346,7 @@
                                         }
                                     },
                                     {
-                                        "shell_command": "open -a 'MATLAB_R2021a.app'"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "launcher_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "1",
-                                    "modifiers": {
-                                        "mandatory": [],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "open -a 'Google Chat.app'"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "modifiers": {
-                                        "mandatory": [],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    },
-                                    "simultaneous": [
-                                        {
-                                            "key_code": "o"
-                                        },
-                                        {
-                                            "key_code": "1"
-                                        }
-                                    ],
-                                    "simultaneous_options": {
-                                        "key_down_order": "strict",
-                                        "key_up_order": "strict_inverse",
-                                        "to_after_key_up": [
-                                            {
-                                                "set_variable": {
-                                                    "name": "launcher_mode",
-                                                    "value": 0
-                                                }
-                                            }
-                                        ]
-                                    }
-                                },
-                                "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 2000
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "launcher_mode",
-                                            "value": 1
-                                        }
-                                    },
-                                    {
-                                        "shell_command": "open -a 'Google Chat.app'"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "launcher_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "2",
-                                    "modifiers": {
-                                        "mandatory": [],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "open -a 'zoom.us.app'"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "modifiers": {
-                                        "mandatory": [],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    },
-                                    "simultaneous": [
-                                        {
-                                            "key_code": "o"
-                                        },
-                                        {
-                                            "key_code": "2"
-                                        }
-                                    ],
-                                    "simultaneous_options": {
-                                        "key_down_order": "strict",
-                                        "key_up_order": "strict_inverse",
-                                        "to_after_key_up": [
-                                            {
-                                                "set_variable": {
-                                                    "name": "launcher_mode",
-                                                    "value": 0
-                                                }
-                                            }
-                                        ]
-                                    }
-                                },
-                                "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 2000
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "launcher_mode",
-                                            "value": 1
-                                        }
-                                    },
-                                    {
-                                        "shell_command": "open -a 'zoom.us.app'"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "launcher_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "3",
-                                    "modifiers": {
-                                        "mandatory": [],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "open -a 'Discord.app'"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "modifiers": {
-                                        "mandatory": [],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    },
-                                    "simultaneous": [
-                                        {
-                                            "key_code": "o"
-                                        },
-                                        {
-                                            "key_code": "3"
-                                        }
-                                    ],
-                                    "simultaneous_options": {
-                                        "key_down_order": "strict",
-                                        "key_up_order": "strict_inverse",
-                                        "to_after_key_up": [
-                                            {
-                                                "set_variable": {
-                                                    "name": "launcher_mode",
-                                                    "value": 0
-                                                }
-                                            }
-                                        ]
-                                    }
-                                },
-                                "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 2000
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "launcher_mode",
-                                            "value": 1
-                                        }
-                                    },
-                                    {
-                                        "shell_command": "open -a 'Discord.app'"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "launcher_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "4",
-                                    "modifiers": {
-                                        "mandatory": [],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "open -a 'Mail.app'"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "modifiers": {
-                                        "mandatory": [],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    },
-                                    "simultaneous": [
-                                        {
-                                            "key_code": "o"
-                                        },
-                                        {
-                                            "key_code": "4"
-                                        }
-                                    ],
-                                    "simultaneous_options": {
-                                        "key_down_order": "strict",
-                                        "key_up_order": "strict_inverse",
-                                        "to_after_key_up": [
-                                            {
-                                                "set_variable": {
-                                                    "name": "launcher_mode",
-                                                    "value": 0
-                                                }
-                                            }
-                                        ]
-                                    }
-                                },
-                                "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 2000
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "launcher_mode",
-                                            "value": 1
-                                        }
-                                    },
-                                    {
-                                        "shell_command": "open -a 'Mail.app'"
+                                        "shell_command": "open -a 'BetterTouchTool.app'"
                                     }
                                 ],
                                 "type": "basic"
@@ -9707,7 +8646,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open ~/polybox"
+                                        "shell_command": "open ~/soumil.gurjar@d-one.ai - Google Drive/"
                                     }
                                 ],
                                 "type": "basic"
@@ -9752,7 +8691,7 @@
                                         }
                                     },
                                     {
-                                        "shell_command": "open ~/polybox"
+                                        "shell_command": "open ~/soumil.gurjar@d-one.ai - Google Drive/"
                                     }
                                 ],
                                 "type": "basic"
@@ -10418,9 +9357,24 @@
                 },
                 "rules": [
                     {
-                        "description": "Hyper + Some_Key == Navigation Keys",
+                        "description": "Hyper + Some_Key == Navigation Keys (Only Internal Keyboard)",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 632,
+                                                "vendor_id": 1452
+                                            },
+                                            {
+                                                "product_id": 835,
+                                                "vendor_id": 1452
+                                            }
+                                        ],
+                                        "type": "device_if"
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "k",
                                     "modifiers": {
@@ -10440,6 +9394,21 @@
                                 "type": "basic"
                             },
                             {
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 632,
+                                                "vendor_id": 1452
+                                            },
+                                            {
+                                                "product_id": 835,
+                                                "vendor_id": 1452
+                                            }
+                                        ],
+                                        "type": "device_if"
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "h",
                                     "modifiers": {
@@ -10459,6 +9428,21 @@
                                 "type": "basic"
                             },
                             {
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 632,
+                                                "vendor_id": 1452
+                                            },
+                                            {
+                                                "product_id": 835,
+                                                "vendor_id": 1452
+                                            }
+                                        ],
+                                        "type": "device_if"
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "j",
                                     "modifiers": {
@@ -10478,6 +9462,21 @@
                                 "type": "basic"
                             },
                             {
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 632,
+                                                "vendor_id": 1452
+                                            },
+                                            {
+                                                "product_id": 835,
+                                                "vendor_id": 1452
+                                            }
+                                        ],
+                                        "type": "device_if"
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "l",
                                     "modifiers": {
@@ -10497,6 +9496,21 @@
                                 "type": "basic"
                             },
                             {
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 632,
+                                                "vendor_id": 1452
+                                            },
+                                            {
+                                                "product_id": 835,
+                                                "vendor_id": 1452
+                                            }
+                                        ],
+                                        "type": "device_if"
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "w",
                                     "modifiers": {
@@ -10516,6 +9530,21 @@
                                 "type": "basic"
                             },
                             {
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 632,
+                                                "vendor_id": 1452
+                                            },
+                                            {
+                                                "product_id": 835,
+                                                "vendor_id": 1452
+                                            }
+                                        ],
+                                        "type": "device_if"
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "s",
                                     "modifiers": {
@@ -10683,9 +9712,24 @@
                         ]
                     },
                     {
-                        "description": "Caps_Lock -> Hyper | Enter",
+                        "description": "Caps_Lock -> Hyper | Enter (Only Internal Keyboard)",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 632,
+                                                "vendor_id": 1452
+                                            },
+                                            {
+                                                "product_id": 835,
+                                                "vendor_id": 1452
+                                            }
+                                        ],
+                                        "type": "device_if"
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "caps_lock",
                                     "modifiers": {}
@@ -10758,62 +9802,24 @@
                         ]
                     },
                     {
-                        "description": "Toggle caps_lock by pressing left_shift then right_shift",
+                        "description": "Tab -> Meh | Tab (Only Internal Keyboard)",
                         "manipulators": [
                             {
-                                "from": {
-                                    "key_code": "left_shift",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "right_shift"
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 632,
+                                                "vendor_id": 1452
+                                            },
+                                            {
+                                                "product_id": 835,
+                                                "vendor_id": 1452
+                                            }
                                         ],
-                                        "optional": [
-                                            "caps_lock"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "caps_lock"
+                                        "type": "device_if"
                                     }
                                 ],
-                                "to_if_alone": [
-                                    {
-                                        "key_code": "left_shift"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "right_shift",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_shift"
-                                        ],
-                                        "optional": [
-                                            "caps_lock"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "caps_lock"
-                                    }
-                                ],
-                                "to_if_alone": [
-                                    {
-                                        "key_code": "right_shift"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Tab -> Meh | Tab",
-                        "manipulators": [
-                            {
                                 "from": {
                                     "key_code": "tab",
                                     "modifiers": {}
@@ -10837,9 +9843,24 @@
                         ]
                     },
                     {
-                        "description": "Left Command -> (Escape) | Left Command",
+                        "description": "Left Command -> (Escape) | Left Command (Only Internal Keyboard)",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 632,
+                                                "vendor_id": 1452
+                                            },
+                                            {
+                                                "product_id": 835,
+                                                "vendor_id": 1452
+                                            }
+                                        ],
+                                        "type": "device_if"
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "left_command",
                                     "modifiers": {
@@ -10889,7 +9910,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open -a 'SioyekRun.app'"
+                                        "shell_command": "open -a 'Alfred 5.app'"
                                     }
                                 ],
                                 "type": "basic"
@@ -10934,7 +9955,7 @@
                                         }
                                     },
                                     {
-                                        "shell_command": "open -a 'SioyekRun.app'"
+                                        "shell_command": "open -a 'Alfred 5.app'"
                                     }
                                 ],
                                 "type": "basic"
@@ -11510,7 +10531,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open -a 'Zotero.app'"
+                                        "shell_command": "open -a 'zoom.us.app'"
                                     }
                                 ],
                                 "type": "basic"
@@ -11555,7 +10576,7 @@
                                         }
                                     },
                                     {
-                                        "shell_command": "open -a 'Zotero.app'"
+                                        "shell_command": "open -a 'zoom.us.app'"
                                     }
                                 ],
                                 "type": "basic"
@@ -11579,7 +10600,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open -a 'Gmsh.app'"
+                                        "shell_command": "open -a 'Clock.app'"
                                     }
                                 ],
                                 "type": "basic"
@@ -11624,7 +10645,7 @@
                                         }
                                     },
                                     {
-                                        "shell_command": "open -a 'Gmsh.app'"
+                                        "shell_command": "open -a 'Clock.app'"
                                     }
                                 ],
                                 "type": "basic"
@@ -11648,7 +10669,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open -a 'Visual Studio Code.app'"
+                                        "shell_command": "open -a 'Calendar.app'"
                                     }
                                 ],
                                 "type": "basic"
@@ -11693,7 +10714,7 @@
                                         }
                                     },
                                     {
-                                        "shell_command": "open -a 'Visual Studio Code.app'"
+                                        "shell_command": "open -a 'Calendar.app'"
                                     }
                                 ],
                                 "type": "basic"
@@ -11717,7 +10738,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open -a 'ParaView-5.11.0.app'"
+                                        "shell_command": "open -a 'Visual Studio Code.app'"
                                     }
                                 ],
                                 "type": "basic"
@@ -11762,7 +10783,7 @@
                                         }
                                     },
                                     {
-                                        "shell_command": "open -a 'ParaView-5.11.0.app'"
+                                        "shell_command": "open -a 'Visual Studio Code.app'"
                                     }
                                 ],
                                 "type": "basic"
@@ -11786,7 +10807,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open -a 'MATLAB_R2021a.app'"
+                                        "shell_command": "open -a 'BetterTouchTool.app'"
                                     }
                                 ],
                                 "type": "basic"
@@ -11831,283 +10852,7 @@
                                         }
                                     },
                                     {
-                                        "shell_command": "open -a 'MATLAB_R2021a.app'"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "launcher_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "1",
-                                    "modifiers": {
-                                        "mandatory": [],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "open -a 'Google Chat.app'"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "modifiers": {
-                                        "mandatory": [],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    },
-                                    "simultaneous": [
-                                        {
-                                            "key_code": "o"
-                                        },
-                                        {
-                                            "key_code": "1"
-                                        }
-                                    ],
-                                    "simultaneous_options": {
-                                        "key_down_order": "strict",
-                                        "key_up_order": "strict_inverse",
-                                        "to_after_key_up": [
-                                            {
-                                                "set_variable": {
-                                                    "name": "launcher_mode",
-                                                    "value": 0
-                                                }
-                                            }
-                                        ]
-                                    }
-                                },
-                                "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 2000
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "launcher_mode",
-                                            "value": 1
-                                        }
-                                    },
-                                    {
-                                        "shell_command": "open -a 'Google Chat.app'"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "launcher_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "2",
-                                    "modifiers": {
-                                        "mandatory": [],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "open -a 'zoom.us.app'"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "modifiers": {
-                                        "mandatory": [],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    },
-                                    "simultaneous": [
-                                        {
-                                            "key_code": "o"
-                                        },
-                                        {
-                                            "key_code": "2"
-                                        }
-                                    ],
-                                    "simultaneous_options": {
-                                        "key_down_order": "strict",
-                                        "key_up_order": "strict_inverse",
-                                        "to_after_key_up": [
-                                            {
-                                                "set_variable": {
-                                                    "name": "launcher_mode",
-                                                    "value": 0
-                                                }
-                                            }
-                                        ]
-                                    }
-                                },
-                                "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 2000
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "launcher_mode",
-                                            "value": 1
-                                        }
-                                    },
-                                    {
-                                        "shell_command": "open -a 'zoom.us.app'"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "launcher_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "3",
-                                    "modifiers": {
-                                        "mandatory": [],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "open -a 'Discord.app'"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "modifiers": {
-                                        "mandatory": [],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    },
-                                    "simultaneous": [
-                                        {
-                                            "key_code": "o"
-                                        },
-                                        {
-                                            "key_code": "3"
-                                        }
-                                    ],
-                                    "simultaneous_options": {
-                                        "key_down_order": "strict",
-                                        "key_up_order": "strict_inverse",
-                                        "to_after_key_up": [
-                                            {
-                                                "set_variable": {
-                                                    "name": "launcher_mode",
-                                                    "value": 0
-                                                }
-                                            }
-                                        ]
-                                    }
-                                },
-                                "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 2000
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "launcher_mode",
-                                            "value": 1
-                                        }
-                                    },
-                                    {
-                                        "shell_command": "open -a 'Discord.app'"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "launcher_mode",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "4",
-                                    "modifiers": {
-                                        "mandatory": [],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "open -a 'Mail.app'"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "modifiers": {
-                                        "mandatory": [],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    },
-                                    "simultaneous": [
-                                        {
-                                            "key_code": "o"
-                                        },
-                                        {
-                                            "key_code": "4"
-                                        }
-                                    ],
-                                    "simultaneous_options": {
-                                        "key_down_order": "strict",
-                                        "key_up_order": "strict_inverse",
-                                        "to_after_key_up": [
-                                            {
-                                                "set_variable": {
-                                                    "name": "launcher_mode",
-                                                    "value": 0
-                                                }
-                                            }
-                                        ]
-                                    }
-                                },
-                                "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 2000
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "launcher_mode",
-                                            "value": 1
-                                        }
-                                    },
-                                    {
-                                        "shell_command": "open -a 'Mail.app'"
+                                        "shell_command": "open -a 'BetterTouchTool.app'"
                                     }
                                 ],
                                 "type": "basic"
@@ -12407,7 +11152,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open ~/polybox"
+                                        "shell_command": "open ~/soumil.gurjar@d-one.ai - Google Drive/"
                                     }
                                 ],
                                 "type": "basic"
@@ -12452,7 +11197,7 @@
                                         }
                                     },
                                     {
-                                        "shell_command": "open ~/polybox"
+                                        "shell_command": "open ~/soumil.gurjar@d-one.ai - Google Drive/"
                                     }
                                 ],
                                 "type": "basic"
