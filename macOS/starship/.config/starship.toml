@@ -7,20 +7,12 @@ add_newline = true
 command_timeout = 1000
 
 # Change the default prompt format
-# old config ...
 format = """\
 [╭╴](238)$env_var \
-$all[╰─](238)$character"""
-
-# new config
-# format = """$env_var $all"""
+$all[╰──>](238)$character"""
 
 # Change the default prompt characters
 [character]
-# old config
-# success_symbol = "[](238)"
-# error_symbol = "[](238)"
-# new config
 success_symbol = ""
 error_symbol = ""
 
@@ -47,14 +39,14 @@ disabled = false
 [directory]
 truncation_length = 2
 truncation_symbol = "…/"
-home_symbol = " ~"
+home_symbol = " ~"
 read_only_style = "197"
-read_only = "  "
+read_only = " 󰌾"
 format = "[$path]($style)[$read_only]($read_only_style) "
 
 [git_branch]
 # symbol = " "
-symbol = " "
+symbol = "󰊢 "
 format = "via [$symbol$branch]($style) "
 # truncation_length = 4
 truncation_symbol = "…/"
@@ -69,14 +61,14 @@ untracked = "[ ](bold red)"
 ahead = "⇡${count}"
 diverged = "⇕⇡${ahead_count}⇣${behind_count}"
 behind = "⇣${count}"
-stashed = "[ ](yellow)"
+stashed = "[ ](yellow)"
 modified = "[ ](yellow)"
 staged = '[++\($count\)](green)'
-renamed = "襁 "
+renamed = "󰑕 "
 deleted = " "
 
 [python]
-symbol = " "
+symbol = "󰌠 "
 python_binary = "python3"
 disabled = false
 
@@ -85,8 +77,11 @@ format = "via [ $context](bold blue) "
 disabled = false
 
 # (deactivated)
+[battery]
+disabled = true
+
 [kubernetes]
-format = 'via [ﴱ $context\($namespace\)](bold purple) '
+format = 'via [󱃾 $context\($namespace\)](bold purple) '
 disabled = true
 
 [cmd_duration]
@@ -107,15 +102,18 @@ format = "via [ $version](bold purple) "
 disabled = true
 
 [nodejs]
-format = "via [ $version](bold green) "
+format = "via [󰎙 $version](bold green) "
 disabled = true
 
 [ruby]
 format = "via [ $version]($style) "
 disabled = true
 
+[gcloud]
+disabled = true
+
 [aws]
-symbol = "  "
+symbol = " "
 
 [buf]
 symbol = " "
@@ -154,28 +152,73 @@ symbol = " "
 symbol = " "
 
 [memory_usage]
-symbol = " "
+symbol = "󰍛 "
 
 [meson]
 symbol = "喝 "
 
 [nim]
-symbol = " "
+symbol = " "
 
 [nix_shell]
 symbol = " "
 
+[os.symbols]
+Alpaquita = " "
+Alpine = " "
+Amazon = " "
+Android = " "
+Arch = " "
+Artix = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+Garuda = "󰛓 "
+Gentoo = " "
+HardenedBSD = "ﲊ "
+Illumos = " "
+Linux = " "
+Mabox = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "
+NetBSD = " "
+NixOS = " "
+OpenBSD = " "
+openSUSE = " "
+OracleLinux = " "
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+Redox = " "
+Solus = " "
+SUSE = " "
+Ubuntu = " "
+Unknown = " "
+Windows = "󰖳 "
+
 [package]
-symbol = " "
+symbol = " "
+
+[pijul_channel]
+symbol = "🪺 "
 
 [rlang]
-symbol = "ﳒ "
+symbol = "󰟔 "
 
 [rust]
-symbol = " "
+symbol = "󱘗 "
 
 [scala]
 symbol = " "
 
 [spack]
 symbol = "🅢 "
+

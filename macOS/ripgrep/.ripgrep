@@ -10,11 +10,3 @@ web:*.{html,css,js}*
 
 --hidden
 --follow
-
-# use 142 instead of yellow for better integration with Vim (Gruvbox theme)
- --colors
- line:fg:142
-
- # use 214 instead of yellow for better integration with Vim (Gruvbox theme)
- --colors
- path:fg:109
