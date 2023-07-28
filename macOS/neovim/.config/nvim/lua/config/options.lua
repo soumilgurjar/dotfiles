@@ -7,7 +7,7 @@ vim.opt.backup = false                          -- creates a backup file
 vim.opt.breakindent = true                      -- wrapped line will continue visually indented
 vim.opt.clipboard = "unnamedplus"               -- allows neovim to access the system clipboard
 vim.opt.cmdheight = 1                           -- more space in the neovim command line for displaying messages
-vim.opt.completeopt = { "menuone", "noselect" } -- mostly just for cmp
+vim.opt.completeopt = { "menu" ,"menuone", "preview", "noselect" } -- mostly just for cmp
 vim.opt.conceallevel = 2                        -- so that `` is visible in markdown files
 vim.opt.concealcursor = ""                      -- set modes in which text in cursor line can also be concealed
 vim.opt.cursorline = false                      -- highlight the current line
@@ -45,7 +45,7 @@ vim.opt.splitright = true                       -- force all vertical splits to 
 vim.opt.swapfile = true                         -- creates a swapfile
 vim.opt.tabstop = 4                             -- insert 4 spaces for a tab
 vim.opt.termguicolors = true                    -- set term gui colors (most terminals support this)
-vim.opt.timeoutlen = 400                        -- time to wait for a mapped sequence to complete (in milliseconds)
+vim.opt.timeoutlen = 300                        -- time to wait for a mapped sequence to complete (in milliseconds)
 vim.opt.undofile = true                         -- enable persistent undo
 vim.opt.updatetime = 300                        -- faster completion (4000ms default)
 vim.opt.wildignorecase = true                   -- Don't care about case when completing filenames
@@ -54,7 +54,5 @@ vim.opt.whichwrap:append("<,>,[,]")             -- keys allowed to move to the p
 vim.opt.wrap = true                            -- display lines as one long line
 -- vim.opt.wrapmargin = 2                          -- Wrap margin from right edge of window
 vim.opt.writebackup = false                     -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
-vim.g.python3_host_prog = "/Users/sgurjar/.pyenv/versions/py3nvim/bin/python" -- Python3 executable for neovim within a pyenv virtualenv
--- vim.opt.winbar = " %{%v:lua.require'nvim-navic'.get_location()%}"
--- vim.opt.winbar = " %{%v:lua.require'lspsaga.symbolwinbar'.get_symbol_node()%}"
+vim.g.python3_host_prog = "/Users/sgurjar/.local/share/virtualenvs/pynvim-SB_vDR0w-python/bin/python" -- Python3 executable for neovim within a pipenv virtualenv
 -- stylua: ignore end

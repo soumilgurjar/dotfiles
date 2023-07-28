@@ -1,1 +1,1 @@
-autocmd BufRead,BufNewFile *.keymap set filetype=devicetree
+autocmd BufRead,BufNewFile *.keymap set filetype=dts

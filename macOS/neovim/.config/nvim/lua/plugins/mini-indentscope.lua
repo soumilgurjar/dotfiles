@@ -1,9 +1,10 @@
 return {
-  "echasnovski/mini.indentscope",
-  enabled = true,
-  opts = {
-    draw = {
-      animation = require("mini.indentscope").gen_animation.none(),
-    },
-  },
+	"echasnovski/mini.indentscope",
+	enabled = true,
+	event = "VeryLazy",
+	opts = {
+		draw = {
+			animation = require("mini.indentscope").gen_animation.none(),
+		},
+	},
 }
