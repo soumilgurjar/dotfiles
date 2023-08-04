@@ -8,7 +8,7 @@ return {
 	init = function()
 		vim.g.vimwiki_list = {
 			{
-				path = "~/Dropbox/Apps/vimwiki/",
+				path = "~/Google Drive/Apps/vimwiki/",
 				syntax = "markdown",
 				ext = ".md",
 				links_space_char = "-",
@@ -18,6 +18,9 @@ return {
 		vim.g.vimwiki_markdown_link_ext = 1 -- Generates links as [text](text.md)
 		vim.g.vimwiki_global_ext = 0
 		vim.g.vimwiki_hl_headers = 1 -- Generates headers with different colors
+		vim.g.vimwiki_key_mappings = {
+			mouse = 1,
+		}
 
 		local keymap = vim.keymap.set
 		local opts = { buffer = true, silent = true }
