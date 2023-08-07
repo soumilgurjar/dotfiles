@@ -46,6 +46,7 @@ alias rmf="rm -irf"
 alias gr="grep -r -n"
 alias rgf="rg --files-with-matches"             #Return files which have query in them
 alias cat='bat'
+alias cato='/bin/cat'
 
 # Tmux related
 alias tn="tmux new -As Local"
