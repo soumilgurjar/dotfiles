@@ -39,6 +39,26 @@ vim.api.nvim_create_autocmd("BufEnter", {
 	end,
 })
 
+vim.api.nvim_create_autocmd("BufEnter", {
+	desc = "Format Swweeep keymap",
+	group = group,
+	pattern = "*sofle.keymap", -- this is a pattern to match the filepath of whatever board you wish to target
+	callback = function()
+		require("qmk").setup({
+			name = "Layout_Sofle",
+			auto_format_pattern = "*sofle.keymap",
+			layout = {
+				"x x x x x x _ _ x x x x x x",
+				"x x x x x x _ _ x x x x x x",
+				"x x x x x x _ _ x x x x x x",
+				"x x x x x x x x x x x x x x",
+				"_ _ x x x x x x x x x x _ _",
+			},
+			variant = "zmk",
+		})
+	end,
+})
+
 return {
 	"codethread/qmk.nvim",
 	enabled = true,
