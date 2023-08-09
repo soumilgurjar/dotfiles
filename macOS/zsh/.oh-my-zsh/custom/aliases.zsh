@@ -84,7 +84,7 @@ alias flash_lily_left="cp ~/Git_Repositories/zmk-lily58/build/left/zephyr/zmk.uf
 alias flash_lily_right="cp ~/Git_Repositories/zmk-lily58/build/right/zephyr/zmk.uf2 /Volumes/NICENANO"
 
 # Git related
-alias glog="git log --color --graph --pretty=format:'%C(yellow)%h%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --branches"
+alias glog="git log --color --graph --pretty=format:'%C(yellow)%h%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --abbrev-commit --branches -5"
 alias gs="git status"
 alias gss="git stash save "
 alias gsp="git stash pop"

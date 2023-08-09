@@ -75,7 +75,7 @@ alias nmd="neomutt -e 'source $HOME/.config/mutt/accounts/soumil.gurjar@d-one.ai
 alias nms="~/.config/mutt/neomutt_startup.sh"
 
 # Git related
-alias glog="git log --color --graph --pretty=format:'%C(yellow)%h%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --abbrev-commit --branches -15"
+alias glog="git log --color --graph --pretty=format:'%C(yellow)%h%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --abbrev-commit --branches -5"
 alias gs="git status"
 alias gss="git stash save "
 alias gsp="git stash pop"

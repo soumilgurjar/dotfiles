@@ -45,3 +45,6 @@ Thumbs.db
 # Files and Folders for ignoring
 .Spotlight-V100
 .Trash/
+
+# Latex Build Folder
+build/
