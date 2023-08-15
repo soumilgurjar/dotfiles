@@ -15,7 +15,7 @@
 # Use the command 'task show' to see all defaults and overrides
 
 # Files
-data.location=~/Google Drive/Apps/Taskwarrior
+data.location=~/Google Drive/My Drive/Apps/Taskwarrior
 
 # To use the default location of the XDG directories,
 # move this configuration file from ~/.taskrc to ~/.config/task/taskrc and uncomment below

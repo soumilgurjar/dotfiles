@@ -3,7 +3,6 @@ command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}" # Brew completions: Must be before oh-my-zsh sourcing
 export PIPENV_DEFAULT_PYTHON_VERSION=$(pyenv which python)  # Necessary for pipenv to respect pyenv local/global versions
-# export PATH=$PATH:~/.docker/bin  # Add docker path when choosing User-wide installation instead of System installation
 
 [[ -n $TMUX ]] && export TERM="xterm-256color"
 
@@ -24,6 +23,10 @@ zstyle ":omz:update" frequency 13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
+# Uncomment the following line to use hyphen-insensitive completion.
+HYPHEN_INSENSITIVE="true"
+# Uncomment the following line to enable command auto-correction.
+ENABLE_CORRECTION="true"
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=62"
 VIM_MODE_VICMD_KEY="jj"                 # This allows escape from insert to normal mode with 'jj'
@@ -58,14 +61,6 @@ MODE_CURSOR_VISUAL="#ffff00 steady block"
 MODE_CURSOR_VLINE="#00ffff steady block"
 
 source $ZSH/oh-my-zsh.sh
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-
-# Needed for zathura and vimtex usage
-# export DBUS_SESSION_BUS_ADDRESS='unix:path='$DBUS_LAUNCHD_SESSION_BUS_SOCKET
 
 # FZF configuration
 # One needs to run the '/usr/local/opt/fzf/install' script after brew install for shortcuts and ** to start working
@@ -118,10 +113,6 @@ export RIPGREP_CONFIG_PATH="$HOME/.ripgrep"
 # Unable to use C-o in neomutt without this
 stty discard undef
 
-# Automatically source shell integration tools such as imgcat
-export ITERM_ENABLE_SHELL_INTEGRATION_WITH_TMUX=YES
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
 # Switch to vim for editing current command
 bindkey '^x^x' edit-command-line
 
@@ -132,16 +123,6 @@ function vi-yank-clipboard {
 }
 zle -N vi-yank-clipboard
 bindkey -M vicmd 'y' vi-yank-clipboard
-
-# Testing if this fixes gpg-agent issues on computer restart
-GPG_TTY=$(tty)
-export GPG_TTY
-
-# Lesspipe if found
-export LESS='-R --ignore-case --LONG-PROMPT --tabs=4 --window=-4'
-if type /usr/local/bin/lesspipe.sh >/dev/null 2>&1; then
-    export LESSOPEN="|/usr/local/bin/lesspipe.sh %s"
-fi
 
 # FZF-Tab configuration
 zstyle ':completion:*:git-checkout:*' sort false
@@ -161,9 +142,5 @@ zstyle ':fzf-tab:*' switch-group ',' '.'
 # Starship cross-platform prompt
 eval "$(starship init zsh)"
 
-# Created by `pipx` on 2023-06-05 09:14:00
-export PATH="$PATH:/Users/gurjars/.local/bin"
-
 # These need to placed after completions can be initialised
-eval "$(register-python-argcomplete pipx)" # Needed for pipx completions
 eval "$(_PIPENV_COMPLETE=zsh_source pipenv)" # Needed for pipenv completions

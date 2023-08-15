@@ -23,14 +23,14 @@ alias vib="nvim ~/.bashrc"
 alias vibp="nvim ~/.bash_profile"
 alias viv="nvim ~/.vimrc"
 alias vit="nvim ~/.tmux.conf"
-alias viw="nvim ~/Dropbox/Apps/vimwiki/index.md"
+alias viw="nvim ~/Google Drive/My Drive/Apps/vimwiki/index.md"
 
 function vidl() {
-    nvim -d ~/.dotfiles/d1_m1/$1 ~/.dotfiles/linux/$1
+    nvim -d ~/Git_Repositories/dotfiles/template_macOS/$1 ~/Git_Repositories/dotfiles/linux/$1
 }
 
 function vid() {
-    nvim -d ~/.dotfiles/d1_m1/$1 ~/.dotfiles/macOS/$1
+    nvim -d ~/Git_Repositories/dotfiles/template_macOS/$1 ~/Git_Repositories/dotfiles/macOS/$1
 }
 
 #Terminal navigation
@@ -68,12 +68,6 @@ alias buc="brew upgrade --cask --verbose --no-quarantine"
 alias bucg="brew upgrade --cask --greedy --verbose --no-quarantine"
 alias bun="brew uninstall"
 
-# Neomutt related
-alias nm="neomutt"
-alias nme="neomutt -e 'source $HOME/.config/mutt/accounts/soumil.gurjar@sam.math.ethz.ch.muttrc' "
-alias nmd="neomutt -e 'source $HOME/.config/mutt/accounts/soumil.gurjar@d-one.ai.muttrc' "
-alias nms="~/.config/mutt/neomutt_startup.sh"
-
 # Git related
 alias glog="git log --color --graph --pretty=format:'%C(yellow)%h%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --abbrev-commit --branches -5"
 alias gs="git status"
@@ -101,21 +95,20 @@ function gcap() {
 }
 
 # Stow related
-function stow_adopt_test() { cd ~/.dotfiles/d1_m1 && stow --adopt -nvSt ~ $1 && cd - }
-function stow_adopt() { cd ~/.dotfiles/d1_m1 && stow --adopt -vSt ~ $1 && cd - }
-function stowth_test() { cd ~/.dotfiles/d1_m1 && stow -nvSt ~ $1 && cd - }
-function stowth() { cd ~/.dotfiles/d1_m1 && stow -vSt ~ $1 && cd - }
-function unstow_test() {  cd ~/.dotfiles/d1_m1 && stow -nvDt ~ $1 && cd - }
-function unstow() {  cd ~/.dotfiles/d1_m1 && stow -vDt ~ $1 && cd - }
+function stow_adopt_test() { cd ~/Git_Repositories/dotfiles/template_macOS && stow --adopt -nvSt ~ $1 && cd - }
+function stow_adopt() { cd ~/Git_Repositories/dotfiles/template_macOS && stow --adopt -vSt ~ $1 && cd - }
+function stowth_test() { cd ~/Git_Repositories/dotfiles/template_macOS && stow -nvSt ~ $1 && cd - }
+function stowth() { cd ~/Git_Repositories/dotfiles/template_macOS && stow -vSt ~ $1 && cd - }
+function unstow_test() {  cd ~/Git_Repositories/dotfiles/template_macOS && stow -nvDt ~ $1 && cd - }
+function unstow() {  cd ~/Git_Repositories/dotfiles/template_macOS && stow -vDt ~ $1 && cd - }
 
 # Taskwarrior related
 alias tt="taskwarrior-tui"
 
 # Aliases for scripts
-alias termpdf="~/Git_Repositories/termpdf.py/termpdf.py $1"
-alias birdnet_backup="~/.dotfiles/macOS/birdnet/birdnet-pi_backup.sh"
+alias termpdf="~/Git_Repositories/Application_Related/termpdf.py/termpdf.py $1"
+alias birdnet_backup="~/Git_Repositories/dotfiles/macOS/birdnet/birdnet-pi_backup.sh"
 
 # Aliases for kitty related commands
-alias savekitty="~/.config/kitty/session_save.sh"
 alias icat="kitty +kitten icat"
 alias kssh="kitty +kitten ssh"
