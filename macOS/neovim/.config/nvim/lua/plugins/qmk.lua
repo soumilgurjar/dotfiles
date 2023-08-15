@@ -40,7 +40,7 @@ vim.api.nvim_create_autocmd("BufEnter", {
 })
 
 vim.api.nvim_create_autocmd("BufEnter", {
-	desc = "Format Swweeep keymap",
+	desc = "Format Sofle keymap",
 	group = group,
 	pattern = "*sofle.keymap", -- this is a pattern to match the filepath of whatever board you wish to target
 	callback = function()
