@@ -92,7 +92,7 @@
             ]
         },
         {
-            "description": "Caps_Lock -> Hyper | Escape",
+            "description": "Caps_Lock -> Hyper | Escape (Only Internal Keyboard)",
             "manipulators": [
                 {
                     "from": {
@@ -112,6 +112,21 @@
                     "to_if_alone": [
                         {
                             "key_code": "escape"
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "vendor_id": 1452,
+                                    "product_id": 632
+                                },
+                                {
+                                    "vendor_id": 1452,
+                                    "product_id": 835
+                                }
+                            ]
                         }
                     ],
                     "type": "basic"
@@ -208,31 +223,7 @@
             ]
         },
         {
-            "description": "Function Key -> Esc",
-            "manipulators": [
-                {
-                    "from": {
-                        "key_code": "fn"
-                    },
-                    "parameters": {
-                        "basic.to_if_alone_timeout_milliseconds": 500
-                    },
-                    "to": [
-                        {
-                            "key_code": "fn"
-                        }
-                    ],
-                    "to_if_alone": [
-                        {
-                            "key_code": "escape"
-                        }
-                    ],
-                    "type": "basic"
-                }
-            ]
-        },
-        {
-            "description": "Left Option -> (Option + Left_Arrow) | Left Option",
+            "description": "Left Option -> Left Option | (Option + Left_Arrow) (Only Internal Keyboard)",
             "manipulators": [
                 {
                     "from": {
@@ -254,12 +245,27 @@
                             ]
                         }
                     ],
+                    "conditions": [
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "vendor_id": 1452,
+                                    "product_id": 632
+                                },
+                                {
+                                    "vendor_id": 1452,
+                                    "product_id": 835
+                                }
+                            ]
+                        }
+                    ],
                     "type": "basic"
                 }
             ]
         },
         {
-            "description": "Right Option -> (Option + Right_Arrow) | Right Option",
+            "description": "Right Option -> Right Option | (Option + Right_Arrow) (Only Internal Keyboard)",
             "manipulators": [
                 {
                     "from": {
@@ -281,12 +287,27 @@
                             ]
                         }
                     ],
+                    "conditions": [
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "vendor_id": 1452,
+                                    "product_id": 632
+                                },
+                                {
+                                    "vendor_id": 1452,
+                                    "product_id": 835
+                                }
+                            ]
+                        }
+                    ],
                     "type": "basic"
                 }
             ]
         },
         {
-            "description": "Left Shift -> (Option + Left_Arrow) | Left Shift",
+            "description": "Left Shift -> Left Shift | (Option + Left_Arrow) (Only Internal Keyboard)",
             "manipulators": [
                 {
                     "from": {
@@ -308,12 +329,27 @@
                             ]
                         }
                     ],
+                    "conditions": [
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "vendor_id": 1452,
+                                    "product_id": 632
+                                },
+                                {
+                                    "vendor_id": 1452,
+                                    "product_id": 835
+                                }
+                            ]
+                        }
+                    ],
                     "type": "basic"
                 }
             ]
         },
         {
-            "description": "Right Shift -> (Option + Right_Arrow) | Right Shift",
+            "description": "Right Shift -> Right Shift | (Option + Right_Arrow) (Only Internal Keyboard)",
             "manipulators": [
                 {
                     "from": {
@@ -335,30 +371,18 @@
                             ]
                         }
                     ],
-                    "type": "basic"
-                }
-            ]
-        },
-        {
-            "description": "Left Shift -> (Option + Backspace) | Left Shift",
-            "manipulators": [
-                {
-                    "from": {
-                        "key_code": "left_shift"
-                    },
-                    "parameters": {
-                        "basic.to_if_alone_timeout_milliseconds": 500
-                    },
-                    "to": [
+                    "conditions": [
                         {
-                            "key_code": "left_shift"
-                        }
-                    ],
-                    "to_if_alone": [
-                        {
-                            "key_code": "delete_or_backspace",
-                            "modifiers": [
-                                "option"
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "vendor_id": 1452,
+                                    "product_id": 632
+                                },
+                                {
+                                    "vendor_id": 1452,
+                                    "product_id": 835
+                                }
                             ]
                         }
                     ],
@@ -367,34 +391,7 @@
             ]
         },
         {
-            "description": "Right Shift -> (Control + Forward_Delete) | Right Shift",
-            "manipulators": [
-                {
-                    "from": {
-                        "key_code": "right_shift"
-                    },
-                    "parameters": {
-                        "basic.to_if_alone_timeout_milliseconds": 500
-                    },
-                    "to": [
-                        {
-                            "key_code": "right_shift"
-                        }
-                    ],
-                    "to_if_alone": [
-                        {
-                            "key_code": "delete_forward",
-                            "modifiers": [
-                                "control"
-                            ]
-                        }
-                    ],
-                    "type": "basic"
-                }
-            ]
-        },
-        {
-            "description": "Left Command -> (Escape) | Left Command (Only Internal Keyboard)",
+            "description": "Left Command -> Left Command | Escape (Only Internal Keyboard)",
             "manipulators": [
                 {
                     "from": {
