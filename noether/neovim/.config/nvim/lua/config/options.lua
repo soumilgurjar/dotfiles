@@ -2,6 +2,11 @@
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
 
+--Remap space as leader key
+vim.g.mapleader = " "
+--Remap backspace as localleader key
+vim.g.maplocalleader = vim.api.nvim_replace_termcodes("<BS>", false, false, true)
+
 -- stylua: ignore start
 vim.opt.backup = false                          -- creates a backup file
 vim.opt.breakindent = true                      -- wrapped line will continue visually indented

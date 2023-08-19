@@ -8,12 +8,6 @@ local function keymap(mode, lhs, rhs, opts)
 	vim.keymap.set(mode, lhs, rhs, opts)
 end
 
---Remap space as leader key
-vim.g.mapleader = " "
---Remap backspace as localleader key
--- HACK:Unable to get backspace working with lua code, hence use of vimscript
-vim.cmd([[let maplocalleader = "\<BS>"]])
-
 -- Modes
 -- normal_mode = "n", insert_mode = "i", visual_mode = "v", visual_block_mode = "x", term_mode = "t", command_mode = "c",
 
