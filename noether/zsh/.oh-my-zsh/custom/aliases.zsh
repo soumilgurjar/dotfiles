@@ -68,8 +68,8 @@ alias bric="brew reinstall --cask --no-quarantine"
 alias boc="brew outdated --cask --greedy --verbose"
 alias bl="brew list"
 alias buu="brew update && brew upgrade --verbose --no-quarantine"
-alias buc="brew upgrade --cask --verbose --no-quarantine"
-alias bucg="brew upgrade --cask --greedy --verbose --no-quarantine"
+alias buc="brew upgrade --cask --greedy --verbose --no-quarantine"
+alias bucn="brew upgrade --cask --dry-run --greedy --verbose --no-quarantine"
 alias bun="brew uninstall"
 
 # Git related
