@@ -10,6 +10,10 @@ return {
 			"black",
 			"ruff-lsp",
 			"pyright",
+			-- "clangd",
+			-- "clang-format",
+			-- "codelldb",
+			"latexindent",
 		},
 	},
 }

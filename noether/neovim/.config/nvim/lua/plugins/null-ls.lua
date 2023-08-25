@@ -1,5 +1,6 @@
 return {
 	"jose-elias-alvarez/null-ls.nvim",
+	enabled = true,
 	event = { "BufReadPre", "BufNewFile" },
 	dependencies = { "mason.nvim" },
 	opts = function()
@@ -22,6 +23,7 @@ return {
 				nls.builtins.formatting.sql_formatter.with({
 					extra_args = { "--dialect", "postgresql" }, -- change to your dialect
 				}),
+				nls.builtins.formatting.clang_format,
 			},
 		}
 	end,

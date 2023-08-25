@@ -1,4 +1,7 @@
 return {
+	"HiPhish/nvim-ts-rainbow2",
+	event = "VeryLazy", -- Needed due to some error in disabled filetypes e.g cpp
+}, {
 	"nvim-treesitter/nvim-treesitter",
 	enabled = true,
 	dependencies = {
@@ -54,7 +57,7 @@ return {
 		},
 		rainbow = {
 			enable = true,
-			disable = { "jsx" }, -- list of languages you want to disable the plugin for
+			disable = { "jsx", "cpp" }, -- list of languages you want to disable the plugin for
 			query = {
 				"rainbow-parens",
 				html = "rainbow-tags",
