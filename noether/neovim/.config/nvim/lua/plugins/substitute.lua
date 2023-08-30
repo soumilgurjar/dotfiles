@@ -8,11 +8,25 @@ return {
 	opts = {},
 	keys = {
 		{
+			"gp",
+			function()
+				require("substitute").operator()
+			end,
+			desc = "Substitute",
+		},
+		{
 			"gpp",
 			function()
 				require("substitute").line()
 			end,
 			desc = "Substitute Line",
+		},
+		{
+			"gP",
+			function()
+				require("substitute").eol()
+			end,
+			desc = "Substitute EOL",
 		},
 		{
 			"cx",

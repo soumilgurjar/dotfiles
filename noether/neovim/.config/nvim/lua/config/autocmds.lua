@@ -2,12 +2,10 @@
 -- Default autocmds that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/autocmds.lua
 -- Add any additional autocmds here
 
-local keymap = vim.keymap.set
-local opts = { buffer = true, silent = true }
-
 -- Need to set this here as it gets overwritten when set with vim.opt
 vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
 	desc = "No continuation of comments on next line",
+	group = vim.api.nvim_create_augroup("discontinue_comments", { clear = true }),
 	callback = function()
 		vim.cmd("set formatoptions-=cro")
 		vim.cmd("setlocal keywordprg=:help")
@@ -15,6 +13,7 @@ vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
 })
 
 vim.api.nvim_create_autocmd({ "VimResized" }, {
+	group = vim.api.nvim_create_augroup("resize_windows", { clear = true }),
 	desc = "Equal window sizes",
 	callback = function()
 		vim.cmd("tabdo wincmd =")
@@ -23,6 +22,7 @@ vim.api.nvim_create_autocmd({ "VimResized" }, {
 
 vim.api.nvim_create_autocmd({ "CmdWinEnter" }, {
 	desc = "Quits immediately after entering Command-line Window",
+	group = vim.api.nvim_create_augroup("quit_command_line", { clear = true }),
 	callback = function()
 		vim.cmd("quit")
 	end,
@@ -39,34 +39,29 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 
 vim.api.nvim_create_autocmd({ "FileType" }, {
 	desc = "Wrap and spell on for prose filetypes",
+	group = vim.api.nvim_create_augroup("wrap_spell_text", { clear = true }),
 	pattern = { "text" },
 	callback = function()
 		vim.opt_local.wrap = true
 		vim.opt_local.spelllang = "en_gb,de_ch" -- Set spell language to English and German
 		-- vim.opt_local.spell = true
-		keymap({ "n", "v" }, "j", "gj", opts)
-		keymap({ "n", "v" }, "k", "gk", opts)
-		keymap({ "n" }, "<Right>", "g$", opts)
-		keymap({ "n" }, "<Left>", "g^", opts)
 	end,
 })
 
 vim.api.nvim_create_autocmd({ "FileType" }, {
 	desc = "Wrap and spell on for tex filetypes",
+	group = vim.api.nvim_create_augroup("wrap_spell_markdown_tex", { clear = true }),
 	pattern = { "markdown", "tex" },
 	callback = function()
 		vim.opt_local.wrap = true
 		vim.opt_local.spelllang = "en_gb,de_ch" -- Set spell language to English and German
 		-- vim.opt_local.spell = true
-		keymap({ "n", "v" }, "j", "gj", opts)
-		keymap({ "n", "v" }, "k", "gk", opts)
-		keymap({ "n" }, "<Right>", "g$", opts)
-		keymap({ "n" }, "<Left>", "g^", opts)
 	end,
 })
 
 vim.api.nvim_create_autocmd({ "BufWritePost" }, {
 	desc = "Refresh codelens on saving java files",
+	group = vim.api.nvim_create_augroup("refresh_java_codelens", { clear = true }),
 	pattern = { "*.java" },
 	callback = function()
 		vim.lsp.codelens.refresh()
@@ -74,7 +69,8 @@ vim.api.nvim_create_autocmd({ "BufWritePost" }, {
 })
 
 vim.api.nvim_create_autocmd({ "FileType" }, {
-	desc = "No tab expansion for devicetree filetypes",
+	desc = "No wrapping for devicetree filetypes",
+	group = vim.api.nvim_create_augroup("disable_wrap_devicetree", { clear = true }),
 	pattern = { "dts" },
 	callback = function()
 		vim.opt_local.wrap = false
