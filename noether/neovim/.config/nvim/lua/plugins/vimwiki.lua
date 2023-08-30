@@ -22,9 +22,6 @@ return {
 			mouse = 1,
 		}
 
-		local keymap = vim.keymap.set
-		local opts = { buffer = true, silent = true }
-
 		vim.api.nvim_create_autocmd({ "FileType" }, {
 			desc = "Wrap and spell languages on for vimwiki filetypes",
 			pattern = { "vimwiki" },
@@ -32,10 +29,6 @@ return {
 				vim.opt_local.wrap = true
 				vim.opt_local.spelllang = "en_gb,de_ch" -- Set spell language to English and German
 				vim.opt_local.spell = false
-				keymap({ "n", "v" }, "j", "gj", opts)
-				keymap({ "n", "v" }, "k", "gk", opts)
-				keymap({ "n" }, "<Right>", "g$", opts)
-				keymap({ "n" }, "<Left>", "g^", opts)
 			end,
 		})
 	end,
