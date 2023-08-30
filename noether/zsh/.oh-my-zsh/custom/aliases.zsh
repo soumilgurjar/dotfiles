@@ -39,7 +39,6 @@ function vidt() {
 
 #Terminal navigation
 alias fs="du -sh"
-alias lso="/bin/ls"
 alias l="ls -lha"
 alias la="ls -a"
 alias ls="exa -x --icons --group-directories-first"
@@ -49,8 +48,7 @@ alias rm="rm -ir"
 alias rmf="rm -irf"
 alias gr="grep -r -n"
 alias rgf="rg --files-with-matches"             #Return files which have query in them
-alias cat='bat'
-alias cato='/bin/cat'
+alias cat='bat --plain --italic-text always'
 
 # Tmux related
 alias tn="tmux new -As Local"
@@ -85,6 +83,7 @@ alias gap="git add -p"
 alias gcm="git commit -m"
 alias gd="git df"
 alias grt='cd "$(git rev-parse --show-toplevel)"'
+alias gri="git rebase -i"
 
 # Adds commits and pushes files with the argument as the commit message
 function gcam() {
@@ -108,6 +107,11 @@ function unstow() {  cd ~/Git_Repositories/dotfiles/noether && stow -vDt ~ $1 &&
 
 # Taskwarrior related
 alias tt="taskwarrior-tui"
+
+# Enpass related
+alias enp="MASTERPW='$(pass show enpass)' enpass-cli -vault '$HOME/Documents/Enpass/Vaults/primary/' -keyfile '$HOME/Documents/Enpass/enpass_keyfile.enpasskey' -sort"
+alias enpc="enp copy -clipboardPrimary -and"
+alias enpl="enp list"
 
 # Aliases for scripts
 alias termpdf="~/Git_Repositories/Application_Related/termpdf.py/termpdf.py $1"
