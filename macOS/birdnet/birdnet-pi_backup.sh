@@ -1,6 +1,7 @@
 #!/bin/sh
 
-echo "Copying BirdNET-PI database and settings"
+echo "Date: $(date)\n"
+echo "Copying BirdNET-PI database and settings\n"
 
 # Start Copying with rsync (Always keep -a flag to maintain permissions and timestamps)
 rsync -ahP -e "ssh -i $HOME/.ssh/id_birdnetpi" soumilgurjar@mediumplacebirder.local:/home/soumilgurjar/BirdNET-Pi/birdnet.conf "$HOME/pCloud Drive/Miscellaneous/Apps/BirdNet-Pi/Detection_Database_Backups/BirdNET-Pi/"
@@ -12,4 +13,4 @@ rsync -ahP -e "ssh -i $HOME/.ssh/id_birdnetpi" soumilgurjar@mediumplacebirder.lo
 rsync -ahP --size-only --exclude-from "$HOME/pCloud Drive/Miscellaneous/Apps/BirdNet-Pi/Detection_Database_Backups/BirdSongs/Extracted/By_Date/exclude_list.txt" -e "ssh -i $HOME/.ssh/id_birdnetpi" soumilgurjar@mediumplacebirder.local:/home/soumilgurjar/BirdSongs/Extracted/By_Date "$HOME/pCloud Drive/Miscellaneous/Apps/BirdNet-Pi/Detection_Database_Backups/BirdSongs/Extracted/"
 # rsync -ahP --size-only -e "ssh -i $HOME/.ssh/id_birdnetpi" soumilgurjar@mediumplacebirder.local:/home/soumilgurjar/BirdSongs/Extracted/By_Date "$HOME/pCloud Drive/Miscellaneous/Apps/BirdNet-Pi/Detection_Database_Backups/BirdSongs/Extracted/"
 
-echo "Done syncing"
+echo "\nDone syncing"
