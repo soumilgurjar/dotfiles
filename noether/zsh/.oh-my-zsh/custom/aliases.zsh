@@ -116,6 +116,7 @@ alias enpl="enp list"
 # Aliases for scripts
 alias termpdf="~/Git_Repositories/Application_Related/termpdf.py/termpdf.py $1"
 alias birdnet_backup="~/Git_Repositories/dotfiles/macOS/birdnet/birdnet-pi_backup.sh"
+alias restart_gpg_agent="~/Documents/Scripts/restart_gpg_agent.sh"
 
 # Aliases for kitty related commands
 alias icat="kitty +kitten icat"
