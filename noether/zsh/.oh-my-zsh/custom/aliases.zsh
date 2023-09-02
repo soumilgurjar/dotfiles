@@ -121,3 +121,4 @@ alias restart_gpg_agent="~/Documents/Scripts/restart_gpg_agent.sh"
 # Aliases for kitty related commands
 alias icat="kitty +kitten icat"
 alias kssh="kitty +kitten ssh"
+alias kdiff="kitty +kitten diff"
