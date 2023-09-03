@@ -7,49 +7,49 @@ filetype off                  " required
 call plug#begin('~/.vim/plugged')
 
 """  List plugins here
-Plug 'sheerun/vim-polyglot'                     "Provides syntax for multiple filetypes
-Plug 'airblade/vim-gitgutter'                   "Show changes in file from previous commit
-Plug 'tpope/vim-fugitive'                       "Git integration plugin
-Plug 'tpope/vim-rhubarb'                        "Git browse command to go to webpage directly
-Plug 'easymotion/vim-easymotion'                "New way of moving within vim
-Plug 'tpope/vim-commentary'                     "Allows commenting lines/selection with gc
-Plug 'tpope/vim-surround'                       "Allows surrounding words/selection with cs
-Plug 'wellle/targets.vim'                       "Provides more operators than standard vim e.g v2il'
-Plug 'michaeljsmith/vim-indent-object'          "Provide text objects ai,ii,aI,iI to operate on indent
-Plug 'christoomey/vim-sort-motion'              "Easy sorting of lines with gs command
-Plug 'svermeulen/vim-subversive'                "Easier substitution of text object with register
-Plug 'tpope/vim-repeat'                         "Allows repeating more previous commands with .
-Plug 'tommcdo/vim-exchange'                     "Allows exchanging words/selection with cx/X
-Plug 'tpope/vim-endwise'                        "Automatically ends functions like if etc.
-Plug 'tpope/vim-abolish'                        "Better robust substition and easier case changing
-Plug 'tpope/vim-unimpaired'                     "Complementary pair of mappings for quickfix, line addition, toggle settings etc.
-Plug 'tpope/vim-obsession'                      "Allows easier management of vim sessions
+" Plug 'tbabej/taskwiki'                          "Integration of taskwarrior with vimwiki
+Plug 'Fymyte/mbsync.vim'                        "Enable syntax for mbsyncrc
 Plug 'Raimondi/delimitMate'                     "Automatically creates bracket pairs
-Plug 'machakann/vim-highlightedyank'            "Highlights yanks for short period
 Plug 'SirVer/ultisnips'                         "Track the snippet engine
+Plug 'airblade/vim-gitgutter'                   "Show changes in file from previous commit
+Plug 'airblade/vim-rooter'                      "Autochanges current directory to project root when found; Helpful for fzf
+Plug 'aymericbeaumet/vim-symlink'               "Follows symlink rather than editing the symlink
+Plug 'chaoren/vim-wordmotion'                   "Better word movement when dealing with acronyms, camelcase etc.
+Plug 'christoomey/vim-sort-motion'              "Easy sorting of lines with gs command
+Plug 'easymotion/vim-easymotion'                "New way of moving within vim
 Plug 'honza/vim-snippets'                       "Snippets are separated from the engine
-Plug 'ludovicchabant/vim-gutentags'             "Auto generation of tags
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'                         "Fuzzy finding within vim with :Files
-Plug 'pbogut/fzf-mru.vim'                       "Bring Most Recently Used Functionality to FZF
-Plug 'airblade/vim-rooter'                      "Autochanges current directory to project root when found; Helpful for fzf
-Plug 'vim-scripts/YankRing.vim'                 "Stores multiples yanks
-Plug 'simnalamburt/vim-mundo'                   "Stores multiples undos
-Plug 'scrooloose/nerdtree'                      "Allows navigation of file tree
-Plug 'aymericbeaumet/vim-symlink'               "Follows symlink rather than editing the symlink
-Plug 'moll/vim-bbye'                            "Better buffer management with :Bdelete, :Bwipeout etc.
 Plug 'junegunn/goyo.vim'                        "Distraction free vim
-Plug 'vimwiki/vimwiki', { 'branch': 'dev' }     "Easy note taking and diary maintaining
-" Plug 'tbabej/taskwiki'                          "Integration of taskwarrior with vimwiki
+Plug 'kbarrette/mediummode'                     "Disable common vim navigation functions to help learn vim faster
 Plug 'lervag/vimtex'                            "Latex syntax plugin that provides viewing with zathura
+Plug 'liuchengxu/vim-which-key'
+Plug 'ludovicchabant/vim-gutentags'             "Auto generation of tags
+Plug 'machakann/vim-highlightedyank'            "Highlights yanks for short period
+Plug 'michaeljsmith/vim-indent-object'          "Provide text objects ai,ii,aI,iI to operate on indent
+Plug 'moll/vim-bbye'                            "Better buffer management with :Bdelete, :Bwipeout etc.
+Plug 'pbogut/fzf-mru.vim'                       "Bring Most Recently Used Functionality to FZF
 Plug 'rhysd/vim-grammarous'
+Plug 'romainl/vim-cool'                         "Better search highlighting which disappears after moving away from search
+Plug 'scrooloose/nerdtree'                      "Allows navigation of file tree
+Plug 'sheerun/vim-polyglot'                     "Provides syntax for multiple filetypes
+Plug 'simnalamburt/vim-mundo'                   "Stores multiples undos
+Plug 'svermeulen/vim-subversive'                "Easier substitution of text object with register
+Plug 'tommcdo/vim-exchange'                     "Allows exchanging words/selection with cx/X
+Plug 'tpope/vim-abolish'                        "Better robust substition and easier case changing
+Plug 'tpope/vim-commentary'                     "Allows commenting lines/selection with gc
+Plug 'tpope/vim-endwise'                        "Automatically ends functions like if etc.
+Plug 'tpope/vim-fugitive'                       "Git integration plugin
+Plug 'tpope/vim-obsession'                      "Allows easier management of vim sessions
+Plug 'tpope/vim-repeat'                         "Allows repeating more previous commands with .
+Plug 'tpope/vim-rhubarb'                        "Git browse command to go to webpage directly
+Plug 'tpope/vim-surround'                       "Allows surrounding words/selection with cs
+Plug 'tpope/vim-unimpaired'                     "Complementary pair of mappings for quickfix, line addition, toggle settings etc.
 Plug 'vim-pandoc/vim-pandoc'                    "Pandoc support from within vim
 Plug 'vim-pandoc/vim-pandoc-syntax'             "Pandoc syntax for relevant files
-Plug 'kbarrette/mediummode'                     "Disable common vim navigation functions to help learn vim faster
-Plug 'Fymyte/mbsync.vim'                        "Enable syntax for mbsyncrc
-Plug 'liuchengxu/vim-which-key'
-Plug 'chaoren/vim-wordmotion'                   "Better word movement when dealing with acronyms, camelcase etc.
-Plug 'romainl/vim-cool'                         "Better search highlighting which disappears after moving away from search
+Plug 'vim-scripts/YankRing.vim'                 "Stores multiples yanks
+Plug 'vimwiki/vimwiki', { 'branch': 'dev' }     "Easy note taking and diary maintaining
+Plug 'wellle/targets.vim'                       "Provides more operators than standard vim e.g v2il'
 
 """ Theme plugins
 Plug 'morhetz/gruvbox'
@@ -106,7 +106,11 @@ let g:vimwiki_list = [{'path': '/mnt/c/Users/soumi/Dropbox/Apps/vimwiki/',
                         \ 'auto_diary_index': 1}]
 let g:vimwiki_markdown_link_ext = 1             "Generates links as [text](text.md)
 " let g:vimwiki_listsyms = '✗○◐●✓'              "Unable to use these because taskwiki does not allow these unicode characters
+let g:vimwiki_hl_headers = 1                    " Generates headers with different colors
 let g:vimwiki_global_ext = 0
+let g:vimwiki_key_mappings = {
+    mouse = 1,
+}
 
 """ TaskWiki
 " let g:taskwiki_disable="yes"
@@ -117,6 +121,11 @@ let g:taskwiki_disable_concealcursor="yes"
 " let g:taskwiki_maplocalleader="\t"
 
 """ Vimtex
+let g:vimtex_quickfix_autoclose_after_keystrokes = 1
+let g:vimtex_quickfix_open_on_warning = 1
+let g:vimtex_fold_enabled = 1
+let g:vimtex_fold_manual = 1
+let g:vimtex_compiler_latexmk = { out_dir = "build", aux_dir = "build" }
 let g:vimtex_view_method = 'zathura'
 
 """ EasyMotion
@@ -182,49 +191,55 @@ filetype plugin indent on    " required
 set autoindent
 set autoread
 set autowrite                   " allows changing buffer with save
-set hidden
+set background=dark             " For colorscheme
+set backspace=indent,eol,start  " Vim 8.2 update had changed default backspace behaviour. This reverts it.
+set breakindent                 " enable indentation on linebreak
 set clipboard=unnamedplus       " yank and paste with the system clipboard
 set encoding=utf-8
 set expandtab                   " tabs are spaces
-set shiftround                  " When shifting lines, round the indentation to the nearest multiple of “shiftwidth.”
-set shiftwidth=4
-set smarttab                    " Insert “tabstop” number of spaces when the “tab” key is pressed.
-set tabstop=4                   " number of visual spaces per TAB
-set softtabstop=4               " number of spaces in tab when editing
-set ignorecase                  " case-insensitive search
-set smartcase
-set incsearch                   " search as characters are entered
+set hidden
 set hlsearch
-set showmatch                   " highlight matching [{()}]
+set ignorecase                  " case-insensitive search
+set incsearch                   " search as characters are entered
+set laststatus=2                " 2 - Always display the status bar.
+set linebreak                   " enable softwrap without breaking words
+set list                        " show trailing whitespace
+set listchars=tab:›\ ,extends:»,precedes:‹,nbsp:·,trail:·   " list of characters to show
+set mouse=a
+set nobackup
 set noerrorbells
+set noro                        " Set no read only mode. Useful when using git difftool.
+set noshowmode                    " stop showing current mode
+set nrformats+=alpha
 set number                      " show absolute line numbers
 set relativenumber              " show relative line numbers (except current)
 set ruler                       " show column in console
-set list                        " show trailing whitespace
-set listchars=tab:▸\ ,trail:▫   " list of characters to show
+set scrolloff=4
+set shiftround                  " When shifting lines, round the indentation to the nearest multiple of “shiftwidth.”
+set shiftwidth=4
+set shortmess=a                 " Abbreviates file messages to prevent hit enter to continue message
+set showcmd                     " shows the current command
+set showmatch                   " highlight matching [{()}]
+set sidescrolloff=8
+set smartcase
+set smartindent
+set smarttab                    " Insert “tabstop” number of spaces when the “tab” key is pressed.
+set softtabstop=4               " number of spaces in tab when editing
+set spelllang="en_gb,de_ch"
+set spelloptions="camel"
+set splitright
+set tabstop=4                   " number of visual spaces per TAB
+set termguicolors               " Set true color (use only when terminal supports true colors)
+set textwidth=0                 " No hard wrap of text; default 80
+set undodir=~/.vim/undo
+set undofile
+set updatetime=300             " Sets time between git diff run by gitgutter
 set wrap                        " automatically wrap on load
 set wrapscan                    " Allow search to wrap to start of file
-set breakindent                 " enable indentation on linebreak
-set linebreak                   " enable softwrap without breaking words
-set textwidth=0                 " No hard wrap of text; default 80
-set scrolloff=4
-set nobackup
-set mouse=a
-set undofile
-set undodir=~/.vim/undo
-set updatetime=1000             " Sets time between git diff run by gitgutter
-set backspace=indent,eol,start  " Vim 8.2 update had changed default backspace behaviour. This reverts it.
-set noro                        " Set no read only mode. Useful when using git difftool.
-set showcmd                     " shows the current command
-set laststatus=2                " 2 - Always display the status bar.
-set termguicolors               " Set true color (use only when terminal supports true colors)
-set background=dark             " For colorscheme
-set shortmess=a                 " Abbreviates file messages to prevent hit enter to continue message
 if executable('rg')
     set grepprg=rg\ --vimgrep
     set grepformat=%f:%l:%c:%m
 endif
-set nrformats+=alpha
 
 """"""""" ---------------  VIM Cursor --------------------
 " 1 or 0 -> blinking block
@@ -331,6 +346,11 @@ autocmd BufRead,BufNewFile *.py let python_highlight_all=1
 " autocmd FileType tex setlocal shiftwidth=4 tabstop=4 expandtab
 autocmd BufRead,BufNewFile *.gitconfig-* set filetype=gitconfig
 
+augroup vim-help-right-split
+    autocmd!
+    autocmd FileType help wincmd L
+augroup END
+
 augroup zmkkeymap-devicetree
     autocmd!
     autocmd FileType devicetree set invlist
@@ -357,10 +377,10 @@ augroup END
 augroup markdown-txt-Spell
     autocmd!
     autocmd FileType markdown,vimwiki,text setlocal spell
-    autocmd FileType markdown,vimwiki,text setlocal spelllang=en
+    autocmd FileType markdown,vimwiki,text setlocal spelllang=en_gb
     autocmd FileType markdown,vimwiki,text highlight SpellBad cterm=underline
     autocmd BufRead,BufNewFile *.md,*.txt,*.rst setlocal spell
-    autocmd BufRead,BufNewFile *.md,*.txt,*.rst setlocal spelllang=en
+    autocmd BufRead,BufNewFile *.md,*.txt,*.rst setlocal spelllang=en_gb
     autocmd BufRead,BufNewFile *.md,*.txt,*.rst highlight SpellBad cterm=underline
 augroup END
 
@@ -396,8 +416,8 @@ nnoremap <silent> <leader>pu <Cmd>PlugUpdate<CR>
 nnoremap <silent> <leader>pc <Cmd>PlugClean<CR>
 
 " Fuzzy searching with fzf
-nnoremap <silent> <leader>ff <Cmd>FZFMru<CR>
-nnoremap <silent> <leader>fs <Cmd>Files<CR>
+nnoremap <silent> <leader><leader> :FZFMru<CR>
+nnoremap <silent> <leader>ff <Cmd>Files<CR>
 nnoremap <silent> <leader>fg <Cmd>GFiles<CR>
 nnoremap <silent> <leader>fb <Cmd>BCommits<CR>
 nnoremap <silent> <leader>fc <Cmd>Commits<CR>
@@ -420,15 +440,15 @@ nnoremap <silent> <leader>gg <Cmd>Git<CR>
 nnoremap <silent> <leader>gb <Cmd>Git blame<CR>
 nnoremap <silent> <leader>gcm <Cmd>Git commit<CR>
 nnoremap <silent> <leader>gcl <Cmd>0Gclog<CR>
-nnoremap <silent> <leader>gp <Cmd>Git push<CR>
+nnoremap <silent> <leader>gp <Cmd>Git pull<CR>
+nnoremap <silent> <leader>gP <Cmd>Git push<CR>
 nnoremap <silent> <leader>gl <Cmd>Git log<CR>
-nnoremap <silent> <leader>grs ciwsquash<Esc>0j
-nnoremap <silent> <leader>grf ciwfixup<Esc>0j
-nnoremap <silent> <leader>grp ciwpick<Esc>0j
-nnoremap <silent> <leader>grr ciwreword<Esc>0j
 nnoremap <silent> <leader>gds <Cmd>Gvdiffsplit<CR>
 " Allows using FZF BCommits to get commit hash to clipboard and then compare it with current state of file
 nnoremap <silent> <leader>gdc :Gvdiffsplit <C-r>0<CR>
+
+" Split line at cursor (opposite of J)
+nnoremap <leader>J i<CR><Esc>g; 
 
 " Goyo mappings
 nnoremap <silent> <leader>go <Cmd>Goyo<CR>
@@ -448,7 +468,7 @@ nnoremap <leader>he :vert bo h
 nnoremap <leader>hm <Cmd>MediumModeToggle<CR>
 
 " Nerdtree toggle
-nnoremap <leader>nn <Cmd>NERDTreeToggle<CR>
+nnoremap <leader>e <Cmd>NERDTreeToggle<CR>
 
 " Toggles line and relative linenumbers
 nnoremap <leader>nu <Cmd>set number!<CR> <Cmd>set relativenumber!<CR>
@@ -477,16 +497,6 @@ nnoremap <silent> <leader>yy <Cmd>YRShow<CR>
 " Show/hide spell check underline
 nnoremap <silent> <leader>spl <Cmd>setlocal spell! spelllang=en,de<CR> <Cmd>echo "Spellcheck toggled"<CR>
 
-" Go to specific buffer
-" nnoremap <leader>hh <Cmd>bp<CR>
-" nnoremap <leader>ll <Cmd>bn<CR>
-
-" Go to next or previous window
-nnoremap <leader>kj  <C-w>h
-nnoremap <leader>jk  <C-w>l
-nnoremap <leader>jj  <C-w>j
-nnoremap <leader>kk  <C-w>k
-
 "Save or Close current buffer(s) or windows
 nnoremap <leader>q <Cmd>qall<CR>
 nnoremap <leader>; <Cmd>wall<CR>
@@ -501,6 +511,8 @@ nnoremap <Leader>, <Cmd>norm @:<CR>
 """""""" --------------- Mappings ------------------------
 " Pressing j twice in insert mode will lead to Esc
 inoremap jj <Esc>
+inoremap jk <Esc>
+inoremap kk <Esc>
 inoremap JJ <Esc>
 
 " Easymotion - `s{char}{char}{label}`
@@ -533,24 +545,24 @@ nnoremap , <Cmd>norm @@<CR>
 " Map arrows keys to more useful functions like changing buffers and page up/down
 nnoremap <S-h> <Cmd>bprevious<CR>
 nnoremap <S-l> <Cmd>bnext<CR>
-nnoremap <Left> ^
-nnoremap <Right> $
+nnoremap <Left> g^
+nnoremap <Right> g$
 nnoremap <Up> <C-b>
 nnoremap <Down> <C-f>
 vnoremap <Up> <C-b>
 vnoremap <Down> <C-f>
-vnoremap <Left> ^
-vnoremap <Right> $
+vnoremap <Left> g^
+vnoremap <Right> g$
 
 " No overwriting of paste register
 nnoremap x "_x
-nnoremap d "_dP
+vnoremap p "_dP
 
 " Allows easy searching of word under cursor within current project
 nnoremap gw :Rg <cWORD><CR>
 
 " Allows easy copying to end of line
-nnoremap <S-y> y$
+nnoremap Y y$
 
 " Keeps stuff centered when searching in file
 nnoremap n nzzzv
@@ -586,6 +598,12 @@ nnoremap <C-s> :w<CR>
 nnoremap <C-f> <Cmd>Rg<CR>
 nnoremap <C-e> :!rg vimwiki ~/Dropbox/Apps/vimwiki<CR>
 
+" Go to next or previous window
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+
 "Resize with arrows
 nnoremap <C-Up> <Cmd>resize -2<CR> 
 nnoremap <C-Down> <Cmd>resize +2<CR> 
@@ -597,18 +615,18 @@ inoremap <C-u> <C-g>u<C-u>
 inoremap <C-w> <C-g>u<C-w>
 
 " Switch functions for easier jumping to definition and showing list of all tags
-nnoremap <c-]> g<c-]>
-vnoremap <c-]> g<c-]>
-nnoremap g<c-]> <c-]>
-vnoremap g<c-]> <c-]>
+nnoremap <C-]> g<C-]>
+vnoremap <C-]> g<C-]>
+nnoremap g<C-]> <C-]>
+vnoremap g<C-]> <C-]>
 
 " FZF Insert mode completion
-imap <c-x><c-d> <plug>(fzf-complete-word)
-imap <c-x><c-f> <plug>(fzf-complete-path)
-imap <c-x><c-g> <plug>(fzf-complete-line)
+imap <C-x><C-d> <plug>(fzf-complete-word)
+imap <C-x><C-f> <plug>(fzf-complete-path)
+imap <C-x><C-g> <plug>(fzf-complete-line)
 
 "FZF common commands
-nnoremap <silent> <c-b> <Cmd>BCommits<CR>
+nnoremap <silent> <C-b> <Cmd>BCommits<CR>
 
 """""""" --------------- Function Mappings ------------------------
 " Insert current date and time
@@ -618,8 +636,8 @@ nnoremap <F5>  "=strftime("%d %b %Y (%a) - %H:%M")<CR>p
 
 """""""" --------------- Text Objects ------------------------
 " (entire line sans white-space; cursor at beginning--ie, ^)
-xnoremap <silent> il :<c-u>normal! g_v^<cr>
-onoremap <silent> il :<c-u>normal! g_v^<cr>
+xnoremap <silent> il :<C-u>normal! g_v^<cr>
+onoremap <silent> il :<C-u>normal! g_v^<cr>
 " (entire line sans trailing newline; cursor at beginning--ie, 0)
-xnoremap <silent> al :<c-u>normal! $v0<cr>
-onoremap <silent> al :<c-u>normal! $v0<cr>
+xnoremap <silent> al :<C-u>normal! $v0<cr>
+onoremap <silent> al :<C-u>normal! $v0<cr>

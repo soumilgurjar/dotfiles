@@ -7,43 +7,33 @@ filetype off                  " required
 call plug#begin('~/.vim/plugged')
 
 """  List plugins here
-Plug 'sheerun/vim-polyglot'                     "Provides syntax for multiple filetypes
-Plug 'airblade/vim-gitgutter'                   "Show changes in file from previous commit
-Plug 'tpope/vim-fugitive'                       "Git integration plugin
-Plug 'tpope/vim-rhubarb'                        "Git browse command to go to webpage directly
-Plug 'easymotion/vim-easymotion'                "New way of moving within vim
-Plug 'tpope/vim-commentary'                     "Allows commenting lines/selection with gc
-Plug 'tpope/vim-surround'                       "Allows surrounding words/selection with cs
-Plug 'wellle/targets.vim'                       "Provides more operators than standard vim e.g v2il'
-Plug 'michaeljsmith/vim-indent-object'          "Provide text objects ai,ii,aI,iI to operate on indent
-Plug 'christoomey/vim-sort-motion'              "Easy sorting of lines with gs command
-Plug 'svermeulen/vim-subversive'                "Easier substitution of text object with register
-Plug 'tpope/vim-repeat'                         "Allows repeating more previous commands with .
-Plug 'tommcdo/vim-exchange'                     "Allows exchanging words/selection with cx/X
-Plug 'tpope/vim-endwise'                        "Automatically ends functions like if etc.
-Plug 'tpope/vim-abolish'                        "Better robust substition and easier case changing
-Plug 'tpope/vim-unimpaired'                     "Complementary pair of mappings for quickfix, line addition, toggle settings etc.
-Plug 'tpope/vim-obsession'                      "Allows easier management of vim sessions
 Plug 'Raimondi/delimitMate'                     "Automatically creates bracket pairs
-Plug 'machakann/vim-highlightedyank'            "Highlights yanks for short period
-" Plug 'SirVer/ultisnips'                         "Track the snippet engine
-Plug 'honza/vim-snippets'                       "Snippets are separated from the engine
-" Plug 'ludovicchabant/vim-gutentags'             "Auto generation of tags
+Plug 'airblade/vim-gitgutter'                   "Show changes in file from previous commit
+Plug 'airblade/vim-rooter'                      "Autochanges current directory to project root when found; Helpful for fzf
+Plug 'christoomey/vim-sort-motion'              "Easy sorting of lines with gs command
+Plug 'easymotion/vim-easymotion'                "New way of moving within vim
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'                         "Fuzzy finding within vim with :Files
-Plug 'pbogut/fzf-mru.vim'                       "Bring Most Recently Used Functionality to FZF
-Plug 'airblade/vim-rooter'                      "Autochanges current directory to project root when found; Helpful for fzf
-Plug 'vim-scripts/YankRing.vim'                 "Stores multiples yanks
-Plug 'simnalamburt/vim-mundo'                   "Stores multiples undos
-Plug 'scrooloose/nerdtree'                      "Allows navigation of file tree
-Plug 'aymericbeaumet/vim-symlink'               "Follows symlink rather than editing the symlink
+Plug 'machakann/vim-highlightedyank'            "Highlights yanks for short period
+Plug 'michaeljsmith/vim-indent-object'          "Provide text objects ai,ii,aI,iI to operate on indent
 Plug 'moll/vim-bbye'                            "Better buffer management with :Bdelete, :Bwipeout etc.
-Plug 'junegunn/goyo.vim'                        "Distraction free vim
-Plug 'kbarrette/mediummode'                     "Disable common vim navigation functions to help learn vim faster
+Plug 'pbogut/fzf-mru.vim'                       "Bring Most Recently Used Functionality to FZF
+Plug 'preservim/nerdtree'                      "Allows navigation of file tree
 Plug 'romainl/vim-cool'                         "Better search highlighting which disappears after moving away from search
+Plug 'sheerun/vim-polyglot'                     "Provides syntax for multiple filetypes
+Plug 'simnalamburt/vim-mundo'                   "Stores multiples undos
+Plug 'svermeulen/vim-subversive'                "Easier substitution of text object with register
+Plug 'tommcdo/vim-exchange'                     "Allows exchanging words/selection with cx/X
+Plug 'tpope/vim-abolish'                        "Better robust substition and easier case changing
+Plug 'tpope/vim-commentary'                     "Allows commenting lines/selection with gc
+Plug 'tpope/vim-fugitive'                       "Git integration plugin
+Plug 'tpope/vim-repeat'                         "Allows repeating more previous commands with .
+Plug 'tpope/vim-surround'                       "Allows surrounding words/selection with cs
+Plug 'tpope/vim-unimpaired'                     "Complementary pair of mappings for quickfix, line addition, toggle settings etc.
+Plug 'vim-scripts/YankRing.vim'                 "Stores multiples yanks
+Plug 'wellle/targets.vim'                       "Provides more operators than standard vim e.g v2il'
 
 """ Theme plugins
-Plug 'morhetz/gruvbox'
 Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 
 """ Airline/Lightline/Bufferline plugins
@@ -52,28 +42,21 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'bling/vim-bufferline'
 
 """""""" ----------------- Plugin Settings ---------------
+""" fzf
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9} }
+" This command changes the default :Rg command to work with hidden files
+command! -bang -nargs=* Rg call fzf#vim#grep("rg --hidden --follow --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
 
 """ vim-rooter
-let g:rooter_patterns = ['job.sh','.vimroot', '.git/', '.python-version', 'Makefile', '*.sln']
+let g:rooter_patterns = ['.vimroot', '.git/', '.python-version', 'Makefile', '*.sln']
 let g:rooter_change_directory_for_non_project_files = 'current'
 let g:rooter_resolve_links = 1
 " let g:rooter_silent_chdir = 1
-
-""" Ultisnips
-" let g:UltiSnipsExpandTrigger = "<tab>"
-" let g:UltiSnipsListSnippets = "<c-tab>"
-" let g:UltiSnipsJumpForwardTrigger = "<c-j>"
-" let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
-" let g:UltiSnipsEditSplit = "vertical"
 
 """ Highlight Yank
 let g:yankring_history_file = '.yankring_history'
 " let g:highlightedyank_highlight_duration = "200"
 let g:yankring_zap_keys = ''                "Helps prevent yankring for hijacking y/c/d
-
-""" Mediummode
-let g:mediummode_enabled = 0
-let g:mediummode_allowed_motions = 5
 
 """ EasyMotion
 let g:EasyMotion_keys = 'jkdslaeiruvmcghwoxtybnzqp;slf' "default : 'asdghklqwertyuiopzxcvbnmfj;'
@@ -82,13 +65,6 @@ let g:EasyMotion_smartcase = 1 " Turn on case-insensitive feature
 let g:EasyMotion_use_smartsign_us = 1 " Similar case insensitive for symbol for US keyboards
 let g:EasyMotion_startofline = 1 "Move cursor to start line with line motions
 let g:EasyMotion_space_jump_first = 1
-
-""" Goyo
-let g:undotree_CustomUndotreeCmd = 'vertical 32 new'
-let g:undotree_CustomDiffpanelCmd= 'belowright 12 new'
-let g:goyo_width = 120
-let g:goyo_height = '100%'
-let g:goyo_linenr = 1
 
 """ Vimcool
 let g:CoolTotalMatches = 1
@@ -153,6 +129,7 @@ set mouse=a
 set nobackup
 set noerrorbells
 set noro                        " Set no read only mode. Useful when using git difftool.
+set noshowmode                    " stop showing current mode
 set nrformats+=alpha
 set number                      " show absolute line numbers
 set relativenumber              " show relative line numbers (except current)
@@ -162,12 +139,12 @@ set shiftround                  " When shifting lines, round the indentation to 
 set shiftwidth=4
 set shortmess=a                 " Abbreviates file messages to prevent hit enter to continue message
 set showcmd                     " shows the current command
-set noshowmode                    " stop showing current mode
 set showmatch                   " highlight matching [{()}]
 set sidescrolloff=8
 set smartcase
 set smartindent
 set smarttab                    " Insert “tabstop” number of spaces when the “tab” key is pressed.
+set softtabstop=4               " number of spaces in tab when editing
 set spelllang="en_gb,de_ch"
 set spelloptions="camel"
 set splitright
@@ -202,36 +179,9 @@ if &term =~ '^xterm'
 endif
 
 """"""""" ---------------  VIM Themes --------------------
-" ---- Gruvbox
-" let g:gruvbox_italic=1
-" colorscheme gruvbox
-" let g:airline_theme= 'gruvbox'
-
 " ---- Catppuccin
 colorscheme catppuccin_macchiato
-let g:airline_theme= 'wombat'
-
-""""""""" --------------- Goyo settings ----------------------
-function! s:goyo_enter()
-  let b:quitting = 0
-  let b:quitting_bang = 0
-  autocmd QuitPre <buffer> let b:quitting = 1
-  cabbrev <buffer> q! let b:quitting_bang = 1 <bar> q!
-endfunction
-
-function! s:goyo_leave()
-  " Quit Vim if this is the only remaining buffer
-  if b:quitting && len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
-    if b:quitting_bang
-      qa!
-    else
-      qa
-    endif
-  endif
-endfunction
-
-autocmd! User GoyoEnter call <SID>goyo_enter()
-autocmd! User GoyoLeave call <SID>goyo_leave()
+let g:airline_theme= 'catppuccin_macchiato'
 
 """"""""" --------------- VIM Buffer ----------------------
 "make vim save and load the folding of the document each time it loads"
@@ -344,23 +294,15 @@ nnoremap <silent> <leader>gg :Git<CR>
 nnoremap <silent> <leader>gb :Git blame<CR>
 nnoremap <silent> <leader>gcm :Git commit<CR>
 nnoremap <silent> <leader>gcl :0Gclog<CR>
-nnoremap <silent> <leader>gp :Git push<CR>
+nnoremap <silent> <leader>gp :Git pull<CR>
+nnoremap <silent> <leader>gP :Git push<CR>
 nnoremap <silent> <leader>gl :Git log<CR>
-nnoremap <silent> <leader>grs ciwsquash<Esc>0j
-nnoremap <silent> <leader>grf ciwfixup<Esc>0j
-nnoremap <silent> <leader>grp ciwpick<Esc>0j
-nnoremap <silent> <leader>grr ciwreword<Esc>0j
 nnoremap <silent> <leader>gds :Gvdiffsplit<CR>
 " Allows using FZF BCommits to get commit hash to clipboard and then compare it with current state of file
 nnoremap <silent> <leader>gdc :Gvdiffsplit <C-r>0<CR>
 
-" Goyo mappings
-nnoremap <silent> <leader>go :Goyo<CR>
-nnoremap <silent> <leader>gy :Goyo 120x100%<CR>
-
-" Quickly insert an empty new line without entering insert mode
-" nnoremap <leader>o o<Esc>
-" nnoremap <leader>O O<Esc>
+" Split line at cursor (opposite of J)
+nnoremap <leader>J i<CR><Esc>g; 
 
 " Removes highlighting until next search
 nnoremap <leader>hl :noh<CR>
@@ -368,11 +310,8 @@ nnoremap <leader>hl :noh<CR>
 " Open help in vertically split window
 nnoremap <leader>he :vert bo h 
 
-" Medium mode enable and disable
-nnoremap <leader>hm :MediumModeToggle<CR>
-
 " Nerdtree toggle
-nnoremap <leader>nn :NERDTreeToggle<CR>
+nnoremap <leader>e :NERDTreeToggle<CR>
 
 " Toggles line and relative linenumbers
 nnoremap <leader>nu :set number!<CR> :set relativenumber!<CR>
@@ -394,30 +333,22 @@ nnoremap <silent> <leader>yy :YRShow<CR>
 " Show/hide spell check underline
 nnoremap <silent> <leader>spl <Cmd>setlocal spell! spelllang=en,de<CR> <Cmd>echo "Spellcheck toggled"<CR>
 
-" Go to specific buffer
-" nnoremap <leader>hh :bp<CR>
-" nnoremap <leader>ll :bn<CR>
-
-" Go to next or previous window
-nnoremap <leader>kj  <C-w>h
-nnoremap <leader>jk  <C-w>l
-nnoremap <leader>jj  <C-w>j
-nnoremap <leader>kk  <C-w>k
-
 "Save or Close current buffer(s) or windows
-nnoremap <leader>q <Cmd>qall<CR>
-nnoremap <leader>; <Cmd>wall<CR>
-nnoremap <leader>wq <Cmd>close<CR>
-nnoremap <leader>wo <Cmd>only<CR>
+nnoremap <leader>qq :qall<CR>
+nnoremap <leader>; :wall<CR>
+nnoremap <leader>wq :close<CR>
+nnoremap <leader>wo :only<CR>
 
-nnoremap <leader>qc <Cmd>cclose<CR>
+nnoremap <leader>qc :cclose<CR>
 
 " Repeat last command from command line
-nnoremap <Leader>, <Cmd>norm @:<CR>
+nnoremap <Leader>, :norm @:<CR>
 
 """""""" --------------- Mappings ------------------------
 " Pressing j twice in insert mode will lead to Esc
 inoremap jj <Esc>
+inoremap jk <Esc>
+inoremap kk <Esc>
 inoremap JJ <Esc>
 
 " Easymotion - `s{char}{char}{label}`
@@ -450,14 +381,14 @@ nnoremap , :norm @@<CR>
 " Map arrows keys to more useful functions like changing buffers and page up/down
 nnoremap <S-h> :bprevious<CR>
 nnoremap <S-l> :bnext<CR>
-nnoremap <Left> ^
-nnoremap <Right> $
+nnoremap <Left> g^
+nnoremap <Right> g$
 nnoremap <Up> <C-b>
 nnoremap <Down> <C-f>
 vnoremap <Up> <C-b>
 vnoremap <Down> <C-f>
-vnoremap <Left> ^
-vnoremap <Right> $
+vnoremap <Left> g^
+vnoremap <Right> g$
 
 " No overwriting of paste register
 nnoremap x "_x
@@ -467,7 +398,7 @@ vnoremap p "_dP
 nnoremap gw :Rg <cWORD><CR>
 
 " Allows easy copying to end of line
-nnoremap <S-y> y$
+nnoremap Y y$
 
 " Keeps stuff centered when searching in file
 nnoremap n nzzzv
@@ -488,6 +419,10 @@ inoremap ˚ <esc>:m .-2<CR>==gi
 nnoremap ∆ :m .+1<CR>==
 nnoremap ˚ :m .-2<CR>==
 
+" Stay in indent mode
+vnoremap < <gv
+vnoremap > >gv
+
 " Create an undo checkpoint for writing prose easier
 inoremap ! !<C-g>u
 inoremap , ,<C-g>u
@@ -503,6 +438,12 @@ nnoremap <C-s> :w<CR>
 nnoremap <C-f> :Rg<CR>
 nnoremap <C-e> :!rg vimwiki ~/Dropbox/Apps/vimwiki<CR>
 
+" Go to next or previous window
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+
 "Resize with arrows
 nnoremap <C-Up> <Cmd>resize -2<CR> 
 nnoremap <C-Down> <Cmd>resize +2<CR> 
@@ -514,29 +455,23 @@ inoremap <C-u> <C-g>u<C-u>
 inoremap <C-w> <C-g>u<C-w>
 
 " Switch functions for easier jumping to definition and showing list of all tags
-nnoremap <c-]> g<c-]>
-vnoremap <c-]> g<c-]>
-nnoremap g<c-]> <c-]>
-vnoremap g<c-]> <c-]>
+nnoremap <C-]> g<C-]>
+vnoremap <C-]> g<C-]>
+nnoremap g<C-]> <C-]>
+vnoremap g<C-]> <C-]>
 
 " FZF Insert mode completion
-imap <c-x><c-d> <plug>(fzf-complete-word)
-imap <c-x><c-f> <plug>(fzf-complete-path)
-imap <c-x><c-g> <plug>(fzf-complete-line)
+imap <C-x><C-d> <plug>(fzf-complete-word)
+imap <C-x><C-f> <plug>(fzf-complete-path)
+imap <C-x><C-g> <plug>(fzf-complete-line)
 
 "FZF common commands
-nnoremap <silent> <c-b> :BCommits<CR>
-
-"""""""" --------------- Function Mappings ------------------------
-" Insert current date and time
-nnoremap <F3>  "=strftime("%d %b %Y")<CR>p
-nnoremap <F4>  "=strftime("%H:%M")<CR>p
-nnoremap <F5>  "=strftime("%d %b %Y (%a) - %H:%M")<CR>p
+nnoremap <silent> <C-b> :BCommits<CR>
 
 """""""" --------------- Text Objects ------------------------
 " (entire line sans white-space; cursor at beginning--ie, ^)
-xnoremap <silent> il :<c-u>normal! g_v^<cr>
-onoremap <silent> il :<c-u>normal! g_v^<cr>
+xnoremap <silent> il :<C-u>normal! g_v^<cr>
+onoremap <silent> il :<C-u>normal! g_v^<cr>
 " (entire line sans trailing newline; cursor at beginning--ie, 0)
-xnoremap <silent> al :<c-u>normal! $v0<cr>
-onoremap <silent> al :<c-u>normal! $v0<cr>
+xnoremap <silent> al :<C-u>normal! $v0<cr>
+onoremap <silent> al :<C-u>normal! $v0<cr>
