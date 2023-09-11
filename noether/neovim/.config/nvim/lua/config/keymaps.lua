@@ -18,12 +18,6 @@ keymap({ "n", "v" }, "<Down>", "<C-f>", { desc = "Page Down" })
 keymap({ "n", "v" }, "<Left>", "g^", { desc = "Start of Line" })
 keymap({ "n", "v" }, "<Right>", "g$", { desc = "End of Line" })
 
--- -- Better window navigation
--- keymap({ "n" }, "<Leader>kj", "<C-w>h", { desc = "Switch to left window" })
--- keymap({ "n" }, "<Leader>jk", "<C-w>l", { desc = "Switch to right window" })
--- keymap({ "n" }, "<Leader>jj", "<C-w>j", { desc = "Switch to lower window" })
--- keymap({ "n" }, "<Leader>kk", "<C-w>k", { desc = "Switch to upper window" })
-
 -- Move text up and down
 keymap({ "n" }, "∆", ":m .+1<CR>==", { desc = "Move line down" })
 keymap({ "n" }, "˚", ":m .-2<CR>==", { desc = "Move line up" })
@@ -31,18 +25,22 @@ keymap({ "n" }, "˚", ":m .-2<CR>==", { desc = "Move line up" })
 -- Repeat last used macro
 keymap({ "n" }, ",", "<Cmd>norm @@<CR>", { desc = "Repeat last used macro or command" })
 -- Repeat last command from command line
-keymap({ "n", "v" }, "<Leader>,", "<cmd>norm @:<CR>", { desc = "Repeat last command" })
+keymap({ "n", "v" }, "<leader>,", "<Cmd>norm @:<CR>", { desc = "Repeat last command" })
 
 -- Save and quit buffers and windows
 keymap({ "n" }, ";", "<Cmd>update<CR>", { desc = "Save Buffer" })
-keymap({ "n" }, "<Leader>;", "<Cmd>wall<CR>", { desc = "Save All Buffers" })
+keymap({ "n" }, "<leader>;", "<Cmd>wall<CR>", { desc = "Save All Buffers" })
 keymap({ "n" }, "q", "<Cmd>lua require('mini.bufremove').delete(n, false)<CR>", { desc = "Quit Buffer" })
-keymap({ "n" }, "<Leader>qq", "<Cmd>qall<CR>", { desc = "Quit All Buffers and Splits" })
-keymap({ "n" }, "<Leader>wq", "<Cmd>close<CR>", { desc = "Quit Window" })
-keymap({ "n" }, "<Leader>wo", "<Cmd>only<CR>", { desc = "Quit All Other Window" })
+keymap({ "n" }, "<leader>qq", "<Cmd>qall<CR>", { desc = "Quit All Buffers and Splits" })
+keymap({ "n" }, "<leader>wq", "<Cmd>close<CR>", { desc = "Quit Window" })
+keymap({ "n" }, "<leader>wo", "<Cmd>only<CR>", { desc = "Quit All Other Window" })
 
 -- Start macro with Q instead of q
 keymap({ "n" }, "<S-q>", "q", { desc = "Start Macro" })
+
+-- Create mark with M and go to mark with m
+keymap({ "n" }, "<S-m>", "m", { desc = "Create Mark" })
+keymap({ "n" }, "m", "`", { desc = "Go to Mark" })
 
 -- Easy copying to end of line
 keymap({ "n" }, "<S-y>", "y$", { desc = "Copy to end of line" })
@@ -61,13 +59,13 @@ keymap({ "n" }, "x", '"_x', { desc = "Delete Character" })
 
 ------------------------------- Insert -----------------------------------------
 -- Press jj/jk/JJ/ZZ fast to exit insert mode
-keymap({ "i" }, "jj", "<ESC>", { desc = "Go to normal mode" })
-keymap({ "i" }, "jk", "<ESC>", { desc = "Go to normal mode" })
-keymap({ "i" }, "kk", "<ESC>", { desc = "Go to normal mode" })
-keymap({ "i" }, "JJ", "<ESC>", { desc = "Go to normal mode" })
+keymap({ "i" }, "jj", "<Esc>", { desc = "Go to normal mode" })
+keymap({ "i" }, "jk", "<Esc>", { desc = "Go to normal mode" })
+keymap({ "i" }, "kk", "<Esc>", { desc = "Go to normal mode" })
+keymap({ "i" }, "JJ", "<Esc>", { desc = "Go to normal mode" })
 
 -- Press ZZ fast to exit insert mode and save
-keymap({ "i" }, "ZZ", "<ESC>:wq<CR>", { desc = "Save from insert mode" })
+keymap({ "i" }, "ZZ", "<Esc>:wq<CR>", { desc = "Save from insert mode" })
 
 -- Move text up and down
 keymap({ "i" }, "∆", "<Esc>:m .+1<CR>==gi", { desc = "Move line down" })
@@ -109,4 +107,4 @@ keymap({ "x" }, "˚", ":move '<-2<CR>gv-gv", { desc = "Move Block up" })
 
 ------------------------- Plugin Specific Mappings ---------------------------------
 -- LSP
-keymap({ "n" }, "<leader>li", "<cmd>LspInfo<cr>", { desc = "Show LSP Info" })
+keymap({ "n" }, "<leader>li", "<Cmd>LspInfo<CR>", { desc = "Show LSP Info" })

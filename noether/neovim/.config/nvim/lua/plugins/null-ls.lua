@@ -4,7 +4,7 @@ return {
 	event = { "BufReadPre", "BufNewFile" },
 	dependencies = { "mason.nvim" },
 	keys = {
-		{ "<leader>ln", "<cmd>NullLsInfo<CR>", desc = "Show Null-ls Info" },
+		{ "<leader>ln", "<Cmd>NullLsInfo<CR>", desc = "Show Null-ls Info" },
 	},
 	opts = function()
 		local nls = require("null-ls")

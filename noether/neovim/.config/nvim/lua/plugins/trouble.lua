@@ -3,6 +3,6 @@ return {
 	enabled = true,
 	event = "VeryLazy",
 	keys = {
-		{ "gR", "<cmd>TroubleToggle lsp_references<cr>", desc = "LSP References (Trouble)" },
+		{ "gR", "<Cmd>TroubleToggle lsp_references<CR>", desc = "LSP References (Trouble)" },
 	},
 }

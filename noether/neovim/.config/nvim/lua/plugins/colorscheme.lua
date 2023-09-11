@@ -46,8 +46,8 @@ return {
 			vimwiki = true,
 			which_key = true,
 			dap = { -- You NEED to override nvim-dap's default highlight groups, AFTER requiring nvim-dap; see git page
-				enabled = false,
-				enable_ui = false,
+				enabled = true,
+				enable_ui = true,
 			},
 			indent_blankline = {
 				enabled = true,
