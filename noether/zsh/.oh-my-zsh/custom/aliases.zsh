@@ -112,6 +112,8 @@ alias birdnet_backup="~/Git_Repositories/dotfiles/macOS/birdnet/birdnet-pi_backu
 alias restart_gpg_agent="~/Git_Repositories/dotfiles/noether/gnupg/restart_gpg_agent.sh"
 
 # Aliases for kitty related commands
+alias rgh="kitty +kitten hyperlinked_grep"             #Return files which have query in them
 alias icat="kitty +kitten icat"
 alias kssh="kitty +kitten ssh"
 alias kdiff="kitty +kitten diff"
+alias kcopy="kitty +kitten clipboard"
