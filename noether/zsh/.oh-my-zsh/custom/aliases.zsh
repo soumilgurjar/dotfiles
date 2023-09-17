@@ -109,15 +109,10 @@ function unstow() {  cd ~/Git_Repositories/dotfiles/noether && stow -vDt ~ $1 &&
 # Taskwarrior related
 alias tt="taskwarrior-tui"
 
-# Enpass related
-alias enp="MASTERPW='$(pass show enpass)' enpass-cli -vault '$HOME/Documents/Enpass/Vaults/primary/' -keyfile '$HOME/Documents/Enpass/enpass_keyfile.enpasskey' -sort"
-alias enpc="enp copy -clipboardPrimary -and"
-alias enpl="enp list"
-
 # Aliases for scripts
 alias termpdf="~/Git_Repositories/Application_Related/termpdf.py/termpdf.py $1"
 alias birdnet_backup="~/Git_Repositories/dotfiles/macOS/birdnet/birdnet-pi_backup.sh"
-alias restart_gpg_agent="~/Documents/Scripts/restart_gpg_agent.sh"
+alias restart_gpg_agent="~/Git_Repositories/dotfiles/noether/gnupg/restart_gpg_agent.sh"
 
 # Aliases for kitty related commands
 alias icat="kitty +kitten icat"
