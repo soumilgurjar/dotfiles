@@ -106,9 +106,6 @@ function stowth() { cd ~/Git_Repositories/dotfiles/noether && stow -vSt ~ $1 && 
 function unstow_test() {  cd ~/Git_Repositories/dotfiles/noether && stow -nvDt ~ $1 && cd - }
 function unstow() {  cd ~/Git_Repositories/dotfiles/noether && stow -vDt ~ $1 && cd - }
 
-# Taskwarrior related
-alias tt="taskwarrior-tui"
-
 # Aliases for scripts
 alias termpdf="~/Git_Repositories/Application_Related/termpdf.py/termpdf.py $1"
 alias birdnet_backup="~/Git_Repositories/dotfiles/macOS/birdnet/birdnet-pi_backup.sh"
