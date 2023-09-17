@@ -108,3 +108,6 @@ keymap({ "x" }, "˚", ":move '<-2<CR>gv-gv", { desc = "Move Block up" })
 ------------------------- Plugin Specific Mappings ---------------------------------
 -- LSP
 keymap({ "n" }, "<leader>li", "<Cmd>LspInfo<CR>", { desc = "Show LSP Info" })
+
+-- Gitsigns (Map unused U to previewing hunk)
+keymap({ "n" }, "<S-u>", "<Cmd>Gitsigns preview_hunk<CR>", { desc = "Preview Hunk" })
