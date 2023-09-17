@@ -8,7 +8,7 @@ return {
 	init = function()
 		vim.g.vimwiki_list = {
 			{
-				path = "~/Google Drive/My Drive/Apps/vimwiki/",
+				path = "~/Library/CloudStorage/GoogleDrive-soumilgurjar@gmail.com/My Drive/Apps/vimwiki",
 				syntax = "markdown",
 				ext = ".md",
 				links_space_char = "-",
