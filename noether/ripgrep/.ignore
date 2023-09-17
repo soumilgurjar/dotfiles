@@ -55,7 +55,7 @@ vendor/
 # Hidden directories need to be un-ignored specifically
 !.config
 !.dotfiles
-!.oh-my-zsh/custom/
+!.oh-my-zsh/custom/aliases.zsh
 !.ripgrep
 !.ssh
 !.tmux
