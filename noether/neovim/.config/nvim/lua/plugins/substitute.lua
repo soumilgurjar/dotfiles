@@ -5,7 +5,9 @@ return {
 	config = function(_, opts)
 		require("substitute").setup(opts)
 	end,
-	opts = {},
+	opts = {
+		on_substitute = require("yanky.integration").substitute(),
+	},
 	keys = {
 		{
 			"gp",
