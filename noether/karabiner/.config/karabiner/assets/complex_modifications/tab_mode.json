@@ -1,175 +1,175 @@
 {
-  "title": "Use left_cmd+h/j/k/l/;/' to switch current tab/window/application",
-  "rules": [
-    {
-      "description": "Use left_command+j/k to cycle through running applications (like command+tab).",
-      "manipulators": [
+    "title": "Use command+h/j/k/l/;/' to switch current tab/window/application",
+    "rules": [
         {
-          "type": "basic",
-          "from": {
-            "key_code": "k",
-            "modifiers": {
-              "mandatory": [
-                "left_command"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "tab",
-              "modifiers": [
-                "left_command"
-              ]
-            }
-          ]
+            "description": "Use command+j/k to cycle through running applications (like command+tab).",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "k",
+                        "modifiers": {
+                            "mandatory": [
+                                "command"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "tab",
+                            "modifiers": [
+                                "command"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "j",
+                        "modifiers": {
+                            "mandatory": [
+                                "command"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "tab",
+                            "modifiers": [
+                                "command",
+                                "shift"
+                            ]
+                        }
+                    ]
+                }
+            ]
         },
         {
-          "type": "basic",
-          "from": {
-            "key_code": "j",
-            "modifiers": {
-              "mandatory": [
-                "left_command"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "tab",
-              "modifiers": [
-                "left_command",
-                "left_shift"
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "description": "Use left_command+h/l to switch tabs in an application.",
-      "manipulators": [
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "l",
-            "modifiers": {
-              "mandatory": [
-                "left_command"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "tab",
-              "modifiers": [
-                "left_control"
-              ]
-            }
-          ]
+            "description": "Use command+h/l to switch tabs in an application.",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "l",
+                        "modifiers": {
+                            "mandatory": [
+                                "command"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "tab",
+                            "modifiers": [
+                                "control"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "h",
+                        "modifiers": {
+                            "mandatory": [
+                                "command"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "tab",
+                            "modifiers": [
+                                "control",
+                                "shift"
+                            ]
+                        }
+                    ]
+                }
+            ]
         },
         {
-          "type": "basic",
-          "from": {
-            "key_code": "h",
-            "modifiers": {
-              "mandatory": [
-                "left_command"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "tab",
-              "modifiers": [
-                "left_control",
-                "left_shift"
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "description": "Use left_command+;/' to switch windows of the foreground application .",
-      "manipulators": [
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "semicolon",
-            "modifiers": {
-              "mandatory": [
-                "left_command"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "grave_accent_and_tilde",
-              "modifiers": [
-                "left_command"
-              ]
-            }
-          ]
+            "description": "Use command+;/' to switch windows of the foreground application .",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "semicolon",
+                        "modifiers": {
+                            "mandatory": [
+                                "command"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "grave_accent_and_tilde",
+                            "modifiers": [
+                                "command"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "quote",
+                        "modifiers": {
+                            "mandatory": [
+                                "command"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "grave_accent_and_tilde",
+                            "modifiers": [
+                                "command",
+                                "shift"
+                            ]
+                        }
+                    ]
+                }
+            ]
         },
         {
-          "type": "basic",
-          "from": {
-            "key_code": "quote",
-            "modifiers": {
-              "mandatory": [
-                "left_command"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "grave_accent_and_tilde",
-              "modifiers": [
-                "left_command",
-                "left_shift"
-              ]
-            }
-          ]
+            "description": "Disable command+(tab/shift+tab) (to retrain reflexes using the other manipulators).",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "tab",
+                        "modifiers": {
+                            "mandatory": [
+                                "command"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "out"
+                        }
+                    ]
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "tab",
+                        "modifiers": {
+                            "mandatory": [
+                                "command",
+                                "shift"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "out"
+                        }
+                    ]
+                }
+            ]
         }
-      ]
-    },
-    {
-      "description": "Disable left_command+(tab/shift+tab) (to retrain reflexes using the other manipulators).",
-      "manipulators": [
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "tab",
-            "modifiers": {
-              "mandatory": [
-                "left_command"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "out"
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "tab",
-            "modifiers": {
-              "mandatory": [
-                "left_command",
-                "left_shift"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "out"
-            }
-          ]
-        }
-      ]
-    }
-  ]
+    ]
 }

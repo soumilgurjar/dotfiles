@@ -435,6 +435,52 @@
                     "type": "basic"
                 }
             ]
+        },
+        {
+            "description": "Right Command -> Right Command | Backspace (Only Internal Keyboard)",
+            "manipulators": [
+                {
+                    "from": {
+                        "key_code": "right_command",
+                        "modifiers": {
+                            "optional": [
+                                "left_option",
+                                "left_command",
+                                "left_control"
+                            ]
+                        }
+                    },
+                    "parameters": {
+                        "basic.to_if_alone_timeout_milliseconds": 500
+                    },
+                    "to": [
+                        {
+                            "key_code": "right_command"
+                        }
+                    ],
+                    "to_if_alone": [
+                        {
+                            "key_code": "delete_or_backspace"
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "device_if",
+                            "identifiers": [
+                                {
+                                    "vendor_id": 1452,
+                                    "product_id": 632
+                                },
+                                {
+                                    "vendor_id": 1452,
+                                    "product_id": 835
+                                }
+                            ]
+                        }
+                    ],
+                    "type": "basic"
+                }
+            ]
         }
     ]
 }
