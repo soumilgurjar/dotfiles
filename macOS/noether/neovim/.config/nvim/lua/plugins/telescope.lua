@@ -60,4 +60,11 @@ return {
 			},
 		},
 	},
+	keys = {
+		{
+			"<leader><space>",
+			require("lazyvim.util").telescope("files", { cwd = false }),
+			desc = "Find Files (root dir)",
+		},
+	},
 }
