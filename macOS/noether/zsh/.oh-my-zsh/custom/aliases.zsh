@@ -109,6 +109,7 @@ function unstow() { cd ~/Git_Repositories/dotfiles/macOS/noether && stow -vDt ~ 
 # Aliases for scripts
 alias termpdf="~/Git_Repositories/Application_Related/termpdf.py/termpdf.py $1"
 alias birdnet_backup="~/Git_Repositories/dotfiles/macOS/calderon/birdnet/birdnet-pi_backup.sh"
+alias birdnet_exclude="vi '/Volumes/Seagate 1TB/Backups/Apps/BirdNet-Pi/Detection_Database_Backups/BirdSongs/Extracted/By_Date/exclude_list.txt'"
 alias restart_gpg_agent="~/Git_Repositories/dotfiles/macOS/noether/gnupg/restart_gpg_agent.sh"
 
 # Aliases for kitty related commands
