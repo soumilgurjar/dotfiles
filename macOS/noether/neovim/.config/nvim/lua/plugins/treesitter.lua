@@ -19,15 +19,24 @@ return {
 		},
 		{
 			"nvim-treesitter/nvim-treesitter-textobjects",
+			config = function()
+				-- Disable class keymaps in diff mode
+				vim.api.nvim_create_autocmd("BufReadPost", {
+					callback = function(event)
+						if vim.wo.diff then
+							for _, key in ipairs({ "[c", "]c", "[C", "]C" }) do
+								pcall(vim.keymap.del, "n", key, { buffer = event.buf })
+							end
+						end
+					end,
+				})
+			end,
 		},
 		{
 			"nvim-treesitter/playground",
 		},
 		{
 			"RRethy/nvim-treesitter-textsubjects",
-		},
-		{
-			"HiPhish/nvim-ts-rainbow2",
 		},
 	},
 	opts = {
@@ -73,36 +82,52 @@ return {
 				include_surrounding_whitespace = true,
 				-- iF and aF families for selecting text objects
 				keymaps = {
-					-- v keymaps are for key-values
-					["af"] = "@function.outer",
-					["if"] = "@function.inner",
-					-- c keymaps are for dictionaries
-					["ac"] = "@class.outer",
-					["ic"] = "@class.inner",
-					-- k keymaps are for comments
-					["ak"] = "@comment.outer",
-					["ik"] = "@comment.inner",
+					-- You can use the capture groups defined in textobjects.scm
+					["a="] = { query = "@assignment.outer", desc = "Select outer part of an assignment" },
+					["i="] = { query = "@assignment.inner", desc = "Select inner part of an assignment" },
+					["l="] = { query = "@assignment.lhs", desc = "Select left hand side of an assignment" },
+					["r="] = { query = "@assignment.rhs", desc = "Select right hand side of an assignment" },
+
+					["aa"] = { query = "@parameter.outer", desc = "Select outer part of a parameter/argument" },
+					["ia"] = { query = "@parameter.inner", desc = "Select inner part of a parameter/argument" },
+
+					["ai"] = { query = "@conditional.outer", desc = "Select outer part of a conditional" },
+					["ii"] = { query = "@conditional.inner", desc = "Select inner part of a conditional" },
+
+					["ao"] = { query = "@loop.outer", desc = "Select outer part of a loop" },
+					["io"] = { query = "@loop.inner", desc = "Select inner part of a loop" },
+
+					-- ["af"] = { query = "@call.outer", desc = "Select outer part of a function call" },
+					-- ["if"] = { query = "@call.inner", desc = "Select inner part of a function call" },
+
+					["af"] = { query = "@function.outer", desc = "Select outer part of a method/function definition" },
+					["if"] = { query = "@function.inner", desc = "Select inner part of a method/function definition" },
+
+					["ac"] = { query = "@class.outer", desc = "Select outer part of a class" },
+					["ic"] = { query = "@class.inner", desc = "Select inner part of a class" },
+
+					["ak"] = { query = "@comment.outer", desc = "Select outer part of a comment" },
+					["ik"] = { query = "@comment.inner", desc = "Select inner part of a comment" },
 				},
 			},
 			move = {
-				enable = false,
+				enable = true,
 				set_jumps = true,
 				-- Granular control over motions on key-values and dictionaries
-				-- if you want it
 				goto_next_start = {
-					["]m"] = "@function.outer",
+					["]f"] = "@function.outer",
 					["]]"] = "@class.outer",
 				},
 				goto_next_end = {
-					["]M"] = "@function.outer",
+					["]F"] = "@function.outer",
 					["]["] = "@class.outer",
 				},
 				goto_previous_start = {
-					["[m"] = "@function.outer",
+					["[f"] = "@function.outer",
 					["[["] = "@class.outer",
 				},
 				goto_previous_end = {
-					["[M"] = "@function.outer",
+					["[f"] = "@function.outer",
 					["[]"] = "@class.outer",
 				},
 			},
