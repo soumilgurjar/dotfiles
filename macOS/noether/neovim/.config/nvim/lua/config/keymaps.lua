@@ -108,6 +108,7 @@ keymap({ "x" }, "˚", ":move '<-2<CR>gv-gv", { desc = "Move Block up" })
 ------------------------- Plugin Specific Mappings ---------------------------------
 -- LSP
 keymap({ "n" }, "<leader>li", "<Cmd>LspInfo<CR>", { desc = "Show LSP Info" })
+keymap({ "n" }, "<leader>le", "<Cmd>LazyExtras<CR>", { desc = "Show LazyVim Extras" })
 
 -- Gitsigns (Map unused U to previewing hunk)
 keymap({ "n" }, "<S-u>", "<Cmd>Gitsigns preview_hunk<CR>", { desc = "Preview Hunk" })

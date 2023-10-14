@@ -10,6 +10,7 @@ return {
 			"black",
 			"ruff-lsp",
 			"pyright",
+			"prettierd",
 			"latexindent",
 		},
 	},
