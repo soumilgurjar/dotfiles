@@ -41,7 +41,7 @@ function vidt() {
 alias fs="du -sh"
 alias l="ls -lha"
 alias la="ls -a"
-alias ls="exa -x --icons --group-directories-first"
+alias ls="eza -x --icons --group-directories-first"
 alias lsh="gls --hyperlink=auto"
 alias ils="timg --grid=4x1 --center --upscale -F"
 alias cpwd="pwd | pbcopy"
