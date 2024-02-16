@@ -45,7 +45,6 @@ plugins=(
     zsh-syntax-highlighting
     zsh-completions
     zsh-vim-mode                        # This vi-mode plugin keeps the push-line ^q functionality
-    z
     fzf
 )
 
@@ -136,6 +135,9 @@ zstyle ':fzf-tab:*' fzf-bindings 'tab:accept'
 zstyle ':fzf-tab:*' accept-line enter
 zstyle ':fzf-tab:*' continuous-trigger 'space'
 zstyle ':fzf-tab:*' switch-group ',' '.'
+
+# Setup zoxide
+eval "$(zoxide init --cmd cd zsh)"
 
 # Starship cross-platform prompt
 eval "$(starship init zsh)"
