@@ -107,6 +107,7 @@ function unstow_test() { cd ~/Git_Repositories/dotfiles/macOS/noether && stow -n
 function unstow() { cd ~/Git_Repositories/dotfiles/macOS/noether && stow -vDt ~ $1 && cd - }
 
 # Aliases for scripts
+alias p="~/Git_Repositories/Application_Related/termpdf.py/termpdf.py $1"
 alias termpdf="~/Git_Repositories/Application_Related/termpdf.py/termpdf.py $1"
 alias birdnet_backup="~/Git_Repositories/dotfiles/macOS/calderon/birdnet/birdnet-pi_backup.sh"
 alias birdnet_exclude="vi '/Volumes/Seagate 1TB/Backups/Apps/BirdNet-Pi/Detection_Database_Backups/BirdSongs/Extracted/By_Date/exclude_list.txt'"
