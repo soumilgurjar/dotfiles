@@ -14,6 +14,9 @@ require("lazy").setup({
 		-- { import = "lazyvim.plugins.extras.ui.mini-animate" }, -- Slows down fast scrolling due to animation
 		{ import = "lazyvim.plugins.extras.coding.copilot" },
 		{ import = "lazyvim.plugins.extras.coding.yanky" },
+		{ import = "lazyvim.plugins.extras.coding.luasnip" },
+		{ import = "lazyvim.plugins.extras.coding.mini-comment" },
+		{ import = "lazyvim.plugins.extras.coding.mini-surround" },
 		{ import = "lazyvim.plugins.extras.dap.core" },
 		{ import = "lazyvim.plugins.extras.dap.nlua" },
 		{ import = "lazyvim.plugins.extras.formatting.prettier" },
@@ -25,6 +28,7 @@ require("lazy").setup({
 		{ import = "lazyvim.plugins.extras.lang.cmake" },
 		{ import = "lazyvim.plugins.extras.lang.tex" },
 		{ import = "lazyvim.plugins.extras.lang.yaml" },
+		{ import = "lazyvim.plugins.extras.ui.mini-indentscope" },
 		{ import = "lazyvim.plugins.extras.util.project" },
 		-- import/override with your plugins
 		{ import = "plugins" },

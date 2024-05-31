@@ -5,7 +5,7 @@ return {
 		"nvim-telescope/telescope.nvim",
 		"nvim-tree/nvim-web-devicons",
 	},
-	enabled = true,
+	enabled = false,
 	event = "VeryLazy",
 	opts = {},
 }

@@ -30,7 +30,7 @@ keymap({ "n", "v" }, "<leader>,", "<Cmd>norm @:<CR>", { desc = "Repeat last comm
 -- Save and quit buffers and windows
 keymap({ "n" }, ";", "<Cmd>update<CR>", { desc = "Save Buffer" })
 keymap({ "n" }, "<leader>;", "<Cmd>wall<CR>", { desc = "Save All Buffers" })
-keymap({ "n" }, "q", "<Cmd>lua require('mini.bufremove').delete(n, false)<CR>", { desc = "Quit Buffer" })
+keymap({ "n" }, "q", LazyVim.ui.bufremove, { desc = "Quit Buffer" })
 keymap({ "n" }, "<leader>qq", "<Cmd>qall<CR>", { desc = "Quit All Buffers and Splits" })
 keymap({ "n" }, "<leader>wq", "<Cmd>close<CR>", { desc = "Quit Window" })
 keymap({ "n" }, "<leader>wo", "<Cmd>only<CR>", { desc = "Quit All Other Window" })
