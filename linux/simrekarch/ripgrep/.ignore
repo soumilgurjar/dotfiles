@@ -1,0 +1,61 @@
+# Generally ignored folders
+.git/
+.github/
+node_modules/
+vendor/
+
+# OS specific files
+.DS_Store
+
+# Files and Folders for ignoring
+
+## Hidden files and directories
+.CFUserTextEncoding
+.Trash
+.Virtual_Environments
+.android
+.cache
+.conda
+.config
+.cups
+.docker
+.dotfiles
+.dropbox
+.fzf.bash
+.fzf.zsh
+.git-credentials
+.lesshst
+.local
+.npm
+.oh-my-zsh
+.pcloud
+.pyenv
+.ssh
+.tmux
+.viminfo
+.vscode
+.z
+.zcompdump-Medium Place Macbook-5.9
+.zcompdump-Medium Place Macbook-5.9.zwc
+.zprofile
+.zsh_history
+.zsh_sessions
+
+## Directories
+/Documents
+/go
+/miniconda3
+/Library
+/Movies
+/Music
+/Pictures
+/Public
+/pCloud Drive/Academics/IITB/*
+
+# Hidden directories need to be un-ignored specifically
+!.config
+!.dotfiles
+!.oh-my-zsh/custom/aliases.zsh
+!.ripgrep
+!.ssh
+!.tmux
