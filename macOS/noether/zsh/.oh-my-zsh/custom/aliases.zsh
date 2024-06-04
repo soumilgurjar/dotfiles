@@ -8,7 +8,6 @@ alias switch_bash="chsh -s $(which bash)"
 alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
 
 # Source Config files
-# alias soza="kitty @ send-text --all soz\n" # TODO: Escape <CR> or \n properly
 alias soz="clear && rm -f '$ZSH_COMPDUMP' && exec zsh"
 alias sow="source ~/.zshrc"
 alias sob="source ~/.bashrc"
@@ -27,6 +26,10 @@ alias viw="nvim ~/Google Drive/My Drive/Apps/vimwiki/index.md"
 
 function vidl() {
     nvim -d ~/Git_Repositories/dotfiles/macOS/noether/$1 ~/Git_Repositories/dotfiles/linux/wsl/$1
+}
+
+function vids() {
+    nvim -d ~/Git_Repositories/dotfiles/macOS/noether/$1 ~/Git_Repositories/dotfiles/linux/simrekarch/$1
 }
 
 function vid() {
