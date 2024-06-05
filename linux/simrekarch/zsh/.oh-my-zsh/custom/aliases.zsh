@@ -64,6 +64,13 @@ alias yle="yay -Qe | grep"
 alias yu="yay -Syu"
 alias yr="yay -Rsu"
 
+# Tmux related
+alias tn="tmux new -As Local"
+alias tnn="tmux new -As Test"
+alias tds="tmux detach-client"
+alias tpi="~/.tmux/plugins/tpm/bin/install_plugins"
+alias tpu="~/.tmux/plugins/tpm/bin/update_plugins all"
+
 # Git related
 alias glog="git log --color --graph --pretty=format:'%C(yellow)%h%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --abbrev-commit --branches -5"
 alias gs="git status"
