@@ -1,9 +1,18 @@
+export PYENV_ROOT="$HOME/.pyenv"
+# [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+export PIPENV_DEFAULT_PYTHON_VERSION=$(pyenv which python)  # Necessary for pipenv to respect pyenv local/global versions
+# export PIPENV_PYTHON=$PYENV_ROOT/shims/python  # Necessary for pipenv to respect pyenv local/global versions
+
+[[ -n $TMUX ]] && export TERM="xterm-256color"
+
 # Set editor to neovim
 export VISUAL="nvim"
 export EDITOR="nvim"
 export MANPAGER="nvim +Man!"
-# export BROWSER="/mnt/c/Program Files/BraveSoftware/Brave-Browser/Application/brave.exe"
-export BROWSER="/usr/bin/wslview"
+export BROWSER="/mnt/c/Users/Soumil - Simreka/AppData/Local/BraveSoftware/Brave-Browser/Application/brave.exe"
+# export BROWSER="/usr/bin/wslview"
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/soumilgurjar/.oh-my-zsh"
@@ -95,7 +104,7 @@ bindkey '^x^x' edit-command-line
 # Copy to system clipboard from zsh-vi-mode
 function vi-yank-clipboard {
     zle vi-yank
-    echo "$CUTBUFFER" | xclip
+    echo "$CUTBUFFER" | clip.exe
 }
 zle -N vi-yank-clipboard
 bindkey -M vicmd 'y' vi-yank-clipboard
