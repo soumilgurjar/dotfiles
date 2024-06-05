@@ -1,3 +1,4 @@
 .idea/
 *.swp
 lazy-lock.json
+.vimroot
