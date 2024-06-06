@@ -50,6 +50,8 @@ Komorebic(cmd) {
 ; Window manager options
 !+^z::Komorebic("retile")
 !+^x::Komorebic("toggle-pause")
+!+^c::Komorebic("quick-load-resize")
+!+^v::Komorebic("quick-save-resize")
 
 ; Layouts
 !+^Space::Komorebic("cycle-layout next")
