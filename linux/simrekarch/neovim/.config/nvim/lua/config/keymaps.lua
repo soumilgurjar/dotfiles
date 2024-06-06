@@ -94,6 +94,9 @@ keymap({ "v" }, "˚", ":m .-2<CR>==", { desc = "Move line up" })
 keymap({ "v" }, "p", '"_dP', { desc = "Paste" })
 
 ------------------------------- Visual Block -----------------------------------------
+-- Select text in block selection mode
+keymap({ "n" }, "<leader>vv", "<C-v>", { desc = "Block selection mode" })
+
 -- Move text up and down
 keymap({ "x" }, "∆", ":move '>+1<CR>gv-gv", { desc = "Move Block down" })
 keymap({ "x" }, "˚", ":move '<-2<CR>gv-gv", { desc = "Move Block up" })
