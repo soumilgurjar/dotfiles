@@ -1,0 +1,9 @@
+[user]
+    name = Soumil Gurjar
+    email = 95701317+soumilgurjar@users.noreply.github.com
+	signingkey = ~/.ssh/id_github.pub
+[github]
+    user = soumilgurjar
+[core]
+    sshCommand = "ssh -i ~/.ssh/id_github.pub"
+

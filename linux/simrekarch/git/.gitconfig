@@ -1,10 +1,9 @@
-[user]
-    name = Soumil Gurjar
-    email = 95701317+soumilgurjar@users.noreply.github.com
-	signingkey = ~/.ssh/id_github.pub
-[github]
-    user = soumilgurjar
-[core]
+[includeIf "gitdir:~/Git_Repositories/"] # include for all .git projects under personnal/ 
+path = ~/Git_Repositories/.gitconfig_personal
+ 
+[includeIf "gitdir:~/Work/"]
+path = ~/Work/.gitconfig_work
+ [core]
     editor = nvim
     whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
     excludesfile = ~/.gitignore

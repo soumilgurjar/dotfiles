@@ -1,0 +1,8 @@
+[user]
+    name = Soumil Gurjar
+    email = 171830517+sg000-simreka@users.noreply.github.com
+	signingkey = ~/.ssh/id_github_simreka.pub
+[github]
+    user = sg000-simreka
+[core]
+    sshCommand = "ssh -i ~/.ssh/id_github_simreka.pub"
