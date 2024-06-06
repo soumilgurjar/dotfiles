@@ -22,15 +22,15 @@ thm_black4="#5b6078"
 
 # utils
 set() {
-    local option=$1
-    local value=$2
-    tmux set-option -gq "$option" "$value"
+	local option=$1
+	local value=$2
+	tmux set-option -gq "$option" "$value"
 }
 
 setw() {
-    local option=$1
-    local value=$2
-    tmux set-window-option -gq "$option" "$value"
+	local option=$1
+	local value=$2
+	tmux set-window-option -gq "$option" "$value"
 }
 
 # status
@@ -56,7 +56,7 @@ setw window-status-style "fg=${thm_fg},bg=${thm_bg},none"
 # --------=== Statusline
 
 set status-left "#{?client_prefix,#[bg=$thm_red],#[bg=$thm_blue]}#[fg=$thm_blue] #{?client_prefix,#[bg=$thm_red],#[bg=$thm_blue]}#[fg=$thm_bg] #[fg=$thm_fg,bg=$thm_gray] #S "
-set status-right ""
+set status-right "#[fg=$thm_fg,bg=$thm_gray] %a, %d %b #[bg=$thm_blue]#[fg=$thm_bg] %H:%M "
 
 # current_dir
 setw window-status-format "#[fg=$thm_black4,bg=$thm_bg] #W "
