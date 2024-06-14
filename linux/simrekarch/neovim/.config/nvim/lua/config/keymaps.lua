@@ -35,6 +35,10 @@ keymap({ "n" }, "<leader>qq", "<Cmd>qall<CR>", { desc = "Quit All Buffers and Sp
 keymap({ "n" }, "<leader>wq", "<Cmd>close<CR>", { desc = "Quit Window" })
 keymap({ "n" }, "<leader>wo", "<Cmd>only<CR>", { desc = "Quit All Other Window" })
 
+-- Move to split windows
+keymap({ "n" }, "<leader>j", "<Cmd>wincmd j<CR>", { desc = "Move to Lower Window" })
+keymap({ "n" }, "<leader>k", "<Cmd>wincmd k<CR>", { desc = "Move to Upper Window" })
+
 -- Start macro with Q instead of q
 keymap({ "n" }, "<S-q>", "q", { desc = "Start Macro" })
 
