@@ -63,8 +63,8 @@ return {
 	keys = {
 		{
 			"<leader><space>",
-			require("lazyvim.util").telescope("files", { cwd = false }),
-			desc = "Find Files (root dir)",
+			LazyVim.pick("oldfiles", { cwd = vim.uv.cwd() }),
+			desc = "Recent (cwd)",
 		},
 	},
 }
