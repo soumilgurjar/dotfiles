@@ -108,6 +108,9 @@ return {
 
 					["ak"] = { query = "@comment.outer", desc = "Select outer part of a comment" },
 					["ik"] = { query = "@comment.inner", desc = "Select inner part of a comment" },
+
+					["az"] = { query = "@code_cell.outer", desc = "around block" },
+					["iz"] = { query = "@code_cell.inner", desc = "in block" },
 				},
 			},
 			move = {
@@ -117,6 +120,7 @@ return {
 				goto_next_start = {
 					["]f"] = "@function.outer",
 					["]]"] = "@class.outer",
+					["]z"] = { query = "@code_cell.inner", desc = "next code block" },
 				},
 				goto_next_end = {
 					["]F"] = "@function.outer",
@@ -125,6 +129,7 @@ return {
 				goto_previous_start = {
 					["[f"] = "@function.outer",
 					["[["] = "@class.outer",
+					["[z"] = { query = "@code_cell.inner", desc = "previous code block" },
 				},
 				goto_previous_end = {
 					["[f"] = "@function.outer",
@@ -132,14 +137,16 @@ return {
 				},
 			},
 			swap = {
-				enable = false,
+				enable = true,
 				-- Swap parameters; ie. if a key-value has multiple values
 				-- and you want to swap them
 				swap_next = {
 					[",a"] = "@parameter.inner",
+					["<leader>sbl"] = "@code_cell.outer",
 				},
 				swap_previous = {
 					[",A"] = "@parameter.inner",
+					["<leader>sbh"] = "@code_cell.outer",
 				},
 			},
 		},
