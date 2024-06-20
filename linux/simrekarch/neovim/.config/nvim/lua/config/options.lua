@@ -59,5 +59,5 @@ vim.opt.whichwrap:append("<,>,[,]")             -- keys allowed to move to the p
 vim.opt.wrap = true                            -- display lines as one long line
 -- vim.opt.wrapmargin = 2                          -- Wrap margin from right edge of window
 vim.opt.writebackup = false                     -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
-vim.g.python3_host_prog = "/home/soumilgurjar/.local/share/virtualenvs/pynvim-kWHDhcTl/bin/python" -- Python3 executable for neovim within a pipenv virtualenv
+vim.g.python3_host_prog = "/home/soumilgurjar/.local/share/virtualenvs/pynvim-kWHDhcTl-python/bin/python" -- Python3 executable for neovim within a pipenv virtualenv
 -- stylua: ignore end
