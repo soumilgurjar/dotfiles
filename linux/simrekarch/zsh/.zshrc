@@ -2,8 +2,10 @@ export PYENV_ROOT="$HOME/.pyenv"
 # [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
-export PIPENV_DEFAULT_PYTHON_VERSION=$(pyenv which python)  # Necessary for pipenv to respect pyenv local/global versions
-# export PIPENV_PYTHON=$PYENV_ROOT/shims/python  # Necessary for pipenv to respect pyenv local/global versions
+# export PIPENV_DEFAULT_PYTHON_VERSION=$(pyenv which python)  # Necessary for pipenv to respect pyenv local/global versions
+export PIPENV_PYTHON=$PYENV_ROOT/shims/python  # Necessary for pipenv to respect pyenv local/global versions
+
+eval $(keychain --eval --quiet --nogui id_github id_github_simreka) # Load SSH keys into keychain
 
 [[ -n $TMUX ]] && export TERM="xterm-256color"
 
@@ -94,6 +96,9 @@ fz() {
 fh() {
     eval $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
 }
+
+# For being able to view pdfs with zathura
+export DISPLAY=192.168.178.38:0
 
 # ripgrep configuration
 export RIPGREP_CONFIG_PATH="$HOME/.ripgrep"
